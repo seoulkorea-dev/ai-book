@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>위키: 사례연구 | 생성형 AI 실전 가이드</title>
-<meta name="description" content="위키: 사례연구">
+<title>위키: 사례 연구 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="위키: 사례 연구">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -35,10 +35,10 @@
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
 <li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험관리</li>
+<li class="group">4부 위험 관리</li>
 <li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
 <li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
 <li class="group">5부 미래</li>
 <li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
 <li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
@@ -52,7 +52,7 @@
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
 <li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html" aria-current="page">사례연구</a></li>
+<li><a href="../wiki/cases.html" aria-current="page">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
@@ -68,29 +68,41 @@
 <main id="main">
 <article>
 <p class="eyebrow-part">위키</p>
-<h1>사례연구</h1>
+<h1>사례 연구</h1>
 <p class="lead">생성형 AI 사용에서 발생한 문제와 기관의 대응 사례입니다.</p><h2 id="legal">법률 환각 사례</h2>
 
-<p><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Mata v. Avianca, Inc. (미국 뉴욕 남부 연방지방법원, 사건번호 22-cv-1461)</p>
+<p><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> Mata v. Avianca, Inc. (미국 뉴욕 남부 연방지방법원, 사건번호 22-cv-1461)</p>
 <figure class="fig"><div class="table-wrap"><table>
 <thead><tr><th>항목</th><th>내용</th></tr></thead>
 <tbody>
 <tr><td>사건</td><td>항공사를 상대로 한 개인 상해 소송</td></tr>
 <tr><td>문제</td><td>원고 측 변호사가 ChatGPT로 찾은 판례를 인용한 서면 제출. 인용한 판례 여러 건이 존재하지 않음</td></tr>
-<tr><td>법원 판단</td><td>2023년 6월 22일 변호사 두 명과 소속 법률 사무소에 5,000달러 제재금 부과</td></tr>
-<tr><td>교훈</td><td>AI가 제시한 인용은 원문 데이터베이스에서 존재를 확인한 뒤 사용</td></tr>
+<tr><td>발각</td><td>피고 측과 법원이 인용 판례를 찾지 못해 원고 측에 해명을 요구</td></tr>
+<tr><td>확인 방식의 문제</td><td>변호사는 ChatGPT에 판례가 실제로 있는지 물었고, ChatGPT는 있다고 답함</td></tr>
+<tr><td>법원 판단</td><td>2023년 6월 22일 변호사 두 명과 소속 법률 사무소에 공동으로 5,000달러 제재금 부과</td></tr>
+<tr><td>교훈</td><td>AI가 제시한 인용은 법률 데이터베이스 원문에서 존재를 확인한 뒤 사용</td></tr>
 </tbody></table></div>
-<figcaption><b>표 W-2. Mata v. Avianca 사건 개요</b><br>사건 경과와 법원 판단</figcaption></figure>
-<p>관련: <a href="../chapters/ch09.html">9장</a></p>
+<figcaption><b>표 W-13. Mata v. Avianca 사건 개요</b><br>사건 경과와 법원 판단</figcaption></figure>
+<p>같은 AI에게 다시 묻는 것은 검증이 아닙니다. AI에게는 판례 검색어를 받고, 검색과 확인은 법률 데이터베이스에서 합니다. 관련: <a href="../chapters/ch09.html#case">9장</a></p>
 <h2 id="academic">학술 윤리 사례</h2>
 
-<p><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Nature는 2023년 1월 24일 사설에서 대규모 언어 모델 사용 원칙 두 가지를 발표했습니다.</p>
+<p><span class="mark inst" role="img" aria-label="출처: 기관" title="기관">기관</span> Nature는 2023년 1월 24일 사설에서 대규모 언어 모델 사용 원칙 두 가지를 발표했습니다.</p>
 <ol><li>대규모 언어 모델은 논문 저자로 인정하지 않습니다. 저자에게는 연구에 대한 책임이 따르는데 AI는 그 책임을 지지 못하기 때문입니다.</li><li>대규모 언어 모델을 사용한 연구자는 방법 또는 감사의 글에 사용 사실을 밝힙니다.</li></ol>
-<p>관련: <a href="../chapters/ch06.html">6장</a>, <a href="../chapters/ch10.html">10장</a></p>
-<p class="tags">태그: <a href="../tags.html#tag-57">환각</a><a href="../tags.html#tag-53">학술 윤리</a><a href="../tags.html#tag-22">사례</a></p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>구분</th><th>예</th></tr></thead>
+<tbody>
+<tr><td>대체로 허용</td><td>개념 질문, 문법 교정, 검색어 제안, 번역 보조</td></tr>
+<tr><td>기관마다 다름</td><td>초안 작성 후 수정, 구조 제안, 요약 참고</td></tr>
+<tr><td>대체로 금지</td><td>AI가 쓴 글 그대로 제출, AI가 만든 참고문헌 사용, 시험 중 사용</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-14. 학업에서 AI 사용 범위</b><br>일반적인 구분 (기관 규정이 우선)</figcaption></figure>
+<h3>AI 탐지 도구의 한계</h3>
+<ul><li>사람이 쓴 글을 AI가 쓴 것으로 잘못 판정할 수 있습니다.</li><li>AI가 쓴 글을 고쳐 쓰면 탐지하지 못할 수 있습니다.</li><li>탐지 결과만으로 부정행위를 판정하지 않고, 작성 과정과 초안 기록을 함께 봅니다.</li></ul>
+<p>관련: <a href="../chapters/ch06.html#integrity">6장</a>, <a href="../chapters/ch10.html#plagiarism">10장</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-73">환각</a><a href="../tags.html#tag-68">학술 윤리</a><a href="../tags.html#tag-29">사례</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../wiki/tools.html"><small>이전</small>도구</a><a class="next" href="../wiki/security.html"><small>다음</small>보안</a></nav>
-<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#legal">법률 환각 사례</a></li>

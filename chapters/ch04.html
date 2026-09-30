@@ -35,10 +35,10 @@
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
 <li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험관리</li>
+<li class="group">4부 위험 관리</li>
 <li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
 <li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
 <li class="group">5부 미래</li>
 <li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
 <li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
@@ -52,7 +52,7 @@
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
 <li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
@@ -70,19 +70,20 @@
 
 <p class="eyebrow-part">2부 원리</p>
 <h1>4장 고급 프롬프팅 기법</h1>
-<p class="lead">고급 프롬프팅 기법은 예시, 단계별 추론, 도구 사용, 작업 분할로 결과 품질을 높이는 방법입니다.</p>
-<ul class="summary"><li>예시를 주는 Few-shot은 형식과 기준을 전달합니다.</li><li>단계별 추론(Chain of Thought)은 여러 단계의 계산과 논리 문제에 씁니다.</li><li>큰 작업은 프롬프트 체이닝으로 나눕니다.</li></ul>
+<p class="lead">고급 프롬프팅 기법은 예시, 단계별 추론, 도구 사용, 작업 분할, 생성 설정으로 결과 품질을 높이는 방법입니다.</p>
+<ul class="summary"><li>예시를 주는 Few-shot은 형식과 기준을 전달합니다.</li><li>단계별 추론(Chain of Thought)은 여러 단계의 계산과 논리 문제에 씁니다.</li><li>큰 작업은 프롬프트 체이닝으로 나누고, 기법은 조합해서 씁니다.</li></ul>
 
 <h2 id="overview">기법 요약</h2>
 <figure class="fig"><div class="table-wrap"><table>
 <thead><tr><th>기법</th><th>방법</th><th>적합한 작업</th><th>원 논문</th></tr></thead>
 <tbody>
 <tr><td>Zero-shot</td><td>예시 없이 지시만 줌</td><td>단순 요약, 번역</td><td>없음</td></tr>
-<tr><td>Few-shot</td><td>입력과 출력 예시 몇 개를 줌</td><td>분류, 형식 맞추기</td><td><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Brown 외, 2020</td></tr>
-<tr><td>Chain of Thought</td><td>추론 과정을 단계별로 쓰게 함</td><td>수학, 논리 문제</td><td><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Wei 외, 2022</td></tr>
-<tr><td>Zero-shot CoT</td><td>"단계별로 생각하라"는 지시만 추가</td><td>예시 없는 추론 문제</td><td><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Kojima 외, 2022</td></tr>
-<tr><td>Self-consistency</td><td>여러 추론 결과 중 다수 답을 채택</td><td>정답이 하나인 추론 문제</td><td><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Wang 외, 2022</td></tr>
-<tr><td>ReAct</td><td>추론과 도구 사용을 번갈아 수행</td><td>검색, 계산이 필요한 질문</td><td><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Yao 외, 2022</td></tr>
+<tr><td>Few-shot</td><td>입력과 출력 예시 몇 개를 줌</td><td>분류, 형식 맞추기</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Brown 외, 2020</td></tr>
+<tr><td>Chain of Thought</td><td>추론 과정을 단계별로 쓰게 함</td><td>수학, 논리 문제</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Wei 외, 2022</td></tr>
+<tr><td>Zero-shot CoT</td><td>&quot;단계별로 생각하라&quot;는 지시만 추가</td><td>예시 없는 추론 문제</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Kojima 외, 2022</td></tr>
+<tr><td>Self-consistency</td><td>여러 추론 결과 중 다수 답을 채택</td><td>정답이 하나인 추론 문제</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Wang 외, 2022</td></tr>
+<tr><td>Tree of Thoughts</td><td>여러 풀이 갈래를 만들고 평가해 고름</td><td>계획, 퍼즐처럼 탐색이 필요한 문제</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Yao 외, 2023</td></tr>
+<tr><td>ReAct</td><td>추론과 도구 사용을 번갈아 수행</td><td>검색, 계산이 필요한 질문</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Yao 외, 2022</td></tr>
 <tr><td>프롬프트 체이닝</td><td>작업을 나눠 앞 결과를 다음 입력으로 씀</td><td>긴 문서 처리, 다단계 작업</td><td>없음</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4-1. 프롬프팅 기법 비교</b><br>기법별 방법, 적합한 작업, 원 논문</figcaption></figure>
@@ -90,34 +91,89 @@
 <h2 id="fewshot">Few-shot</h2>
 <pre><code>다음 문장의 감정을 긍정, 부정, 중립 중 하나로 분류하십시오.
 
-문장: 배송이 하루 늦었지만 제품은 좋습니다. / 분류: 긍정
+문장: 제품이 설명과 같고 품질도 좋습니다. / 분류: 긍정
 문장: 설명서와 다른 부품이 왔습니다. / 분류: 부정
 문장: 주문은 월요일에 했습니다. / 분류: 중립
 문장: 포장이 찢어져 있었고 환불도 거절당했습니다. / 분류:</code></pre>
-<p>예시는 분류 기준과 출력 형식을 함께 전달합니다. 예시가 한쪽 분류에 몰리면 결과도 그쪽으로 몰리므로 분류별로 고르게 넣습니다.</p>
+<p>예시는 분류 기준과 출력 형식을 함께 전달합니다. 예시를 고를 때는 다음을 지킵니다.</p>
+<ul><li>분류별로 고르게 넣습니다. 예시가 한쪽 분류에 몰리면 결과도 그쪽으로 몰립니다.</li><li>한 예시에는 한 가지 판단만 담습니다. 긍정과 부정이 섞인 문장은 기준을 흐립니다.</li><li>모든 예시를 같은 형식으로 씁니다.</li><li>실제 작업과 비슷한 길이와 난이도로 만듭니다.</li><li>순서를 섞습니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Zhao 외(2021)는 예시의 순서와 마지막 예시의 답이 결과에 영향을 준다고 보고했습니다.</li></ul>
 
 <h2 id="cot">단계별 추론</h2>
 <p>단계별 추론은 답을 바로 내지 않고 중간 과정을 먼저 쓰게 하는 방법입니다. 여러 단계를 거치는 계산과 논리 문제에서 정확도가 올라갑니다.</p>
-<p>추론 과정을 내부에서 수행하는 추론 모델에서는 사용 방법이 다릅니다. <span class="mark openai" role="img" aria-label="OpenAI 발표" title="OpenAI 발표">O</span> OpenAI는 추론 모델 안내에서 추론 모델에는 단계별로 생각하라는 지시를 따로 넣지 않도록 안내했습니다.</p>
+<h3>구조화된 단계별 추론</h3>
+<p>"단계별로 생각하십시오"만 적는 대신, 거칠 단계를 직접 지정할 수 있습니다. 단계를 지정하면 결과를 단계별로 점검하기 쉽습니다.</p>
+<pre><code>두 마케팅 안 중 비용 대비 효과가 큰 안을 고르십시오.
+A안: SNS 광고, 비용 500만 원, 예상 도달 10만 명
+B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
+
+다음 순서로 답하십시오.
+1. 안별로 1인 도달 비용을 계산하십시오.
+2. 계산에 반영되지 않은 고려 요소를 두 가지 적으십시오.
+3. 1과 2를 근거로 한 안을 고르고 이유를 한 문장으로 쓰십시오.</code></pre>
+<h3>추론 모델에서의 차이</h3>
+<p>추론 과정을 내부에서 수행하는 추론 모델에서는 사용 방법이 다릅니다. <span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> OpenAI는 추론 모델 안내에서 추론 모델에는 단계별로 생각하라는 지시를 따로 넣지 않도록 안내했습니다. 추론 모델에는 목표와 제약을 명확히 주고 과정은 모델에 맡깁니다.</p>
+<h3>쓰지 않을 때</h3>
+<p>단순 조회, 짧은 번역, 창작 초안처럼 추론 단계가 없는 작업에는 단계별 추론이 답을 길게 만들 뿐입니다.</p>
+
+<h2 id="sampling">생성 설정</h2>
+<p>모델은 다음 토큰을 확률에 따라 고릅니다. API와 일부 개발 도구에서는 고르는 방식을 설정으로 조절할 수 있습니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>설정</th><th>의미</th><th>사용 예</th></tr></thead>
+<tbody>
+<tr><td>Temperature</td><td>확률 분포를 평평하게 또는 뾰족하게 만듭니다. 낮으면 확률 높은 토큰을 주로 고르고, 높으면 다양하게 고릅니다.</td><td>정보 추출, 분류는 낮게, 아이디어 발상은 높게</td></tr>
+<tr><td>Top-p</td><td>누적 확률이 p가 될 때까지의 후보 안에서만 고릅니다.</td><td>엉뚱한 단어를 줄이려면 낮춥니다.</td></tr>
+<tr><td>최대 토큰 수</td><td>답변 길이의 상한입니다.</td><td>비용과 길이 제한</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-2. 생성 설정</b><br>설정별 의미와 사용 예</figcaption></figure>
+<p>Top-p 방식은 <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Holtzman 외(2019)가 제안했습니다. 두 설정을 동시에 크게 바꾸지 말고 한 가지씩 조절합니다. 대화형 제품은 이 설정을 화면에 드러내지 않는 경우가 많고, 추론 모델은 일부 설정을 지원하지 않습니다. 제품별 지원 여부는 개발 문서에서 확인합니다.</p>
 
 <h2 id="react">ReAct</h2>
 <p>ReAct는 추론(Reasoning)과 행동(Acting)을 번갈아 수행하는 방식입니다. 모델이 필요한 정보를 판단하고, 검색 같은 도구를 호출하고, 결과를 보고 다음 행동을 정합니다. AI 에이전트의 기본 동작 방식입니다. 자세한 내용은 <a href="../wiki/pe-agents.html">위키 에이전트</a>에서 다룹니다.</p>
 
 <h2 id="chaining">프롬프트 체이닝</h2>
 <ol><li>긴 보고서를 장별로 나눠 요약합니다.</li><li>장별 요약을 모아 핵심 주장을 뽑습니다.</li><li>핵심 주장으로 발표 자료 목차를 만듭니다.</li></ol>
-<p>단계를 나누면 단계별 결과를 확인하고, 틀린 단계만 다시 실행합니다.</p>
+<p>단계를 나누면 단계별 결과를 확인하고, 틀린 단계만 다시 실행할 수 있습니다.</p>
 
-<p class="tags">태그: <a href="../tags.html#tag-4">Few-shot</a><a href="../tags.html#tag-1">Chain of Thought</a><a href="../tags.html#tag-11">ReAct</a><a href="../tags.html#tag-52">프롬프트 체이닝</a></p>
+<h2 id="korean">한국어 프롬프팅</h2>
+<p>한국어로 쓸 때 결과 품질에 영향을 주는 요소가 있습니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>방법</th><th>이유</th><th>작성 예</th></tr></thead>
+<tbody>
+<tr><td>전문 용어 원어 병기</td><td>번역어가 여러 개인 용어의 뜻을 고정합니다.</td><td>재현율(recall)과 정밀도(precision)를 비교하십시오.</td></tr>
+<tr><td>문체 지정</td><td>합니다체, 해요체, 해라체가 섞이는 것을 막습니다.</td><td>모든 문장을 합니다체로 쓰십시오.</td></tr>
+<tr><td>호칭과 경어 지정</td><td>대상에 맞는 높임 수준을 정합니다.</td><td>수신자는 거래처 부장입니다. 존칭은 '부장님'으로 쓰십시오.</td></tr>
+<tr><td>한국 기준 명시</td><td>해외 기준으로 답하는 것을 막습니다.</td><td>한국 근로기준법 기준으로 답하십시오. 금액은 원 단위로 쓰십시오.</td></tr>
+<tr><td>번역투 금지</td><td>영어 문장 구조를 옮긴 어색한 표현을 줄입니다.</td><td>'~에 대해', '~를 통해'를 반복하지 마십시오.</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-3. 한국어 프롬프팅 방법</b><br>방법별 이유와 작성 예</figcaption></figure>
+<p>영어 자료를 근거로 답하게 할 때는 자료는 원문 그대로 두고 답만 한국어로 요청합니다. 자료를 먼저 번역하면 번역 과정의 오류가 답에 섞입니다.</p>
+
+<h2 id="combine">기법 조합</h2>
+<p>기법은 하나씩 쓰기보다 조합해서 씁니다. 표 4-4는 작업별 조합 예입니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>조합</th><th>방법</th></tr></thead>
+<tbody>
+<tr><td>고객 문의 분류</td><td>5요소 + Few-shot</td><td>분류 기준을 제약에 적고, 분류별 예시를 둡니다.</td></tr>
+<tr><td>계산이 들어간 보고</td><td>구조화된 단계별 추론 + 형식 지정</td><td>계산 단계를 지정하고, 결과는 표로 받습니다.</td></tr>
+<tr><td>긴 문서 분석</td><td>프롬프트 체이닝 + 구분 기호</td><td>장별로 나눠 처리하고, 원문은 태그로 감쌉니다.</td></tr>
+<tr><td>최신 자료 조사</td><td>ReAct(검색 기능) + 출처 표시 요구</td><td>검색 결과마다 출처 링크를 붙이게 합니다.</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-4. 작업별 기법 조합</b><br>작업 유형과 조합할 기법</figcaption></figure>
+
+<p class="tags">태그: <a href="../tags.html#tag-6">Few-shot</a><a href="../tags.html#tag-3">Chain of Thought</a><a href="../tags.html#tag-13">ReAct</a><a href="../tags.html#tag-66">프롬프트 체이닝</a><a href="../tags.html#tag-30">샘플링</a><a href="../tags.html#tag-71">한국어 프롬프팅</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch03.html"><small>이전</small>3장 프롬프트 구조</a><a class="next" href="../chapters/ch05.html"><small>다음</small>5장 반복 개선 방법</a></nav>
-<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#overview">기법 요약</a></li>
 <li><a href="#fewshot">Few-shot</a></li>
 <li><a href="#cot">단계별 추론</a></li>
+<li><a href="#sampling">생성 설정</a></li>
 <li><a href="#react">ReAct</a></li>
 <li><a href="#chaining">프롬프트 체이닝</a></li>
+<li><a href="#korean">한국어 프롬프팅</a></li>
+<li><a href="#combine">기법 조합</a></li>
 </ol></aside>
 </div>
 </body>

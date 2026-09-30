@@ -35,10 +35,10 @@
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
 <li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험관리</li>
+<li class="group">4부 위험 관리</li>
 <li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
 <li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
 <li class="group">5부 미래</li>
 <li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
 <li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
@@ -52,7 +52,7 @@
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
 <li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
@@ -70,34 +70,44 @@
 
 <p class="eyebrow-part">서론</p>
 <h1>0.2 지금 배워야 하는 이유</h1>
-<p class="lead">이 책은 생성형 AI를 지금 배워야 하는 이유를 세 가지로 정리합니다.</p>
-<ul class="summary"><li>일반 사용자가 쓰는 제품으로 공개되었습니다.</li><li>생성형 AI를 대상으로 하는 법률이 시행 단계에 들어갔습니다.</li><li>결과물의 책임은 사용자에게 남습니다.</li></ul>
+<p class="lead">이 책은 생성형 AI를 지금 배워야 하는 이유를 네 가지로 정리합니다.</p>
+<ul class="summary"><li>일반 사용자가 쓰는 제품으로 공개되었습니다.</li><li>같은 도구라도 쓰는 방법에 따라 결과 차이가 큽니다.</li><li>생성형 AI를 대상으로 하는 법률이 시행 단계에 들어갔습니다.</li><li>결과물의 책임은 사용자에게 남습니다.</li></ul>
 
 <h2 id="products">일반 사용자용 제품 공개</h2>
-<p>생성형 AI는 연구용 모델에서 누구나 쓰는 대화형 제품으로 바뀌었습니다.</p>
+<p>생성형 AI는 연구용 모델에서 누구나 쓰는 대화형 제품으로 바뀌었습니다. 표 0-7은 제품 기준으로 최초 공개 시점을 정리합니다.</p>
 <figure class="fig"><div class="table-wrap"><table>
 <thead><tr><th>제품</th><th>발표 주체</th><th>최초 공개</th></tr></thead>
 <tbody>
-<tr><td>ChatGPT</td><td><span class="mark openai" role="img" aria-label="OpenAI 발표" title="OpenAI 발표">O</span> OpenAI</td><td>2022년 11월</td></tr>
-<tr><td>Claude</td><td><span class="mark anthropic" role="img" aria-label="Anthropic 발표" title="Anthropic 발표">A</span> Anthropic</td><td>2023년 3월</td></tr>
-<tr><td>Gemini</td><td><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Google</td><td>2023년 12월 (모델 발표)</td></tr>
+<tr><td>ChatGPT</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> OpenAI</td><td>2022년 11월</td></tr>
+<tr><td>Claude</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Anthropic</td><td>2023년 3월</td></tr>
+<tr><td>Gemini</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Google</td><td>2023년 3월 Bard로 공개, 2024년 2월 Gemini로 이름 변경</td></tr>
 </tbody></table></div>
-<figcaption><b>표 0-4. 주요 대화형 제품 공개 시점</b><br>제품별 최초 공개 연월과 발표 주체</figcaption></figure>
+<figcaption><b>표 0-7. 주요 대화형 제품 공개 시점</b><br>제품별 최초 공개 연월과 발표 주체</figcaption></figure>
+
+<h2 id="skill-gap">사용 방법에 따른 결과 차이</h2>
+<p>생성형 AI는 잘하는 작업과 못하는 작업의 경계가 고르지 않습니다. 같은 사람이 같은 도구를 써도 작업이 경계 안에 있으면 결과가 좋아지고, 경계 밖에 있으면 결과가 나빠집니다.</p>
+<p><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> 하버드 경영대학원 등의 연구진은 2023년 9월 발표한 실험 논문(Dell'Acqua 외)에서 컨설턴트 758명에게 GPT-4를 쓰게 했습니다. AI가 잘하는 범위의 과제에서는 AI를 쓴 집단이 더 많은 과제를 더 빨리, 더 높은 품질로 마쳤습니다. AI가 잘하지 못하는 범위의 과제에서는 AI를 쓴 집단의 정답률이 쓰지 않은 집단보다 낮았습니다.</p>
+<p>이 결과는 두 가지를 보여 줍니다. 첫째, AI에 맡길 작업과 맡기지 않을 작업을 구분하는 능력이 필요합니다. 둘째, AI 결과를 검증하지 않으면 AI를 쓰지 않을 때보다 결과가 나빠질 수 있습니다. 이 두 능력은 2부, 4부, 12장에서 다룹니다.</p>
+
+<h2 id="jobs">일자리 변화</h2>
+<p><span class="mark inst" role="img" aria-label="출처: 기관" title="기관">기관</span> 세계경제포럼(WEF)은 「Future of Jobs Report 2025」에서 2030년까지 새로 생기는 일자리를 1억 7천만 개, 사라지는 일자리를 9천2백만 개로 추정했습니다. 같은 보고서는 AI와 빅데이터를 가장 빠르게 수요가 느는 기술로 꼽았습니다. 추정치는 설문에 기반한 전망이므로 확정된 사실로 읽지 않습니다. 직무 안에서 AI가 맡는 작업이 늘어난다는 방향만 읽습니다.</p>
 
 <h2 id="law">법률 시행</h2>
-<ul><li><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> 유럽연합 인공지능법(Regulation (EU) 2024/1689)은 2024년 8월 1일 발효했고, 조항별로 2025년 2월부터 단계적으로 적용합니다.</li><li><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> 한국의 「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」은 2025년 1월 21일 공포되었고 2026년 1월 22일 시행되었습니다.</li></ul>
+<ul><li><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> 유럽연합 인공지능법(Regulation (EU) 2024/1689)은 2024년 8월 1일 발효되었고, 조항별로 2025년 2월부터 단계적으로 적용됩니다. 적용 일정은 <a href="ch11.html#regulation">11장 표 11-4</a>에서 다룹니다.</li><li><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> 한국의 「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」은 2025년 1월 21일 공포되었고 2026년 1월 22일 시행되었습니다. 과학기술정보통신부는 시행 뒤 1년 이상 사실 조사와 과태료 부과를 유예하는 계도 기간을 두었습니다.</li></ul>
 <p>규제 내용은 <a href="ch11.html">11장</a>과 <a href="../wiki/governance.html">위키 거버넌스</a>에서 다룹니다.</p>
 
 <h2 id="responsibility">사용자의 책임</h2>
-<p>AI가 만든 문장, 인용, 코드를 그대로 제출하면 그 책임은 제출한 사람에게 있습니다. 미국 법원은 AI가 만든 가짜 판례를 인용한 변호사에게 제재를 부과했습니다. 사례는 <a href="../wiki/cases.html">위키 사례연구</a>에서 다룹니다.</p>
+<p>AI가 만든 문장, 인용, 코드를 그대로 제출하면 그 책임은 제출한 사람에게 있습니다. 미국 법원은 AI가 만든 가짜 판례를 인용한 변호사에게 제재를 부과했습니다. 사례는 <a href="ch09.html#case">9장</a>과 <a href="../wiki/cases.html">위키 사례 연구</a>에서 다룹니다.</p>
 
-<p class="tags">태그: <a href="../tags.html#tag-14">규제</a><a href="../tags.html#tag-23">생성형 AI</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-18">규제</a><a href="../tags.html#tag-31">생성형 AI</a><a href="../tags.html#tag-33">숙련도</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch00-1.html"><small>이전</small>0.1 책의 구성과 읽는 순서</a><a class="next" href="../chapters/ch01.html"><small>다음</small>1장 생성형 AI 개념</a></nav>
-<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#products">일반 사용자용 제품 공개</a></li>
+<li><a href="#skill-gap">사용 방법에 따른 결과 차이</a></li>
+<li><a href="#jobs">일자리 변화</a></li>
 <li><a href="#law">법률 시행</a></li>
 <li><a href="#responsibility">사용자의 책임</a></li>
 </ol></aside>

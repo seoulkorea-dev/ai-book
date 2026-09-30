@@ -35,10 +35,10 @@
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
 <li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험관리</li>
+<li class="group">4부 위험 관리</li>
 <li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
 <li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
 <li class="group">5부 미래</li>
 <li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
 <li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
@@ -52,7 +52,7 @@
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html" aria-current="page">개념</a></li>
 <li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
@@ -69,32 +69,114 @@
 <article>
 <p class="eyebrow-part">위키</p>
 <h1>개념</h1>
-<p class="lead">본문의 핵심 개념을 정의하고 관련 장으로 연결합니다.</p><h2 id="prompt">프롬프트</h2>
-<p>모델에 주는 입력 전체입니다. 지시, 맥락, 입력 데이터, 출력 형식으로 구성합니다. 관련: <a href="../chapters/ch03.html">3장</a></p>
+<p class="lead">본문의 핵심 개념을 정의하고, 본문에서 다루지 않은 세부 사항을 덧붙입니다.</p><h2 id="prompt">프롬프트</h2>
+
+<p>모델에 주는 입력 전체입니다. 맥락, 역할, 작업, 제약, 형식의 5요소로 구성되고, 처리할 입력 자료는 구분 기호로 감싸 따로 붙입니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>종류</th><th>작성자</th><th>역할</th></tr></thead>
+<tbody>
+<tr><td>시스템 프롬프트</td><td>제품 개발자, 사용자 설정</td><td>대화 전체에 적용되는 기본 지시</td></tr>
+<tr><td>사용자 프롬프트</td><td>사용자</td><td>매번 입력하는 질문과 지시</td></tr>
+<tr><td>어시스턴트 메시지</td><td>모델</td><td>이전 답변. 다음 답변의 맥락이 됩니다.</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-2. 프롬프트 종류</b><br>작성자에 따른 구분</figcaption></figure>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>연도</th><th>발표</th><th>의의</th></tr></thead>
+<tbody>
+<tr><td>2020</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Brown 외, GPT-3 논문</td><td>예시만으로 여러 작업을 수행할 수 있음을 보임</td></tr>
+<tr><td>2022</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Wei 외, Chain of Thought</td><td>단계별 추론으로 추론 문제 정확도 향상</td></tr>
+<tr><td>2022</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Kojima 외, Zero-shot CoT</td><td>예시 없이 한 문장 지시로 추론 유도</td></tr>
+<tr><td>2023</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Yao 외, Tree of Thoughts</td><td>여러 풀이 갈래를 탐색하고 평가</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-3. 프롬프트 연구 이정표</b><br>연도별 주요 발표</figcaption></figure>
+<p>관련: <a href="../chapters/ch03.html">3장</a>, <a href="../appendix/a-templates.html">부록 A</a></p>
 <h2 id="hallucination">환각</h2>
-<p>사실이 아니거나 입력과 맞지 않는 내용을 사실처럼 생성하는 현상입니다. 입력 불일치와 사실 불일치로 나눕니다. 관련: <a href="../chapters/ch09.html">9장</a></p>
+
+<p>사실이 아니거나 입력과 맞지 않는 내용을 사실처럼 생성하는 현상입니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Ji 외(2023)는 입력과 모순되는 내재적 환각과 입력으로 확인할 수 없는 외재적 환각으로 구분했습니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>분야</th><th>위험</th></tr></thead>
+<tbody>
+<tr><td>법률</td><td>존재하지 않는 판례 인용으로 제재</td></tr>
+<tr><td>의료</td><td>잘못된 약물, 용량 정보로 건강 위험</td></tr>
+<tr><td>학술</td><td>가짜 참고문헌 인용으로 연구 부정 판정</td></tr>
+<tr><td>금융</td><td>틀린 수치로 잘못된 투자 판단</td></tr>
+<tr><td>언론</td><td>오보와 신뢰 하락</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-4. 환각이 특히 위험한 분야</b><br>분야별 위험</figcaption></figure>
+<p>프롬프트가 답을 강요해도 환각이 늘어납니다. 근거가 두 가지뿐인 주제에 다섯 가지를 요구하면 나머지를 만들어 채울 수 있습니다. 관련: <a href="../chapters/ch09.html">9장</a></p>
 <h2 id="token">토큰</h2>
-<p>모델이 처리하는 텍스트 단위입니다. 단어 전체이거나 단어의 일부이며, 언어와 토크나이저에 따라 같은 문장의 토큰 수가 다릅니다. 사용량 요금과 컨텍스트 윈도우는 토큰 수로 계산합니다. 관련: <a href="pe-research.html">연구: 토큰화</a></p>
-<h2 id="context-window">컨텍스트 윈도우</h2>
-<p>모델이 한 번에 처리하는 토큰의 최대 개수입니다. 입력, 이전 대화, 첨부 문서, 답변이 모두 포함됩니다. 관련: <a href="../chapters/ch01.html">1장</a></p>
+
+<p>모델이 처리하는 텍스트 단위입니다. 토크나이저가 텍스트를 토큰으로 나누고, 모델은 토큰을 숫자 번호로 바꿔 처리합니다. 사용 요금과 컨텍스트 윈도는 토큰 수로 계산합니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>방식</th><th>원리</th><th>제안</th></tr></thead>
+<tbody>
+<tr><td>BPE</td><td>자주 함께 나오는 글자 쌍을 반복해서 합칩니다.</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Sennrich 외, 2016 (기계 번역 적용)</td></tr>
+<tr><td>WordPiece</td><td>학습 데이터의 가능도를 높이는 조각을 고릅니다.</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Google</td></tr>
+<tr><td>SentencePiece</td><td>공백을 포함한 원문 그대로를 조각으로 나눕니다.</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Kudo와 Richardson, 2018</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-5. 주요 토큰화 방식</b><br>방식별 원리와 제안 논문</figcaption></figure>
+<p>같은 뜻이라도 언어에 따라 토큰 수가 다르고, 한국어는 영어보다 토큰 수가 많은 경우가 흔합니다. 토큰 수를 줄이려면 인사말과 반복 지시를 빼고, 긴 문서는 필요한 부분만 넣습니다. 관련: <a href="../chapters/ch01.html#token">1장</a>, <a href="pe-research.html">연구: 토큰화</a></p>
+<h2 id="context-window">컨텍스트 윈도</h2>
+
+<p>모델이 한 번에 처리하는 토큰의 최대 개수입니다. 시스템 프롬프트, 이전 대화, 첨부 문서, 현재 입력, 답변이 모두 포함됩니다. 대화가 길어지면 새 입력과 답변에 쓸 공간이 줄어듭니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>방법</th><th>절차</th></tr></thead>
+<tbody>
+<tr><td>순차 요약</td><td>문서를 나눠 부분별로 요약하고, 요약을 모아 다시 요약합니다.</td></tr>
+<tr><td>계층 요약</td><td>절 단위 요약, 장 단위 요약, 전체 요약 순서로 올라갑니다.</td></tr>
+<tr><td>질문 기반 추출</td><td>질문과 관련된 부분만 찾아 넣고 답을 생성합니다(RAG).</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-6. 긴 문서 처리 방법</b><br>방법별 절차</figcaption></figure>
+<p><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Liu 외(2023)는 긴 입력의 가운데에 있는 정보를 모델이 앞과 끝의 정보보다 덜 활용한다고 보고했습니다. 중요한 지시는 앞이나 끝에 둡니다. 관련: <a href="../chapters/ch01.html#context">1장</a></p>
 <h2 id="bias">편향</h2>
-<p>학습 데이터의 불균형이 결과에 반영되어 특정 집단에 불공정한 결과를 내는 현상입니다. 집단만 바꾼 같은 질문으로 점검합니다. 관련: <a href="../chapters/ch10.html">10장</a></p>
+
+<p>학습 데이터의 불균형이 결과에 반영되어 특정 집단에 불공정한 결과를 내는 현상입니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>유형</th><th>예</th></tr></thead>
+<tbody>
+<tr><td>성별 편향</td><td>직업을 특정 성별과 연결</td></tr>
+<tr><td>문화 편향</td><td>특정 국가, 언어권의 관점을 기본값으로 삼음</td></tr>
+<tr><td>확증 편향 강화</td><td>사용자의 질문에 담긴 가정을 그대로 받아 지지하는 답을 냄</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-7. 편향 유형</b><br>유형별 예</figcaption></figure>
+<p>집단만 바꾼 같은 질문을 여러 번 실행해 경향을 비교합니다. 관련: <a href="../chapters/ch10.html#bias">10장</a></p>
 <h2 id="role">역할 부여</h2>
-<p>모델에게 직무나 관점을 지정해 설명 수준과 용어를 조정하는 방법입니다. 작업, 형식 지시와 함께 씁니다. 관련: <a href="../chapters/ch03.html">3장</a></p>
+<p>모델에게 직무나 관점을 지정해 설명 수준과 용어를 조정하는 방법입니다. 역할은 모델에 전문 지식을 더하지 않으므로 사실 확인은 따로 합니다. 작업, 형식 지시와 함께 씁니다. 관련: <a href="../chapters/ch03.html#role">3장</a></p>
 <h2 id="few-shot">Few-shot</h2>
-<p>입력과 출력 예시 몇 개를 프롬프트에 넣어 작업 방식과 형식을 보여 주는 기법입니다. <span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Brown 외(2020)가 GPT-3 논문에서 예시만으로 여러 작업을 수행하는 결과를 발표했습니다. 관련: <a href="../chapters/ch04.html">4장</a></p>
+
+<p>입력과 출력 예시 몇 개를 프롬프트에 넣어 작업 방식과 형식을 보여 주는 기법입니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Brown 외(2020)가 GPT-3 논문에서 예시만으로 여러 작업을 수행하는 결과를 발표했습니다. 모델의 가중치를 바꾸지 않고 프롬프트 안의 예시만으로 따르게 하므로 맥락 내 학습(in-context learning)이라고도 합니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>Few-shot</th><th>미세 조정</th></tr></thead>
+<tbody>
+<tr><td>필요 데이터</td><td>예시 2개에서 10개</td><td>수백 개 이상</td></tr>
+<tr><td>준비 시간</td><td>즉시</td><td>학습 시간 필요</td></tr>
+<tr><td>변경</td><td>프롬프트만 고치면 됨</td><td>다시 학습</td></tr>
+<tr><td>적합한 경우</td><td>시험 작업, 자주 바뀌는 작업</td><td>같은 작업을 대량으로 반복</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-8. Few-shot과 미세 조정 비교</b><br>두 방법의 준비와 적합한 경우</figcaption></figure>
+<p>예시 순서도 결과에 영향을 줍니다(<span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Zhao 외, 2021). 관련: <a href="../chapters/ch04.html#fewshot">4장</a></p>
 <h2 id="cot">Chain of Thought</h2>
-<p>답을 내기 전에 추론 과정을 단계별로 쓰게 하는 기법입니다. <span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Wei 외(2022)가 발표했습니다. 관련: <a href="../chapters/ch04.html">4장</a></p>
-<p class="tags">태그: <a href="../tags.html#tag-50">프롬프트</a><a href="../tags.html#tag-57">환각</a><a href="../tags.html#tag-46">토큰</a><a href="../tags.html#tag-43">컨텍스트 윈도우</a><a href="../tags.html#tag-47">편향</a><a href="../tags.html#tag-28">역할 부여</a><a href="../tags.html#tag-4">Few-shot</a><a href="../tags.html#tag-1">Chain of Thought</a></p>
+
+<p>답을 내기 전에 추론 과정을 단계별로 쓰게 하는 기법입니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Wei 외(2022)가 발표했습니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>방식</th><th>방법</th><th>사용 시점</th></tr></thead>
+<tbody>
+<tr><td>Zero-shot CoT</td><td>&quot;단계별로 생각하십시오&quot;를 덧붙임</td><td>간단한 추론 문제</td></tr>
+<tr><td>Few-shot CoT</td><td>풀이 과정이 담긴 예시를 줌</td><td>특정 풀이 형식이 필요할 때</td></tr>
+<tr><td>구조화된 CoT</td><td>거칠 단계를 번호로 지정</td><td>결과를 단계별로 점검할 때</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-9. 단계별 추론 방식</b><br>방식별 방법과 사용 시점</figcaption></figure>
+<p>단순 조회, 짧은 번역, 창작 초안에는 쓰지 않습니다. 추론 모델에는 따로 지시하지 않습니다. 관련: <a href="../chapters/ch04.html#cot">4장</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-64">프롬프트</a><a href="../tags.html#tag-73">환각</a><a href="../tags.html#tag-59">토큰</a><a href="../tags.html#tag-56">컨텍스트 윈도</a><a href="../tags.html#tag-60">편향</a><a href="../tags.html#tag-38">역할 부여</a><a href="../tags.html#tag-6">Few-shot</a><a href="../tags.html#tag-3">Chain of Thought</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../wiki/index.html"><small>이전</small>위키 홈</a><a class="next" href="../wiki/tools.html"><small>다음</small>도구</a></nav>
-<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#prompt">프롬프트</a></li>
 <li><a href="#hallucination">환각</a></li>
 <li><a href="#token">토큰</a></li>
-<li><a href="#context-window">컨텍스트 윈도우</a></li>
+<li><a href="#context-window">컨텍스트 윈도</a></li>
 <li><a href="#bias">편향</a></li>
 <li><a href="#role">역할 부여</a></li>
 <li><a href="#few-shot">Few-shot</a></li>

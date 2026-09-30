@@ -35,10 +35,10 @@
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
 <li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험관리</li>
+<li class="group">4부 위험 관리</li>
 <li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
 <li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
 <li class="group">5부 미래</li>
 <li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
 <li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
@@ -52,7 +52,7 @@
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
 <li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
@@ -71,28 +71,86 @@
 <p class="eyebrow-part">부록</p>
 <h1>E. 자가 진단</h1>
 <p class="lead">부별 학습 결과를 점검합니다. 할 수 있는 항목에 표시하고, 표시하지 못한 항목의 장을 다시 읽습니다.</p>
-<h2 id="part1">1부 이해</h2>
-<ul><li><label><input type="checkbox"> LLM이 문장을 만드는 과정을 토큰 단위로 설명합니다.</label></li><li><label><input type="checkbox"> 컨텍스트 윈도우의 의미를 설명합니다.</label></li><li><label><input type="checkbox"> 도구 선택 점검 항목으로 제품을 비교합니다.</label></li></ul>
+<p>항목은 '안다'가 아니라 '할 수 있다'를 기준으로 표시합니다. 실제로 해 본 적이 없으면 표시하지 않습니다.</p>
+<h2 id="part0">서론과 1부 이해</h2>
+<p>관련 장: 서론, 1장, 2장</p>
+<ul><li><label><input type="checkbox"> LLM이 문장을 만드는 과정을 토큰 단위로 설명합니다.</label></li><li><label><input type="checkbox"> AI, 머신러닝, 딥러닝, 생성형 AI의 포함 관계를 설명합니다.</label></li><li><label><input type="checkbox"> 컨텍스트 윈도의 의미와 긴 입력의 중간 정보가 덜 반영되는 문제를 설명합니다.</label></li><li><label><input type="checkbox"> 생성형 AI의 강점과 약점을 작업 유형별로 구분합니다.</label></li><li><label><input type="checkbox"> 제품형 서비스와 오픈 가중치 모델의 차이를 설명합니다.</label></li><li><label><input type="checkbox"> 도구 선택 점검 항목으로 제품을 비교합니다.</label></li></ul>
 <h2 id="part2">2부 원리</h2>
-<ul><li><label><input type="checkbox"> 지시, 맥락, 입력 데이터, 출력 형식을 갖춘 프롬프트를 씁니다.</label></li><li><label><input type="checkbox"> Few-shot 예시를 분류별로 고르게 구성합니다.</label></li><li><label><input type="checkbox"> 평가 기준표를 만들고 한 번에 한 요소만 고칩니다.</label></li></ul>
+<p>관련 장: 3장, 4장, 5장</p>
+<ul><li><label><input type="checkbox"> 맥락, 역할, 작업, 제약, 형식의 5요소를 갖춘 프롬프트를 씁니다.</label></li><li><label><input type="checkbox"> 모호한 표현을 기준, 수치, 대상으로 바꿉니다.</label></li><li><label><input type="checkbox"> 입력 자료를 구분 기호로 감쌉니다.</label></li><li><label><input type="checkbox"> Few-shot 예시를 분류별로 고르게 넣습니다.</label></li><li><label><input type="checkbox"> 계산이 들어간 작업에 단계를 지정한 단계별 추론을 씁니다.</label></li><li><label><input type="checkbox"> 한국어 프롬프트에서 문체와 한국 기준을 지정합니다.</label></li><li><label><input type="checkbox"> 평가 기준표를 만들고 한 번에 한 요소만 고칩니다.</label></li><li><label><input type="checkbox"> 피드백을 현상, 기준, 요청으로 나눠 줍니다.</label></li></ul>
 <h2 id="part3">3부 활용</h2>
-<ul><li><label><input type="checkbox"> AI가 제시한 참고문헌의 존재를 원문으로 확인합니다.</label></li><li><label><input type="checkbox"> 업무 데이터를 공개, 내부, 개인정보, 영업 비밀로 분류합니다.</label></li><li><label><input type="checkbox"> 창작물의 권리 침해 요소를 점검합니다.</label></li></ul>
-<h2 id="part4">4부 위험관리</h2>
-<ul><li><label><input type="checkbox"> 환각의 두 유형을 구분합니다.</label></li><li><label><input type="checkbox"> 집단만 바꾼 프롬프트로 편향을 점검합니다.</label></li><li><label><input type="checkbox"> 프롬프트 인젝션의 대응 방법을 설명합니다.</label></li><li><label><input type="checkbox"> 적용 법률의 시행일을 원문으로 확인합니다.</label></li></ul>
+<p>관련 장: 6장, 7장, 8장</p>
+<ul><li><label><input type="checkbox"> AI를 튜터로 쓸 때 답 대신 힌트를 요청합니다.</label></li><li><label><input type="checkbox"> AI가 제시한 참고문헌의 존재를 원문으로 확인합니다.</label></li><li><label><input type="checkbox"> 업무 데이터를 공개, 내부, 개인정보, 고유식별정보, 영업 비밀로 분류합니다.</label></li><li><label><input type="checkbox"> 코드 실행 기능으로 계산한 결과를 원본과 대조합니다.</label></li><li><label><input type="checkbox"> 이미지 프롬프트를 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소로 씁니다.</label></li><li><label><input type="checkbox"> 창작물의 권리 침해 요소와 표시 의무를 점검합니다.</label></li></ul>
+<h2 id="part4">4부 위험 관리</h2>
+<p>관련 장: 9장, 10장, 11장</p>
+<ul><li><label><input type="checkbox"> 내재적 환각과 외재적 환각을 구분합니다.</label></li><li><label><input type="checkbox"> 환각 의심 신호를 알아보고 원문으로 확인합니다.</label></li><li><label><input type="checkbox"> 집단만 바꾼 프롬프트를 여러 번 실행해 편향을 점검합니다.</label></li><li><label><input type="checkbox"> AI 사용 사실을 도구, 범위, 확인 방법까지 표기합니다.</label></li><li><label><input type="checkbox"> 자신의 과의존 신호를 점검합니다.</label></li><li><label><input type="checkbox"> 프롬프트 인젝션의 대응 방법을 설명합니다.</label></li><li><label><input type="checkbox"> 적용 법률의 시행일을 원문으로 확인합니다.</label></li></ul>
 <h2 id="part5">5부 미래</h2>
-<ul><li><label><input type="checkbox"> 다섯 가지 역량별로 자신의 수준을 설명합니다.</label></li><li><label><input type="checkbox"> 기술 발표의 발표 주체와 시점을 확인합니다.</label></li></ul>
+<p>관련 장: 12장, 13장</p>
+<ul><li><label><input type="checkbox"> 활용 역량과 기반 역량별로 자신의 수준을 설명합니다.</label></li><li><label><input type="checkbox"> 에이전트 자율성 단계별로 사람의 역할을 설명합니다.</label></li><li><label><input type="checkbox"> 기술 발표의 발표 주체와 시점을 확인합니다.</label></li></ul>
 
-<p class="tags">태그: <a href="../tags.html#tag-27">역량</a><a href="../tags.html#tag-55">학습 로드맵</a></p>
+<h2 id="score">점수 계산</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>부</th><th>표시 수</th><th>통과 기준</th><th>다시 읽을 장</th></tr></thead>
+<tbody>
+<tr><td>서론과 1부 이해</td><td>____ / 6</td><td>5개 이상</td><td>서론, 1장, 2장</td></tr>
+<tr><td>2부 원리</td><td>____ / 8</td><td>6개 이상</td><td>3장, 4장, 5장</td></tr>
+<tr><td>3부 활용</td><td>____ / 6</td><td>5개 이상</td><td>6장, 7장, 8장</td></tr>
+<tr><td>4부 위험 관리</td><td>____ / 7</td><td>6개 이상</td><td>9장, 10장, 11장</td></tr>
+<tr><td>5부 미래</td><td>____ / 3</td><td>3개 이상</td><td>12장, 13장</td></tr>
+<tr><td>합계</td><td>____ / 30</td><td></td><td></td></tr>
+</tbody></table></div>
+<figcaption><b>표 E-1. 부별 점수</b><br>부별 표시한 항목 수와 통과 기준</figcaption></figure>
+
+<h2 id="result">결과 해석</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>합계</th><th>수준</th><th>다음 할 일</th></tr></thead>
+<tbody>
+<tr><td>26점 이상</td><td>숙련</td><td>12장 자기 평가표의 4단계 행동을 목표로 합니다.</td></tr>
+<tr><td>20점에서 25점</td><td>중급</td><td>통과하지 못한 부의 장을 다시 읽습니다.</td></tr>
+<tr><td>12점에서 19점</td><td>기초</td><td>2부와 4부를 다시 읽고 프롬프트 예를 실행합니다.</td></tr>
+<tr><td>11점 이하</td><td>입문</td><td>0.1의 학습 경로를 따라 처음부터 읽습니다.</td></tr>
+</tbody></table></div>
+<figcaption><b>표 E-2. 결과 해석</b><br>합계 점수(30점 만점)별 수준과 다음 할 일</figcaption></figure>
+
+<h2 id="review">복습 안내</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>약한 영역</th><th>다시 읽을 곳</th><th>연습</th></tr></thead>
+<tbody>
+<tr><td>작동 원리</td><td>1장</td><td>토큰 계산 도구로 한국어와 영어 문장의 토큰 수 비교</td></tr>
+<tr><td>도구 선택</td><td>2장, 부록 B</td><td>부록 B 점검표를 사용하는 제품으로 채우기</td></tr>
+<tr><td>프롬프트 작성</td><td>3장, 4장, 부록 A</td><td>부록 A 템플릿 세 개를 실제 작업에 적용</td></tr>
+<tr><td>결과 개선</td><td>5장</td><td>시험 입력 5개로 프롬프트 한 개를 개선하고 기록</td></tr>
+<tr><td>분야 적용</td><td>6장, 7장, 8장</td><td>자기 분야 작업 하나를 AI와 함께 수행</td></tr>
+<tr><td>검증과 책임</td><td>9장, 10장, 11장</td><td>AI 답변 세 개의 확인할 곳을 표시하고 원문으로 확인</td></tr>
+</tbody></table></div>
+<figcaption><b>표 E-3. 약한 영역별 복습</b><br>영역별 다시 읽을 곳과 연습</figcaption></figure>
+
+<h2 id="history">점검 기록</h2>
+<p>한 달에 한 번 점검하고 기록합니다. 사용하는 도구의 기능과 규정이 바뀌면 관련 부를 다시 점검합니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>날짜</th><th>합계</th><th>가장 낮은 부</th><th>메모</th></tr></thead>
+<tbody>
+<tr><td></td><td>/ 30</td><td></td><td></td></tr>
+<tr><td></td><td>/ 30</td><td></td><td></td></tr>
+<tr><td></td><td>/ 30</td><td></td><td></td></tr>
+</tbody></table></div>
+<figcaption><b>표 E-4. 점검 기록표</b><br>점검 날짜별 합계와 메모</figcaption></figure>
+
+<p class="tags">태그: <a href="../tags.html#tag-37">역량</a><a href="../tags.html#tag-70">학습 로드맵</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../appendix/d-references.html"><small>이전</small>D. 참고문헌</a><a class="next" href="../wiki/index.html"><small>다음</small>위키 홈</a></nav>
-<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
-<li><a href="#part1">1부 이해</a></li>
+<li><a href="#part0">서론과 1부 이해</a></li>
 <li><a href="#part2">2부 원리</a></li>
 <li><a href="#part3">3부 활용</a></li>
-<li><a href="#part4">4부 위험관리</a></li>
+<li><a href="#part4">4부 위험 관리</a></li>
 <li><a href="#part5">5부 미래</a></li>
+<li><a href="#score">점수 계산</a></li>
+<li><a href="#result">결과 해석</a></li>
+<li><a href="#review">복습 안내</a></li>
+<li><a href="#history">점검 기록</a></li>
 </ol></aside>
 </div>
 </body>

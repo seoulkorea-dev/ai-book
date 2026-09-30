@@ -35,10 +35,10 @@
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
 <li><a href="../chapters/ch07.html" aria-current="page">7장 업무와 비즈니스</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험관리</li>
+<li class="group">4부 위험 관리</li>
 <li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
 <li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
 <li class="group">5부 미래</li>
 <li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
 <li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
@@ -52,7 +52,7 @@
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
 <li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
@@ -71,7 +71,7 @@
 <p class="eyebrow-part">3부 활용</p>
 <h1>7장 업무와 비즈니스</h1>
 <p class="lead">업무에서 생성형 AI는 문서 초안, 정리, 분석, 코드 작성을 맡고, 최종 판단과 발송은 사람이 합니다.</p>
-<ul class="summary"><li>회사 정책이 허용한 도구와 계정만 씁니다.</li><li>개인정보와 영업 비밀은 허용된 환경에서만 입력합니다.</li><li>외부로 나가는 결과물은 사람이 검토합니다.</li></ul>
+<ul class="summary"><li>회사 정책이 허용한 도구와 계정만 씁니다.</li><li>개인정보와 영업 비밀은 허용된 환경에서만 입력하고, 주민등록번호는 입력하지 않습니다.</li><li>외부로 나가는 결과물은 사람이 검토합니다.</li></ul>
 
 <h2 id="tasks">업무 영역별 활용</h2>
 <figure class="fig"><div class="table-wrap"><table>
@@ -79,7 +79,11 @@
 <tbody>
 <tr><td>문서 작성</td><td>보고서, 제안서, 메일 초안</td><td>사실, 수치, 어조</td></tr>
 <tr><td>회의</td><td>회의록 정리, 결정 사항 추출</td><td>담당자와 기한</td></tr>
-<tr><td>데이터</td><td>표 정리, 수식 작성, 분석 설명</td><td>계산 결과와 원본 데이터 대조</td></tr>
+<tr><td>데이터 분석</td><td>표 정리, 수식 작성, 분석 설명</td><td>계산 결과와 원본 데이터 대조</td></tr>
+<tr><td>기획, 전략</td><td>SWOT 분석, 선택지 비교</td><td>전제와 자료의 정확성</td></tr>
+<tr><td>프로젝트 관리</td><td>작업 분해, 일정표, 위험 목록</td><td>일정과 인력의 실현 가능성</td></tr>
+<tr><td>영업, 마케팅</td><td>고객 제안서, 홍보 문구, 캠페인 계획</td><td>과장 광고, 약관 일치</td></tr>
+<tr><td>인사</td><td>채용 공고, 교육 자료</td><td>차별 표현, 평가 판단 배제</td></tr>
 <tr><td>고객 응대</td><td>답변 초안, 자주 묻는 질문 정리</td><td>약관, 정책과의 일치</td></tr>
 <tr><td>코드</td><td>스크립트 작성, 오류 분석</td><td>실행 결과와 보안</td></tr>
 </tbody></table></div>
@@ -91,11 +95,58 @@
 <tbody>
 <tr><td>공개 정보</td><td>보도 자료, 공개 문서</td><td>허용 도구에 입력</td></tr>
 <tr><td>내부 정보</td><td>내부 회의록, 업무 매뉴얼</td><td>조직 계정과 학습 제외 설정이 된 환경에서만 입력</td></tr>
-<tr><td>개인정보</td><td>고객 이름, 연락처, 주민등록번호</td><td>원칙적으로 입력하지 않음. 필요하면 가명 처리 후 입력</td></tr>
+<tr><td>개인정보</td><td>고객 이름, 연락처, 주소</td><td>원칙적으로 입력하지 않음. 필요하면 가명처리 후 입력</td></tr>
+<tr><td>고유식별정보</td><td>주민등록번호, 여권번호, 운전면허번호</td><td>입력하지 않음</td></tr>
 <tr><td>영업 비밀</td><td>원가, 계약 조건, 미공개 제품 정보</td><td>조직 정책에 따름</td></tr>
 </tbody></table></div>
 <figcaption><b>표 7-2. 입력 데이터 분류</b><br>데이터 유형별 입력 기준</figcaption></figure>
-<p>개인 계정과 조직 계정은 데이터 처리 조건이 다릅니다. 업무 데이터는 조직이 계약한 계정에서 처리합니다.</p>
+<p>가명처리는 추가 정보 없이는 특정 개인을 알아볼 수 없도록 개인정보를 바꾸는 처리입니다(「개인정보 보호법」 제2조). 예를 들어 고객 이름을 '고객 A'로, 연락처를 삭제한 뒤 입력합니다. 개인 계정과 조직 계정은 데이터 처리 조건이 다릅니다. 업무 데이터는 조직이 계약한 계정에서 처리합니다.</p>
+
+<h2 id="analysis">데이터 분석</h2>
+<p>코드 실행 기능이 있는 제품은 표 파일을 받아 계산, 차트, 요약을 만듭니다. 코드 실행 기능이 없는 대화에서 모델이 직접 계산한 수치는 틀릴 수 있으므로 쓰지 않습니다.</p>
+<pre><code>첨부한 월별 매출 파일을 분석하십시오.
+1. 코드를 실행해 월별 합계와 전월 대비 증감률을 표로 만드십시오.
+2. 증감률이 가장 큰 달 두 개를 적으십시오.
+3. 원인은 파일에서 확인되는 내용만 쓰고, 추정은 &#x27;추정&#x27;이라고 표시하십시오.
+4. 사용한 코드를 마지막에 보여 주십시오.</code></pre>
+<p>결과 표의 합계 몇 개를 원본 파일에서 직접 계산해 대조합니다. 표 계산 프로그램 수식을 받을 때는 작은 표로 먼저 시험합니다.</p>
+
+<h2 id="strategy">기획과 전략 분석</h2>
+<p>SWOT 분석처럼 틀이 정해진 분석은 AI가 빠르게 초안을 만듭니다. 결과의 질은 입력한 자료에 달려 있으므로, 회사 내부 정보와 시장 자료를 함께 줍니다.</p>
+<pre><code>다음 자료를 근거로 [사업]의 SWOT 분석표를 작성하십시오.
+강점과 약점은 내부 요인, 기회와 위협은 외부 요인만 쓰십시오.
+각 항목 옆에 근거가 된 자료 번호를 적고, 자료에 없는 항목은 쓰지 마십시오.
+표 아래에 강점으로 기회를 살리는 전략 두 가지를 제안하십시오.
+
+&lt;자료&gt;
+1. [내부 현황]
+2. [시장 자료]
+&lt;/자료&gt;</code></pre>
+
+<h2 id="project">프로젝트 관리</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>요청 예</th><th>확인할 점</th></tr></thead>
+<tbody>
+<tr><td>작업 분해</td><td>목표를 3단계 깊이의 작업 목록으로 나누십시오.</td><td>빠진 작업, 중복 작업</td></tr>
+<tr><td>일정표</td><td>작업 목록과 인원으로 주 단위 일정표를 만드십시오.</td><td>선후 관계, 휴일</td></tr>
+<tr><td>위험 목록</td><td>위험을 발생 가능성과 영향으로 표시하고 대응을 적으십시오.</td><td>조직 사정에 맞는지</td></tr>
+<tr><td>주간 보고</td><td>완료, 진행, 지연 항목을 표로 정리하십시오.</td><td>상태가 실제와 같은지</td></tr>
+</tbody></table></div>
+<figcaption><b>표 7-3. 프로젝트 관리 활용</b><br>작업별 요청 예와 확인할 점</figcaption></figure>
+
+<h2 id="communication">업무 소통</h2>
+<h3>메일 초안</h3>
+<pre><code>다음 정보로 거래처에 보낼 납기 지연 안내 메일을 작성하십시오.
+- 지연 품목: 산업용 필터 A형
+- 기존 납기: 10월 7일, 변경 납기: 10월 14일
+- 원인: 원자재 입고 지연
+- 요청: 변경 납기 수락 여부 회신
+문체는 정중한 업무용으로, 사과는 한 문장만 넣으십시오. 제목도 작성하십시오.</code></pre>
+<h3>발표 준비</h3>
+<p>발표 자료는 목차와 슬라이드별 핵심 문장을 먼저 받고, 사람이 순서와 강조점을 정한 뒤 문장을 다듬게 합니다. 청중이 할 만한 질문과 답변 초안도 함께 요청할 수 있습니다.</p>
+
+<h2 id="hr">인사 업무의 한계</h2>
+<p>채용 공고 작성, 교육 자료 초안에는 AI를 쓸 수 있습니다. 지원자 평가, 승진, 해고처럼 사람에게 영향을 주는 판단에는 AI 결과를 그대로 쓰지 않습니다. 이유와 사례는 <a href="ch10.html#bias">10장</a>에서 다룹니다.</p>
 
 <h2 id="stages">자동화 단계</h2>
 <figure class="fig"><div class="table-wrap"><table>
@@ -106,27 +157,23 @@
 <tr><td>3</td><td>API로 업무 시스템에 연결</td><td>접근 권한, 로그, 비용 관리</td></tr>
 <tr><td>4</td><td>에이전트가 여러 단계 작업을 수행</td><td>작업 권한 제한, 사람 승인, 감사 기록</td></tr>
 </tbody></table></div>
-<figcaption><b>표 7-3. 업무 자동화 단계</b><br>단계별 방식과 필요한 통제</figcaption></figure>
-<p>단계가 올라갈수록 AI가 사람 확인 없이 수행하는 작업이 늘어나므로 통제도 함께 늘립니다. 에이전트 도입은 <a href="../wiki/governance.html">위키 거버넌스</a>에서 다룹니다.</p>
+<figcaption><b>표 7-4. 업무 자동화 단계</b><br>단계별 방식과 필요한 통제</figcaption></figure>
+<p>단계가 올라갈수록 AI가 사람 확인 없이 수행하는 작업이 늘어나므로 통제도 함께 늘립니다. 조직 정책은 <a href="ch11.html">11장</a>, 에이전트 도입은 <a href="../wiki/governance.html">위키 거버넌스</a>에서 다룹니다.</p>
 
-<h2 id="email">메일 초안 예</h2>
-<pre><code>다음 정보로 거래처에 보낼 납기 지연 안내 메일을 작성하십시오.
-- 지연 품목: 산업용 필터 A형
-- 기존 납기: 10월 7일, 변경 납기: 10월 14일
-- 원인: 원자재 입고 지연
-- 요청: 변경 납기 수락 여부 회신
-문체는 정중한 업무용으로, 사과는 한 문장만 넣으십시오. 제목도 작성하십시오.</code></pre>
-
-<p class="tags">태그: <a href="../tags.html#tag-25">업무</a><a href="../tags.html#tag-12">개인정보</a><a href="../tags.html#tag-34">자동화</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-35">업무</a><a href="../tags.html#tag-15">개인정보</a><a href="../tags.html#tag-46">자동화</a><a href="../tags.html#tag-20">데이터 분석</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch06.html"><small>이전</small>6장 학습과 연구</a><a class="next" href="../chapters/ch08.html"><small>다음</small>8장 창작과 콘텐츠</a></nav>
-<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#tasks">업무 영역별 활용</a></li>
 <li><a href="#data">입력 데이터 관리</a></li>
+<li><a href="#analysis">데이터 분석</a></li>
+<li><a href="#strategy">기획과 전략 분석</a></li>
+<li><a href="#project">프로젝트 관리</a></li>
+<li><a href="#communication">업무 소통</a></li>
+<li><a href="#hr">인사 업무의 한계</a></li>
 <li><a href="#stages">자동화 단계</a></li>
-<li><a href="#email">메일 초안 예</a></li>
 </ol></aside>
 </div>
 </body>
