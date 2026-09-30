@@ -72,7 +72,7 @@
 <ul class="summary"><li>도구 비교는 회사가 아니라 제품 단위로 합니다.</li><li>같은 제품도 요금제와 계정 유형에 따라 기능과 데이터 처리 정책이 다릅니다.</li><li>도구 선택 기준은 작업 목적, 데이터 정책, 연동 범위입니다.</li></ul>
 
 <h2 id="layers">생태계 5계층</h2>
-<figure class="fig"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-2-1"><div class="table-wrap"><table>
 <thead><tr><th>계층</th><th>역할</th><th>예시</th></tr></thead>
 <tbody>
 <tr><td>모델</td><td>텍스트, 이미지를 생성하는 본체</td><td>GPT 계열, Claude 계열, Gemini 계열</td></tr>
@@ -84,7 +84,7 @@
 <figcaption><b>표 2-1. 생성형 AI 생태계 계층</b><br>계층별 역할과 예시</figcaption></figure>
 
 <h2 id="products">범용 대화형 제품</h2>
-<figure class="fig"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-2-2"><div class="table-wrap"><table>
 <thead><tr><th>제품</th><th>발표 주체</th><th>사용 형태</th><th>공식 안내</th></tr></thead>
 <tbody>
 <tr><td>ChatGPT</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> OpenAI</td><td>웹, 데스크톱 앱, 모바일 앱, API(별도)</td><td>help.openai.com</td></tr>
@@ -92,8 +92,8 @@
 <tr><td>Gemini</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Google</td><td>웹, 모바일 앱, Google Workspace 연동, API(별도)</td><td>support.google.com/gemini</td></tr>
 </tbody></table></div>
 <figcaption><b>표 2-2. 범용 대화형 제품</b><br>제품별 발표 주체, 사용 형태, 공식 안내 위치</figcaption></figure>
-<p>세 제품은 공통으로 대화, 파일 첨부, 이미지 이해, 웹 검색, 대화 묶음(프로젝트) 관리 기능을 제공합니다. 구체적인 기능 이름, 모델 버전, 요금제는 자주 바뀝니다. 이 책은 기능 목록 대신 확인 방법을 안내하며, 현재 기능은 표 2-2의 공식 안내에서 확인합니다.</p>
-<figure class="fig"><div class="table-wrap"><table>
+<p>세 제품은 공통으로 대화, 파일 첨부, 이미지 이해, 웹 검색, 대화 묶음(프로젝트) 관리 기능을 제공합니다. 구체적인 기능 이름, 모델 버전, 요금제는 자주 바뀝니다. 이 책은 기능 목록 대신 확인 방법을 안내하며, 현재 기능은 <a href="#tbl-2-2">표 2-2</a>의 공식 안내에서 확인합니다.</p>
+<figure class="fig" id="tbl-2-3"><div class="table-wrap"><table>
 <thead><tr><th>기능 유형</th><th>용도</th><th>확인할 점</th></tr></thead>
 <tbody>
 <tr><td>파일 첨부</td><td>문서, 표, 이미지를 읽고 요약</td><td>지원 형식, 파일 크기, 개수 한도</td></tr>
@@ -106,8 +106,8 @@
 <figcaption><b>표 2-3. 범용 제품의 공통 기능 유형</b><br>기능 유형별 용도와 확인할 점</figcaption></figure>
 
 <h2 id="specialized">특화 도구</h2>
-<p>범용 제품 외에 특정 작업에 맞춘 도구가 있습니다. 표 2-4는 유형별 대표 사례입니다. 사례는 처음 공개된 순서가 아니라 널리 쓰이는 제품 위주로 골랐습니다.</p>
-<figure class="fig"><div class="table-wrap"><table>
+<p>범용 제품 외에 특정 작업에 맞춘 도구가 있습니다. <a href="#tbl-2-4">표 2-4</a>는 유형별 대표 사례입니다. 사례는 처음 공개된 순서가 아니라 널리 쓰이는 제품 위주로 골랐습니다.</p>
+<figure class="fig" id="tbl-2-4"><div class="table-wrap"><table>
 <thead><tr><th>유형</th><th>용도</th><th>대표 사례</th></tr></thead>
 <tbody>
 <tr><td>검색 특화</td><td>질문에 대한 답과 출처 링크 제공</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Perplexity</td></tr>
@@ -121,7 +121,7 @@
 
 <h2 id="open">오픈 가중치 모델</h2>
 <p>오픈 가중치 모델은 학습된 모델 파일을 공개해 누구나 내려받아 자기 컴퓨터나 서버에서 실행할 수 있는 모델입니다. <span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Meta의 Llama 계열, <span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Mistral AI의 모델, <span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Alibaba의 Qwen 계열, <span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> OpenAI의 gpt-oss 등이 있습니다.</p>
-<figure class="fig"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-2-5"><div class="table-wrap"><table>
 <thead><tr><th>구분</th><th>장점</th><th>단점</th></tr></thead>
 <tbody>
 <tr><td>제품형 서비스</td><td>설치 없이 바로 사용, 최신 기능 제공</td><td>데이터가 외부 서버로 전송, 요금 발생</td></tr>
@@ -135,9 +135,9 @@
 <aside class="footnote"><h4>버전 주석 (2026년 9월)</h4><p><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Anthropic은 2025년 12월 9일 MCP를 Linux Foundation 산하 Agentic AI Foundation(AAIF)에 기부했습니다. ChatGPT, Gemini 등 다른 회사 제품도 MCP 연결을 지원합니다.</p></aside>
 
 <h2 id="choose">도구 선택 기준</h2>
-<p>도구는 그림 2-1의 순서로 고릅니다. 작업 목적으로 제품 유형을 먼저 정하고, 표 2-6의 공통 확인 항목으로 제품을 좁힙니다.</p>
-<figure class="fig diagram"><div class="svg-wrap" role="img" aria-label="작업 목적 다섯 가지와 각각에 맞는 제품 유형, 공통 확인 항목"><svg viewBox="0 0 880 465" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="170" width="160" height="60" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="90.0" y="195.5">작업 목적</tspan><tspan x="90.0" y="214.4">정하기</tspan></text><line x1="170" y1="200" x2="250" y2="36" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="10" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="40.9">글쓰기, 요약, 분석</tspan></text><line x1="500" y1="36" x2="560" y2="36" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="10" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="40.9">범용 대화형 제품</tspan></text><line x1="170" y1="200" x2="250" y2="116" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="90" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="120.9">최신 정보, 출처 확인</tspan></text><line x1="500" y1="116" x2="560" y2="116" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="90" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="120.9">웹 검색 기능이 있는 제품</tspan></text><line x1="170" y1="200" x2="250" y2="196" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="170" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="200.9">회사 문서, 메일 작업</tspan></text><line x1="500" y1="196" x2="560" y2="196" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="170" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="200.9">업무 도구 내장형 제품</tspan></text><line x1="170" y1="200" x2="250" y2="276" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="250" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="280.9">코드 작성, 수정</tspan></text><line x1="500" y1="276" x2="560" y2="276" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="250" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="280.9">코딩 도구</tspan></text><line x1="170" y1="200" x2="250" y2="356" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="330" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="360.9">이미지, 영상 제작</tspan></text><line x1="500" y1="356" x2="560" y2="356" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="330" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="360.9">이미지, 영상 생성 도구</tspan></text><rect x="250" y="410" width="610" height="44" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="555.0" y="436.9">공통 확인: 데이터 정책, 계정 유형, 파일 처리, 연동, 비용 (표 2-6)</tspan></text></svg></div><figcaption><b>그림 2-1. 도구 선택 흐름</b><br>작업 목적으로 제품 유형을 먼저 고르고, 공통 확인 항목으로 제품을 좁힙니다.</figcaption></figure>
-<figure class="fig"><div class="table-wrap"><table>
+<p>도구는 <a href="#fig-2-1">그림 2-1</a>의 순서로 고릅니다. 작업 목적으로 제품 유형을 먼저 정하고, <a href="#tbl-2-6">표 2-6</a>의 공통 확인 항목으로 제품을 좁힙니다.</p>
+<figure class="fig diagram" id="fig-2-1"><div class="svg-wrap" role="img" aria-label="작업 목적 다섯 가지와 각각에 맞는 제품 유형, 공통 확인 항목"><svg viewBox="0 0 880 465" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="170" width="160" height="60" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="90.0" y="195.5">작업 목적</tspan><tspan x="90.0" y="214.4">정하기</tspan></text><line x1="170" y1="200" x2="250" y2="36" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="10" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="40.9">글쓰기, 요약, 분석</tspan></text><line x1="500" y1="36" x2="560" y2="36" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="10" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="40.9">범용 대화형 제품</tspan></text><line x1="170" y1="200" x2="250" y2="116" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="90" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="120.9">최신 정보, 출처 확인</tspan></text><line x1="500" y1="116" x2="560" y2="116" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="90" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="120.9">웹 검색 기능이 있는 제품</tspan></text><line x1="170" y1="200" x2="250" y2="196" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="170" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="200.9">회사 문서, 메일 작업</tspan></text><line x1="500" y1="196" x2="560" y2="196" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="170" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="200.9">업무 도구 내장형 제품</tspan></text><line x1="170" y1="200" x2="250" y2="276" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="250" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="280.9">코드 작성, 수정</tspan></text><line x1="500" y1="276" x2="560" y2="276" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="250" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="280.9">코딩 도구</tspan></text><line x1="170" y1="200" x2="250" y2="356" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="250" y="330" width="250" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="375.0" y="360.9">이미지, 영상 제작</tspan></text><line x1="500" y1="356" x2="560" y2="356" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="560" y="330" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="710.0" y="360.9">이미지, 영상 생성 도구</tspan></text><rect x="250" y="410" width="610" height="44" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="555.0" y="436.9">공통 확인: 데이터 정책, 계정 유형, 파일 처리, 연동, 비용 (표 2-6)</tspan></text></svg></div><figcaption><b>그림 2-1. 도구 선택 흐름</b><br>작업 목적으로 제품 유형을 먼저 고르고, 공통 확인 항목으로 제품을 좁힙니다.</figcaption></figure>
+<figure class="fig" id="tbl-2-6"><div class="table-wrap"><table>
 <thead><tr><th>항목</th><th>확인 내용</th></tr></thead>
 <tbody>
 <tr><td>작업 목적</td><td>텍스트, 이미지, 코드, 데이터 분석 중 무엇이 필요한지</td></tr>

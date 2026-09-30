@@ -28,11 +28,14 @@
 
 ## 자동 점검
 
-커밋 전에 아래 명령을 실행합니다. 결과가 0줄이어야 합니다.
+커밋 전에 아래 명령을 실행합니다. 두 명령 모두 출력이 없어야 합니다.
 
 ```
 grep -nEf lint/banned.txt index.html tags.html chapters/*.html appendix/*.html wiki/*.html
+python3 lint/check_numbers.py
 ```
+
+`check_numbers.py`는 그림, 표 번호의 순서, 누락, 중복, 없는 번호 참조, 링크 없는 번호 참조를 검사합니다. 문제가 없으면 아무것도 출력하지 않습니다.
 
 ## 출처 유형 표시
 

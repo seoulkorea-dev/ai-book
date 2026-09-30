@@ -72,16 +72,16 @@
 <h2 id="workflow">워크플로와 에이전트</h2>
 
 <p><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Anthropic은 「Building effective agents」(2024년 12월)에서 두 방식을 구분했습니다.</p>
-<figure class="fig"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-1"><div class="table-wrap"><table>
 <thead><tr><th>구분</th><th>실행 순서</th><th>적합한 작업</th></tr></thead>
 <tbody>
 <tr><td>워크플로</td><td>코드로 미리 정한 순서</td><td>단계가 정해진 작업</td></tr>
 <tr><td>에이전트</td><td>모델이 스스로 결정</td><td>단계를 미리 정하기 어려운 작업</td></tr>
 </tbody></table></div>
-<figcaption><b>표 W-23. 워크플로와 에이전트</b><br>실행 순서 결정 주체와 적합한 작업</figcaption></figure>
+<figcaption><b>표 1. 워크플로와 에이전트</b><br>실행 순서 결정 주체와 적합한 작업</figcaption></figure>
 <p>같은 글에서 Anthropic은 가장 단순한 방식부터 시작하고, 필요할 때만 복잡도를 높이도록 권장했습니다.</p>
 <h2 id="components">에이전트 구성 요소</h2>
-<figure class="fig"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-2"><div class="table-wrap"><table>
 <thead><tr><th>구성 요소</th><th>역할</th></tr></thead>
 <tbody>
 <tr><td>모델</td><td>다음 행동 결정</td></tr>
@@ -90,7 +90,7 @@
 <tr><td>루프</td><td>행동, 관찰, 판단 반복</td></tr>
 <tr><td>통제</td><td>권한 제한, 사람 승인, 종료 조건</td></tr>
 </tbody></table></div>
-<figcaption><b>표 W-24. 에이전트 구성 요소</b><br>구성 요소별 역할</figcaption></figure>
+<figcaption><b>표 2. 에이전트 구성 요소</b><br>구성 요소별 역할</figcaption></figure>
 <h2 id="function-calling">함수 호출</h2>
 <p>함수 호출은 모델이 미리 정의된 함수의 이름과 인자를 구조화된 형식으로 출력하고, 애플리케이션이 그 함수를 실행해 결과를 돌려주는 방식입니다. 모델은 함수를 직접 실행하지 않습니다.</p>
 <h2 id="mcp">MCP (Model Context Protocol)</h2>
