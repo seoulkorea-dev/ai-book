@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>11장 책임 있는 AI 사용 | 생성형 AI 실전 가이드</title>
-<meta name="description" content="11장 책임 있는 AI 사용">
+<title>11장 개인의 사용 균형과 조직의 AI 정책 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="11장 개인의 사용 균형과 조직의 AI 정책">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -20,31 +20,28 @@
 <nav class="sidenav" id="sidenav" aria-label="전체 목차">
 <h2>전체 목차</h2>
 <ul>
-<li class="group"><a href="../index.html">홈</a></li>
-<li class="group">서론</li>
-<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
-<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
-<li class="group">1부 이해</li>
-<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
-<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
-<li class="group">2부 원리</li>
-<li><a href="../chapters/ch03.html">3장 프롬프트 구조</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
-<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
-<li class="group">3부 활용</li>
+<li class="group"><a href="../index.html">표지와 머리말</a></li>
+<li class="group">1부 생성형 AI의 원리와 도구</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI의 정의와 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 선택 기준</a></li>
+<li class="group">2부 프롬프트 작성과 개선</li>
+<li><a href="../chapters/ch03.html">3장 프롬프트의 5요소</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 결과를 개선하는 절차</a></li>
+<li class="group">3부 분야별 활용</li>
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
-<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch07.html">7장 업무</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험 관리</li>
-<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
-<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html" aria-current="page">11장 책임 있는 AI 사용</a></li>
-<li class="group">5부 미래</li>
-<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
-<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">4부 검증과 책임</li>
+<li><a href="../chapters/ch09.html">9장 환각의 확인과 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용</a></li>
+<li><a href="../chapters/ch11.html" aria-current="page">11장 개인의 사용 균형과 조직의 AI 정책</a></li>
+<li class="group">5부 AI 활용 역량과 기술 변화</li>
+<li><a href="../chapters/ch12.html">12장 필요한 역량과 자기 평가</a></li>
+<li><a href="../chapters/ch13.html">13장 주요 기술 변화</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
-<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
 <li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
 <li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
 <li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
@@ -55,6 +52,7 @@
 <li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
+<li class="group">위키: 프롬프트 엔지니어링 (웹 전용)</li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
 <li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
 <li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
@@ -68,13 +66,13 @@
 <main id="main">
 <article>
 
-<p class="eyebrow-part">4부 위험 관리</p>
-<h1>11장 책임 있는 AI 사용</h1>
+<p class="eyebrow-part">4부 검증과 책임</p>
+<h1>11장 개인의 사용 균형과 조직의 AI 정책</h1>
 <p class="lead">책임 있는 AI 사용은 개인이 AI에 기대는 정도를 스스로 조절하고, 조직이 사용 정책, 보안 통제, 규제 대응, 사람의 검토를 갖추는 것입니다.</p>
 <ul class="summary"><li>개인은 AI를 쓰기 전에 스스로 생각하고, 쓴 뒤에 결과를 판단합니다.</li><li>조직은 사용 정책에 허용 도구, 입력 금지 데이터, 검토 절차를 적습니다.</li><li>외부 문서를 읽는 AI는 프롬프트 인젝션에 대비하고, 적용 법률의 시행일을 확인합니다.</li></ul>
 
 <h2 id="personal">개인: 과의존과 균형</h2>
-<p>AI에 기대는 정도가 커지면 스스로 생각하고 판단하는 기회가 줄어듭니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Microsoft Research와 카네기멜런대 연구진(Lee 외, 2025)은 지식 노동자 319명을 조사해, AI를 더 신뢰하는 사람일수록 비판적 사고를 덜 쓴다고 응답했고 자기 판단을 더 신뢰하는 사람일수록 비판적 사고를 더 쓴다고 응답했다고 보고했습니다.</p>
+<p>AI에 기대는 정도가 커지면 스스로 생각하고 판단하는 기회가 줄어듭니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Microsoft Research와 카네기멜런대 연구진(Lee 외, 2025)은 지식 노동자 319명을 조사했습니다. AI를 더 신뢰한다고 답한 사람일수록 비판적 사고를 덜 썼다고 응답했고, 자기 판단을 더 신뢰한 사람일수록 더 썼다고 응답했습니다.</p>
 <h3>과의존 신호</h3>
 <figure class="fig"><div class="table-wrap"><table>
 <thead><tr><th>신호</th><th>예</th><th>대응</th></tr></thead>
@@ -105,7 +103,7 @@
 <tr><td>자산 목록</td><td>조직 안에서 쓰는 AI 도구와 에이전트 목록</td></tr>
 </tbody></table></div>
 <figcaption><b>표 11-2. AI 사용 정책 항목</b><br>항목별 정할 내용</figcaption></figure>
-<p>정책 없이 직원이 개인 계정으로 AI 도구를 쓰는 상태를 섀도우 AI라고 합니다. 섀도우 AI는 입력 데이터와 결과물을 조직이 파악하지 못하게 만듭니다. 허용 도구를 정하지 않고 금지만 하면 개인 계정 사용이 늘어나므로, 쓸 수 있는 도구와 계정을 함께 제공합니다.</p>
+<p>조직이 파악하지 못한 채 쓰이는 AI 도구와 에이전트를 섀도 AI라고 합니다. 정책 없이 직원이 개인 계정으로 AI 도구를 쓰는 것이 대표적인 경우입니다. 섀도 AI는 입력 데이터와 결과물을 조직이 파악하지 못하게 만듭니다. 허용 도구를 정하지 않고 금지만 하면 개인 계정 사용이 늘어나므로, 쓸 수 있는 도구와 계정을 함께 제공합니다.</p>
 
 <h2 id="security">조직: 보안 위협</h2>
 <figure class="fig"><div class="table-wrap"><table>
@@ -129,13 +127,14 @@
 <tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> EU 인공지능법</td><td>2025년 2월 2일</td><td>금지 관행, AI 리터러시 조항 적용</td></tr>
 <tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> EU 인공지능법</td><td>2025년 8월 2일</td><td>범용 AI 모델 의무 적용</td></tr>
 <tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> EU 인공지능법</td><td>2026년 8월 2일</td><td>투명성 의무(제50조) 적용</td></tr>
-<tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> EU 인공지능법</td><td>2026년 12월 2일</td><td>이전에 시장에 나온 시스템의 기계 판독 표시 유예 종료</td></tr>
+<tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> EU 인공지능법</td><td>2026년 12월 2일</td><td>비동의 성적 이미지, 아동 성착취물을 생성하는 AI 금지(제5조 신설). 이전에 시장에 나온 시스템의 기계 판독 표시 유예 종료</td></tr>
 <tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> EU 인공지능법</td><td>2027년 12월 2일</td><td>부속서 III 고위험 시스템 의무 적용</td></tr>
 <tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> EU 인공지능법</td><td>2028년 8월 2일</td><td>부속서 I 제품에 내장된 고위험 시스템 의무 적용</td></tr>
-<tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> 한국 인공지능기본법</td><td>2026년 1월 22일</td><td>시행. 1년 이상 사실 조사와 과태료 부과 유예</td></tr>
+<tr><td><span class="mark law" role="img" aria-label="출처: 법령, 판결" title="법령, 판결">법령</span> 한국 인공지능기본법</td><td>2026년 1월 22일</td><td>시행. 1년 이상 사실조사와 과태료 부과 유예</td></tr>
 </tbody></table></div>
 <figcaption><b>표 11-4. 주요 AI 법률 적용 일정</b><br>법률별 시행, 적용 시점 (2026년 9월 확인)</figcaption></figure>
-<p>EU 인공지능법의 고위험 시스템 적용 시점은 Regulation (EU) 2026/1744 개정으로 늦춰졌습니다. 적용 일정은 다시 바뀔 수 있습니다. 업무에 적용하기 전에 EUR-Lex와 국가법령정보센터의 현행 원문을 확인합니다.</p>
+<figure class="fig diagram"><div class="svg-wrap" role="img" aria-label="2024년 8월부터 2028년 8월까지 EU 인공지능법과 한국 기본법의 적용 시점"><svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><line x1="40" y1="120" x2="860" y2="120" stroke="#625D52" stroke-width="2"/><line x1="151.81818181816834" y1="116" x2="151.81818181816834" y2="124" stroke="#8a8272"/><text x="151.81818181816834" y="137" font-size="11" fill="#8a8272" text-anchor="middle">2025</text><line x1="338.1818181818105" y1="116" x2="338.1818181818105" y2="124" stroke="#8a8272"/><text x="338.1818181818105" y="137" font-size="11" fill="#8a8272" text-anchor="middle">2026</text><line x1="524.5454545454527" y1="116" x2="524.5454545454527" y2="124" stroke="#8a8272"/><text x="524.5454545454527" y="137" font-size="11" fill="#8a8272" text-anchor="middle">2027</text><line x1="710.9090909090947" y1="116" x2="710.9090909090947" y2="124" stroke="#8a8272"/><text x="710.9090909090947" y="137" font-size="11" fill="#8a8272" text-anchor="middle">2028</text><circle cx="73.54545454542509" cy="120" r="6" fill="#1f5a66"/><line x1="73.54545454542509" y1="126" x2="73.54545454542509" y2="144" stroke="#ddd5c0"/><text x="73.54545454542509" y="156" font-size="12" font-weight="700" fill="#1f5a66" text-anchor="middle">2024.8.1</text><text x="73.54545454542509" y="171" font-size="12" fill="#2B2A26" text-anchor="middle">EU 법 발효</text><circle cx="168.59090909088087" cy="120" r="6" fill="#1f5a66"/><line x1="168.59090909088087" y1="114" x2="168.59090909088087" y2="88" stroke="#ddd5c0"/><text x="168.59090909088087" y="66" font-size="12" font-weight="700" fill="#1f5a66" text-anchor="middle">2025.2.2</text><text x="168.59090909088087" y="81" font-size="12" fill="#2B2A26" text-anchor="middle">EU 금지 관행</text><circle cx="259.90909090906723" cy="120" r="6" fill="#1f5a66"/><line x1="259.90909090906723" y1="126" x2="259.90909090906723" y2="144" stroke="#ddd5c0"/><text x="259.90909090906723" y="156" font-size="12" font-weight="700" fill="#1f5a66" text-anchor="middle">2025.8.2</text><text x="259.90909090906723" y="171" font-size="12" fill="#2B2A26" text-anchor="middle">EU 범용 AI 의무</text><circle cx="347.49999999998414" cy="120" r="6" fill="#7a2e2e"/><line x1="347.49999999998414" y1="114" x2="347.49999999998414" y2="88" stroke="#ddd5c0"/><text x="347.49999999998414" y="66" font-size="12" font-weight="700" fill="#7a2e2e" text-anchor="middle">2026.1.22</text><text x="347.49999999998414" y="81" font-size="12" fill="#2B2A26" text-anchor="middle">한국 기본법 시행</text><circle cx="446.27272727270935" cy="120" r="6" fill="#1f5a66"/><line x1="446.27272727270935" y1="126" x2="446.27272727270935" y2="144" stroke="#ddd5c0"/><text x="446.27272727270935" y="156" font-size="12" font-weight="700" fill="#1f5a66" text-anchor="middle">2026.8.2</text><text x="446.27272727270935" y="171" font-size="12" fill="#2B2A26" text-anchor="middle">EU 투명성 의무</text><circle cx="509.63636363637477" cy="120" r="6" fill="#1f5a66"/><line x1="509.63636363637477" y1="114" x2="509.63636363637477" y2="88" stroke="#ddd5c0"/><text x="509.63636363637477" y="52" font-size="12" font-weight="700" fill="#1f5a66" text-anchor="middle">2026.12.2</text><text x="509.63636363637477" y="67" font-size="12" fill="#2B2A26" text-anchor="middle">EU 신규 금지,</text><text x="509.63636363637477" y="82" font-size="12" fill="#2B2A26" text-anchor="middle">표시 유예 종료</text><circle cx="696.0000000000169" cy="120" r="6" fill="#1f5a66"/><line x1="696.0000000000169" y1="126" x2="696.0000000000169" y2="144" stroke="#ddd5c0"/><text x="696.0000000000169" y="156" font-size="12" font-weight="700" fill="#1f5a66" text-anchor="middle">2027.12.2</text><text x="696.0000000000169" y="171" font-size="12" fill="#2B2A26" text-anchor="middle">EU 부속서 III</text><text x="696.0000000000169" y="186" font-size="12" fill="#2B2A26" text-anchor="middle">고위험</text><circle cx="818.9999999999936" cy="120" r="6" fill="#1f5a66"/><line x1="818.9999999999936" y1="114" x2="818.9999999999936" y2="88" stroke="#ddd5c0"/><text x="818.9999999999936" y="52" font-size="12" font-weight="700" fill="#1f5a66" text-anchor="middle">2028.8.2</text><text x="818.9999999999936" y="67" font-size="12" fill="#2B2A26" text-anchor="middle">EU 부속서 I</text><text x="818.9999999999936" y="82" font-size="12" fill="#2B2A26" text-anchor="middle">고위험</text></svg></div><figcaption><b>그림 11-1. AI 법률 적용 일정</b><br>EU 인공지능법(청록)과 한국 인공지능기본법(적갈)의 주요 적용 시점입니다. Regulation (EU) 2026/1744 개정을 반영했습니다(2026년 9월 확인).</figcaption></figure>
+<p>EU 인공지능법은 Regulation (EU) 2026/1744(Digital Omnibus on AI) 개정으로 2026년 7월 27일부터 바뀌었습니다. 고위험 시스템 적용 시점이 늦춰졌고, 비동의 성적 이미지와 아동 성착취물을 생성하는 AI를 금지하는 조항이 새로 들어갔습니다. 적용 일정은 다시 바뀔 수 있습니다. 업무에 적용하기 전에 EUR-Lex와 국가법령정보센터의 현행 원문을 확인합니다.</p>
 <figure class="fig"><div class="table-wrap"><table>
 <thead><tr><th>등급</th><th>예</th><th>규제</th></tr></thead>
 <tbody>
@@ -149,9 +148,9 @@
 <h2 id="human">사람의 검토</h2>
 <p>사람의 검토(human in the loop)는 AI 결과가 효력을 갖기 전에 사람이 확인하고 승인하는 절차입니다. 채용, 신용 평가, 의료처럼 사람에게 영향을 주는 판단과, 결제, 삭제, 외부 발송처럼 되돌리기 어려운 작업에는 사람의 승인을 둡니다. 승인자는 AI 결과만 보지 말고 근거 자료와 실행 기록을 함께 봅니다.</p>
 
-<p class="tags">태그: <a href="../tags.html#tag-18">규제</a><a href="../tags.html#tag-26">보안</a><a href="../tags.html#tag-65">프롬프트 인젝션</a><a href="../tags.html#tag-16">거버넌스</a><a href="../tags.html#tag-17">과의존</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-18">규제</a><a href="../tags.html#tag-26">보안</a><a href="../tags.html#tag-64">프롬프트 인젝션</a><a href="../tags.html#tag-16">거버넌스</a><a href="../tags.html#tag-17">과의존</a></p>
 </article>
-<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch10.html"><small>이전</small>10장 윤리적 사용과 책임</a><a class="next" href="../chapters/ch12.html"><small>다음</small>12장 AI 시대 핵심 역량</a></nav>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch10.html"><small>이전</small>10장 윤리적 사용</a><a class="next" href="../chapters/ch12.html"><small>다음</small>12장 필요한 역량과 자기 평가</a></nav>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>

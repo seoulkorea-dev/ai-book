@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>3장 프롬프트 구조 | 생성형 AI 실전 가이드</title>
-<meta name="description" content="3장 프롬프트 구조">
+<title>3장 프롬프트의 5요소 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="3장 프롬프트의 5요소">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -20,31 +20,28 @@
 <nav class="sidenav" id="sidenav" aria-label="전체 목차">
 <h2>전체 목차</h2>
 <ul>
-<li class="group"><a href="../index.html">홈</a></li>
-<li class="group">서론</li>
-<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
-<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
-<li class="group">1부 이해</li>
-<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
-<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
-<li class="group">2부 원리</li>
-<li><a href="../chapters/ch03.html" aria-current="page">3장 프롬프트 구조</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
-<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
-<li class="group">3부 활용</li>
+<li class="group"><a href="../index.html">표지와 머리말</a></li>
+<li class="group">1부 생성형 AI의 원리와 도구</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI의 정의와 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 선택 기준</a></li>
+<li class="group">2부 프롬프트 작성과 개선</li>
+<li><a href="../chapters/ch03.html" aria-current="page">3장 프롬프트의 5요소</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 결과를 개선하는 절차</a></li>
+<li class="group">3부 분야별 활용</li>
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
-<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch07.html">7장 업무</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험 관리</li>
-<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
-<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
-<li class="group">5부 미래</li>
-<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
-<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">4부 검증과 책임</li>
+<li><a href="../chapters/ch09.html">9장 환각의 확인과 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 개인의 사용 균형과 조직의 AI 정책</a></li>
+<li class="group">5부 AI 활용 역량과 기술 변화</li>
+<li><a href="../chapters/ch12.html">12장 필요한 역량과 자기 평가</a></li>
+<li><a href="../chapters/ch13.html">13장 주요 기술 변화</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
-<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
 <li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
 <li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
 <li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
@@ -55,6 +52,7 @@
 <li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
+<li class="group">위키: 프롬프트 엔지니어링 (웹 전용)</li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
 <li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
 <li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
@@ -68,10 +66,10 @@
 <main id="main">
 <article>
 
-<p class="eyebrow-part">2부 원리</p>
-<h1>3장 프롬프트 구조</h1>
+<p class="eyebrow-part">2부 프롬프트 작성과 개선</p>
+<h1>3장 프롬프트의 5요소</h1>
 <p class="lead">프롬프트는 모델에게 주는 입력 전체이며, 맥락, 역할, 작업, 제약, 형식의 다섯 요소로 구성됩니다.</p>
-<ul class="summary"><li>다섯 요소를 모두 적으면 결과의 편차가 줄어듭니다.</li><li>처리할 자료는 구분 기호로 감싸 지시와 나눕니다.</li><li>모호한 단어를 기준, 수치, 대상으로 바꿉니다.</li></ul>
+<ul class="summary"><li>필요한 요소를 빠짐없이 적으면 결과의 편차가 줄어듭니다.</li><li>처리할 자료는 구분 기호로 감싸 지시와 나눕니다.</li><li>모호한 단어를 기준, 수치, 대상으로 바꿉니다.</li></ul>
 
 <h2 id="elements">프롬프트의 다섯 요소</h2>
 <figure class="fig"><div class="table-wrap"><table>
@@ -84,7 +82,7 @@
 <tr><td>형식</td><td>Format</td><td>결과의 모양</td><td>결정 사항, 담당자, 기한을 표로 작성하십시오.</td></tr>
 </tbody></table></div>
 <figcaption><b>표 3-1. 프롬프트 5요소</b><br>요소별 역할과 작성 예</figcaption></figure>
-<p>처리할 원문, 표, 코드 같은 입력 자료는 다섯 요소와 별도로 프롬프트 끝에 붙이고 구분 기호로 감쌉니다.</p>
+<p>처리할 원문, 표, 코드 같은 입력 자료는 다섯 요소와 따로 두고 구분 기호로 감쌉니다. 입력 자료를 어디에 둘지는 <a href="#input-position">입력 자료 위치</a>에서 다룹니다.</p>
 <p>다섯 요소가 모든 프롬프트에 필요하지는 않습니다. 짧은 질문은 작업만으로 충분합니다. 결과를 여러 번 고쳐야 했던 작업이면 빠진 요소가 있는지 먼저 확인합니다.</p>
 
 <h2 id="types">프롬프트의 종류</h2>
@@ -100,7 +98,7 @@
 <p>대화형 제품의 사용자 지정 지침, 프로젝트 지침 기능은 시스템 프롬프트와 비슷한 역할을 합니다. 매번 반복하는 맥락과 역할은 지침에 적고, 매번 바뀌는 작업은 사용자 프롬프트에 적습니다.</p>
 
 <h2 id="clarity">명확성 원칙</h2>
-<p>모델은 프롬프트에 적힌 정보만 압니다. 사람에게는 당연한 배경도 적지 않으면 모델은 가장 흔한 경우로 추측합니다. 표 3-3은 모호한 표현을 명확하게 바꾸는 방법입니다.</p>
+<p>모델은 학습으로 얻은 일반 지식을 갖고 있지만, 사용자의 상황은 프롬프트에 적힌 만큼만 압니다. 사람에게는 당연한 배경도 적지 않으면 모델은 가장 흔한 경우로 추측합니다. 표 3-3은 모호한 표현을 명확하게 바꾸는 방법입니다.</p>
 <figure class="fig"><div class="table-wrap"><table>
 <thead><tr><th>모호한 표현</th><th>문제</th><th>명확한 표현</th></tr></thead>
 <tbody>
@@ -125,7 +123,8 @@
 &lt;회의록&gt;
 (회의록 원문)
 &lt;/회의록&gt;</code></pre>
-<p>개선 후 프롬프트는 다섯 요소를 모두 적었고, 입력 자료를 태그로 구분했습니다. 대괄호 표시는 요소를 보여 주려고 붙인 것이며, 실제로는 빼고 써도 됩니다.</p>
+<p>개선 후 프롬프트는 다섯 요소를 모두 적었고, 입력 자료를 태그로 구분했습니다. 대괄호 표시는 요소를 보여 주려고 붙인 것이며, 실제로는 빼고 써도 됩니다. 그림 3-1은 각 줄이 어느 요소인지 보여 줍니다.</p>
+<figure class="fig diagram"><div class="svg-wrap" role="img" aria-label="맥락, 역할, 작업, 제약, 형식, 입력 자료로 나뉜 프롬프트 예"><svg viewBox="0 0 890 340" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="12" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="37.9">맥락</tspan></text><line x1="130" y1="33" x2="158" y2="33" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="160" y="12" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="38" font-size="14" fill="#2B2A26">다음 주 부서 회의에 참석하지 못한 팀장에게 보고합니다.</text><rect x="10" y="66" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="91.9">역할</tspan></text><line x1="130" y1="87" x2="158" y2="87" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="160" y="66" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="92" font-size="14" fill="#2B2A26">당신은 회의 내용을 정리하는 기획팀 담당자입니다.</text><rect x="10" y="120" width="120" height="42" rx="8" fill="#1f5a66" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="145.9">작업</tspan></text><line x1="130" y1="141" x2="158" y2="141" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="160" y="120" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="146" font-size="14" fill="#2B2A26">다음 회의록을 요약하십시오.</text><rect x="10" y="174" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="199.9">제약</tspan></text><line x1="130" y1="195" x2="158" y2="195" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="160" y="174" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="200" font-size="14" fill="#2B2A26">회의록에 없는 내용은 쓰지 마십시오. 전체 10줄 이내로 쓰십시오.</text><rect x="10" y="228" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="253.9">형식</tspan></text><line x1="130" y1="249" x2="158" y2="249" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="160" y="228" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="254" font-size="14" fill="#2B2A26">결정 사항, 담당자, 기한을 표로 작성하십시오.</text><rect x="10" y="282" width="120" height="42" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="307.9">입력 자료</tspan></text><line x1="130" y1="303" x2="158" y2="303" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="160" y="282" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="308" font-size="14" fill="#2B2A26">&lt;회의록&gt; 회의록 원문 &lt;/회의록&gt;</text><line x1="10" y1="276" x2="880" y2="276" stroke="#8a8272" stroke-dasharray="4 4"/></svg></div><figcaption><b>그림 3-1. 개선 후 프롬프트의 요소 구분</b><br>3장 개선 예의 각 줄이 어느 요소인지 표시했습니다. 작업이 중심이고, 입력 자료는 점선 아래에 구분 기호로 감싸 따로 둡니다.</figcaption></figure>
 
 <h2 id="fix">나쁜 프롬프트 고치기</h2>
 <p>결과가 기대와 다르면 프롬프트에서 빠진 요소를 찾습니다. 표 3-4는 자주 보는 나쁜 프롬프트와 고친 예입니다.</p>
@@ -160,12 +159,18 @@
 단점 (3개):
 추천 대상:</code></pre>
 
-<h2 id="order">요소 배치 순서</h2>
-<p>짧은 프롬프트는 순서에 크게 영향받지 않습니다. 긴 입력 자료를 붙일 때는 자료를 앞에 두고 작업과 형식을 끝에 다시 적습니다. 긴 입력의 중간에 놓인 지시는 덜 반영될 수 있기 때문입니다(<a href="ch01.html#context">1장 컨텍스트 윈도</a>).</p>
+<h2 id="input-position">입력 자료 위치</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>자료 길이</th><th>배치</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td>짧은 자료(몇 문단 이하)</td><td>다섯 요소 뒤, 프롬프트 끝에 붙임</td><td>지시를 먼저 읽고 자료를 처리합니다.</td></tr>
+<tr><td>긴 자료(여러 쪽, 여러 문서)</td><td>자료를 앞에 두고, 작업과 형식을 끝에 다시 적음</td><td>긴 입력의 중간에 놓인 지시는 덜 반영될 수 있습니다(<a href="ch01.html#context">1장 컨텍스트 윈도</a>).</td></tr>
+</tbody></table></div>
+<figcaption><b>표 3-5. 입력 자료 위치</b><br>자료 길이에 따른 배치</figcaption></figure>
 
-<p class="tags">태그: <a href="../tags.html#tag-64">프롬프트</a><a href="../tags.html#tag-1">5요소</a><a href="../tags.html#tag-38">역할 부여</a><a href="../tags.html#tag-53">출력 형식</a><a href="../tags.html#tag-34">시스템 프롬프트</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-63">프롬프트</a><a href="../tags.html#tag-1">5요소</a><a href="../tags.html#tag-37">역할 부여</a><a href="../tags.html#tag-53">출력 형식</a><a href="../tags.html#tag-33">시스템 프롬프트</a></p>
 </article>
-<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch02.html"><small>이전</small>2장 주요 도구와 생태계</a><a class="next" href="../chapters/ch04.html"><small>다음</small>4장 고급 프롬프팅 기법</a></nav>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch02.html"><small>이전</small>2장 주요 도구와 선택 기준</a><a class="next" href="../chapters/ch04.html"><small>다음</small>4장 고급 프롬프트 기법</a></nav>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
@@ -177,7 +182,7 @@
 <li><a href="#delimiters">구분 기호</a></li>
 <li><a href="#role">역할 부여</a></li>
 <li><a href="#format">출력 형식 지정</a></li>
-<li><a href="#order">요소 배치 순서</a></li>
+<li><a href="#input-position">입력 자료 위치</a></li>
 </ol></aside>
 </div>
 </body>

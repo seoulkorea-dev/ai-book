@@ -20,31 +20,28 @@
 <nav class="sidenav" id="sidenav" aria-label="전체 목차">
 <h2>전체 목차</h2>
 <ul>
-<li class="group"><a href="../index.html">홈</a></li>
-<li class="group">서론</li>
-<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
-<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
-<li class="group">1부 이해</li>
-<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
-<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
-<li class="group">2부 원리</li>
-<li><a href="../chapters/ch03.html">3장 프롬프트 구조</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
-<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
-<li class="group">3부 활용</li>
+<li class="group"><a href="../index.html">표지와 머리말</a></li>
+<li class="group">1부 생성형 AI의 원리와 도구</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI의 정의와 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 선택 기준</a></li>
+<li class="group">2부 프롬프트 작성과 개선</li>
+<li><a href="../chapters/ch03.html">3장 프롬프트의 5요소</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 결과를 개선하는 절차</a></li>
+<li class="group">3부 분야별 활용</li>
 <li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
-<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch07.html">7장 업무</a></li>
 <li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
-<li class="group">4부 위험 관리</li>
-<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
-<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
-<li><a href="../chapters/ch11.html">11장 책임 있는 AI 사용</a></li>
-<li class="group">5부 미래</li>
-<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
-<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">4부 검증과 책임</li>
+<li><a href="../chapters/ch09.html">9장 환각의 확인과 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용</a></li>
+<li><a href="../chapters/ch11.html">11장 개인의 사용 균형과 조직의 AI 정책</a></li>
+<li class="group">5부 AI 활용 역량과 기술 변화</li>
+<li><a href="../chapters/ch12.html">12장 필요한 역량과 자기 평가</a></li>
+<li><a href="../chapters/ch13.html">13장 주요 기술 변화</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
-<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
 <li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
 <li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
 <li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
@@ -55,6 +52,7 @@
 <li><a href="../wiki/cases.html">사례 연구</a></li>
 <li><a href="../wiki/security.html">보안</a></li>
 <li><a href="../wiki/governance.html">거버넌스</a></li>
+<li class="group">위키: 프롬프트 엔지니어링 (웹 전용)</li>
 <li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
 <li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
 <li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
@@ -73,7 +71,7 @@
 <thead><tr><th>작업 유형</th><th>지시 요점</th><th>검증 방법</th></tr></thead>
 <tbody>
 <tr><td>코드 생성</td><td>언어, 버전, 입력과 출력, 예외 처리 명시</td><td>실행과 테스트</td></tr>
-<tr><td>바이브 코딩</td><td>기능을 자연어로 설명하고 결과를 보며 수정</td><td>생성된 코드 검토와 테스트</td></tr>
+<tr><td>바이브 코딩</td><td>코드를 거의 읽지 않고 자연어로 지시하며 실행 결과만 보고 수정. Andrej Karpathy가 2025년 2월 이름 붙임</td><td>원래 방식은 코드 검토를 생략하므로 시제품에만 씀. 실제 사용할 코드는 검토와 테스트를 거침</td></tr>
 <tr><td>텍스트 요약</td><td>독자, 분량, 포함 항목 지정</td><td>원문 대조</td></tr>
 <tr><td>분류</td><td>분류 목록과 판단 기준, 예시 제공</td><td>정답이 있는 표본으로 정확도 측정</td></tr>
 <tr><td>질의응답</td><td>근거 문서 제공, 근거 없으면 모름 허용</td><td>근거 문단 확인</td></tr>
@@ -89,7 +87,7 @@
 <h2 id="finetuning">미세 조정</h2>
 <p>미세 조정은 모델을 특정 데이터로 추가 학습시키는 작업입니다. 프롬프트와 RAG로 해결되지 않는 형식, 어조 요구가 있을 때 검토합니다.</p>
 
-<p class="tags">태그: <a href="../tags.html#tag-44">응용</a><a href="../tags.html#tag-57">코드 생성</a><a href="../tags.html#tag-41">요약</a><a href="../tags.html#tag-49">정보 추출</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-43">응용</a><a href="../tags.html#tag-57">코드 생성</a><a href="../tags.html#tag-40">요약</a><a href="../tags.html#tag-49">정보 추출</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../wiki/pe-agents.html"><small>이전</small>프롬프트 엔지니어링: 에이전트</a><a class="next" href="../wiki/pe-evaluation.html"><small>다음</small>프롬프트 엔지니어링: 평가와 안전</a></nav>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
