@@ -74,12 +74,12 @@
 <h2 id="types">유형</h2>
 <p><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Ji 외(2023)는 환각 연구를 정리하면서 환각을 입력과의 관계에 따라 두 유형으로 구분했습니다. 이 책도 같은 구분을 씁니다.</p>
 <figure class="fig" id="tbl-9-1"><div class="table-wrap"><table>
-<thead><tr><th>유형</th><th>정의</th><th>예</th></tr></thead>
+<thead><tr><th>유형</th><th>정의</th><th>예제</th></tr></thead>
 <tbody>
 <tr><td>내재적 환각</td><td>주어진 입력 자료와 모순되는 내용 생성</td><td>요약에 원문과 다른 수치 기재</td></tr>
 <tr><td>외재적 환각</td><td>입력으로 확인할 수 없는 내용 생성</td><td>존재하지 않는 논문, 판례 인용</td></tr>
 </tbody></table></div>
-<figcaption><b>표 9-1. 환각 유형</b><br>Ji 외(2023)의 구분에 따른 유형별 정의와 예</figcaption></figure>
+<figcaption><b>표 9-1. 환각 유형</b><ul class="capnote"><li>내재적 환각과 외재적 환각의 정의와 예제</li><li>Ji 외(2023)의 구분 기준</li></ul></figcaption></figure>
 
 <h2 id="features">환각의 특징</h2>
 <ul><li>문장이 자연스럽고 어조가 확신에 차 있습니다.</li><li>저자, 연도, 사건 번호, 쪽수처럼 구체적인 세부 정보를 붙입니다.</li><li>다시 물어도 같은 내용을 되풀이하거나, 근거를 새로 만들어 붙이기도 합니다.</li><li>맞는 정보와 틀린 정보가 한 문단 안에 섞입니다.</li></ul>
@@ -89,7 +89,7 @@
 
 <h2 id="signals">의심 신호</h2>
 <figure class="fig" id="tbl-9-2"><div class="table-wrap"><table>
-<thead><tr><th>신호</th><th>예</th><th>확인 방법</th></tr></thead>
+<thead><tr><th>신호</th><th>예제</th><th>확인 방법</th></tr></thead>
 <tbody>
 <tr><td>지나치게 정확한 수치</td><td>정확히 73.2%</td><td>수치의 출처와 기준 연도 확인</td></tr>
 <tr><td>처음 보는 출처</td><td>들어 본 적 없는 학술지, 보고서</td><td>학술 검색, 기관 누리집 검색</td></tr>
@@ -97,11 +97,11 @@
 <tr><td>요청 개수를 정확히 채운 목록</td><td>요청한 대로 딱 다섯 가지</td><td>항목별 근거 확인</td></tr>
 <tr><td>인용 문장</td><td>큰따옴표 안의 발언</td><td>원문에서 같은 문장 검색</td></tr>
 </tbody></table></div>
-<figcaption><b>표 9-2. 환각 의심 신호</b><br>신호별 예와 확인 방법</figcaption></figure>
+<figcaption><b>표 9-2. 환각 의심 신호</b><ul class="capnote"><li>지나치게 정확한 수치, 처음 보는 출처 등 의심 신호 5개와 확인 방법</li></ul></figcaption></figure>
 
 <h2 id="measures">대응 방법</h2>
 <figure class="fig" id="tbl-9-3"><div class="table-wrap"><table>
-<thead><tr><th>방법</th><th>적용 위치</th><th>작성 예</th></tr></thead>
+<thead><tr><th>방법</th><th>적용 위치</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>근거 자료 제공</td><td>프롬프트</td><td>첨부 문서만 근거로 답하십시오.</td></tr>
 <tr><td>출처 표시 요구</td><td>프롬프트</td><td>각 주장 뒤에 근거 문단 번호를 적으십시오.</td></tr>
@@ -110,9 +110,9 @@
 <tr><td>검색 증강 생성(RAG)</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 넣음(<a href="#fig-9-1">그림 9-1</a>)</td></tr>
 <tr><td>원문 대조</td><td>사용자 검토</td><td>수치, 인용, 고유명사를 원문과 대조</td></tr>
 </tbody></table></div>
-<figcaption><b>표 9-3. 환각 대응 방법</b><br>방법별 적용 위치와 작성 예</figcaption></figure>
+<figcaption><b>표 9-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 작성 예제</li></ul></figcaption></figure>
 
-<figure class="fig diagram" id="fig-9-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/></svg></div><figcaption><b>그림 9-1. 검색 증강 생성(RAG) 흐름</b><br>질문과 관련된 문서를 찾아 근거로 넣고 답하게 하면 외재적 환각을 줄일 수 있습니다. 출처 표시가 있어야 사람이 확인할 수 있습니다.</figcaption></figure>
+<figure class="fig diagram" id="fig-9-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/></svg></div><figcaption><b>그림 9-1. 검색 증강 생성(RAG) 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시의 흐름</li><li>출처 표시가 있어야 사람이 원문과 대조 가능</li></ul></figcaption></figure>
 
 <h2 id="case">사례</h2>
 <h3>가짜 판례 인용</h3>

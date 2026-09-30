@@ -5,12 +5,14 @@
 2. 장 번호-순번 형식(예: 표 3-1)이 여러 페이지에서 중복되지 않는지
 3. 본문이 가리키는 번호가 실제로 있는지
 4. 본문의 번호 참조에 링크가 걸려 있는지
+
+표지(index.html)는 번호와 캡션을 두지 않으므로 검사하지 않는다.
 """
 import glob
 import re
 import sys
 
-files = ["index.html"] + sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html")) + sorted(glob.glob("wiki/*.html"))
+files = sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html")) + sorted(glob.glob("wiki/*.html"))
 CAP = re.compile(r"<figcaption><b>((그림|표) (?:([0-9A-Z]+)-)?([0-9]+))\.")
 REF = re.compile(r"(?:그림|표) [0-9A-Z]+-[0-9]+")
 errors = []
@@ -41,6 +43,11 @@ for f in files:
     for r in sorted(set(REF.findall(plain))):
         errors.append(f"링크 없는 번호 참조: {f} {r}")
 
+idx = open("index.html", encoding="utf-8").read()
+if "<figcaption" in idx:
+    errors.append("표지에 캡션이 있음: index.html")
+
 for e in errors:
     print(e)
 sys.exit(1 if errors else 0)
+

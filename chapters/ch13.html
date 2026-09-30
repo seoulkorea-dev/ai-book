@@ -82,7 +82,7 @@
 <tr><td>긴 컨텍스트</td><td>긴 문서를 한 번에 처리</td><td><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Google 연구진 Infini-attention 발표 (2024년 4월)</td></tr>
 <tr><td>개인화</td><td>이전 대화와 사용자 설정을 기억해 반영</td><td><span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> ChatGPT 메모리 기능 발표 (2024년 2월)</td></tr>
 </tbody></table></div>
-<figcaption><b>표 13-1. 생성형 AI 기술 변화</b><br>변화별 내용과 대표 사례</figcaption></figure>
+<figcaption><b>표 13-1. 생성형 AI 기술 변화</b><ul class="capnote"><li>추론 모델, 멀티모달, 연동 규격, 에이전트, 긴 컨텍스트, 개인화의 내용과 대표 사례</li></ul></figcaption></figure>
 
 <h2 id="reasoning">추론 모델</h2>
 <p>추론 모델은 답을 내기 전에 중간 추론 토큰을 생성해 수학, 코딩, 과학 문제의 정확도를 높입니다. 처음에는 일반 모델과 추론 모델이 따로 나왔지만, 지금은 한 모델 안에서 추론량을 조절하는 방식이 쓰입니다. <span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Anthropic은 Claude Opus 4.7부터 모델이 작업 난이도에 따라 추론량을 스스로 정하는 적응형 추론과 노력 수준(effort) 설정을 제공합니다. 사용자는 추론에 쓰는 시간과 비용을 고려해 모델과 추론 강도를 함께 정합니다. 프롬프트 작성법의 차이는 <a href="ch04.html#cot">4장</a>에서 다룹니다.</p>
@@ -94,15 +94,15 @@
 <p>에이전트는 목표를 받아 도구 호출, 결과 확인, 다음 행동 결정을 반복하는 시스템입니다. <span class="mark company" role="img" aria-label="출처: 기업" title="기업">기업</span> Anthropic은 「Building effective agents」에서 정해진 순서로 실행하는 워크플로와 모델이 과정을 스스로 결정하는 에이전트를 구분하고, 가장 단순한 방식부터 시작하도록 권장했습니다.</p>
 <p>에이전트는 사람이 얼마나 관여하느냐로 나눠 볼 수 있습니다. <a href="#tbl-13-2">표 13-2</a>는 이 책이 정리한 구분입니다.</p>
 <figure class="fig" id="tbl-13-2"><div class="table-wrap"><table>
-<thead><tr><th>단계</th><th>AI의 행동</th><th>사람의 역할</th><th>예</th></tr></thead>
+<thead><tr><th>단계</th><th>AI의 행동</th><th>사람의 역할</th><th>예제</th></tr></thead>
 <tbody>
 <tr><td>1. 제안</td><td>할 일을 제안만 함</td><td>실행</td><td>메일 답장 초안 제시</td></tr>
 <tr><td>2. 승인 후 실행</td><td>사람이 승인한 작업만 실행</td><td>단계별 승인</td><td>코드 수정을 보여 주고 승인받아 저장</td></tr>
 <tr><td>3. 범위 안 자율 실행</td><td>정해진 권한 안에서 스스로 실행</td><td>권한 설정, 결과 검토</td><td>지정 폴더의 문서만 정리</td></tr>
 <tr><td>4. 자율 실행</td><td>목표만 받고 도구 선택과 실행을 스스로 결정</td><td>목표 설정, 사후 감사</td><td>여러 사이트를 조사해 보고서 작성</td></tr>
 </tbody></table></div>
-<figcaption><b>표 13-2. 에이전트 자율성 단계</b><br>단계별 AI의 행동과 사람의 역할</figcaption></figure>
-<figure class="fig diagram" id="fig-13-1"><div class="svg-wrap" role="img" aria-label="제안, 승인 후 실행, 범위 안 자율, 자율 실행의 네 단계와 단계별 사람의 역할"><svg viewBox="0 0 900 225" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="110" width="200" height="60" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text x="110" y="136" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">1. 제안</text><text x="110" y="158" font-size="12" fill="#625D52" text-anchor="middle">사람: 직접 실행</text><rect x="230" y="80" width="200" height="90" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text x="330" y="106" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">2. 승인 후 실행</text><text x="330" y="128" font-size="12" fill="#625D52" text-anchor="middle">사람: 단계마다 승인</text><rect x="450" y="50" width="200" height="120" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text x="550" y="76" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">3. 범위 안 자율</text><text x="550" y="98" font-size="12" fill="#625D52" text-anchor="middle">사람: 권한 설정, 결과 검토</text><rect x="670" y="20" width="200" height="150" rx="8" fill="#DCD2B8" stroke="#8a8272"/><text x="770" y="46" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">4. 자율 실행</text><text x="770" y="68" font-size="12" fill="#625D52" text-anchor="middle">사람: 목표 설정, 사후 감사</text><line x1="10" y1="195" x2="880" y2="195" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><text x="445" y="215" font-size="12" fill="#625D52" text-anchor="middle">오른쪽으로 갈수록 사람 확인 없이 실행되는 작업이 늘어납니다</text></svg></div><figcaption><b>그림 13-1. 에이전트 자율성 단계</b><br>단계가 높을수록 AI가 스스로 실행하는 범위가 넓어지고, 사람의 역할은 실행에서 권한 설정과 사후 감사로 바뀝니다.</figcaption></figure>
+<figcaption><b>표 13-2. 에이전트 자율성 단계</b><ul class="capnote"><li>제안, 승인 후 실행, 범위 안 자율 실행, 자율 실행 단계별 AI의 행동과 사람의 역할</li><li>이 책이 정리한 구분</li></ul></figcaption></figure>
+<figure class="fig diagram" id="fig-13-1"><div class="svg-wrap" role="img" aria-label="제안, 승인 후 실행, 범위 안 자율, 자율 실행의 네 단계와 단계별 사람의 역할"><svg viewBox="0 0 900 225" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="110" width="200" height="60" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text x="110" y="136" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">1. 제안</text><text x="110" y="158" font-size="12" fill="#625D52" text-anchor="middle">사람: 직접 실행</text><rect x="230" y="80" width="200" height="90" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text x="330" y="106" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">2. 승인 후 실행</text><text x="330" y="128" font-size="12" fill="#625D52" text-anchor="middle">사람: 단계마다 승인</text><rect x="450" y="50" width="200" height="120" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text x="550" y="76" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">3. 범위 안 자율</text><text x="550" y="98" font-size="12" fill="#625D52" text-anchor="middle">사람: 권한 설정, 결과 검토</text><rect x="670" y="20" width="200" height="150" rx="8" fill="#DCD2B8" stroke="#8a8272"/><text x="770" y="46" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">4. 자율 실행</text><text x="770" y="68" font-size="12" fill="#625D52" text-anchor="middle">사람: 목표 설정, 사후 감사</text><line x1="10" y1="195" x2="880" y2="195" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><text x="445" y="215" font-size="12" fill="#625D52" text-anchor="middle">오른쪽으로 갈수록 사람 확인 없이 실행되는 작업이 늘어납니다</text></svg></div><figcaption><b>그림 13-1. 에이전트 자율성 단계</b><ul class="capnote"><li>표 13-2의 네 단계를 자율성 순서로 배치한 그림</li><li>단계가 높을수록 사람의 역할은 실행에서 권한 설정과 사후 감사로 이동</li></ul></figcaption></figure>
 <p>단계가 높을수록 사람이 확인하지 않고 실행되는 작업이 늘어납니다(<a href="#fig-13-1">그림 13-1</a>). 되돌리기 어려운 작업은 단계와 관계없이 사람의 승인을 둡니다(<a href="ch11.html#human">11장</a>). 상세 내용은 <a href="../wiki/pe-agents.html">위키 에이전트</a>에서 다룹니다.</p>
 
 <h2 id="mcp">연동 규격</h2>
@@ -122,7 +122,7 @@
 <tr><td><span class="mark inst" role="img" aria-label="출처: 기관" title="기관">기관</span> OWASP Top 10 for LLM Applications</td><td>LLM 애플리케이션 보안 위험 목록</td><td>2025년 판 발표</td></tr>
 <tr><td><span class="mark inst" role="img" aria-label="출처: 기관" title="기관">기관</span> Agentic AI Foundation</td><td>MCP 등 에이전트 규격의 중립 관리</td><td>2025년 12월 출범</td></tr>
 </tbody></table></div>
-<figcaption><b>표 13-3. 규제와 표준의 변화</b><br>변화별 내용과 시점</figcaption></figure>
+<figcaption><b>표 13-3. 규제와 표준의 변화</b><ul class="capnote"><li>EU 인공지능법, Digital Omnibus, 한국 인공지능기본법, OWASP, AAIF의 내용과 시점</li></ul></figcaption></figure>
 
 <h2 id="industry">산업별로 확인할 질문</h2>
 <p>산업별 영향은 기관마다 전망이 다르고 자주 바뀝니다. 이 책은 전망 수치 대신 자기 산업에서 확인할 질문을 제시합니다.</p>

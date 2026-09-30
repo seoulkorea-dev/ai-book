@@ -212,3 +212,7 @@ aside.footnote h4 { margin: 0 0 0.3rem; font-size: 18px; }
 /* 인라인 SVG 그림 */
 .diagram .svg-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 0.75rem; }
 .diagram svg { display: block; width: 100%; min-width: 560px; height: auto; }
+
+/* 캡션 설명: 개조식 */
+figcaption ul.capnote { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+figcaption ul.capnote li { margin: 0.1rem 0; }

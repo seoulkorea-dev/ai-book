@@ -71,12 +71,12 @@
 
 <p>프롬프트 인젝션은 입력 데이터 안에 숨긴 문장이 AI의 원래 지시를 바꾸는 공격입니다. <span class="mark inst" role="img" aria-label="출처: 기관" title="기관">기관</span> OWASP는 「Top 10 for LLM Applications」 2025년 판에서 첫 번째 위험 항목(LLM01)으로 분류했습니다.</p>
 <figure class="fig" id="tbl-1"><div class="table-wrap"><table>
-<thead><tr><th>유형</th><th>경로</th><th>예</th></tr></thead>
+<thead><tr><th>유형</th><th>경로</th><th>예제</th></tr></thead>
 <tbody>
 <tr><td>직접</td><td>사용자가 입력창에 공격 문장 입력</td><td>이전 지시를 무시하라는 문장, 역할극이나 번역 요청으로 감싼 문장</td></tr>
 <tr><td>간접</td><td>AI가 읽는 웹 페이지, 문서, 메일에 공격 문장 삽입</td><td>요약할 웹 페이지에 배경색과 같은 글자로 지시 삽입</td></tr>
 </tbody></table></div>
-<figcaption><b>표 1. 프롬프트 인젝션 유형</b><br>유형별 경로와 예</figcaption></figure>
+<figcaption><b>표 1. 프롬프트 인젝션 유형</b><ul class="capnote"><li>직접 인젝션과 간접 인젝션의 경로와 예제</li></ul></figcaption></figure>
 <h3>완전히 막기 어려운 이유</h3>
 <p>SQL 인젝션은 명령과 데이터를 구조적으로 분리해 막을 수 있습니다. LLM에서는 지시와 데이터가 모두 자연어로 같은 입력에 들어가므로 구조적으로 분리할 방법이 아직 없습니다. 그래서 여러 겹의 방어로 피해를 줄입니다.</p>
 <figure class="fig" id="tbl-2"><div class="table-wrap"><table>
@@ -88,7 +88,7 @@
 <tr><td>입출력 검사</td><td>알려진 공격 문장, 외부 링크, 민감 정보를 검사</td></tr>
 <tr><td>최소 노출</td><td>시스템 프롬프트에 비밀번호, 키를 넣지 않음</td></tr>
 </tbody></table></div>
-<figcaption><b>표 2. 다층 방어</b><br>방어별 방법</figcaption></figure>
+<figcaption><b>표 2. 다층 방어</b><ul class="capnote"><li>권한 최소화, 사람 승인, 입력 경계 표시, 입출력 검사, 최소 노출의 방법</li></ul></figcaption></figure>
 <h2 id="agent">AI 에이전트 보안</h2>
 
 <p>에이전트는 파일, 메일, 브라우저, 외부 서비스를 직접 조작하므로 잘못된 판단이 곧 실제 작업으로 이어집니다. 단순 대화에서 공격의 피해는 잘못된 답변이지만, 에이전트에서는 잘못된 행동입니다.</p>
@@ -100,7 +100,7 @@
 <tr><td>메모리 오염</td><td>장기 메모리, 검색 문서, 벡터 데이터베이스에 악성 내용을 심어 이후 작업에 영향</td></tr>
 <tr><td>섀도 AI</td><td>조직이 파악하지 못한 에이전트가 사내 데이터에 접근</td></tr>
 </tbody></table></div>
-<figcaption><b>표 3. 에이전트 고유 위협</b><br>위협별 내용</figcaption></figure>
+<figcaption><b>표 3. 에이전트 고유 위협</b><ul class="capnote"><li>과도한 권한, 도구 설명 오염, 메모리 오염, 섀도 AI의 내용</li></ul></figcaption></figure>
 <figure class="fig" id="tbl-4"><div class="table-wrap"><table>
 <thead><tr><th>통제</th><th>적용 방법</th></tr></thead>
 <tbody>
@@ -113,7 +113,7 @@
 <tr><td>자산 목록</td><td>조직 안의 에이전트를 목록으로 관리</td></tr>
 <tr><td>자격 증명 보호</td><td>비밀번호, API 키를 프롬프트에 넣지 않음</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4. 에이전트 보안 통제</b><br>통제별 적용 방법</figcaption></figure>
+<figcaption><b>표 4. 에이전트 보안 통제</b><ul class="capnote"><li>최소 권한부터 자격 증명 보호까지 에이전트 보안 통제 8개의 적용 방법</li></ul></figcaption></figure>
 <p>관련: <a href="../chapters/ch11.html#security">11장</a></p>
 <p class="tags">태그: <a href="../tags.html#tag-26">보안</a><a href="../tags.html#tag-64">프롬프트 인젝션</a><a href="../tags.html#tag-35">에이전트</a></p>
 </article>
