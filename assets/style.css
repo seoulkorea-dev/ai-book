@@ -117,9 +117,16 @@ table { border-collapse: collapse; width: 100%; font-size: 18px; line-height: 1.
 th, td { border: 1px solid var(--rule); padding: 0.55rem 0.75rem; text-align: left; vertical-align: top; }
 thead th { background: var(--panel); }
 
+/* 짧은 라벨 열: 내용 폭에 맞추고 줄바꿈하지 않음 (좁은 화면에서는 줄바꿈 허용) */
+@media (min-width: 600px) {
+  table.fit-1 :is(th, td):nth-child(1),
+  table.fit-2 :is(th, td):nth-child(2),
+  table.fit-3 :is(th, td):nth-child(3),
+  table.fit-4 :is(th, td):nth-child(4) { white-space: nowrap; width: 1%; }
+}
+/* 주소(URL)가 든 표: 긴 주소를 칸 폭에서 줄바꿈 */
+table.wrap-url td { overflow-wrap: anywhere; }
 /* 표 열 폭 비율 (colgroup) */
-col.w10 { width: 10%; }
-col.w15 { width: 15%; }
 col.w20 { width: 20%; }
 col.w25 { width: 25%; }
 col.w30 { width: 30%; }

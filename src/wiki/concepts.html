@@ -3,7 +3,7 @@
 <p class="lead">본문의 핵심 개념을 정의하고, 본문에서 다루지 않은 세부 사항을 덧붙입니다.</p><h2 id="prompt">프롬프트</h2>
 
 <p>모델에 주는 입력 전체입니다. 목적, 역할, 맥락, 출력 형식, 제약 조건의 5요소로 구성되고, 처리할 입력 자료는 구분 기호로 감싸 따로 붙입니다.</p>
-<figure class="fig" id="tbl-1"><div class="table-wrap"><table><colgroup><col class="w25"><col class="w25"><col class="w50"></colgroup>
+<figure class="fig" id="tbl-1"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w50"></colgroup>
 <thead><tr><th>종류</th><th>작성자</th><th>역할</th></tr></thead>
 <tbody>
 <tr><td>시스템 프롬프트</td><td>제품 개발자, 사용자 설정</td><td>대화 전체에 적용되는 기본 지시</td></tr>
@@ -11,7 +11,7 @@
 <tr><td>어시스턴트 메시지</td><td>모델</td><td>이전 답변. 다음 답변의 맥락이 됩니다.</td></tr>
 </tbody></table></div>
 <figcaption><b>표 1. 프롬프트 종류</b><ul class="capnote"><li>시스템 프롬프트, 사용자 프롬프트, 어시스턴트 메시지의 작성자와 역할</li></ul></figcaption></figure>
-<figure class="fig" id="tbl-2"><div class="table-wrap"><table><colgroup><col class="w10"><col class="w35"><col class="w55"></colgroup>
+<figure class="fig" id="tbl-2"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w55"></colgroup>
 <thead><tr><th>연도</th><th>발표</th><th>의의</th></tr></thead>
 <tbody>
 <tr><td>2020</td><td>Brown 외, GPT-3</td><td>예시만으로 여러 작업을 수행할 수 있음을 보임</td></tr>
@@ -24,7 +24,7 @@
 <h2 id="hallucination">환각</h2>
 
 <p>사실이 아니거나 입력과 맞지 않는 내용을 사실처럼 생성하는 현상입니다. Ji 외(2023)는 입력과 모순되는 내재적 환각과 입력으로 확인할 수 없는 외재적 환각으로 구분했습니다.</p>
-<figure class="fig" id="tbl-3"><div class="table-wrap"><table><colgroup><col class="w20"><col class="w80"></colgroup>
+<figure class="fig" id="tbl-3"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w80"></colgroup>
 <thead><tr><th>분야</th><th>위험</th></tr></thead>
 <tbody>
 <tr><td>법률</td><td>존재하지 않는 판례 인용으로 제재</td></tr>
@@ -38,7 +38,7 @@
 <h2 id="token">토큰</h2>
 
 <p>모델이 처리하는 텍스트 단위입니다. 토크나이저가 텍스트를 토큰으로 나누고, 모델은 토큰을 숫자 번호로 바꿔 처리합니다. 사용 요금과 컨텍스트 윈도는 토큰 수로 계산합니다.</p>
-<figure class="fig" id="tbl-4"><div class="table-wrap"><table><colgroup><col class="w15"><col class="w50"><col class="w35"></colgroup>
+<figure class="fig" id="tbl-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w35"></colgroup>
 <thead><tr><th>방식</th><th>원리</th><th>제안</th></tr></thead>
 <tbody>
 <tr><td>BPE</td><td>자주 함께 나오는 글자 쌍을 반복해서 합칩니다.</td><td>Sennrich 외, 2016 (기계 번역 적용)</td></tr>
@@ -50,7 +50,7 @@
 <h2 id="context-window">컨텍스트 윈도</h2>
 
 <p>모델이 한 번에 처리하는 토큰의 최대 개수입니다. 시스템 프롬프트, 이전 대화, 첨부 문서, 현재 입력, 답변이 모두 포함됩니다. 대화가 길어지면 새 입력과 답변에 쓸 공간이 줄어듭니다.</p>
-<figure class="fig" id="tbl-5"><div class="table-wrap"><table><colgroup><col class="w20"><col class="w80"></colgroup>
+<figure class="fig" id="tbl-5"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w80"></colgroup>
 <thead><tr><th>방법</th><th>절차</th></tr></thead>
 <tbody>
 <tr><td>순차 요약</td><td>문서를 나눠 부분별로 요약하고, 요약을 모아 다시 요약합니다.</td></tr>
@@ -62,7 +62,7 @@
 <h2 id="bias">편향</h2>
 
 <p>학습 데이터의 불균형이 결과에 반영되어 특정 집단에 불공정한 결과를 내는 현상입니다.</p>
-<figure class="fig" id="tbl-6"><div class="table-wrap"><table><colgroup><col class="w20"><col class="w80"></colgroup>
+<figure class="fig" id="tbl-6"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w80"></colgroup>
 <thead><tr><th>유형</th><th>예제</th></tr></thead>
 <tbody>
 <tr><td>성별 편향</td><td>직업을 특정 성별과 연결</td></tr>
@@ -76,7 +76,7 @@
 <h2 id="few-shot">Few-shot</h2>
 
 <p>입력과 출력 예시 몇 개를 프롬프트에 넣어 작업 방식과 형식을 보여 주는 기법입니다. Brown 외(2020)가 GPT-3 연구에서 예시만으로 여러 작업을 수행하는 결과를 발표했습니다. 모델의 가중치를 바꾸지 않고 프롬프트 안의 예시만으로 따르게 하므로 맥락 내 학습(in-context learning)이라고도 합니다.</p>
-<figure class="fig" id="tbl-7"><div class="table-wrap"><table><colgroup><col class="w15"><col class="w35"><col class="w50"></colgroup>
+<figure class="fig" id="tbl-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w50"></colgroup>
 <thead><tr><th>항목</th><th>Few-shot</th><th>미세 조정</th></tr></thead>
 <tbody>
 <tr><td>필요 데이터</td><td>예시 2개에서 10개</td><td>수십 개 이상, 제공사 권장 수량 확인</td></tr>
@@ -89,7 +89,7 @@
 <h2 id="cot">Chain of Thought</h2>
 
 <p>답을 내기 전에 추론 과정을 단계별로 쓰게 하는 기법입니다. Wei 외(2022)가 발표했습니다.</p>
-<figure class="fig" id="tbl-8"><div class="table-wrap"><table><colgroup><col class="w20"><col class="w45"><col class="w35"></colgroup>
+<figure class="fig" id="tbl-8"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col class="w45"><col></colgroup>
 <thead><tr><th>방식</th><th>방법</th><th>사용 시점</th></tr></thead>
 <tbody>
 <tr><td>Zero-shot CoT</td><td>&quot;단계별로 생각하십시오&quot;를 덧붙임</td><td>간단한 추론 문제</td></tr>
