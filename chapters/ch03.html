@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>3장 프롬프트의 5요소 | 생성형 AI 실전 가이드</title>
+<title>Chapter 3 프롬프트의 5요소 | 생성형 AI 실전 가이드</title>
 <meta name="description" content="프롬프트는 모델에게 주는 입력 전체이며, 목적, 역할, 맥락, 출력 형식, 제약 조건의 다섯 요소로 구성됩니다.">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -21,18 +21,18 @@
 <h2>전체 목차</h2>
 <ul>
 <li class="group"><a href="../index.html">표지와 머리말</a></li>
-<li class="group">1부 생성형 AI의 이해와 도구 선택</li>
-<li><a href="../chapters/ch01.html">1장 생성형 AI의 작동 원리</a></li>
-<li><a href="../chapters/ch02.html">2장 도구 선택 기준과 활용 역량 자기 평가</a></li>
-<li class="group">2부 프롬프트 작성</li>
-<li><a href="../chapters/ch03.html" aria-current="page">3장 프롬프트의 5요소</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법과 자기 검토 요청</a></li>
-<li class="group">3부 학업과 업무에서 AI와 사람의 역할 분담</li>
-<li><a href="../chapters/ch05.html">5장 학습, 자료 조사, 요약</a></li>
-<li><a href="../chapters/ch06.html">6장 업무 위임, 기획서 초안, 창작</a></li>
-<li class="group">4부 결과물 검증과 위험 관리</li>
-<li><a href="../chapters/ch07.html">7장 환각 대응과 결과 개선 절차</a></li>
-<li><a href="../chapters/ch08.html">8장 개인정보, 저작권, 보안과 조직 정책</a></li>
+<li class="group">Part 1 생성형 AI의 이해와 도구 선택</li>
+<li><a href="../chapters/ch01.html">Chapter 1 생성형 AI의 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">Chapter 2 도구 선택 기준과 활용 역량 자기 평가</a></li>
+<li class="group">Part 2 프롬프트 작성</li>
+<li><a href="../chapters/ch03.html" aria-current="page">Chapter 3 프롬프트의 5요소</a></li>
+<li><a href="../chapters/ch04.html">Chapter 4 고급 프롬프트 기법과 자기 검토 요청</a></li>
+<li class="group">Part 3 학업과 업무에서 AI와 사람의 역할 분담</li>
+<li><a href="../chapters/ch05.html">Chapter 5 학습, 자료 조사, 요약</a></li>
+<li><a href="../chapters/ch06.html">Chapter 6 업무 위임, 기획서 초안, 창작</a></li>
+<li class="group">Part 4 결과물 검증과 위험 관리</li>
+<li><a href="../chapters/ch07.html">Chapter 7 환각 대응과 결과 개선 절차</a></li>
+<li><a href="../chapters/ch08.html">Chapter 8 개인정보, 저작권, 보안과 조직 정책</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
 <li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
@@ -59,8 +59,8 @@
 </ul></nav>
 <main id="main">
 <article>
-<p class="eyebrow-part">2부 프롬프트 작성</p>
-<h1>3장 프롬프트의 5요소</h1>
+<p class="eyebrow-part">Part 2 프롬프트 작성</p>
+<h1>Chapter 3 프롬프트의 5요소</h1>
 <p class="lead">프롬프트는 모델에게 주는 입력 전체이며, 목적, 역할, 맥락, 출력 형식, 제약 조건의 다섯 요소로 구성됩니다.</p>
 <ul class="summary"><li>필요한 요소를 빠짐없이 적으면 결과의 편차가 줄어듭니다.</li><li>처리할 자료는 구분 기호로 감싸 지시와 나눕니다.</li><li>모호한 단어를 기준, 수치, 대상으로 바꿉니다.</li></ul>
 
@@ -74,7 +74,7 @@
 <tr><td>출력 형식</td><td>Format</td><td>결과의 모양</td><td>결정 사항, 담당자, 기한을 표로 작성하십시오.</td></tr>
 <tr><td>제약 조건</td><td>Constraints</td><td>지켜야 할 조건, 금지 사항, 분량</td><td>회의록에 없는 내용은 쓰지 마십시오. 전체 10줄 이내로 쓰십시오.</td></tr>
 </tbody></table></div>
-<figcaption><b>표 3-1. 프롬프트 5요소</b><ul class="capnote"><li>목적, 역할, 맥락, 출력 형식, 제약 조건의 역할과 작성 예제</li><li>예제 열을 이으면 3장 개선 후 프롬프트</li></ul></figcaption></figure>
+<figcaption><b>표 3-1. 프롬프트 5요소</b><ul class="capnote"><li>목적, 역할, 맥락, 출력 형식, 제약 조건의 역할과 작성 예제</li><li>예제 열을 이으면 Chapter 3 개선 후 프롬프트</li></ul></figcaption></figure>
 <p>처리할 원문, 표, 코드 같은 입력 자료는 다섯 요소와 따로 두고 구분 기호로 감쌉니다. 입력 자료를 어디에 둘지는 <a href="#input-position">입력 자료 위치</a>에서 다룹니다.</p>
 <p>다섯 요소가 모든 프롬프트에 필요하지는 않습니다. 짧은 질문은 목적만으로 충분합니다. 결과를 여러 번 고쳐야 했던 작업이면 누락된 요소가 있는지 먼저 확인합니다.</p>
 
@@ -165,7 +165,7 @@
 <thead><tr><th>자료 길이</th><th>배치</th><th>이유</th></tr></thead>
 <tbody>
 <tr><td>짧은 자료(몇 문단 이하)</td><td>다섯 요소 뒤, 프롬프트 끝에 붙임</td><td>지시를 먼저 읽고 자료를 처리합니다.</td></tr>
-<tr><td>긴 자료(여러 쪽, 여러 문서)</td><td>자료를 앞에 두고, 목적과 출력 형식을 끝에 다시 적음</td><td>긴 입력의 중간에 놓인 지시는 덜 반영될 수 있습니다(<a href="../chapters/ch01.html#context">1장 컨텍스트 윈도</a>).</td></tr>
+<tr><td>긴 자료(여러 쪽, 여러 문서)</td><td>자료를 앞에 두고, 목적과 출력 형식을 끝에 다시 적음</td><td>긴 입력의 중간에 놓인 지시는 덜 반영될 수 있습니다(<a href="../chapters/ch01.html#context">Chapter 1 컨텍스트 윈도</a>).</td></tr>
 </tbody></table></div>
 <figcaption><b>표 3-5. 입력 자료 위치</b><ul class="capnote"><li>짧은 자료와 긴 자료의 배치 위치와 이유</li></ul></figcaption></figure>
 

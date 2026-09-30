@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>1장 생성형 AI의 작동 원리 | 생성형 AI 실전 가이드</title>
+<title>Chapter 1 생성형 AI의 작동 원리 | 생성형 AI 실전 가이드</title>
 <meta name="description" content="생성형 AI는 학습한 데이터의 패턴을 바탕으로 새로운 텍스트, 이미지, 음성, 코드를 만드는 AI입니다.">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -21,18 +21,18 @@
 <h2>전체 목차</h2>
 <ul>
 <li class="group"><a href="../index.html">표지와 머리말</a></li>
-<li class="group">1부 생성형 AI의 이해와 도구 선택</li>
-<li><a href="../chapters/ch01.html" aria-current="page">1장 생성형 AI의 작동 원리</a></li>
-<li><a href="../chapters/ch02.html">2장 도구 선택 기준과 활용 역량 자기 평가</a></li>
-<li class="group">2부 프롬프트 작성</li>
-<li><a href="../chapters/ch03.html">3장 프롬프트의 5요소</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법과 자기 검토 요청</a></li>
-<li class="group">3부 학업과 업무에서 AI와 사람의 역할 분담</li>
-<li><a href="../chapters/ch05.html">5장 학습, 자료 조사, 요약</a></li>
-<li><a href="../chapters/ch06.html">6장 업무 위임, 기획서 초안, 창작</a></li>
-<li class="group">4부 결과물 검증과 위험 관리</li>
-<li><a href="../chapters/ch07.html">7장 환각 대응과 결과 개선 절차</a></li>
-<li><a href="../chapters/ch08.html">8장 개인정보, 저작권, 보안과 조직 정책</a></li>
+<li class="group">Part 1 생성형 AI의 이해와 도구 선택</li>
+<li><a href="../chapters/ch01.html" aria-current="page">Chapter 1 생성형 AI의 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">Chapter 2 도구 선택 기준과 활용 역량 자기 평가</a></li>
+<li class="group">Part 2 프롬프트 작성</li>
+<li><a href="../chapters/ch03.html">Chapter 3 프롬프트의 5요소</a></li>
+<li><a href="../chapters/ch04.html">Chapter 4 고급 프롬프트 기법과 자기 검토 요청</a></li>
+<li class="group">Part 3 학업과 업무에서 AI와 사람의 역할 분담</li>
+<li><a href="../chapters/ch05.html">Chapter 5 학습, 자료 조사, 요약</a></li>
+<li><a href="../chapters/ch06.html">Chapter 6 업무 위임, 기획서 초안, 창작</a></li>
+<li class="group">Part 4 결과물 검증과 위험 관리</li>
+<li><a href="../chapters/ch07.html">Chapter 7 환각 대응과 결과 개선 절차</a></li>
+<li><a href="../chapters/ch08.html">Chapter 8 개인정보, 저작권, 보안과 조직 정책</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
 <li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
@@ -59,8 +59,8 @@
 </ul></nav>
 <main id="main">
 <article>
-<p class="eyebrow-part">1부 생성형 AI의 이해와 도구 선택</p>
-<h1>1장 생성형 AI의 작동 원리</h1>
+<p class="eyebrow-part">Part 1 생성형 AI의 이해와 도구 선택</p>
+<h1>Chapter 1 생성형 AI의 작동 원리</h1>
 <p class="lead">생성형 AI는 학습한 데이터의 패턴을 바탕으로 새로운 텍스트, 이미지, 음성, 코드를 만드는 AI입니다.</p>
 <ul class="summary"><li>대규모 언어 모델(LLM)은 앞의 토큰을 보고 다음 토큰을 예측해 문장을 만듭니다.</li><li>모델은 사전 학습과 추가 학습을 거쳐 대화형 제품이 됩니다.</li><li>강점과 약점을 알고 기대치를 맞춰야 결과를 제대로 쓸 수 있습니다.</li></ul>
 
@@ -109,7 +109,7 @@
 <h2 id="llm">대규모 언어 모델의 작동 방식</h2>
 <p>대규모 언어 모델(LLM, Large Language Model)은 방대한 텍스트로 학습한 생성형 모델입니다. 문장을 한 번에 만들지 않고 토큰을 하나씩 이어 붙입니다.</p>
 <ol><li>입력 문장을 토큰으로 나눕니다. 토큰은 모델이 처리하는 텍스트 단위이며, 단어 전체이거나 단어의 일부입니다.</li><li>모델이 지금까지의 토큰을 보고 다음에 올 토큰의 확률을 계산합니다.</li><li>확률에 따라 토큰 하나를 고르고 입력 뒤에 붙입니다.</li><li>종료 조건에 이를 때까지 2단계와 3단계를 반복합니다.</li></ol>
-<p>3단계에서 확률이 가장 높은 토큰만 고르지 않고 확률에 따라 고르기 때문에, 같은 질문에도 답이 조금씩 달라집니다. 고르는 방식을 조절하는 설정은 <a href="../chapters/ch04.html#sampling">4장</a>에서 다룹니다.</p>
+<p>3단계에서 확률이 가장 높은 토큰만 고르지 않고 확률에 따라 고르기 때문에, 같은 질문에도 답이 조금씩 달라집니다. 고르는 방식을 조절하는 설정은 <a href="../chapters/ch04.html#sampling">Chapter 4</a>에서 다룹니다.</p>
 <p>GPT 계열, Claude 계열, Gemini 계열 모델은 트랜스포머(Transformer) 구조를 기반으로 합니다. 트랜스포머는 Google 연구진이 2017년 「Attention Is All You Need」에서 발표했습니다. GPT는 Generative Pre-trained Transformer의 약자입니다.</p>
 
 
@@ -154,7 +154,7 @@
 
 
 <h2 id="limits">한계</h2>
-<ul><li><b>환각</b>: 사실이 아닌 내용을 사실처럼 만들어 내기도 합니다. <a href="../chapters/ch07.html">7장</a>에서 다룹니다.</li><li><b>지식 기준일</b>: 학습 데이터 수집 시점 이후의 사건을 모릅니다. 웹 검색 기능이 있는 제품은 검색 결과로 이를 보완합니다.</li><li><b>계산 오류</b>: 토큰 단위로 처리하므로 자릿수가 많은 계산에서 틀릴 수 있습니다. 계산은 코드 실행 기능이나 계산기로 확인합니다.</li><li><b>편향</b>: 학습 데이터에 있는 편향을 결과에 반영할 수 있습니다. <a href="../chapters/ch08.html">8장</a>에서 다룹니다.</li></ul>
+<ul><li><b>환각</b>: 사실이 아닌 내용을 사실처럼 만들어 내기도 합니다. <a href="../chapters/ch07.html">Chapter 7</a>에서 다룹니다.</li><li><b>지식 기준일</b>: 학습 데이터 수집 시점 이후의 사건을 모릅니다. 웹 검색 기능이 있는 제품은 검색 결과로 이를 보완합니다.</li><li><b>계산 오류</b>: 토큰 단위로 처리하므로 자릿수가 많은 계산에서 틀릴 수 있습니다. 계산은 코드 실행 기능이나 계산기로 확인합니다.</li><li><b>편향</b>: 학습 데이터에 있는 편향을 결과에 반영할 수 있습니다. <a href="../chapters/ch08.html">Chapter 8</a>에서 다룹니다.</li></ul>
 
 </article>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
