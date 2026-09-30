@@ -21,30 +21,25 @@
 <h2>전체 목차</h2>
 <ul>
 <li class="group"><a href="../index.html">표지와 머리말</a></li>
-<li class="group">1부 생성형 AI의 원리와 도구</li>
-<li><a href="../chapters/ch01.html">1장 생성형 AI의 정의와 작동 원리</a></li>
-<li><a href="../chapters/ch02.html">2장 주요 도구와 선택 기준</a></li>
-<li class="group">2부 프롬프트 작성과 개선</li>
+<li class="group">1부 생성형 AI의 이해와 도구 선택</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI의 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">2장 도구 선택 기준과 활용 역량 자기 평가</a></li>
+<li class="group">2부 프롬프트 작성</li>
 <li><a href="../chapters/ch03.html">3장 프롬프트의 5요소</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법</a></li>
-<li><a href="../chapters/ch05.html">5장 결과를 개선하는 절차</a></li>
-<li class="group">3부 분야별 활용</li>
-<li><a href="../chapters/ch06.html">6장 학습과 연구에서 AI 활용</a></li>
-<li><a href="../chapters/ch07.html">7장 업무에서 AI와 사람의 역할 분담</a></li>
-<li><a href="../chapters/ch08.html">8장 창작에서 AI와 사람의 몫</a></li>
-<li class="group">4부 검증과 책임</li>
-<li><a href="../chapters/ch09.html">9장 환각의 확인과 대응</a></li>
-<li><a href="../chapters/ch10.html">10장 윤리적 사용</a></li>
-<li><a href="../chapters/ch11.html">11장 개인의 사용 균형과 조직의 AI 정책</a></li>
-<li class="group">5부 AI 활용 역량과 기술 변화</li>
-<li><a href="../chapters/ch12.html">12장 필요한 역량과 자기 평가</a></li>
-<li><a href="../chapters/ch13.html">13장 주요 기술 변화</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법과 자기 검토 요청</a></li>
+<li class="group">3부 학업과 업무에서 AI와 사람의 역할 분담</li>
+<li><a href="../chapters/ch05.html">5장 학습, 자료 조사, 요약</a></li>
+<li><a href="../chapters/ch06.html">6장 업무 위임, 기획서 초안, 창작</a></li>
+<li class="group">4부 결과물 검증과 위험 관리</li>
+<li><a href="../chapters/ch07.html">7장 환각 대응과 결과 개선 절차</a></li>
+<li><a href="../chapters/ch08.html">8장 개인정보, 저작권, 보안과 조직 정책</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
 <li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
 <li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
 <li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
 <li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li><a href="../appendix/f-trends.html">F. 주요 기술 변화</a></li>
 <li class="group">위키</li>
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
@@ -61,7 +56,6 @@
 <li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
 <li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
 <li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
-<li class="group"><a href="../tags.html">태그 인덱스</a></li>
 </ul></nav>
 <main id="main">
 <article>
@@ -72,16 +66,15 @@
 <h2 id="few-shot">Few-shot</h2>
 <p>입력과 출력 예시 몇 개를 넣습니다. 예시는 분류별로 고르게 넣습니다. 원 논문: Brown 외(2020)</p>
 <h2 id="cot">Chain of Thought</h2>
-<p>추론 과정을 단계별로 쓰게 합니다. 원 논문: Wei 외(2022). 예시 없이 "단계별로 생각하라"는 지시만 붙이는 방식은 <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Kojima 외(2022)가 발표했습니다.</p>
+<p>추론 과정을 단계별로 쓰게 합니다. 원 논문: Wei 외(2022). 예시 없이 "단계별로 생각하라"는 지시만 붙이는 방식은 Kojima 외(2022)가 발표했습니다.</p>
 <h2 id="self-consistency">Self-consistency</h2>
 <p>같은 질문으로 추론을 여러 번 생성하고 가장 많이 나온 답을 채택합니다. 원 논문: Wang 외(2022)</p>
 <h2 id="react">ReAct</h2>
 <p>추론과 도구 사용을 번갈아 수행합니다. 원 논문: Yao 외(2022)</p>
 <h2 id="chaining">프롬프트 체이닝</h2>
 <p>작업을 여러 프롬프트로 나누고 앞 결과를 다음 입력으로 씁니다. 단계별로 결과를 확인합니다.</p>
-<p class="tags">태그: <a href="../tags.html#tag-6">Few-shot</a><a href="../tags.html#tag-3">Chain of Thought</a><a href="../tags.html#tag-13">ReAct</a><a href="../tags.html#tag-66">프롬프트 체이닝</a></p>
+
 </article>
-<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../wiki/pe-foundations.html"><small>이전</small>프롬프트 엔지니어링: 기초</a><a class="next" href="../wiki/pe-reasoning.html"><small>다음</small>프롬프트 엔지니어링: 추론</a></nav>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>

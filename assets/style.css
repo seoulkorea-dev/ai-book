@@ -16,10 +16,6 @@
   --focus: #2f6fd0;
   --nav-gray: #6e6e6e;
   --nav-gray-dark: #3f3f3f;
-  --src-paper: #4a4f8c;
-  --src-law: #7a2e2e;
-  --src-company: #1d6b4f;
-  --src-inst: #7a4a1e;
   --font: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
           "Malgun Gothic", "Noto Sans KR", sans-serif;
 }
@@ -148,25 +144,6 @@ aside.footnote {
 }
 aside.footnote h4 { margin: 0 0 0.3rem; font-size: 18px; }
 
-/* 출처 유형 표시 */
-.mark {
-  display: inline-block;
-  min-width: 1.35em;
-  padding: 0 0.3em;
-  border-radius: 3px;
-  color: #fff;
-  font-size: 0.75em;
-  font-weight: 700;
-  line-height: 1.5;
-  text-align: center;
-  vertical-align: 0.12em;
-}
-.mark.paper { background: var(--src-paper); }
-.mark.law { background: var(--src-law); }
-.mark.company { background: var(--src-company); }
-.mark.inst { background: var(--src-inst); }
-
-.legend { list-style: none; padding: 0; font-size: 17px; }
 
 /* 홈: 빠른 탐색 */
 .quick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; }

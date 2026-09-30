@@ -21,30 +21,25 @@
 <h2>전체 목차</h2>
 <ul>
 <li class="group"><a href="../index.html">표지와 머리말</a></li>
-<li class="group">1부 생성형 AI의 원리와 도구</li>
-<li><a href="../chapters/ch01.html">1장 생성형 AI의 정의와 작동 원리</a></li>
-<li><a href="../chapters/ch02.html">2장 주요 도구와 선택 기준</a></li>
-<li class="group">2부 프롬프트 작성과 개선</li>
+<li class="group">1부 생성형 AI의 이해와 도구 선택</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI의 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">2장 도구 선택 기준과 활용 역량 자기 평가</a></li>
+<li class="group">2부 프롬프트 작성</li>
 <li><a href="../chapters/ch03.html">3장 프롬프트의 5요소</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법</a></li>
-<li><a href="../chapters/ch05.html">5장 결과를 개선하는 절차</a></li>
-<li class="group">3부 분야별 활용</li>
-<li><a href="../chapters/ch06.html">6장 학습과 연구에서 AI 활용</a></li>
-<li><a href="../chapters/ch07.html">7장 업무에서 AI와 사람의 역할 분담</a></li>
-<li><a href="../chapters/ch08.html">8장 창작에서 AI와 사람의 몫</a></li>
-<li class="group">4부 검증과 책임</li>
-<li><a href="../chapters/ch09.html">9장 환각의 확인과 대응</a></li>
-<li><a href="../chapters/ch10.html">10장 윤리적 사용</a></li>
-<li><a href="../chapters/ch11.html">11장 개인의 사용 균형과 조직의 AI 정책</a></li>
-<li class="group">5부 AI 활용 역량과 기술 변화</li>
-<li><a href="../chapters/ch12.html">12장 필요한 역량과 자기 평가</a></li>
-<li><a href="../chapters/ch13.html">13장 주요 기술 변화</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법과 자기 검토 요청</a></li>
+<li class="group">3부 학업과 업무에서 AI와 사람의 역할 분담</li>
+<li><a href="../chapters/ch05.html">5장 학습, 자료 조사, 요약</a></li>
+<li><a href="../chapters/ch06.html">6장 업무 위임, 기획서 초안, 창작</a></li>
+<li class="group">4부 결과물 검증과 위험 관리</li>
+<li><a href="../chapters/ch07.html">7장 환각 대응과 결과 개선 절차</a></li>
+<li><a href="../chapters/ch08.html">8장 개인정보, 저작권, 보안과 조직 정책</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
 <li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
 <li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
 <li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
 <li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li><a href="../appendix/f-trends.html">F. 주요 기술 변화</a></li>
 <li class="group">위키</li>
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
@@ -61,27 +56,25 @@
 <li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
 <li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
 <li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
-<li class="group"><a href="../tags.html">태그 인덱스</a></li>
 </ul></nav>
 <main id="main">
 <article>
 <p class="eyebrow-part">프롬프트 엔지니어링</p>
 <h1>RAG</h1>
 <p class="lead">검색 증강 생성(RAG)의 구조와 품질 관리 방법입니다.</p><h2 id="overview">RAG 개요</h2>
-<p>RAG는 질문과 관련된 문서를 검색해 프롬프트에 넣고 답을 생성하는 방식입니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Lewis 외(2020)가 발표했습니다. 모델을 다시 학습시키지 않고 최신 문서와 내부 문서를 답변에 반영합니다.</p>
+<p>RAG는 질문과 관련된 문서를 검색해 프롬프트에 넣고 답을 생성하는 방식입니다. Lewis 외(2020)가 발표했습니다. 모델을 다시 학습시키지 않고 최신 문서와 내부 문서를 답변에 반영합니다.</p>
 <h2 id="pipeline">RAG 파이프라인</h2>
 <ol><li>문서를 일정 길이의 조각으로 나눕니다.</li><li>조각을 임베딩으로 바꿔 벡터 저장소에 넣습니다.</li><li>질문을 임베딩으로 바꿔 가까운 조각을 검색합니다.</li><li>검색한 조각을 프롬프트에 넣어 답을 생성합니다.</li><li>답변에 근거 조각의 출처를 표시합니다.</li></ol>
 <h2 id="faithfulness">RAG 신뢰성</h2>
 <ul><li>검색한 문서에 없는 내용은 답하지 않도록 지시합니다.</li><li>답변 문장마다 근거 조각을 연결합니다.</li><li>검색 결과가 없으면 '자료에 없음'으로 답하게 합니다.</li></ul>
 <h2 id="long-context">위치에 따른 누락</h2>
-<p><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Liu 외(2023)는 긴 입력의 가운데에 있는 정보를 모델이 앞과 끝의 정보보다 덜 활용한다는 실험 결과를 발표했습니다(「Lost in the Middle」). 중요한 조각은 프롬프트 앞이나 끝에 둡니다.</p>
+<p>Liu 외(2023)는 긴 입력의 가운데에 있는 정보를 모델이 앞과 끝의 정보보다 덜 활용한다는 실험 결과를 발표했습니다(「Lost in the Middle」). 중요한 조각은 프롬프트 앞이나 끝에 둡니다.</p>
 <h2 id="graphrag">GraphRAG</h2>
-<p>문서에서 개체와 관계를 추출해 지식 그래프를 만들고, 그래프를 이용해 검색과 요약을 하는 방식입니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Microsoft 연구진(Edge 외, 2024)이 발표했습니다.</p>
+<p>문서에서 개체와 관계를 추출해 지식 그래프를 만들고, 그래프를 이용해 검색과 요약을 하는 방식입니다. Microsoft 연구진(Edge 외, 2024)이 발표했습니다.</p>
 <h2 id="ontology">온톨로지와 지식 그래프</h2>
 <p>온톨로지는 한 분야의 개념과 개념 사이 관계를 정한 명세입니다. 지식 그래프는 이 명세에 따라 실제 개체와 관계를 저장한 데이터입니다.</p>
-<p class="tags">태그: <a href="../tags.html#tag-12">RAG</a><a href="../tags.html#tag-72">환각</a><a href="../tags.html#tag-8">GraphRAG</a></p>
+
 </article>
-<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../wiki/pe-reasoning.html"><small>이전</small>프롬프트 엔지니어링: 추론</a><a class="next" href="../wiki/pe-agents.html"><small>다음</small>프롬프트 엔지니어링: 에이전트</a></nav>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>

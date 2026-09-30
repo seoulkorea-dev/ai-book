@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>1장 생성형 AI의 정의와 작동 원리 | 생성형 AI 실전 가이드</title>
-<meta name="description" content="1장 생성형 AI의 정의와 작동 원리">
+<title>1장 생성형 AI의 작동 원리 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="생성형 AI는 학습한 데이터의 패턴을 바탕으로 새로운 텍스트, 이미지, 음성, 코드를 만드는 AI입니다.">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -21,30 +21,25 @@
 <h2>전체 목차</h2>
 <ul>
 <li class="group"><a href="../index.html">표지와 머리말</a></li>
-<li class="group">1부 생성형 AI의 원리와 도구</li>
-<li><a href="../chapters/ch01.html" aria-current="page">1장 생성형 AI의 정의와 작동 원리</a></li>
-<li><a href="../chapters/ch02.html">2장 주요 도구와 선택 기준</a></li>
-<li class="group">2부 프롬프트 작성과 개선</li>
+<li class="group">1부 생성형 AI의 이해와 도구 선택</li>
+<li><a href="../chapters/ch01.html" aria-current="page">1장 생성형 AI의 작동 원리</a></li>
+<li><a href="../chapters/ch02.html">2장 도구 선택 기준과 활용 역량 자기 평가</a></li>
+<li class="group">2부 프롬프트 작성</li>
 <li><a href="../chapters/ch03.html">3장 프롬프트의 5요소</a></li>
-<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법</a></li>
-<li><a href="../chapters/ch05.html">5장 결과를 개선하는 절차</a></li>
-<li class="group">3부 분야별 활용</li>
-<li><a href="../chapters/ch06.html">6장 학습과 연구에서 AI 활용</a></li>
-<li><a href="../chapters/ch07.html">7장 업무에서 AI와 사람의 역할 분담</a></li>
-<li><a href="../chapters/ch08.html">8장 창작에서 AI와 사람의 몫</a></li>
-<li class="group">4부 검증과 책임</li>
-<li><a href="../chapters/ch09.html">9장 환각의 확인과 대응</a></li>
-<li><a href="../chapters/ch10.html">10장 윤리적 사용</a></li>
-<li><a href="../chapters/ch11.html">11장 개인의 사용 균형과 조직의 AI 정책</a></li>
-<li class="group">5부 AI 활용 역량과 기술 변화</li>
-<li><a href="../chapters/ch12.html">12장 필요한 역량과 자기 평가</a></li>
-<li><a href="../chapters/ch13.html">13장 주요 기술 변화</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프트 기법과 자기 검토 요청</a></li>
+<li class="group">3부 학업과 업무에서 AI와 사람의 역할 분담</li>
+<li><a href="../chapters/ch05.html">5장 학습, 자료 조사, 요약</a></li>
+<li><a href="../chapters/ch06.html">6장 업무 위임, 기획서 초안, 창작</a></li>
+<li class="group">4부 결과물 검증과 위험 관리</li>
+<li><a href="../chapters/ch07.html">7장 환각 대응과 결과 개선 절차</a></li>
+<li><a href="../chapters/ch08.html">8장 개인정보, 저작권, 보안과 조직 정책</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
 <li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
 <li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
 <li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
 <li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li><a href="../appendix/f-trends.html">F. 주요 기술 변화</a></li>
 <li class="group">위키</li>
 <li><a href="../wiki/index.html">위키 홈</a></li>
 <li><a href="../wiki/concepts.html">개념</a></li>
@@ -61,19 +56,17 @@
 <li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
 <li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
 <li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
-<li class="group"><a href="../tags.html">태그 인덱스</a></li>
 </ul></nav>
 <main id="main">
 <article>
-
-<p class="eyebrow-part">1부 생성형 AI의 원리와 도구</p>
-<h1>1장 생성형 AI의 정의와 작동 원리</h1>
+<p class="eyebrow-part">1부 생성형 AI의 이해와 도구 선택</p>
+<h1>1장 생성형 AI의 작동 원리</h1>
 <p class="lead">생성형 AI는 학습한 데이터의 패턴을 바탕으로 새로운 텍스트, 이미지, 음성, 코드를 만드는 AI입니다.</p>
 <ul class="summary"><li>대규모 언어 모델(LLM)은 앞의 토큰을 보고 다음 토큰을 예측해 문장을 만듭니다.</li><li>모델은 사전 학습과 추가 학습을 거쳐 대화형 제품이 됩니다.</li><li>강점과 약점을 알고 기대치를 맞춰야 결과를 제대로 쓸 수 있습니다.</li></ul>
 
 <h2 id="hierarchy">AI의 포함 관계</h2>
 <p>생성형 AI는 인공지능 안의 여러 기술 가운데 하나입니다. <a href="#fig-1-1">그림 1-1</a>은 용어 사이의 포함 관계를 보여 줍니다.</p>
-<figure class="fig diagram" id="fig-1-1"><div class="svg-wrap" role="img" aria-label="인공지능 안에 머신 러닝, 그 안에 딥 러닝, 그 안에 생성형 AI가 포함되는 관계"><svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="10" width="880" height="300" rx="10" fill="#FAF6EB" stroke="#8a8272"/><text x="26" y="40" font-size="15" fill="#2B2A26">인공지능 (AI): 사람의 지적 작업을 컴퓨터로 수행하는 기술 전체</text><rect x="40" y="60" width="820" height="240" rx="10" fill="#F5EFE0" stroke="#8a8272"/><text x="56" y="90" font-size="15" fill="#2B2A26">머신 러닝: 데이터에서 규칙을 학습하는 방법</text><rect x="70" y="110" width="760" height="180" rx="10" fill="#F1EBDB" stroke="#8a8272"/><text x="86" y="140" font-size="15" fill="#2B2A26">딥 러닝: 여러 층의 신경망으로 학습하는 방법</text><rect x="100" y="160" width="700" height="120" rx="10" fill="#E9E1CC" stroke="#8a8272"/><text x="116" y="190" font-size="15" fill="#2B2A26">생성형 AI: 새로운 텍스트, 이미지, 음성, 코드를 만드는 모델</text><rect x="140" y="212" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="290.0" y="242.9">대규모 언어 모델 (텍스트)</tspan></text><rect x="460" y="212" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="610.0" y="242.9">이미지, 음성, 영상 생성 모델</tspan></text></svg></div><figcaption><b>그림 1-1. 인공지능의 포함 관계</b><ul class="capnote"><li>생성형 AI는 딥 러닝의 한 갈래</li><li>대규모 언어 모델은 텍스트를 다루는 생성형 AI</li></ul></figcaption></figure>
+<figure class="fig diagram" id="fig-1-1"><div class="svg-wrap" role="img" aria-label="인공지능 안에 머신 러닝, 그 안에 딥 러닝, 그 안에 생성형 AI가 포함되는 관계"><svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="10" width="880" height="300" rx="10" fill="#FAF6EB" stroke="#8a8272"/><text x="26" y="40" font-size="15" fill="#2B2A26">인공지능 (AI): 사람의 지적 작업을 컴퓨터로 수행하는 기술 전체</text><rect x="40" y="60" width="820" height="240" rx="10" fill="#F5EFE0" stroke="#8a8272"/><text x="56" y="90" font-size="15" fill="#2B2A26">머신 러닝: 데이터에서 규칙을 학습하는 방법</text><rect x="70" y="110" width="760" height="180" rx="10" fill="#F1EBDB" stroke="#8a8272"/><text x="86" y="140" font-size="15" fill="#2B2A26">딥 러닝: 여러 층의 신경망으로 학습하는 방법</text><rect x="100" y="160" width="700" height="120" rx="10" fill="#E9E1CC" stroke="#8a8272"/><text x="116" y="190" font-size="15" fill="#2B2A26">생성형 AI: 새로운 텍스트, 이미지, 음성, 코드를 만드는 모델</text><rect x="140" y="212" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="290.0" y="242.9">대규모 언어 모델 (텍스트)</tspan></text><rect x="460" y="212" width="300" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="610.0" y="242.9">이미지, 음성, 영상 생성 모델</tspan></text></svg></div><figcaption><b>그림 1-1. 인공지능의 포함 관계</b><ul class="capnote"><li>생성형 AI는 딥 러닝의 한 갈래</li><li>대규모 언어 모델은 텍스트를 다루는 생성형 AI</li></ul></figcaption></figure>
 <figure class="fig" id="tbl-1-1"><div class="table-wrap"><table>
 <thead><tr><th>용어</th><th>정의</th><th>예제</th></tr></thead>
 <tbody>
@@ -85,6 +78,7 @@
 </tbody></table></div>
 <figcaption><b>표 1-1. AI 관련 용어</b><ul class="capnote"><li>인공지능, 머신 러닝, 딥 러닝, 생성형 AI, 대규모 언어 모델의 정의와 예제</li><li>그림 1-1의 포함 관계를 용어별로 정리</li></ul></figcaption></figure>
 
+
 <h2 id="definition">판별형과 생성형</h2>
 <p>AI 모델은 입력을 받아 출력을 내는 프로그램입니다. 판별형 모델은 입력을 정해진 분류 중 하나로 판단하고, 생성형 모델은 입력에 맞는 새로운 결과물을 만듭니다.</p>
 <figure class="fig" id="tbl-1-2"><div class="table-wrap"><table>
@@ -94,6 +88,7 @@
 <tr><td>생성형</td><td>새 텍스트, 이미지, 음성, 코드</td><td>문서 초안 작성, 이미지 생성, 번역</td></tr>
 </tbody></table></div>
 <figcaption><b>표 1-2. 판별형 모델과 생성형 모델</b><ul class="capnote"><li>판별형과 생성형 모델의 출력 차이와 예제</li></ul></figcaption></figure>
+
 
 <h2 id="modality">모달리티별 분류</h2>
 <p>모달리티는 데이터의 형태입니다. 생성형 AI는 입력과 출력의 모달리티로 나눌 수 있습니다. 하나의 모델이 여러 모달리티를 함께 다루면 멀티모달 모델이라고 합니다.</p>
@@ -110,14 +105,17 @@
 </tbody></table></div>
 <figcaption><b>표 1-3. 모달리티별 생성형 AI</b><ul class="capnote"><li>텍스트, 코드, 이미지, 음성, 영상 등 입력과 출력 형태별 작업 예제</li></ul></figcaption></figure>
 
+
 <h2 id="llm">대규모 언어 모델의 작동 방식</h2>
 <p>대규모 언어 모델(LLM, Large Language Model)은 방대한 텍스트로 학습한 생성형 모델입니다. 문장을 한 번에 만들지 않고 토큰을 하나씩 이어 붙입니다.</p>
 <ol><li>입력 문장을 토큰으로 나눕니다. 토큰은 모델이 처리하는 텍스트 단위이며, 단어 전체이거나 단어의 일부입니다.</li><li>모델이 지금까지의 토큰을 보고 다음에 올 토큰의 확률을 계산합니다.</li><li>확률에 따라 토큰 하나를 고르고 입력 뒤에 붙입니다.</li><li>종료 조건에 이를 때까지 2단계와 3단계를 반복합니다.</li></ol>
-<p>3단계에서 확률이 가장 높은 토큰만 고르지 않고 확률에 따라 고르기 때문에, 같은 질문에도 답이 조금씩 달라집니다. 고르는 방식을 조절하는 설정은 <a href="ch04.html#sampling">4장</a>에서 다룹니다.</p>
-<p>GPT 계열, Claude 계열, Gemini 계열 모델은 트랜스포머(Transformer) 구조를 기반으로 합니다. 트랜스포머는 <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Google 연구진이 2017년 「Attention Is All You Need」에서 발표했습니다. GPT는 Generative Pre-trained Transformer의 약자입니다.</p>
+<p>3단계에서 확률이 가장 높은 토큰만 고르지 않고 확률에 따라 고르기 때문에, 같은 질문에도 답이 조금씩 달라집니다. 고르는 방식을 조절하는 설정은 <a href="../chapters/ch04.html#sampling">4장</a>에서 다룹니다.</p>
+<p>GPT 계열, Claude 계열, Gemini 계열 모델은 트랜스포머(Transformer) 구조를 기반으로 합니다. 트랜스포머는 Google 연구진이 2017년 「Attention Is All You Need」에서 발표했습니다. GPT는 Generative Pre-trained Transformer의 약자입니다.</p>
+
 
 <h2 id="token">토큰과 언어</h2>
 <p>같은 내용이라도 언어와 토크나이저에 따라 토큰 수가 다릅니다. 한국어 문장은 같은 뜻의 영어 문장보다 토큰 수가 많은 경우가 흔합니다. 토큰 수는 사용 요금과 컨텍스트 윈도 사용량을 결정하므로, 긴 한국어 문서를 다룰 때는 제품이 제공하는 토큰 계산 도구로 먼저 확인합니다.</p>
+
 
 <h2 id="training">학습 단계</h2>
 <figure class="fig" id="tbl-1-4"><div class="table-wrap"><table>
@@ -128,11 +126,13 @@
 <tr><td>선호 학습</td><td>사람 또는 AI가 비교 평가한 답변</td><td>선호되는 답변을 내는 모델</td></tr>
 </tbody></table></div>
 <figcaption><b>표 1-4. LLM 학습 단계</b><ul class="capnote"><li>사전 학습, 지시 학습, 선호 학습에 쓰는 데이터와 단계별 결과</li></ul></figcaption></figure>
-<p><span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> OpenAI 연구진은 2022년 InstructGPT 연구에서 사람의 피드백을 이용한 강화 학습(RLHF)으로 지시를 따르는 모델을 만드는 방법을 발표했습니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Anthropic은 2022년 12월 원칙 목록을 기준으로 AI가 스스로 답변을 평가하고 고치게 하는 Constitutional AI 방법을 발표했습니다.</p>
+<p>OpenAI 연구진은 2022년 InstructGPT 연구에서 사람의 피드백을 이용한 강화 학습(RLHF)으로 지시를 따르는 모델을 만드는 방법을 발표했습니다. Anthropic은 2022년 12월 원칙 목록을 기준으로 AI가 스스로 답변을 평가하고 고치게 하는 Constitutional AI 방법을 발표했습니다.</p>
+
 
 <h2 id="context">컨텍스트 윈도</h2>
 <p>컨텍스트 윈도는 모델이 한 번에 처리하는 토큰의 최대 개수입니다. 시스템 프롬프트, 입력 프롬프트, 첨부 문서, 이전 대화, 모델의 답변이 모두 이 한도 안에 들어가야 합니다. 한도를 넘는 내용은 모델이 보지 못합니다.</p>
-<p>한도 안에 들어간 내용도 모두 같은 비중으로 쓰이지는 않습니다. <span class="mark paper" role="img" aria-label="출처: 논문" title="논문">논문</span> Liu 외(2023)는 긴 입력의 중간에 놓인 정보를 모델이 앞과 끝의 정보보다 덜 활용한다고 보고했습니다. 긴 문서를 다룰 때는 중요한 지시를 앞이나 끝에 두고, 필요한 부분만 골라 넣습니다.</p>
+<p>한도 안에 들어간 내용도 모두 같은 비중으로 쓰이지는 않습니다. Liu 외(2023)는 긴 입력의 중간에 놓인 정보를 모델이 앞과 끝의 정보보다 덜 활용한다고 보고했습니다. 긴 문서를 다룰 때는 중요한 지시를 앞이나 끝에 두고, 필요한 부분만 골라 넣습니다.</p>
+
 
 <h2 id="strengths">강점과 약점</h2>
 <figure class="fig" id="tbl-1-5"><div class="table-wrap"><table>
@@ -148,15 +148,15 @@
 </tbody></table></div>
 <figcaption><b>표 1-5. 생성형 AI의 강점과 약점</b><ul class="capnote"><li>초안 작성, 요약, 코드 등 강점 작업과 최신 사실, 계산, 출처 등 약점 작업</li><li>이유 열은 결과를 얼마나 믿을지 정하는 기준</li></ul></figcaption></figure>
 
+
 <h2 id="expectation">기대치 맞추기</h2>
 <ul><li>AI 결과는 초안으로 받습니다. 최종본은 사람이 검토해 확정합니다.</li><li>AI가 자신 있게 답해도 정확하다는 뜻은 아닙니다. 문장의 자연스러움과 사실 여부는 별개입니다.</li><li>모델은 사용자의 상황을 프롬프트에 적힌 만큼만 압니다. 필요한 배경은 프롬프트에 적습니다.</li><li>같은 질문도 다시 실행하면 결과가 달라질 수 있습니다. 중요한 작업은 여러 번 실행해 비교합니다.</li></ul>
 
-<h2 id="limits">한계</h2>
-<ul><li><b>환각</b>: 사실이 아닌 내용을 사실처럼 만들어 내기도 합니다. <a href="ch09.html">9장</a>에서 다룹니다.</li><li><b>지식 기준일</b>: 학습 데이터 수집 시점 이후의 사건을 모릅니다. 웹 검색 기능이 있는 제품은 검색 결과로 이를 보완합니다.</li><li><b>계산 오류</b>: 토큰 단위로 처리하므로 자릿수가 많은 계산에서 틀릴 수 있습니다. 계산은 코드 실행 기능이나 계산기로 확인합니다.</li><li><b>편향</b>: 학습 데이터에 있는 편향을 결과에 반영할 수 있습니다. <a href="ch10.html">10장</a>에서 다룹니다.</li></ul>
 
-<p class="tags">태그: <a href="../tags.html#tag-31">생성형 AI</a><a href="../tags.html#tag-9">LLM</a><a href="../tags.html#tag-60">토큰</a><a href="../tags.html#tag-57">컨텍스트 윈도</a><a href="../tags.html#tag-23">멀티모달</a></p>
+<h2 id="limits">한계</h2>
+<ul><li><b>환각</b>: 사실이 아닌 내용을 사실처럼 만들어 내기도 합니다. <a href="../chapters/ch07.html">7장</a>에서 다룹니다.</li><li><b>지식 기준일</b>: 학습 데이터 수집 시점 이후의 사건을 모릅니다. 웹 검색 기능이 있는 제품은 검색 결과로 이를 보완합니다.</li><li><b>계산 오류</b>: 토큰 단위로 처리하므로 자릿수가 많은 계산에서 틀릴 수 있습니다. 계산은 코드 실행 기능이나 계산기로 확인합니다.</li><li><b>편향</b>: 학습 데이터에 있는 편향을 결과에 반영할 수 있습니다. <a href="../chapters/ch08.html">8장</a>에서 다룹니다.</li></ul>
+
 </article>
-<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../index.html"><small>이전</small>표지와 머리말</a><a class="next" href="../chapters/ch02.html"><small>다음</small>2장 주요 도구와 선택 기준</a></nav>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>

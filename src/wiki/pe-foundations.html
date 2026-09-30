@@ -1,0 +1,18 @@
+<p class="eyebrow-part">프롬프트 엔지니어링</p>
+<h1>기초</h1>
+<p class="lead">프롬프트의 요소, 모델 설정, 작성 원칙을 정리합니다.</p><h2 id="elements">프롬프트의 요소</h2>
+<p>목적, 역할, 맥락, 출력 형식, 제약 조건의 5요소로 구성됩니다. 처리할 입력 자료는 구분 기호로 감싸 따로 붙입니다. 상세 내용은 <a href="../chapters/ch03.html">3장</a>에서 다룹니다.</p>
+<h2 id="settings">LLM 설정</h2>
+<figure class="fig" id="tbl-1"><div class="table-wrap"><table>
+<thead><tr><th>설정</th><th>효과</th><th>사용 예제</th></tr></thead>
+<tbody>
+<tr><td>temperature</td><td>값이 낮으면 확률이 높은 토큰을 고르고, 높으면 다양한 토큰을 고름</td><td>사실 답변은 낮게, 아이디어 발상은 높게</td></tr>
+<tr><td>top_p</td><td>누적 확률 상위 토큰 안에서만 고름</td><td>temperature와 top_p 중 하나만 조정</td></tr>
+<tr><td>max tokens</td><td>생성할 최대 토큰 수</td><td>답변 길이 제한</td></tr>
+<tr><td>stop sequence</td><td>특정 문자열이 나오면 생성 중단</td><td>형식 끝 표시</td></tr>
+</tbody></table></div>
+<figcaption><b>표 1. 주요 생성 설정</b><ul class="capnote"><li>temperature, top_p, max tokens, stop sequence의 효과와 사용 예제</li><li>모델에 따라 지원하지 않는 설정이 있음</li></ul></figcaption></figure><p>모델에 따라 temperature, top_p를 지원하지 않습니다. Anthropic은 Claude Opus 4.7부터 temperature, top_p, top_k를 기본값이 아닌 값으로 보내면 400 오류를 돌려주고, 프롬프트로 동작을 조정하도록 안내합니다. 관련: <a href="../chapters/ch04.html#sampling">4장</a></p>
+<h2 id="tips">작성 원칙</h2>
+<ul><li>작업을 동사로 구체적으로 적습니다.</li><li>독자와 용도를 적습니다.</li><li>출력 형식을 예시로 보여 줍니다.</li><li>금지 사항보다 해야 할 일을 먼저 적습니다.</li><li>입력 데이터는 구분 기호로 감쌉니다.</li></ul>
+<h2 id="system">시스템 프롬프트</h2>
+<p>시스템 프롬프트는 대화 전체에 적용되는 기본 지시입니다. 역할, 규칙, 출력 형식처럼 매번 반복할 내용을 둡니다.</p>
