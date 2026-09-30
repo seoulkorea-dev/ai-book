@@ -117,6 +117,25 @@ table { border-collapse: collapse; width: 100%; font-size: 18px; line-height: 1.
 th, td { border: 1px solid var(--rule); padding: 0.55rem 0.75rem; text-align: left; vertical-align: top; }
 thead th { background: var(--panel); }
 
+/* 표 열 폭 비율 (colgroup) */
+col.w10 { width: 10%; }
+col.w15 { width: 15%; }
+col.w20 { width: 20%; }
+col.w25 { width: 25%; }
+col.w30 { width: 30%; }
+col.w35 { width: 35%; }
+col.w40 { width: 40%; }
+col.w45 { width: 45%; }
+col.w50 { width: 50%; }
+col.w55 { width: 55%; }
+col.w60 { width: 60%; }
+col.w65 { width: 65%; }
+col.w70 { width: 70%; }
+col.w75 { width: 75%; }
+col.w80 { width: 80%; }
+col.w85 { width: 85%; }
+col.w90 { width: 90%; }
+
 figure.fig { margin: 1.6rem 0; }
 figure.fig figcaption { font-size: 17px; color: var(--muted); margin-top: 0.5rem; }
 figure.fig figcaption b { color: var(--ink); }

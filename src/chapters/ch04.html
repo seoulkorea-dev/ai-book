@@ -4,7 +4,7 @@
 <ul class="summary"><li>예시를 주는 Few-shot은 형식과 기준을 전달합니다.</li><li>단계별 추론(Chain of Thought)은 여러 단계의 계산과 논리 문제에 씁니다.</li><li>AI에게 반론과 조건 충족 여부를 점검하게 해 약점을 먼저 찾습니다.</li></ul>
 
 <h2 id="overview">기법 요약</h2>
-<figure class="fig" id="tbl-4-1"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-4-1"><div class="table-wrap"><table><colgroup><col class="w15"><col class="w40"><col class="w30"><col class="w15"></colgroup>
 <thead><tr><th>기법</th><th>방법</th><th>적합한 작업</th><th>원 논문</th></tr></thead>
 <tbody>
 <tr><td>Zero-shot</td><td>예시 없이 지시만 줌</td><td>단순 요약, 번역</td><td>없음</td></tr>
@@ -51,7 +51,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 
 <h2 id="sampling">생성 설정</h2>
 <p>모델은 다음 토큰을 확률에 따라 고릅니다. API와 일부 개발 도구에서는 고르는 방식을 설정으로 조절할 수 있습니다.</p>
-<figure class="fig" id="tbl-4-2"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-4-2"><div class="table-wrap"><table><colgroup><col class="w10"><col class="w60"><col class="w30"></colgroup>
 <thead><tr><th>설정</th><th>의미</th><th>사용 예제</th></tr></thead>
 <tbody>
 <tr><td>temperature</td><td>확률 분포를 평평하게 또는 뾰족하게 만듭니다. 낮으면 확률 높은 토큰을 주로 고르고, 높으면 다양하게 고릅니다.</td><td>정보 추출, 분류는 낮게, 아이디어 발상은 높게</td></tr>
@@ -76,7 +76,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 
 <h2 id="korean">한국어 프롬프트</h2>
 <p>한국어로 쓸 때 결과 품질에 영향을 주는 요소가 있습니다.</p>
-<figure class="fig" id="tbl-4-3"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-4-3"><div class="table-wrap"><table><colgroup><col class="w15"><col class="w40"><col class="w45"></colgroup>
 <thead><tr><th>방법</th><th>이유</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>전문 용어 원어 병기</td><td>번역어가 여러 개인 용어의 뜻을 고정합니다.</td><td>재현율(recall)과 정밀도(precision)를 비교하십시오.</td></tr>
@@ -91,7 +91,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 
 <h2 id="combine">기법 조합</h2>
 <p>기법은 하나씩 쓰기보다 조합해서 씁니다. 표 4-4는 작업별 조합 예입니다.</p>
-<figure class="fig" id="tbl-4-4"><div class="table-wrap"><table>
+<figure class="fig" id="tbl-4-4"><div class="table-wrap"><table><colgroup><col class="w20"><col class="w35"><col class="w45"></colgroup>
 <thead><tr><th>작업</th><th>조합</th><th>방법</th></tr></thead>
 <tbody>
 <tr><td>고객 문의 분류</td><td>5요소 + Few-shot</td><td>분류 기준을 제약에 적고, 분류별 예시를 둡니다.</td></tr>
