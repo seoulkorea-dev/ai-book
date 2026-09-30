@@ -29,9 +29,9 @@
 <li><a href="../chapters/ch04.html" aria-current="page">4장 고급 프롬프트 기법</a></li>
 <li><a href="../chapters/ch05.html">5장 결과를 개선하는 절차</a></li>
 <li class="group">3부 분야별 활용</li>
-<li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
-<li><a href="../chapters/ch07.html">7장 업무</a></li>
-<li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
+<li><a href="../chapters/ch06.html">6장 학습과 연구에서 AI 활용</a></li>
+<li><a href="../chapters/ch07.html">7장 업무에서 AI와 사람의 역할 분담</a></li>
+<li><a href="../chapters/ch08.html">8장 창작에서 AI와 사람의 몫</a></li>
 <li class="group">4부 검증과 책임</li>
 <li><a href="../chapters/ch09.html">9장 환각의 확인과 대응</a></li>
 <li><a href="../chapters/ch10.html">10장 윤리적 사용</a></li>
@@ -133,7 +133,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 <figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="질문에서 추론, 행동, 관찰을 반복한 뒤 답변으로 가는 흐름"><svg viewBox="0 0 900 170" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="90" width="130" height="56" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="75.0" y="122.9">질문</tspan></text><line x1="140" y1="118" x2="190" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="190" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="265.0" y="113.5">추론</tspan><tspan x="265.0" y="132.3">필요한 정보 판단</tspan></text><line x1="340" y1="118" x2="390" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="390" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="465.0" y="113.5">행동</tspan><tspan x="465.0" y="132.3">도구 호출(검색 등)</tspan></text><line x1="540" y1="118" x2="590" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="590" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="665.0" y="113.5">관찰</tspan><tspan x="665.0" y="132.3">도구 결과 확인</tspan></text><path d="M 665 90 Q 665 30 440 30 Q 265 30 265 86" fill="none" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><text x="465" y="24" font-size="12" fill="#625D52" text-anchor="middle">정보가 부족하면 다시 추론</text><line x1="740" y1="118" x2="790" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah)"/><rect x="790" y="90" width="100" height="56" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="840.0" y="122.9">답변</tspan></text></svg></div><figcaption><b>그림 4-1. ReAct의 반복 구조</b><ul class="capnote"><li>추론, 행동, 관찰을 반복하다가 정보가 충분하면 답변하는 구조</li><li>에이전트의 기본 동작</li></ul></figcaption></figure>
 
 <h2 id="chaining">프롬프트 체이닝</h2>
-<ol><li>긴 보고서를 장별로 나눠 요약합니다.</li><li>장별 요약을 모아 핵심 주장을 뽑습니다.</li><li>핵심 주장으로 발표 자료 목차를 만듭니다.</li></ol>
+<ol><li>긴 보고서를 장별로 나눠 요약합니다.</li><li>장별 요약을 모아 핵심 주장을 추립니다.</li><li>핵심 주장으로 발표 자료 목차를 만듭니다.</li></ol>
 <p>단계를 나누면 단계별 결과를 확인하고, 틀린 단계만 다시 실행할 수 있습니다.</p>
 
 <h2 id="korean">한국어 프롬프트</h2>
@@ -162,7 +162,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 </tbody></table></div>
 <figcaption><b>표 4-4. 작업별 기법 조합</b><ul class="capnote"><li>고객 문의 분류, 계산 보고, 긴 문서 분석, 최신 자료 조사에 맞는 기법 조합</li></ul></figcaption></figure>
 
-<p class="tags">태그: <a href="../tags.html#tag-6">Few-shot</a><a href="../tags.html#tag-3">Chain of Thought</a><a href="../tags.html#tag-13">ReAct</a><a href="../tags.html#tag-65">프롬프트 체이닝</a><a href="../tags.html#tag-30">생성 설정</a><a href="../tags.html#tag-70">한국어 프롬프트</a></p>
+<p class="tags">태그: <a href="../tags.html#tag-6">Few-shot</a><a href="../tags.html#tag-3">Chain of Thought</a><a href="../tags.html#tag-13">ReAct</a><a href="../tags.html#tag-66">프롬프트 체이닝</a><a href="../tags.html#tag-30">생성 설정</a><a href="../tags.html#tag-70">한국어 프롬프트</a></p>
 </article>
 <nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch03.html"><small>이전</small>3장 프롬프트의 5요소</a><a class="next" href="../chapters/ch05.html"><small>다음</small>5장 결과를 개선하는 절차</a></nav>
 <footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험 관리. 최종 업데이트 2026년 9월 30일.</footer>
