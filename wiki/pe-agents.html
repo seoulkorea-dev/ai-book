@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>위키: 프롬프트 엔지니어링 에이전트 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="위키: 프롬프트 엔지니어링 에이전트">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="topbar">
+<a class="brand" href="../index.html">생성형 AI 실전 가이드</a>
+<span class="spacer"></span>
+<a class="navlink" href="#sidenav">전체 목차</a>
+<a href="https://github.com/seoulkorea-dev/ai-book">저장소</a>
+</header>
+<div class="layout">
+<nav class="sidenav" id="sidenav" aria-label="전체 목차">
+<h2>전체 목차</h2>
+<ul>
+<li class="group"><a href="../index.html">홈</a></li>
+<li class="group">서론</li>
+<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
+<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
+<li class="group">1부 이해</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
+<li class="group">2부 원리</li>
+<li><a href="../chapters/ch03.html">3장 프롬프트 구조</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
+<li class="group">3부 활용</li>
+<li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
+<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
+<li class="group">4부 위험관리</li>
+<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
+<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li class="group">5부 미래</li>
+<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
+<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">부록</li>
+<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
+<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
+<li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li class="group">위키</li>
+<li><a href="../wiki/index.html">위키 홈</a></li>
+<li><a href="../wiki/concepts.html">개념</a></li>
+<li><a href="../wiki/tools.html">도구</a></li>
+<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/security.html">보안</a></li>
+<li><a href="../wiki/governance.html">거버넌스</a></li>
+<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
+<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
+<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
+<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
+<li><a href="../wiki/pe-agents.html" aria-current="page">프롬프트 엔지니어링: 에이전트</a></li>
+<li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
+<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
+<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li class="group"><a href="../tags.html">태그 인덱스</a></li>
+</ul></nav>
+<main id="main">
+<article>
+<p class="eyebrow-part">프롬프트 엔지니어링</p>
+<h1>에이전트</h1>
+<p class="lead">AI 에이전트의 구성과 관련 규격, 프레임워크입니다.</p><h2 id="intro">AI 에이전트</h2>
+<p>에이전트는 목표를 받아 도구 호출, 결과 확인, 다음 행동 결정을 반복하는 AI 시스템입니다.</p>
+<h2 id="workflow">워크플로와 에이전트</h2>
+
+<p><span class="mark anthropic" role="img" aria-label="Anthropic 발표" title="Anthropic 발표">A</span> Anthropic은 「Building effective agents」(2024년 12월)에서 두 방식을 구분했습니다.</p>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>구분</th><th>실행 순서</th><th>적합한 작업</th></tr></thead>
+<tbody>
+<tr><td>워크플로</td><td>코드로 미리 정한 순서</td><td>단계가 정해진 작업</td></tr>
+<tr><td>에이전트</td><td>모델이 스스로 결정</td><td>단계를 미리 정하기 어려운 작업</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-8. 워크플로와 에이전트</b><br>실행 순서 결정 주체와 적합한 작업</figcaption></figure>
+<p>같은 글에서 Anthropic은 가장 단순한 방식부터 시작하고, 필요할 때만 복잡도를 높이도록 권장했습니다.</p>
+<h2 id="components">에이전트 구성 요소</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>구성 요소</th><th>역할</th></tr></thead>
+<tbody>
+<tr><td>모델</td><td>다음 행동 결정</td></tr>
+<tr><td>도구</td><td>검색, 파일 조작, API 호출</td></tr>
+<tr><td>기억</td><td>대화 기록, 작업 메모, 외부 저장소</td></tr>
+<tr><td>루프</td><td>행동, 관찰, 판단 반복</td></tr>
+<tr><td>통제</td><td>권한 제한, 사람 승인, 종료 조건</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-9. 에이전트 구성 요소</b><br>구성 요소별 역할</figcaption></figure>
+<h2 id="function-calling">함수 호출</h2>
+<p>함수 호출은 모델이 미리 정의된 함수의 이름과 인자를 구조화된 형식으로 출력하고, 애플리케이션이 그 함수를 실행해 결과를 돌려주는 방식입니다. 모델은 함수를 직접 실행하지 않습니다.</p>
+<h2 id="mcp">MCP (Model Context Protocol)</h2>
+<p><span class="mark anthropic" role="img" aria-label="Anthropic 발표" title="Anthropic 발표">A</span> Anthropic이 2024년 11월 공개한 연동 규격입니다. MCP 서버는 도구와 데이터를 제공하고, MCP 클라이언트(AI 애플리케이션)는 이를 호출합니다. 규격이 같으면 한 번 만든 서버를 여러 AI 애플리케이션에서 씁니다.</p>
+<h2 id="frameworks">LangChain과 LangGraph</h2>
+<p><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> LangChain은 LLM 애플리케이션을 만드는 오픈 소스 프레임워크입니다. 같은 개발사의 LangGraph는 에이전트의 상태와 실행 흐름을 그래프로 정의합니다.</p>
+<h2 id="context-engineering">컨텍스트 엔지니어링</h2>
+<p>컨텍스트 엔지니어링은 모델이 각 단계에서 보는 정보(지시, 도구 설명, 검색 결과, 대화 기록)를 선택하고 배치하는 작업입니다. 컨텍스트 윈도우 한도 안에서 필요한 정보만 넣습니다.</p>
+<p class="tags">태그: <a href="../tags.html#tag-26">에이전트</a><a href="../tags.html#tag-9">MCP</a><a href="../tags.html#tag-56">함수 호출</a><a href="../tags.html#tag-42">컨텍스트 엔지니어링</a></p>
+</article>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../wiki/pe-rag.html"><small>이전</small>프롬프트 엔지니어링: RAG</a><a class="next" href="../wiki/pe-applications.html"><small>다음</small>프롬프트 엔지니어링: 응용</a></nav>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+</main>
+<aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
+<li><a href="#intro">AI 에이전트</a></li>
+<li><a href="#workflow">워크플로와 에이전트</a></li>
+<li><a href="#components">에이전트 구성 요소</a></li>
+<li><a href="#function-calling">함수 호출</a></li>
+<li><a href="#mcp">MCP (Model Context Protocol)</a></li>
+<li><a href="#frameworks">LangChain과 LangGraph</a></li>
+<li><a href="#context-engineering">컨텍스트 엔지니어링</a></li>
+</ol></aside>
+</div>
+</body>
+</html>

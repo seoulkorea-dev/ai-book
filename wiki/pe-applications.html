@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>위키: 프롬프트 엔지니어링 응용 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="위키: 프롬프트 엔지니어링 응용">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="topbar">
+<a class="brand" href="../index.html">생성형 AI 실전 가이드</a>
+<span class="spacer"></span>
+<a class="navlink" href="#sidenav">전체 목차</a>
+<a href="https://github.com/seoulkorea-dev/ai-book">저장소</a>
+</header>
+<div class="layout">
+<nav class="sidenav" id="sidenav" aria-label="전체 목차">
+<h2>전체 목차</h2>
+<ul>
+<li class="group"><a href="../index.html">홈</a></li>
+<li class="group">서론</li>
+<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
+<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
+<li class="group">1부 이해</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
+<li class="group">2부 원리</li>
+<li><a href="../chapters/ch03.html">3장 프롬프트 구조</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
+<li class="group">3부 활용</li>
+<li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
+<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
+<li class="group">4부 위험관리</li>
+<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
+<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li class="group">5부 미래</li>
+<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
+<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">부록</li>
+<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
+<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
+<li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li class="group">위키</li>
+<li><a href="../wiki/index.html">위키 홈</a></li>
+<li><a href="../wiki/concepts.html">개념</a></li>
+<li><a href="../wiki/tools.html">도구</a></li>
+<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/security.html">보안</a></li>
+<li><a href="../wiki/governance.html">거버넌스</a></li>
+<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
+<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
+<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
+<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
+<li><a href="../wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
+<li><a href="../wiki/pe-applications.html" aria-current="page">프롬프트 엔지니어링: 응용</a></li>
+<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
+<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li class="group"><a href="../tags.html">태그 인덱스</a></li>
+</ul></nav>
+<main id="main">
+<article>
+<p class="eyebrow-part">프롬프트 엔지니어링</p>
+<h1>응용</h1>
+<p class="lead">작업 유형별 프롬프트 작성 요점입니다.</p><figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>작업 유형</th><th>지시 요점</th><th>검증 방법</th></tr></thead>
+<tbody>
+<tr><td>코드 생성</td><td>언어, 버전, 입력과 출력, 예외 처리 명시</td><td>실행과 테스트</td></tr>
+<tr><td>바이브 코딩</td><td>기능을 자연어로 설명하고 결과를 보며 수정</td><td>생성된 코드 검토와 테스트</td></tr>
+<tr><td>텍스트 요약</td><td>독자, 분량, 포함 항목 지정</td><td>원문 대조</td></tr>
+<tr><td>분류</td><td>분류 목록과 판단 기준, 예시 제공</td><td>정답이 있는 표본으로 정확도 측정</td></tr>
+<tr><td>질의응답</td><td>근거 문서 제공, 근거 없으면 모름 허용</td><td>근거 문단 확인</td></tr>
+<tr><td>데이터 생성</td><td>형식, 개수, 값의 범위 지정</td><td>형식 검사</td></tr>
+<tr><td>창작</td><td>대상, 어조, 제약 지정</td><td>기존 작품과의 유사성 점검</td></tr>
+<tr><td>이미지 생성</td><td>대상, 구도, 화풍, 색상 지정</td><td>권리 침해 요소 점검</td></tr>
+<tr><td>정보 추출</td><td>추출 항목과 출력 형식(JSON 등) 지정</td><td>원문 대조</td></tr>
+<tr><td>수학</td><td>단계별 풀이 요구, 계산은 코드 실행</td><td>다른 방법으로 재계산</td></tr>
+</tbody></table></div>
+<figcaption><b>표 W-10. 작업 유형별 작성 요점</b><br>유형별 지시 요점과 검증 방법</figcaption></figure>
+<h2 id="caching">컨텍스트 캐싱</h2>
+<p>컨텍스트 캐싱은 여러 요청에 반복되는 긴 프롬프트 앞부분을 저장해 두고 재사용하는 API 기능입니다. 반복 부분을 프롬프트 앞에 두면 처리 시간과 비용이 줄어듭니다. 제공 여부와 요금은 API 문서에서 확인합니다.</p>
+<h2 id="finetuning">미세 조정</h2>
+<p>미세 조정은 모델을 특정 데이터로 추가 학습시키는 작업입니다. 프롬프트와 RAG로 해결되지 않는 형식, 어조 요구가 있을 때 검토합니다.</p>
+
+<p class="tags">태그: <a href="../tags.html#tag-33">응용</a><a href="../tags.html#tag-44">코드 생성</a><a href="../tags.html#tag-30">요약</a><a href="../tags.html#tag-36">정보 추출</a></p>
+</article>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../wiki/pe-agents.html"><small>이전</small>프롬프트 엔지니어링: 에이전트</a><a class="next" href="../wiki/pe-evaluation.html"><small>다음</small>프롬프트 엔지니어링: 평가와 안전</a></nav>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+</main>
+<aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
+<li><a href="#caching">컨텍스트 캐싱</a></li>
+<li><a href="#finetuning">미세 조정</a></li>
+</ol></aside>
+</div>
+</body>
+</html>

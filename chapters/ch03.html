@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>3장 프롬프트 구조 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="3장 프롬프트 구조">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="topbar">
+<a class="brand" href="../index.html">생성형 AI 실전 가이드</a>
+<span class="spacer"></span>
+<a class="navlink" href="#sidenav">전체 목차</a>
+<a href="https://github.com/seoulkorea-dev/ai-book">저장소</a>
+</header>
+<div class="layout">
+<nav class="sidenav" id="sidenav" aria-label="전체 목차">
+<h2>전체 목차</h2>
+<ul>
+<li class="group"><a href="../index.html">홈</a></li>
+<li class="group">서론</li>
+<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
+<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
+<li class="group">1부 이해</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
+<li class="group">2부 원리</li>
+<li><a href="../chapters/ch03.html" aria-current="page">3장 프롬프트 구조</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
+<li class="group">3부 활용</li>
+<li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
+<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
+<li class="group">4부 위험관리</li>
+<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
+<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li class="group">5부 미래</li>
+<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
+<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">부록</li>
+<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
+<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
+<li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li class="group">위키</li>
+<li><a href="../wiki/index.html">위키 홈</a></li>
+<li><a href="../wiki/concepts.html">개념</a></li>
+<li><a href="../wiki/tools.html">도구</a></li>
+<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/security.html">보안</a></li>
+<li><a href="../wiki/governance.html">거버넌스</a></li>
+<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
+<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
+<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
+<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
+<li><a href="../wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
+<li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
+<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
+<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li class="group"><a href="../tags.html">태그 인덱스</a></li>
+</ul></nav>
+<main id="main">
+<article>
+
+<p class="eyebrow-part">2부 원리</p>
+<h1>3장 프롬프트 구조</h1>
+<p class="lead">프롬프트는 모델에게 주는 입력 전체이며, 지시, 맥락, 입력 데이터, 출력 형식으로 구성합니다.</p>
+<ul class="summary"><li>네 요소를 모두 적으면 결과의 편차가 줄어듭니다.</li><li>구분 기호로 지시와 입력 데이터를 나눕니다.</li><li>출력 형식을 예시로 보여 줍니다.</li></ul>
+
+<h2 id="elements">프롬프트의 네 요소</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>요소</th><th>역할</th><th>작성 예</th></tr></thead>
+<tbody>
+<tr><td>지시</td><td>수행할 작업</td><td>다음 회의록을 요약하십시오.</td></tr>
+<tr><td>맥락</td><td>작업 배경, 독자, 제약</td><td>읽는 사람은 회의에 참석하지 않은 팀장입니다.</td></tr>
+<tr><td>입력 데이터</td><td>처리 대상</td><td>회의록 원문</td></tr>
+<tr><td>출력 형식</td><td>결과의 모양</td><td>결정 사항, 담당자, 기한을 표로 작성하십시오.</td></tr>
+</tbody></table></div>
+<figcaption><b>표 3-1. 프롬프트 구성 요소</b><br>요소별 역할과 작성 예</figcaption></figure>
+
+<h2 id="example">개선 전후 비교</h2>
+<h3>개선 전</h3>
+<pre><code>회의록 요약해 줘.</code></pre>
+<h3>개선 후</h3>
+<pre><code>다음 회의록을 요약하십시오.
+읽는 사람은 회의에 참석하지 않은 팀장입니다.
+결정 사항, 담당자, 기한을 표로 작성하고, 표 아래에 미결 사항을 불릿으로 적으십시오.
+회의록에 없는 내용은 쓰지 마십시오.
+
+&lt;회의록&gt;
+(회의록 원문)
+&lt;/회의록&gt;</code></pre>
+<p>개선 후 프롬프트는 독자, 출력 형식, 금지 사항을 적었고, 입력 데이터를 태그로 구분했습니다.</p>
+
+<h2 id="delimiters">구분 기호</h2>
+<p>지시와 입력 데이터가 섞이면 모델이 입력 데이터 속 문장을 지시로 처리합니다. 입력 데이터는 따옴표 세 개, 제목 줄, XML 태그 같은 구분 기호로 감쌉니다. <span class="mark anthropic" role="img" aria-label="Anthropic 발표" title="Anthropic 발표">A</span> Anthropic은 프롬프트 작성 안내에서 XML 태그로 프롬프트의 부분을 나누도록 권장합니다.</p>
+
+<h2 id="role">역할 부여</h2>
+<p>역할 부여는 모델에게 특정 직무나 관점을 지정하는 방법입니다. 예를 들어 "당신은 신입 사원 교육 담당자입니다"라고 적으면 설명 수준과 용어 선택이 그 역할에 맞춰집니다. 역할만 적고 작업과 형식을 빠뜨리면 효과가 작으므로, 역할은 네 요소와 함께 씁니다.</p>
+
+<h2 id="format">출력 형식 지정</h2>
+<ul><li>표, 불릿, JSON 등 형식을 이름으로 지정합니다.</li><li>분량은 문장 수나 글자 수로 지정합니다.</li><li>형식이 복잡하면 빈 틀을 예시로 줍니다.</li><li>금지 사항은 긍정 지시와 함께 적습니다. 예: "추측하지 마십시오. 원문에 없는 내용은 '확인 불가'로 적으십시오."</li></ul>
+
+<p class="tags">태그: <a href="../tags.html#tag-50">프롬프트</a><a href="../tags.html#tag-28">역할 부여</a><a href="../tags.html#tag-40">출력 형식</a></p>
+</article>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch02.html"><small>이전</small>2장 주요 도구와 생태계</a><a class="next" href="../chapters/ch04.html"><small>다음</small>4장 고급 프롬프팅 기법</a></nav>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+</main>
+<aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
+<li><a href="#elements">프롬프트의 네 요소</a></li>
+<li><a href="#example">개선 전후 비교</a></li>
+<li><a href="#delimiters">구분 기호</a></li>
+<li><a href="#role">역할 부여</a></li>
+<li><a href="#format">출력 형식 지정</a></li>
+</ol></aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>2장 주요 도구와 생태계 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="2장 주요 도구와 생태계">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="topbar">
+<a class="brand" href="../index.html">생성형 AI 실전 가이드</a>
+<span class="spacer"></span>
+<a class="navlink" href="#sidenav">전체 목차</a>
+<a href="https://github.com/seoulkorea-dev/ai-book">저장소</a>
+</header>
+<div class="layout">
+<nav class="sidenav" id="sidenav" aria-label="전체 목차">
+<h2>전체 목차</h2>
+<ul>
+<li class="group"><a href="../index.html">홈</a></li>
+<li class="group">서론</li>
+<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
+<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
+<li class="group">1부 이해</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
+<li><a href="../chapters/ch02.html" aria-current="page">2장 주요 도구와 생태계</a></li>
+<li class="group">2부 원리</li>
+<li><a href="../chapters/ch03.html">3장 프롬프트 구조</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
+<li class="group">3부 활용</li>
+<li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
+<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
+<li class="group">4부 위험관리</li>
+<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
+<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li class="group">5부 미래</li>
+<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
+<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">부록</li>
+<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
+<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
+<li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li class="group">위키</li>
+<li><a href="../wiki/index.html">위키 홈</a></li>
+<li><a href="../wiki/concepts.html">개념</a></li>
+<li><a href="../wiki/tools.html">도구</a></li>
+<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/security.html">보안</a></li>
+<li><a href="../wiki/governance.html">거버넌스</a></li>
+<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
+<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
+<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
+<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
+<li><a href="../wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
+<li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
+<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
+<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li class="group"><a href="../tags.html">태그 인덱스</a></li>
+</ul></nav>
+<main id="main">
+<article>
+
+<p class="eyebrow-part">1부 이해</p>
+<h1>2장 주요 도구와 생태계</h1>
+<p class="lead">생성형 AI 도구는 모델, 제품, API, 연동 계층으로 구성합니다.</p>
+<ul class="summary"><li>도구 비교는 회사가 아니라 제품 단위로 합니다.</li><li>같은 제품도 요금제와 계정 유형에 따라 기능과 데이터 처리 정책이 다릅니다.</li><li>도구 선택 기준은 작업 목적, 데이터 정책, 연동 범위입니다.</li></ul>
+
+<h2 id="layers">생태계 계층</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>계층</th><th>역할</th><th>예시</th></tr></thead>
+<tbody>
+<tr><td>모델</td><td>텍스트, 이미지를 생성하는 본체</td><td>GPT 계열, Claude 계열, Gemini 계열</td></tr>
+<tr><td>제품</td><td>사람이 쓰는 앱과 웹 화면</td><td>ChatGPT, Claude, Gemini 앱</td></tr>
+<tr><td>API</td><td>프로그램이 모델을 호출하는 통로</td><td>OpenAI API, Claude API, Gemini API</td></tr>
+<tr><td>연동</td><td>모델과 외부 데이터, 도구를 잇는 규격</td><td>MCP(Model Context Protocol)</td></tr>
+<tr><td>에이전트</td><td>도구를 스스로 호출해 여러 단계 작업을 수행하는 시스템</td><td>코딩 에이전트, 브라우저 에이전트</td></tr>
+</tbody></table></div>
+<figcaption><b>표 2-1. 생성형 AI 생태계 계층</b><br>계층별 역할과 예시</figcaption></figure>
+
+<h2 id="products">대화형 제품</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>제품</th><th>발표 주체</th><th>사용 형태</th><th>공식 안내</th></tr></thead>
+<tbody>
+<tr><td>ChatGPT</td><td><span class="mark openai" role="img" aria-label="OpenAI 발표" title="OpenAI 발표">O</span> OpenAI</td><td>웹, 데스크톱 앱, 모바일 앱, API(별도)</td><td>help.openai.com</td></tr>
+<tr><td>Claude</td><td><span class="mark anthropic" role="img" aria-label="Anthropic 발표" title="Anthropic 발표">A</span> Anthropic</td><td>웹, 데스크톱 앱, 모바일 앱, API(별도)</td><td>support.claude.com</td></tr>
+<tr><td>Gemini</td><td><span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Google</td><td>웹, 모바일 앱, Google Workspace 연동, API(별도)</td><td>support.google.com/gemini</td></tr>
+</tbody></table></div>
+<figcaption><b>표 2-2. 대화형 제품 비교</b><br>제품별 발표 주체, 사용 형태, 공식 안내 위치</figcaption></figure>
+<p>제품 기능과 모델 버전은 자주 바뀝니다. 이 책은 기능 목록 대신 확인 방법을 안내합니다. 제품별 현재 기능은 표 2-2의 공식 안내에서 확인합니다.</p>
+
+<h2 id="mcp">연동 규격 MCP</h2>
+<p>MCP(Model Context Protocol)는 AI 애플리케이션이 외부 데이터와 도구에 연결하는 방식을 정한 공개 규격입니다. <span class="mark anthropic" role="img" aria-label="Anthropic 발표" title="Anthropic 발표">A</span> Anthropic은 2024년 11월 MCP를 공개했습니다. MCP 서버를 연결하면 AI 제품이 문서 저장소, 일정, 업무 도구의 데이터를 읽거나 작업을 수행합니다.</p>
+
+<h2 id="choose">도구 선택 기준</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>확인 내용</th></tr></thead>
+<tbody>
+<tr><td>작업 목적</td><td>텍스트, 이미지, 코드, 데이터 분석 중 무엇이 필요한지</td></tr>
+<tr><td>데이터 정책</td><td>입력 데이터를 모델 학습에 쓰는지, 끄는 설정이 있는지</td></tr>
+<tr><td>계정 유형</td><td>개인 계정인지 조직 계정인지, 관리자 통제 기능이 있는지</td></tr>
+<tr><td>파일 처리</td><td>첨부 가능한 파일 형식과 크기</td></tr>
+<tr><td>연동</td><td>사용하는 업무 도구와 연결되는지</td></tr>
+<tr><td>비용</td><td>요금제별 사용 한도와 API 요금</td></tr>
+</tbody></table></div>
+<figcaption><b>표 2-3. 도구 선택 점검 항목</b><br>항목별 확인 내용</figcaption></figure>
+
+<p class="tags">태그: <a href="../tags.html#tag-16">도구</a><a href="../tags.html#tag-24">생태계</a><a href="../tags.html#tag-9">MCP</a></p>
+</article>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch01.html"><small>이전</small>1장 생성형 AI 개념</a><a class="next" href="../chapters/ch03.html"><small>다음</small>3장 프롬프트 구조</a></nav>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+</main>
+<aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
+<li><a href="#layers">생태계 계층</a></li>
+<li><a href="#products">대화형 제품</a></li>
+<li><a href="#mcp">연동 규격 MCP</a></li>
+<li><a href="#choose">도구 선택 기준</a></li>
+</ol></aside>
+</div>
+</body>
+</html>

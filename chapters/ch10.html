@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>10장 윤리적 사용과 책임 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="10장 윤리적 사용과 책임">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="topbar">
+<a class="brand" href="../index.html">생성형 AI 실전 가이드</a>
+<span class="spacer"></span>
+<a class="navlink" href="#sidenav">전체 목차</a>
+<a href="https://github.com/seoulkorea-dev/ai-book">저장소</a>
+</header>
+<div class="layout">
+<nav class="sidenav" id="sidenav" aria-label="전체 목차">
+<h2>전체 목차</h2>
+<ul>
+<li class="group"><a href="../index.html">홈</a></li>
+<li class="group">서론</li>
+<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
+<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
+<li class="group">1부 이해</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
+<li class="group">2부 원리</li>
+<li><a href="../chapters/ch03.html">3장 프롬프트 구조</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
+<li class="group">3부 활용</li>
+<li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
+<li><a href="../chapters/ch07.html">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
+<li class="group">4부 위험관리</li>
+<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
+<li><a href="../chapters/ch10.html" aria-current="page">10장 윤리적 사용과 책임</a></li>
+<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li class="group">5부 미래</li>
+<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
+<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">부록</li>
+<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
+<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
+<li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li class="group">위키</li>
+<li><a href="../wiki/index.html">위키 홈</a></li>
+<li><a href="../wiki/concepts.html">개념</a></li>
+<li><a href="../wiki/tools.html">도구</a></li>
+<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/security.html">보안</a></li>
+<li><a href="../wiki/governance.html">거버넌스</a></li>
+<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
+<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
+<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
+<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
+<li><a href="../wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
+<li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
+<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
+<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li class="group"><a href="../tags.html">태그 인덱스</a></li>
+</ul></nav>
+<main id="main">
+<article>
+
+<p class="eyebrow-part">4부 위험관리</p>
+<h1>10장 윤리적 사용과 책임</h1>
+<p class="lead">윤리적 사용은 편향, 개인정보, 권리, 투명성을 점검하고 결과물에 책임을 지는 것입니다.</p>
+<ul class="summary"><li>AI 결과물의 책임은 그것을 쓰고 제출한 사람에게 있습니다.</li><li>사람에 대한 판단(채용, 평가, 신용)에 AI 결과를 그대로 쓰지 않습니다.</li><li>AI를 사용한 사실을 요구받는 곳에서는 밝힙니다.</li></ul>
+
+<h2 id="principles">점검 영역</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>영역</th><th>위험</th><th>점검 방법</th></tr></thead>
+<tbody>
+<tr><td>편향</td><td>성별, 나이, 지역 등에 따른 불공정한 결과</td><td>집단만 바꾼 같은 질문으로 결과 비교</td></tr>
+<tr><td>개인정보</td><td>입력한 개인정보의 유출, 목적 외 사용</td><td>가명 처리, 조직 계정 사용</td></tr>
+<tr><td>권리</td><td>저작권, 초상권, 상표권 침해</td><td>원작과 대조, 이용 약관 확인</td></tr>
+<tr><td>투명성</td><td>AI 사용 사실을 숨긴 제출</td><td>기관 규정에 따라 사용 사실 표기</td></tr>
+<tr><td>책임</td><td>검증 없이 결과 사용</td><td>제출 전 사람 검토</td></tr>
+</tbody></table></div>
+<figcaption><b>표 10-1. 윤리 점검 영역</b><br>영역별 위험과 점검 방법</figcaption></figure>
+
+<h2 id="bias">편향 점검</h2>
+<p>편향은 학습 데이터에 있는 불균형이 결과에 반영되는 현상입니다. 점검할 때는 대상 집단만 바꾸고 나머지 조건은 같은 프롬프트를 여러 번 실행해 결과를 비교합니다.</p>
+<pre><code>[A] 32세 남성 지원자의 자기소개서를 평가하십시오. (자기소개서 본문)
+[B] 32세 여성 지원자의 자기소개서를 평가하십시오. (같은 자기소개서 본문)</code></pre>
+<p>두 결과의 점수나 평가 문장이 다르면 그 도구를 해당 판단에 쓰지 않습니다.</p>
+
+<h2 id="disclosure">사용 사실 표기</h2>
+<pre><code>표기 예
+이 보고서의 초안 작성과 문장 교정에 생성형 AI(제품명)를 사용했습니다.
+사실, 수치, 인용은 작성자가 원문으로 확인했습니다.</code></pre>
+
+<h2 id="academic">학술 윤리</h2>
+<p>연구와 과제의 AI 사용 규정은 기관마다 다릅니다. <span class="mark third" role="img" aria-label="제3자" title="제3자">3</span> Nature는 대규모 언어 모델을 저자로 인정하지 않는다는 원칙을 2023년 1월 발표했습니다. 사례는 <a href="../wiki/cases.html">위키 사례연구</a>에서 다룹니다.</p>
+
+<p class="tags">태그: <a href="../tags.html#tag-32">윤리</a><a href="../tags.html#tag-47">편향</a><a href="../tags.html#tag-12">개인정보</a><a href="../tags.html#tag-53">학술 윤리</a></p>
+</article>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch09.html"><small>이전</small>9장 환각 이해와 대응</a><a class="next" href="../chapters/ch11.html"><small>다음</small>11장 조직의 책임 있는 AI 사용</a></nav>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+</main>
+<aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
+<li><a href="#principles">점검 영역</a></li>
+<li><a href="#bias">편향 점검</a></li>
+<li><a href="#disclosure">사용 사실 표기</a></li>
+<li><a href="#academic">학술 윤리</a></li>
+</ol></aside>
+</div>
+</body>
+</html>

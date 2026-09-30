@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>7장 업무와 비즈니스 | 생성형 AI 실전 가이드</title>
+<meta name="description" content="7장 업무와 비즈니스">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="topbar">
+<a class="brand" href="../index.html">생성형 AI 실전 가이드</a>
+<span class="spacer"></span>
+<a class="navlink" href="#sidenav">전체 목차</a>
+<a href="https://github.com/seoulkorea-dev/ai-book">저장소</a>
+</header>
+<div class="layout">
+<nav class="sidenav" id="sidenav" aria-label="전체 목차">
+<h2>전체 목차</h2>
+<ul>
+<li class="group"><a href="../index.html">홈</a></li>
+<li class="group">서론</li>
+<li><a href="../chapters/ch00-1.html">0.1 책의 구성과 읽는 순서</a></li>
+<li><a href="../chapters/ch00-2.html">0.2 지금 배워야 하는 이유</a></li>
+<li class="group">1부 이해</li>
+<li><a href="../chapters/ch01.html">1장 생성형 AI 개념</a></li>
+<li><a href="../chapters/ch02.html">2장 주요 도구와 생태계</a></li>
+<li class="group">2부 원리</li>
+<li><a href="../chapters/ch03.html">3장 프롬프트 구조</a></li>
+<li><a href="../chapters/ch04.html">4장 고급 프롬프팅 기법</a></li>
+<li><a href="../chapters/ch05.html">5장 반복 개선 방법</a></li>
+<li class="group">3부 활용</li>
+<li><a href="../chapters/ch06.html">6장 학습과 연구</a></li>
+<li><a href="../chapters/ch07.html" aria-current="page">7장 업무와 비즈니스</a></li>
+<li><a href="../chapters/ch08.html">8장 창작과 콘텐츠</a></li>
+<li class="group">4부 위험관리</li>
+<li><a href="../chapters/ch09.html">9장 환각 이해와 대응</a></li>
+<li><a href="../chapters/ch10.html">10장 윤리적 사용과 책임</a></li>
+<li><a href="../chapters/ch11.html">11장 조직의 책임 있는 AI 사용</a></li>
+<li class="group">5부 미래</li>
+<li><a href="../chapters/ch12.html">12장 AI 시대 핵심 역량</a></li>
+<li><a href="../chapters/ch13.html">13장 기술 동향</a></li>
+<li class="group">부록</li>
+<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
+<li><a href="../appendix/b-tools.html">B. 도구 비교표</a></li>
+<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
+<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
+<li><a href="../appendix/e-self-check.html">E. 자가 진단</a></li>
+<li class="group">위키</li>
+<li><a href="../wiki/index.html">위키 홈</a></li>
+<li><a href="../wiki/concepts.html">개념</a></li>
+<li><a href="../wiki/tools.html">도구</a></li>
+<li><a href="../wiki/cases.html">사례연구</a></li>
+<li><a href="../wiki/security.html">보안</a></li>
+<li><a href="../wiki/governance.html">거버넌스</a></li>
+<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
+<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
+<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
+<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
+<li><a href="../wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
+<li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
+<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
+<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li class="group"><a href="../tags.html">태그 인덱스</a></li>
+</ul></nav>
+<main id="main">
+<article>
+
+<p class="eyebrow-part">3부 활용</p>
+<h1>7장 업무와 비즈니스</h1>
+<p class="lead">업무에서 생성형 AI는 문서 초안, 정리, 분석, 코드 작성을 맡고, 최종 판단과 발송은 사람이 합니다.</p>
+<ul class="summary"><li>회사 정책이 허용한 도구와 계정만 씁니다.</li><li>개인정보와 영업 비밀은 허용된 환경에서만 입력합니다.</li><li>외부로 나가는 결과물은 사람이 검토합니다.</li></ul>
+
+<h2 id="tasks">업무 영역별 활용</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>영역</th><th>작업 예</th><th>사람의 검토 지점</th></tr></thead>
+<tbody>
+<tr><td>문서 작성</td><td>보고서, 제안서, 메일 초안</td><td>사실, 수치, 어조</td></tr>
+<tr><td>회의</td><td>회의록 정리, 결정 사항 추출</td><td>담당자와 기한</td></tr>
+<tr><td>데이터</td><td>표 정리, 수식 작성, 분석 설명</td><td>계산 결과와 원본 데이터 대조</td></tr>
+<tr><td>고객 응대</td><td>답변 초안, 자주 묻는 질문 정리</td><td>약관, 정책과의 일치</td></tr>
+<tr><td>코드</td><td>스크립트 작성, 오류 분석</td><td>실행 결과와 보안</td></tr>
+</tbody></table></div>
+<figcaption><b>표 7-1. 업무 영역별 활용</b><br>영역별 작업 예와 사람의 검토 지점</figcaption></figure>
+
+<h2 id="data">입력 데이터 관리</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>데이터 유형</th><th>예</th><th>입력 기준</th></tr></thead>
+<tbody>
+<tr><td>공개 정보</td><td>보도 자료, 공개 문서</td><td>허용 도구에 입력</td></tr>
+<tr><td>내부 정보</td><td>내부 회의록, 업무 매뉴얼</td><td>조직 계정과 학습 제외 설정이 된 환경에서만 입력</td></tr>
+<tr><td>개인정보</td><td>고객 이름, 연락처, 주민등록번호</td><td>원칙적으로 입력하지 않음. 필요하면 가명 처리 후 입력</td></tr>
+<tr><td>영업 비밀</td><td>원가, 계약 조건, 미공개 제품 정보</td><td>조직 정책에 따름</td></tr>
+</tbody></table></div>
+<figcaption><b>표 7-2. 입력 데이터 분류</b><br>데이터 유형별 입력 기준</figcaption></figure>
+<p>개인 계정과 조직 계정은 데이터 처리 조건이 다릅니다. 업무 데이터는 조직이 계약한 계정에서 처리합니다.</p>
+
+<h2 id="stages">자동화 단계</h2>
+<figure class="fig"><div class="table-wrap"><table>
+<thead><tr><th>단계</th><th>방식</th><th>필요한 통제</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>개인이 대화형 제품으로 작업</td><td>사용 지침</td></tr>
+<tr><td>2</td><td>팀이 템플릿 프롬프트를 공유</td><td>템플릿 관리, 결과 검토</td></tr>
+<tr><td>3</td><td>API로 업무 시스템에 연결</td><td>접근 권한, 로그, 비용 관리</td></tr>
+<tr><td>4</td><td>에이전트가 여러 단계 작업을 수행</td><td>작업 권한 제한, 사람 승인, 감사 기록</td></tr>
+</tbody></table></div>
+<figcaption><b>표 7-3. 업무 자동화 단계</b><br>단계별 방식과 필요한 통제</figcaption></figure>
+<p>단계가 올라갈수록 AI가 사람 확인 없이 수행하는 작업이 늘어나므로 통제도 함께 늘립니다. 에이전트 도입은 <a href="../wiki/governance.html">위키 거버넌스</a>에서 다룹니다.</p>
+
+<h2 id="email">메일 초안 예</h2>
+<pre><code>다음 정보로 거래처에 보낼 납기 지연 안내 메일을 작성하십시오.
+- 지연 품목: 산업용 필터 A형
+- 기존 납기: 10월 7일, 변경 납기: 10월 14일
+- 원인: 원자재 입고 지연
+- 요청: 변경 납기 수락 여부 회신
+문체는 정중한 업무용으로, 사과는 한 문장만 넣으십시오. 제목도 작성하십시오.</code></pre>
+
+<p class="tags">태그: <a href="../tags.html#tag-25">업무</a><a href="../tags.html#tag-12">개인정보</a><a href="../tags.html#tag-34">자동화</a></p>
+</article>
+<nav class="pager" aria-label="이전, 다음 페이지"><a class="prev" href="../chapters/ch06.html"><small>이전</small>6장 학습과 연구</a><a class="next" href="../chapters/ch08.html"><small>다음</small>8장 창작과 콘텐츠</a></nav>
+<footer class="site-foot">생성형 AI 실전 가이드: 원리, 활용, 위험관리. 최종 업데이트 2026년 9월 30일.</footer>
+</main>
+<aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
+<li><a href="#tasks">업무 영역별 활용</a></li>
+<li><a href="#data">입력 데이터 관리</a></li>
+<li><a href="#stages">자동화 단계</a></li>
+<li><a href="#email">메일 초안 예</a></li>
+</ol></aside>
+</div>
+</body>
+</html>
