@@ -1,20 +1,15 @@
 /* 생성형 AI 실전 가이드: 공통 스타일 (아이보리 단일 테마, 시스템 다크 모드 미적용) */
 
-@font-face {
-  font-family: "Pretendard";
-  src: url("fonts/PretendardVariable.woff2") format("woff2-variations"),
-       url("fonts/PretendardVariable.woff2") format("woff2");
-  font-weight: 45 920;
-  font-style: normal;
-  font-display: swap;
-}
+@font-face { font-family: "Pretendard"; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/Pretendard-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 700; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Bold.woff2") format("woff2"); }
 
 :root {
   color-scheme: light;
-  --paper: #fbf8ef;
-  --panel: #f3eedf;
-  --ink: #26251f;
-  --muted: #6b675c;
+  --paper: #FAF6EB;
+  --panel: #F1EBDB;
+  --ink: #2B2A26;
+  --muted: #625D52;
   --rule: #ddd5c0;
   --link: #1f5a66;
   --link-hover: #123e47;
@@ -124,7 +119,8 @@ figure.fig { margin: 1.6rem 0; }
 figure.fig figcaption { font-size: 17px; color: var(--muted); margin-top: 0.5rem; }
 figure.fig figcaption b { color: var(--ink); }
 
-pre, code { font-family: "D2Coding", Consolas, "Courier New", monospace; }
+/* 고정폭 글꼴에 없는 한글은 Pretendard로 표시 */
+pre, code { font-family: "D2Coding", Consolas, "SFMono-Regular", "Pretendard", monospace; }
 code { background: var(--panel); padding: 0.05em 0.3em; border-radius: 3px; font-size: 0.9em; }
 pre {
   background: var(--panel);
