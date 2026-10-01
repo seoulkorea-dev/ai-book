@@ -23,14 +23,14 @@
 <li class="group">시작하며</li>
 <li><a href="../index.html">시작하며: 이 책의 활용법</a></li>
 <li class="group">본문</li>
-<li><a href="../chapters/ch01.html">Chapter 1 생성형 AI의 기본 원리와 한계</a></li>
-<li><a href="../chapters/ch02.html" aria-current="page">Chapter 2 프롬프트 작성의 기본</a></li>
-<li><a href="../chapters/ch03.html">Chapter 3 고급 프롬프트 기법과 AI 자기 검토</a></li>
-<li><a href="../chapters/ch04.html">Chapter 4 환각 대응과 교차 검증</a></li>
-<li><a href="../chapters/ch05.html">Chapter 5 학습, 자료 조사, 요약</a></li>
-<li><a href="../chapters/ch06.html">Chapter 6 업무 위임, 기획서 초안, 창작</a></li>
-<li><a href="../chapters/ch07.html">Chapter 7 나에게 맞는 AI 도구 선택과 역량 진단</a></li>
-<li><a href="../chapters/ch08.html">Chapter 8 AI 윤리, 법, 보안과 조직 정책</a></li>
+<li><a href="../chapters/ch01.html"><span class="nav-num">Chapter 1</span><span class="nav-title">생성형 AI의 기본 원리와 한계</span></a></li>
+<li><a href="../chapters/ch02.html" aria-current="page"><span class="nav-num">Chapter 2</span><span class="nav-title">프롬프트 작성의 기본</span></a></li>
+<li><a href="../chapters/ch03.html"><span class="nav-num">Chapter 3</span><span class="nav-title">고급 프롬프트 기법과 AI 자기 검토</span></a></li>
+<li><a href="../chapters/ch04.html"><span class="nav-num">Chapter 4</span><span class="nav-title">환각 대응과 교차 검증</span></a></li>
+<li><a href="../chapters/ch05.html"><span class="nav-num">Chapter 5</span><span class="nav-title">학습, 자료 조사, 요약</span></a></li>
+<li><a href="../chapters/ch06.html"><span class="nav-num">Chapter 6</span><span class="nav-title">업무 위임, 기획서 초안, 창작</span></a></li>
+<li><a href="../chapters/ch07.html"><span class="nav-num">Chapter 7</span><span class="nav-title">나에게 맞는 AI 도구 선택과 역량 진단</span></a></li>
+<li><a href="../chapters/ch08.html"><span class="nav-num">Chapter 8</span><span class="nav-title">AI 윤리, 법, 보안과 조직 정책</span></a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
 <li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
@@ -55,26 +55,26 @@
 <main id="main">
 <article>
 <h1>Chapter 2 프롬프트 작성의 기본</h1>
-<p class="lead">프롬프트는 모델에게 주는 입력 전체이며, 목적, 역할, 맥락, 출력 형식, 제약 조건으로 구성됩니다. 이 다섯 가지를 프롬프트 구성 요소라고 합니다. 모델은 프롬프트에 적힌 내용만으로 작업하므로, 필요한 요소를 갖추는 것이 결과 품질의 출발점입니다.</p>
+<p class="lead">프롬프트(prompt)는 모델에게 주는 입력 전체이며, 목적, 역할, 맥락, 출력 형식, 제약 조건으로 구성됩니다. 이 다섯 가지를 프롬프트 구성 요소라고 합니다. 모델은 프롬프트에 적힌 내용만으로 작업하므로, 필요한 요소를 갖추는 것이 결과 품질의 출발점입니다.</p>
 <ul class="summary"><li>필요한 요소를 빠짐없이 적으면 결과의 편차가 줄어듭니다.</li><li>처리할 자료는 구분 기호로 감싸 지시와 분리합니다.</li><li>모호한 단어는 기준, 수치, 대상으로 변환합니다.</li></ul>
 
 <h2 id="elements">프롬프트 구성 요소</h2>
-<p>프롬프트 구성 요소는 각각 모델이 알아야 할 정보 한 가지를 담당합니다. 목적은 무엇을 할지, 역할은 어떤 관점에서 할지, 맥락은 왜 하며 누가 읽는지, 출력 형식은 결과를 어떤 모양으로 낼지, 제약 조건은 무엇을 지켜야 하는지를 알려 줍니다. <a href="#tbl-2-1">표 2-1</a>은 요소별 내용과, 공지문 정리 작업을 예로 든 작성 예제입니다.</p>
-<figure class="fig" id="tbl-2-1"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w35"><col class="w45"></colgroup>
-<thead><tr><th>요소</th><th>영문</th><th>내용</th><th>작성 예제</th></tr></thead>
+<p>프롬프트 구성 요소는 각각 모델이 알아야 할 정보 한 가지를 담당합니다. 목적(goal)은 무엇을 할지, 역할(persona)은 어떤 관점에서 할지, 맥락(context)은 왜 하며 누가 읽는지, 출력 형식(format)은 결과를 어떤 모양으로 낼지, 제약 조건(constraints)은 무엇을 지켜야 하는지를 알려 줍니다. <a href="#tbl-2-1">표 2-1</a>은 요소별 내용과, 공지문 정리 작업을 예로 든 작성 예제입니다.</p>
+<figure class="fig" id="tbl-2-1"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col class="w35"><col class="w45"></colgroup>
+<thead><tr><th>요소</th><th>내용</th><th>작성 예제</th></tr></thead>
 <tbody>
-<tr><td>목적</td><td>Goal</td><td>수행할 작업과 결과물의 용도, 동사로 끝맺음</td><td>다음 공지문에서 받는 사람이 확인해야 할 핵심 항목을 정리하십시오.</td></tr>
-<tr><td>역할</td><td>Persona</td><td>모델이 맡을 직무나 관점</td><td>당신은 처음 읽는 사람의 관점에서 안내문을 정리합니다.</td></tr>
-<tr><td>맥락</td><td>Context</td><td>작업 배경, 상황, 읽을 사람</td><td>공지를 받은 사람들은 일정, 해야 할 일, 기한을 먼저 확인합니다.</td></tr>
-<tr><td>출력 형식</td><td>Format</td><td>결과의 구조(표, 목록, 문단)</td><td>항목, 내용, 기한을 표로 작성하십시오.</td></tr>
-<tr><td>제약 조건</td><td>Constraints</td><td>지켜야 할 조건, 금지 사항, 분량</td><td>공지문에 없는 내용은 쓰지 마십시오. 전체 10줄 이내로 쓰십시오.</td></tr>
+<tr><td>목적</td><td>수행할 작업과 결과물의 용도, 동사로 끝맺음</td><td>다음 공지문에서 받는 사람이 확인해야 할 핵심 항목을 정리하십시오.</td></tr>
+<tr><td>역할</td><td>모델이 맡을 직무나 관점</td><td>당신은 처음 읽는 사람의 관점에서 공지문을 정리합니다.</td></tr>
+<tr><td>맥락</td><td>작업 배경, 상황, 읽을 사람</td><td>공지를 받은 사람들은 일정, 해야 할 일, 기한을 먼저 확인합니다.</td></tr>
+<tr><td>출력 형식</td><td>결과의 구조(표, 목록, 문단)</td><td>항목, 내용, 기한을 표로 작성하십시오.</td></tr>
+<tr><td>제약 조건</td><td>지켜야 할 조건, 금지 사항, 분량</td><td>공지문에 없는 내용은 쓰지 마십시오. 전체 10줄 이내로 쓰십시오.</td></tr>
 </tbody></table></div>
 <figcaption><b>표 2-1. 프롬프트 구성 요소</b><ul class="capnote"><li>목적, 역할, 맥락, 출력 형식, 제약 조건의 내용과 공지문 정리 작성 예제</li></ul></figcaption></figure>
 <p>처리할 원문, 표, 코드 같은 입력 자료는 구성 요소에 포함하지 않고 따로 두며, 구분 기호로 감쌉니다. 입력 자료를 프롬프트의 어디에 둘지는 <a href="#input-position">입력 자료 위치</a>에서 다룹니다.</p>
 <p>모든 프롬프트에 구성 요소가 모두 필요하지는 않습니다. 짧은 질문은 목적만으로 충분합니다. 반대로 결과를 여러 번 수정해야 했던 작업이라면, 누락된 요소가 없는지 먼저 확인합니다.</p>
 
 <h2 id="types">프롬프트의 종류</h2>
-<p>대화형 AI에 전달되는 입력은 작성자에 따라 시스템 프롬프트, 사용자 프롬프트, 어시스턴트 메시지의 세 종류로 나뉩니다. 사용자가 매번 작성하는 것은 사용자 프롬프트이지만, 모델은 세 종류를 모두 함께 읽고 답합니다(<a href="#tbl-2-2">표 2-2</a>).</p>
+<p>대화형 AI에 전달되는 입력은 작성자에 따라 시스템 프롬프트(system prompt), 사용자 프롬프트, 어시스턴트 메시지의 세 종류로 나뉩니다. 사용자가 매번 작성하는 것은 사용자 프롬프트이지만, 모델은 세 종류를 모두 함께 읽고 답합니다(<a href="#tbl-2-2">표 2-2</a>).</p>
 <figure class="fig" id="tbl-2-2"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w60"></colgroup>
 <thead><tr><th>종류</th><th>작성자</th><th>역할</th></tr></thead>
 <tbody>
@@ -104,7 +104,7 @@
 <pre><code>공지문 정리해 줘.</code></pre>
 <h3>개선 후</h3>
 <pre><code>[목적] 다음 공지문에서 받는 사람이 확인해야 할 핵심 항목을 정리하십시오.
-[역할] 당신은 처음 읽는 사람의 관점에서 안내문을 정리합니다.
+[역할] 당신은 처음 읽는 사람의 관점에서 공지문을 정리합니다.
 [맥락] 공지를 받은 사람들은 일정, 해야 할 일, 기한을 먼저 확인합니다.
 [출력 형식] 항목, 내용, 기한을 표로 작성하고, 표 아래에 문의처를 한 줄로 적으십시오.
 [제약 조건] 공지문에 없는 내용은 쓰지 마십시오. 전체 10줄 이내로 쓰십시오.
@@ -113,7 +113,7 @@
 (공지문 원문)
 &lt;/공지문&gt;</code></pre>
 <p>개선 후 프롬프트는 <a href="#tbl-2-1">표 2-1</a>의 작성 예제를 순서대로 잇고, 출력 형식에 문의처 조건을 하나 추가한 것입니다. 입력 자료는 태그로 구분했습니다. 대괄호 표시는 요소를 보여 주려고 추가한 것이므로 실제로 사용할 때는 생략해도 됩니다. <a href="#fig-2-1">그림 2-1</a>은 <a href="#tbl-2-1">표 2-1</a>의 작성 예제가 어느 요소에 해당하는지 보여 줍니다.</p>
-<figure class="fig diagram" id="fig-2-1"><div class="svg-wrap" role="img" aria-label="목적, 역할, 맥락, 출력 형식, 제약 조건, 입력 자료로 나뉜 프롬프트 예"><svg viewBox="0 0 890 340" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="12" width="120" height="42" rx="8" fill="#1f5a66" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="37.9">목적</tspan></text><line x1="130" y1="33" x2="158" y2="33" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="12" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="38" font-size="14" fill="#2B2A26">다음 공지문에서 받는 사람이 확인해야 할 핵심 항목을 정리하십시오.</text><rect x="10" y="66" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="91.9">역할</tspan></text><line x1="130" y1="87" x2="158" y2="87" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="66" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="92" font-size="14" fill="#2B2A26">당신은 처음 읽는 사람의 관점에서 안내문을 정리합니다.</text><rect x="10" y="120" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="145.9">맥락</tspan></text><line x1="130" y1="141" x2="158" y2="141" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="120" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="146" font-size="14" fill="#2B2A26">공지를 받은 사람들은 일정, 해야 할 일, 기한을 먼저 확인합니다.</text><rect x="10" y="174" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="199.9">출력 형식</tspan></text><line x1="130" y1="195" x2="158" y2="195" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="174" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="200" font-size="14" fill="#2B2A26">항목, 내용, 기한을 표로 작성하십시오.</text><rect x="10" y="228" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="253.9">제약 조건</tspan></text><line x1="130" y1="249" x2="158" y2="249" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="228" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="254" font-size="14" fill="#2B2A26">공지문에 없는 내용은 쓰지 마십시오. 전체 10줄 이내로 쓰십시오.</text><rect x="10" y="282" width="120" height="42" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="307.9">입력 자료</tspan></text><line x1="130" y1="303" x2="158" y2="303" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="282" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="308" font-size="14" fill="#2B2A26">&lt;공지문&gt; 공지문 원문 &lt;/공지문&gt;</text><line x1="10" y1="276" x2="880" y2="276" stroke="#8a8272" stroke-dasharray="4 4"/></svg></div><figcaption><b>그림 2-1. 개선 후 프롬프트의 요소 구분</b><ul class="capnote"><li>개선 후 프롬프트의 각 줄을 구성 요소와 입력 자료로 구분한 그림</li></ul></figcaption></figure>
+<figure class="fig diagram" id="fig-2-1"><div class="svg-wrap" role="img" aria-label="목적, 역할, 맥락, 출력 형식, 제약 조건, 입력 자료로 나뉜 프롬프트 예"><svg viewBox="0 0 890 340" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="12" width="120" height="42" rx="8" fill="#1f5a66" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="37.9">목적</tspan></text><line x1="130" y1="33" x2="158" y2="33" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="12" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="38" font-size="14" fill="#2B2A26">다음 공지문에서 받는 사람이 확인해야 할 핵심 항목을 정리하십시오.</text><rect x="10" y="66" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="91.9">역할</tspan></text><line x1="130" y1="87" x2="158" y2="87" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="66" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="92" font-size="14" fill="#2B2A26">당신은 처음 읽는 사람의 관점에서 공지문을 정리합니다.</text><rect x="10" y="120" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="145.9">맥락</tspan></text><line x1="130" y1="141" x2="158" y2="141" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="120" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="146" font-size="14" fill="#2B2A26">공지를 받은 사람들은 일정, 해야 할 일, 기한을 먼저 확인합니다.</text><rect x="10" y="174" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="199.9">출력 형식</tspan></text><line x1="130" y1="195" x2="158" y2="195" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="174" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="200" font-size="14" fill="#2B2A26">항목, 내용, 기한을 표로 작성하십시오.</text><rect x="10" y="228" width="120" height="42" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="253.9">제약 조건</tspan></text><line x1="130" y1="249" x2="158" y2="249" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="228" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="254" font-size="14" fill="#2B2A26">공지문에 없는 내용은 쓰지 마십시오. 전체 10줄 이내로 쓰십시오.</text><rect x="10" y="282" width="120" height="42" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="307.9">입력 자료</tspan></text><line x1="130" y1="303" x2="158" y2="303" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="160" y="282" width="720" height="42" rx="6" fill="#FAF6EB" stroke="#ddd5c0"/><text x="176" y="308" font-size="14" fill="#2B2A26">&lt;공지문&gt; 공지문 원문 &lt;/공지문&gt;</text><line x1="10" y1="276" x2="880" y2="276" stroke="#8a8272" stroke-dasharray="4 4"/></svg></div><figcaption><b>그림 2-1. 개선 후 프롬프트의 요소 구분</b><ul class="capnote"><li>개선 후 프롬프트의 각 줄을 구성 요소와 입력 자료로 구분한 그림</li></ul></figcaption></figure>
 
 <h2 id="fix">나쁜 프롬프트 수정</h2>
 <p>결과가 기대와 다르면 프롬프트에서 누락된 요소를 찾는 것이 첫 단계입니다. 누락된 요소를 찾으면 수정할 내용도 정해집니다. <a href="#tbl-2-4">표 2-4</a>는 나쁜 프롬프트 네 가지와 누락된 요소, 요소를 보완해 수정한 프롬프트입니다.</p>
@@ -137,7 +137,7 @@
 &lt;/고객문의&gt;</code></pre>
 
 <h2 id="role">역할 부여</h2>
-<p>역할 부여는 모델에게 특정 직무나 관점을 지정하는 방법입니다. 예를 들어 "당신은 [분야] 교육 담당자입니다"라고 적으면 설명 수준과 용어 선택이 그 역할에 맞춰집니다. 다만 역할은 설명의 관점을 정할 뿐 모델에게 없는 전문 지식을 추가하지 않습니다. 따라서 역할은 목적, 출력 형식과 함께 작성하고, 역할을 지정해도 사실 확인은 따로 합니다.</p>
+<p>역할 부여(role prompting)는 모델에게 특정 직무나 관점을 지정하는 방법입니다. 예를 들어 "당신은 [분야] 교육 담당자입니다"라고 적으면 설명 수준과 용어 선택이 그 역할에 맞춰집니다. 다만 역할은 설명의 관점을 정할 뿐 모델에게 없는 전문 지식을 추가하지 않습니다. 따라서 역할은 목적, 출력 형식과 함께 작성하고, 역할을 지정해도 사실 확인은 따로 합니다.</p>
 
 <h2 id="format">출력 형식 지정</h2>
 <p>출력 형식은 결과를 받은 뒤의 작업량을 결정합니다. 형식을 지정하지 않으면 결과를 다시 정리해야 하기 때문입니다. 형식은 세 가지 방법으로 지정합니다.</p>

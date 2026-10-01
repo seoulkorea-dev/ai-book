@@ -31,14 +31,14 @@ def build_nav(cur):
     cp = META[cur]["path"]
     out = ['<nav class="sidenav" id="sidenav" aria-label="전체 목차">', "<h2>전체 목차</h2>", "<ul>"]
     for group, ids in NAV:
-        if len(ids) == 1 and group == "표지와 머리말":
-            cur_attr = ' aria-current="page"' if ids[0] == cur else ""
-            out.append(f'<li class="group"><a href="{rel(cp, META[ids[0]]["path"])}"{cur_attr}>{group}</a></li>')
-            continue
         out.append(f'<li class="group">{group}</li>')
         for pid in ids:
             cur_attr = ' aria-current="page"' if pid == cur else ""
-            out.append(f'<li><a href="{rel(cp, META[pid]["path"])}"{cur_attr}>{META[pid]["nav"]}</a></li>')
+            label = META[pid]["nav"]
+            m = re.match(r"(Chapter \d+) (.+)$", label)
+            if m:  # 장 번호와 제목을 두 줄로
+                label = f'<span class="nav-num">{m.group(1)}</span><span class="nav-title">{m.group(2)}</span>'
+            out.append(f'<li><a href="{rel(cp, META[pid]["path"])}"{cur_attr}>{label}</a></li>')
     out.append("</ul></nav>")
     return "\n".join(out)
 

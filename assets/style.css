@@ -84,7 +84,11 @@ a:hover { color: var(--link-hover); }
 .sidenav a:hover, .pagetoc a:hover { color: var(--ink); text-decoration: underline; }
 .sidenav .group { color: var(--nav-gray-dark); }
 .sidenav .group a { color: var(--nav-gray-dark); }
-.sidenav a[aria-current="page"] { font-weight: 700; color: var(--ink); background: var(--panel); border-left: 3px solid var(--nav-gray-dark); padding: 0.1rem 0.5rem; margin-left: -0.8rem; display: block; }
+/* 목차 항목: 모두 같은 여백과 투명한 막대를 두고, 선택된 항목은 막대 색과 배경만 바꿈(목차 영역 밖으로 나가지 않음) */
+.sidenav li > a { display: block; padding: 0.1rem 0.5rem; border-left: 3px solid transparent; }
+.sidenav a[aria-current="page"] { font-weight: 700; color: var(--ink); background: var(--panel); border-left-color: var(--nav-gray-dark); }
+.sidenav .nav-num, .sidenav .nav-title { display: block; }
+.sidenav .nav-num { font-size: 0.85em; }
 .pagetoc li { margin: 0.3rem 0; }
 .pagetoc a { color: var(--muted); text-decoration: none; }
 .pagetoc a:hover { color: var(--link); }
