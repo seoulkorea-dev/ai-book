@@ -4,7 +4,7 @@
 1. 페이지 안에서 그림, 표 번호가 각각 1부터 빠짐없이 순서대로 매겨졌는지
 2. 장 번호-순번 형식(예: 표 3-1)이 여러 페이지에서 중복되지 않는지
 3. 본문이 가리키는 번호가 실제로 있는지
-4. 본문의 번호 참조에 링크가 걸려 있는지
+4. 다른 쪽 번호 참조에는 링크가 걸려 있고, 같은 쪽 번호 참조에는 링크가 없는지
 6. 파일과 번호 접두가 맞는지(chapters/chNN.html은 NN, 부록 terms=부1, prompts=부2, references=부3), 캡션이 든 figure의 id가 캡션 번호와 같은지(tbl-N-n, fig-N-n). 현행 부록 A~F와 위키는 재구성 4단계 전환 전까지 제외
 5. 번호 뒤 조사가 마지막 숫자의 받침과 맞는지(0, 1, 3, 6, 7, 8 뒤에는 은, 이, 을, 과, 나머지 숫자 뒤에는 는, 가, 를, 와)
 
@@ -43,7 +43,11 @@ for f in files:
         if r not in owner:
             errors.append(f"없는 번호 참조: {f} {r}")
     for r in sorted(set(REF.findall(plain))):
-        errors.append(f"링크 없는 번호 참조: {f} {r}")
+        if owner.get(r) != f:  # 다른 쪽 참조는 링크가 있어야 함
+            errors.append(f"링크 없는 번호 참조: {f} {r}")
+    for r in sorted(linked):
+        if owner.get(r) == f:  # 같은 쪽 참조는 링크를 걸지 않음
+            errors.append(f"같은 쪽 번호 링크: {f} {r}")
 
 # 5. 번호 뒤 조사: 마지막 숫자를 읽었을 때 받침이 있으면 은/이/을/과, 없으면 는/가/를/와
 BATCHIM = set("013678")

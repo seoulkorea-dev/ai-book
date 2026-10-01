@@ -12,6 +12,16 @@ files = ["index.html"] + sorted(glob.glob("chapters/*.html")) + sorted(glob.glob
 total = Counter()
 for f in files:
     body = open(f, encoding="utf-8").read()
+    # 표의 예제 열(작성 예제, 적용 예제, 요청 예제) 셀 속 프롬프트 말투도 "~해 줘"
+    for t in re.findall(r"<table.*?</table>", body, flags=re.S):
+        heads = re.findall(r"<th>(.*?)</th>", t)
+        cols = [i for i, h in enumerate(heads) if h in ("작성 예제", "적용 예제", "요청 예제")]
+        for row in re.findall(r"<tr>(.*?)</tr>", t, flags=re.S):
+            cells = re.findall(r"<td[^>]*>(.*?)</td>", row, flags=re.S)
+            for i in cols:
+                if i < len(cells) and "십시오" in cells[i]:
+                    total["표 예제 십시오"] += 1
+                    print(f"경고 {f}: 표 예제 칸 '십시오' | {re.sub('<[^>]+>', '', cells[i])[:40]}")
     # 코드 상자 속 프롬프트 예제는 예외(STYLE.md 배제어). 줄 번호를 유지하도록 줄바꿈만 남긴다
     # 코드 상자 속 프롬프트 말투는 "~해 줘"(STYLE.md). "십시오"가 남으면 따로 경고
     for m in re.finditer(r"<pre.*?</pre>", body, flags=re.S):

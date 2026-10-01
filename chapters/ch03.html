@@ -59,7 +59,7 @@
 <ul class="summary"><li>Few-shot은 예시로 형식과 판단 기준을 전달합니다.</li><li>단계별 추론(Chain of Thought)은 여러 단계의 계산과 논리가 필요한 문제에 사용합니다.</li><li>결과를 받은 뒤 AI에게 근거, 반론, 조건 충족 여부를 점검하게 하면 사람이 확인할 지점이 드러납니다.</li></ul>
 
 <h2 id="overview">기법 요약</h2>
-<p>기법마다 효과가 있는 작업이 다르므로, 기법은 작업의 성격에 맞춰 선택합니다. <a href="#tbl-3-1">표 3-1</a>은 이 장에서 다루는 기법 8개의 방법, 적합한 작업, 기법을 처음 제안한 논문입니다.</p>
+<p>기법마다 효과가 있는 작업이 다르므로, 기법은 작업의 성격에 맞춰 선택합니다. 표 3-1은 이 장에서 다루는 기법 8개의 방법, 적합한 작업, 기법을 처음 제안한 논문입니다.</p>
 <figure class="fig" id="tbl-3-1"><div class="table-wrap"><table class="fit-1 fit-4"><colgroup><col><col class="w30"><col class="w40"><col></colgroup>
 <thead><tr><th>기법</th><th>방법</th><th>적합한 작업</th><th>원 논문</th></tr></thead>
 <tbody>
@@ -117,7 +117,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 <p>단순 조회, 짧은 번역, 창작 초안처럼 추론 단계가 없는 작업에는 단계별 추론을 적용하지 않습니다. 정확도는 높아지지 않고 답변만 길어지기 때문입니다.</p>
 
 <h2 id="react">ReAct</h2>
-<p>ReAct는 추론(Reasoning)과 행동(Acting)을 번갈아 수행하는 방식입니다. 모델이 필요한 정보를 판단하고, 검색 같은 도구를 호출하고, 그 결과를 관찰해 다음 행동을 정하는 과정을 반복합니다(<a href="#fig-3-1">그림 3-1</a>). 모델이 학습하지 않은 정보도 도구로 확인할 수 있어 최신 정보가 필요한 질문에 적합하며, AI 에이전트(Agent)의 기본 동작 방식이기도 합니다. 자세한 내용은 <a href="../wiki/pe-agents.html">위키 에이전트</a>에서 다룹니다.</p>
+<p>ReAct는 추론(Reasoning)과 행동(Acting)을 번갈아 수행하는 방식입니다. 모델이 필요한 정보를 판단하고, 검색 같은 도구를 호출하고, 그 결과를 관찰해 다음 행동을 정하는 과정을 반복합니다(그림 3-1). 모델이 학습하지 않은 정보도 도구로 확인할 수 있어 최신 정보가 필요한 질문에 적합하며, AI 에이전트(Agent)의 기본 동작 방식이기도 합니다. 자세한 내용은 <a href="../wiki/pe-agents.html">위키 에이전트</a>에서 다룹니다.</p>
 <figure class="fig diagram" id="fig-3-1"><div class="svg-wrap" role="img" aria-label="질문에서 추론, 행동, 관찰을 반복한 뒤 답변으로 가는 흐름"><svg viewBox="0 0 900 170" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="90" width="130" height="56" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="75.0" y="122.9">질문</tspan></text><line x1="140" y1="118" x2="190" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="190" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="265.0" y="113.5">추론</tspan><tspan x="265.0" y="132.3">필요한 정보 판단</tspan></text><line x1="340" y1="118" x2="390" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="390" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="465.0" y="113.5">행동</tspan><tspan x="465.0" y="132.3">도구 호출(검색 등)</tspan></text><line x1="540" y1="118" x2="590" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="590" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="665.0" y="113.5">관찰</tspan><tspan x="665.0" y="132.3">도구 결과 확인</tspan></text><path d="M 665 90 Q 665 30 440 30 Q 265 30 265 86" fill="none" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><text x="465" y="24" font-size="12" fill="#625D52" text-anchor="middle">정보가 부족하면 다시 추론</text><line x1="740" y1="118" x2="790" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="790" y="90" width="100" height="56" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="840.0" y="122.9">답변</tspan></text></svg></div><figcaption><b>그림 3-1. ReAct의 반복 구조</b><ul class="capnote"><li>추론, 행동, 관찰을 반복하다가 정보가 충분하면 답변하는 구조</li></ul></figcaption></figure>
 
 <h2 id="chaining">프롬프트 체이닝</h2>
@@ -126,21 +126,21 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 <p>단계를 나누면 단계마다 결과를 확인할 수 있고, 오류가 있는 단계만 다시 실행하면 됩니다. 한 번의 프롬프트로 처리하면 어느 단계에서 오류가 생겼는지 찾기 어렵습니다.</p>
 
 <h2 id="korean">한국어 프롬프트</h2>
-<p>한국어 프롬프트에는 문체, 높임법, 한국 기준, 용어 표기를 추가로 지정합니다. 지정하지 않으면 모델이 문체를 섞거나 해외 기준으로 답할 수 있습니다. <a href="#tbl-3-2">표 3-2</a>는 요소별 지정 방법과 이유입니다.</p>
+<p>한국어 프롬프트에는 문체, 높임법, 한국 기준, 용어 표기를 추가로 지정합니다. 지정하지 않으면 모델이 문체를 섞거나 해외 기준으로 답할 수 있습니다. 표 3-2는 요소별 지정 방법과 이유입니다.</p>
 <figure class="fig" id="tbl-3-2"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
 <thead><tr><th>방법</th><th>이유</th><th>작성 예제</th></tr></thead>
 <tbody>
-<tr><td>전문 용어 원어 병기</td><td>번역어가 여러 개인 용어의 뜻을 고정</td><td>재현율(recall)과 정밀도(precision)를 비교하십시오.</td></tr>
-<tr><td>문체 지정</td><td>합니다체, 해요체, 해라체가 섞이는 것을 방지</td><td>모든 문장을 합니다체로 쓰십시오.</td></tr>
-<tr><td>호칭과 경어 지정</td><td>대상에 맞는 높임 수준을 결정</td><td>수신자는 [직함]입니다. 존칭은 '[직함]님'으로 쓰십시오.</td></tr>
-<tr><td>한국 기준 명시</td><td>해외 기준으로 답하는 것을 방지</td><td>한국 근로기준법 기준으로 답하십시오. 금액은 원 단위로 쓰십시오.</td></tr>
-<tr><td>번역투 금지</td><td>영어 문장 구조를 옮긴 어색한 표현 감소</td><td>'~에 대해', '~를 통해'를 반복하지 마십시오.</td></tr>
+<tr><td>전문 용어 원어 병기</td><td>번역어가 여러 개인 용어의 뜻을 고정</td><td>재현율(recall)과 정밀도(precision)를 비교해 줘.</td></tr>
+<tr><td>문체 지정</td><td>합니다체, 해요체, 해라체가 섞이는 것을 방지</td><td>모든 문장을 합니다체로 작성해 줘.</td></tr>
+<tr><td>호칭과 경어 지정</td><td>대상에 맞는 높임 수준을 결정</td><td>수신자는 [직함]이야. 존칭은 '[직함]님'으로 작성해 줘.</td></tr>
+<tr><td>한국 기준 명시</td><td>해외 기준으로 답하는 것을 방지</td><td>한국 근로기준법 기준으로 답해 줘. 금액은 원 단위로 작성해 줘.</td></tr>
+<tr><td>번역투 금지</td><td>영어 문장 구조를 옮긴 어색한 표현 감소</td><td>'~에 대해', '~를 통해'를 반복하지 마.</td></tr>
 </tbody></table></div>
 <figcaption><b>표 3-2. 한국어 프롬프트 작성 방법</b><ul class="capnote"><li>전문 용어 원어 병기, 문체 지정, 경어 지정, 한국 기준 명시, 번역투 금지의 이유와 작성 예제</li></ul></figcaption></figure>
 <p>영어 자료를 근거로 답하게 할 때는 자료를 원문 그대로 입력하고 답만 한국어로 요청합니다. 자료를 먼저 번역하면 번역 과정에서 생긴 오류가 답에 섞이기 때문입니다.</p>
 
 <h2 id="combine">기법 조합</h2>
-<p>실제 작업에서는 기법을 하나씩 사용하기보다 조합해 사용합니다. 각 기법이 해결하는 문제가 다르기 때문입니다. 예를 들어 Few-shot은 형식을, 구분 기호는 자료와 지시의 분리를 담당합니다. <a href="#tbl-3-3">표 3-3</a>은 작업별 조합 예제입니다.</p>
+<p>실제 작업에서는 기법을 하나씩 사용하기보다 조합해 사용합니다. 각 기법이 해결하는 문제가 다르기 때문입니다. 예를 들어 Few-shot은 형식을, 구분 기호는 자료와 지시의 분리를 담당합니다. 표 3-3은 작업별 조합 예제입니다.</p>
 <figure class="fig" id="tbl-3-3"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w45"></colgroup>
 <thead><tr><th>작업</th><th>조합</th><th>방법</th></tr></thead>
 <tbody>
@@ -156,7 +156,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 <ul><li><b>근거 요구</b>: "위 답의 각 주장에 대해 근거가 된 원문 문장을 인용하십시오. 근거가 없는 주장은 표시하십시오."</li><li><b>반론 요구</b>: "위 결론에 반대하는 입장에서 가장 강한 반론 세 가지를 작성하십시오."</li><li><b>조건 확인</b>: "처음에 제시한 제약 조건을 하나씩 나열하고, 결과가 각 조건을 지켰는지 표로 적으십시오."</li></ul>
 
 <h2 id="sampling">생성 설정</h2>
-<p>모델은 다음 토큰을 확률에 따라 선택하며, API와 일부 개발 도구에서는 선택 방식을 설정으로 조절할 수 있습니다. 대화형 제품은 대부분 이 설정을 화면에 표시하지 않습니다. <a href="#tbl-3-4">표 3-4</a>는 주요 설정 세 가지의 의미와 사용 예제입니다.</p>
+<p>모델은 다음 토큰을 확률에 따라 선택하며, API와 일부 개발 도구에서는 선택 방식을 설정으로 조절할 수 있습니다. 대화형 제품은 대부분 이 설정을 화면에 표시하지 않습니다. 표 3-4는 주요 설정 세 가지의 의미와 사용 예제입니다.</p>
 <figure class="fig" id="tbl-3-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w60"><col class="w30"></colgroup>
 <thead><tr><th>설정</th><th>의미</th><th>사용 예제</th></tr></thead>
 <tbody>

@@ -59,7 +59,7 @@
 <ul class="summary"><li>환각은 문장이 자연스러워 겉보기로 구분하기 어려우므로, 원문 대조로 확인합니다.</li><li>근거 자료를 함께 제공하고 출처를 표시하게 하면 대조할 수 있는 결과를 얻습니다.</li><li>결과 개선은 평가 기준을 먼저 정하고, 한 번에 한 요소만 수정하는 방식으로 진행합니다.</li></ul>
 
 <h2 id="types">환각 유형</h2>
-<p>환각은 입력과의 관계에 따라 두 유형으로 나뉩니다. Ji 외는 2023년 논문 「Survey of Hallucination in Natural Language Generation」에서 환각 연구를 정리하며 이 구분을 제시했고, 이 책도 같은 구분을 사용합니다. 유형에 따라 확인 방법이 다릅니다. 내재적 환각은 입력 자료와 대조하면 찾을 수 있지만, 외재적 환각은 외부 원문을 찾아야 확인됩니다(<a href="#tbl-4-1">표 4-1</a>).</p>
+<p>환각은 입력과의 관계에 따라 두 유형으로 나뉩니다. Ji 외는 2023년 논문 「Survey of Hallucination in Natural Language Generation」에서 환각 연구를 정리하며 이 구분을 제시했고, 이 책도 같은 구분을 사용합니다. 유형에 따라 확인 방법이 다릅니다. 내재적 환각은 입력 자료와 대조하면 찾을 수 있지만, 외재적 환각은 외부 원문을 찾아야 확인됩니다(표 4-1).</p>
 <figure class="fig" id="tbl-4-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w45"><col class="w40"></colgroup>
 <thead><tr><th>유형</th><th>정의</th><th>예제</th></tr></thead>
 <tbody>
@@ -78,7 +78,7 @@
 <p>평가 방식도 원인의 하나입니다. OpenAI 연구진(Kalai 외)은 2025년 9월 논문 「Why Language Models Hallucinate」에서, 정답만 채점하는 평가 방식이 모른다고 답하기보다 추측하도록 모델을 유도한다고 밝혔습니다.</p>
 
 <h2 id="signals">의심 신호</h2>
-<p>모든 문장을 원문과 대조할 수는 없으므로, 환각이 자주 나타나는 신호를 기준으로 확인할 곳을 정합니다. <a href="#tbl-4-2">표 4-2</a>는 의심 신호 다섯 가지와 신호별 확인 방법입니다.</p>
+<p>모든 문장을 원문과 대조할 수는 없으므로, 환각이 자주 나타나는 신호를 기준으로 확인할 곳을 정합니다. 표 4-2는 의심 신호 다섯 가지와 신호별 확인 방법입니다.</p>
 <figure class="fig" id="tbl-4-2"><div class="table-wrap"><table><colgroup><col class="w30"><col class="w40"><col class="w30"></colgroup>
 <thead><tr><th>신호</th><th>예제</th><th>확인 방법</th></tr></thead>
 <tbody>
@@ -91,26 +91,26 @@
 <figcaption><b>표 4-2. 환각 의심 신호</b><ul class="capnote"><li>지나치게 정확한 수치, 처음 보는 출처 등 의심 신호 5개와 확인 방법</li></ul></figcaption></figure>
 
 <h2 id="measures">대응 방법</h2>
-<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고 모름을 허용해 환각이 생길 여지를 줄이고, 시스템에서는 검색으로 근거를 보충하고, 사용자는 마지막에 원문과 대조합니다. <a href="#tbl-4-3">표 4-3</a>은 방법별 적용 위치와 적용 예제입니다.</p>
+<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고 모름을 허용해 환각이 생길 여지를 줄이고, 시스템에서는 검색으로 근거를 보충하고, 사용자는 마지막에 원문과 대조합니다. 표 4-3은 방법별 적용 위치와 적용 예제입니다.</p>
 <figure class="fig" id="tbl-4-3"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w65"></colgroup>
 <thead><tr><th>방법</th><th>적용 위치</th><th>적용 예제</th></tr></thead>
 <tbody>
-<tr><td>근거 자료 제공</td><td>프롬프트</td><td>첨부 문서만 근거로 답하십시오.</td></tr>
-<tr><td>출처 표시 요구</td><td>프롬프트</td><td>각 주장 뒤에 근거 문단 번호를 적으십시오.</td></tr>
-<tr><td>모름 허용</td><td>프롬프트</td><td>근거가 없으면 '자료에 없음'이라고 답하십시오.</td></tr>
-<tr><td>개수 강요 제거</td><td>프롬프트</td><td>근거가 있는 이유를 모두 적으십시오. 개수는 정하지 않습니다.</td></tr>
-<tr><td>검색 증강 생성</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 포함(<a href="#fig-4-1">그림 4-1</a>)</td></tr>
+<tr><td>근거 자료 제공</td><td>프롬프트</td><td>첨부 문서만 근거로 답해 줘.</td></tr>
+<tr><td>출처 표시 요구</td><td>프롬프트</td><td>각 주장 뒤에 근거 문단 번호를 적어 줘.</td></tr>
+<tr><td>모름 허용</td><td>프롬프트</td><td>근거가 없으면 '자료에 없음'이라고 답해 줘.</td></tr>
+<tr><td>개수 강요 제거</td><td>프롬프트</td><td>근거가 있는 이유를 모두 적어 줘. 개수는 정하지 않아도 돼.</td></tr>
+<tr><td>검색 증강 생성</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 포함(그림 4-1)</td></tr>
 <tr><td>원문 대조</td><td>사용자 검토</td><td>수치, 인용, 고유명사를 원문과 대조</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 적용 예제</li></ul></figcaption></figure>
-<p>검색 증강 생성(Retrieval-augmented Generation, RAG)은 질문과 관련된 문서를 검색해 프롬프트에 포함한 뒤 답을 생성하는 방식입니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. <a href="#fig-4-1">그림 4-1</a>은 그 흐름입니다.</p>
+<p>검색 증강 생성(Retrieval-augmented Generation, RAG)은 질문과 관련된 문서를 검색해 프롬프트에 포함한 뒤 답을 생성하는 방식입니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. 그림 4-1은 그 흐름입니다.</p>
 <figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/></svg></div><figcaption><b>그림 4-1. 검색 증강 생성 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시의 흐름</li></ul></figcaption></figure>
 
 <h2 id="automation-bias">자동화 편향</h2>
-<p>환각을 확인하지 않은 결과는 실제 피해로 이어집니다. 다음 두 경우가 그 예입니다.</p>
+<p>자동화 편향(Automation Bias)은 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 경향으로, 확인하지 않은 AI 결과가 실제 피해로 이어지는 원인이 됩니다. 다음 두 경우가 그 예입니다.</p>
 <p>미국 뉴욕 남부 연방지방법원은 2023년 6월 22일 Mata v. Avianca 사건에서, ChatGPT가 생성한 존재하지 않는 판례를 인용한 변호사 두 명과 법률 사무소에 공동으로 5,000달러의 제재금을 부과했습니다. 변호사는 ChatGPT에 판례가 실제로 있는지 물었고, ChatGPT는 있다고 답했습니다. 결과를 만든 AI에게 다시 묻는 것은 검증이 아닙니다. 자세한 내용은 <a href="../wiki/cases.html">위키 사례 연구</a>에서 다룹니다.</p>
 <p>Google은 2023년 2월 Bard를 소개하는 홍보 자료에서, 제임스 웹 우주망원경이 태양계 밖 행성을 처음 촬영했다는 Bard의 답변을 보여 주었습니다. 태양계 밖 행성을 처음 촬영한 것은 2004년 유럽남방천문대의 VLT였습니다. 오류가 보도된 날 모회사 Alphabet의 주가가 하락했습니다.</p>
-<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 이 경향을 자동화 편향(Automation Bias)이라고 합니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
+<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
 <ul><li><b>목록에 따른 확인</b>: 확인 항목을 목록으로 정해 두고 매번 같은 순서로 확인합니다.</li><li><b>제삼자 확인</b>: 중요도가 높은 결과는 작성자가 아닌 사람이 한 번 더 확인합니다.</li><li><b>예상 답 기록</b>: AI 결과를 받기 전에 예상 답을 먼저 적어 두면 차이를 발견하기 쉽습니다.</li></ul>
 
 <h2 id="checklist">검토 목록</h2>
@@ -121,12 +121,12 @@
 <p>확인 습관은 연습으로 만듭니다. AI 답변을 받을 때마다 수치, 고유명사, 인용처럼 오류가 있으면 영향이 큰 부분 가운데 세 곳을 먼저 표시합니다. 표시한 세 곳을 원문으로 확인하고, 오류가 나오면 기록합니다. 기록이 쌓이면 자신이 사용하는 도구에서 오류가 자주 나는 유형을 알 수 있습니다.</p>
 
 <h2 id="cycle">개선 절차</h2>
-<p>환각 확인이 결과의 오류를 찾는 일이라면, 개선 절차는 오류가 덜 생기도록 프롬프트를 수정하는 일입니다. 절차는 여섯 단계이며, 불합격 기준이 남아 있는 동안 3단계부터 반복합니다(<a href="#fig-4-2">그림 4-2</a>).</p>
+<p>환각 확인이 결과의 오류를 찾는 일이라면, 개선 절차는 오류가 덜 생기도록 프롬프트를 수정하는 일입니다. 절차는 여섯 단계이며, 불합격 기준이 남아 있는 동안 3단계부터 반복합니다(그림 4-2).</p>
 <figure class="fig diagram" id="fig-4-2"><div class="svg-wrap" role="img" aria-label="목표 정의부터 기록까지 여섯 단계와 수정 후 재실행으로 돌아가는 반복"><svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m2-ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="70.9">1. 목표 정의</tspan></text><line x1="130" y1="66" x2="158" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="158" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="218.0" y="70.9">2. 평가 기준</tspan></text><line x1="278" y1="66" x2="306" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="306" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="366.0" y="70.9">3. 초안 실행</tspan></text><line x1="426" y1="66" x2="454" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="454" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="514.0" y="70.9">4. 평가</tspan></text><line x1="574" y1="66" x2="602" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="602" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="662.0" y="70.9">5. 수정</tspan></text><line x1="722" y1="66" x2="750" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="750" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="810.0" y="70.9">6. 기록</tspan></text><path d="M 662 92 Q 662 150 366 150 L 366 96" fill="none" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><text x="400" y="170" font-size="12" fill="#625D52" text-anchor="middle">불합격 기준이 남으면 3단계로 돌아갑니다</text></svg></div><figcaption><b>그림 4-2. 프롬프트 개선 절차</b><ul class="capnote"><li>목표 정의부터 기록까지 6단계와 반복 구간</li></ul></figcaption></figure>
 <ol><li><b>목표 정의</b>: 결과물의 용도, 읽을 사람, 형식을 적습니다.</li><li><b>평가 기준</b>: 합격과 불합격을 가르는 기준을 적습니다.</li><li><b>초안 실행</b>: 프롬프트를 실행하고 결과를 저장합니다.</li><li><b>평가</b>: 기준별로 결과를 점검합니다.</li><li><b>수정</b>: 실패한 기준에 해당하는 요소 하나를 수정합니다. 한 번에 여러 요소를 수정하면 어느 수정이 효과를 냈는지 알 수 없기 때문입니다.</li><li><b>기록</b>: 프롬프트, 결과, 평가를 함께 저장합니다.</li></ol>
 
 <h3 id="criteria">평가 기준표</h3>
-<p>평가 기준은 프롬프트를 실행하기 전에 정합니다. 결과를 본 뒤에 기준을 정하면 결과에 맞춰 기준이 느슨해지기 때문입니다. <a href="#tbl-4-4">표 4-4</a>는 대부분의 문서 작업에 적용할 수 있는 기준 네 가지입니다.</p>
+<p>평가 기준은 프롬프트를 실행하기 전에 정합니다. 결과를 본 뒤에 기준을 정하면 결과에 맞춰 기준이 느슨해지기 때문입니다. 표 4-4는 대부분의 문서 작업에 적용할 수 있는 기준 네 가지입니다.</p>
 <figure class="fig" id="tbl-4-4"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w40"></colgroup>
 <thead><tr><th>기준</th><th>확인 내용</th><th>불합격 예제</th></tr></thead>
 <tbody>
@@ -138,7 +138,7 @@
 <figcaption><b>표 4-4. 결과물 평가 기준</b><ul class="capnote"><li>정확성, 완전성, 형식, 어조의 확인 내용과 불합격 예제</li></ul></figcaption></figure>
 
 <h3 id="fixes">실패 유형별 수정</h3>
-<p>평가에서 불합격한 기준은 프롬프트 구성 요소 가운데 수정할 요소를 알려 줍니다. 예를 들어 요청과 다른 작업을 수행했다면 목적이, 수준이 맞지 않으면 맥락이 불충분한 것입니다. <a href="#tbl-4-5">표 4-5</a>는 실패 유형별로 수정할 요소와 수정 예제입니다.</p>
+<p>평가에서 불합격한 기준은 프롬프트 구성 요소 가운데 수정할 요소를 알려 줍니다. 예를 들어 요청과 다른 작업을 수행했다면 목적이, 수준이 맞지 않으면 맥락이 불충분한 것입니다. 표 4-5는 실패 유형별로 수정할 요소와 수정 예제입니다.</p>
 <figure class="fig" id="tbl-4-5"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w50"></colgroup>
 <thead><tr><th>실패 유형</th><th>수정할 요소</th><th>수정 예제</th></tr></thead>
 <tbody>
@@ -155,9 +155,9 @@
 <p>여러 번 사용할 프롬프트는 대표 입력 몇 개를 시험 입력 모음으로 만들어 관리합니다. 프롬프트를 수정할 때마다 모음 전체로 다시 실행하면, 한 입력의 결과를 개선하려다 다른 입력의 결과가 저하되는 문제를 발견할 수 있습니다.</p>
 
 <h3 id="record">기록 방법</h3>
-<p>프롬프트를 고칠 때마다 무엇을 변경했고 결과가 어떻게 달라졌는지 기록합니다. 한 번에 한 요소만 변경하고 기록하면, 결과가 좋아졌을 때 어느 수정 덕분인지 알 수 있습니다. 기록 항목(차수, 바꾼 요소, 결과, 다음에 할 일)은 이 책이 정한 형식입니다. <a href="#tbl-4-6">표 4-6</a>은 교육 안내문을 표로 정리하는 프롬프트를 세 번 수정한 기록의 예입니다.</p>
+<p>프롬프트를 고칠 때마다 무엇을 변경했고 결과가 어떻게 달라졌는지 기록합니다. 한 번에 한 요소만 변경하고 기록하면, 결과가 좋아졌을 때 어느 수정 덕분인지 알 수 있습니다. 기록 항목(차수, 바꾼 요소, 결과, 다음에 할 일)은 이 책이 정한 형식입니다. 표 4-6은 교육 안내문을 표로 정리하는 프롬프트를 세 번 수정한 기록의 예입니다.</p>
 <figure class="fig" id="tbl-4-6"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w35"><col></colgroup>
-<thead><tr><th>차수</th><th>바꾼 요소</th><th>결과</th><th>다음에 할 일</th></tr></thead>
+<thead><tr><th>차수</th><th>변경한 요소</th><th>결과</th><th>다음에 할 일</th></tr></thead>
 <tbody>
 <tr><td>1</td><td>처음 요청 "이 교육 안내문 정리해 줘."</td><td>문단으로 요약되어 신청 기한이 문장 속에 묻힘</td><td>출력 형식 지정</td></tr>
 <tr><td>2</td><td>출력 형식: 항목, 내용, 기한 표</td><td>신청 기한, 교육일, 준비물이 표에 따로 정리됨</td><td>안내문에 없는 내용이 섞였는지 확인</td></tr>
@@ -168,19 +168,19 @@
 <p>대화 중에 결과를 수정할 때는 피드백 방식, 대화를 이어 갈지 여부, 안의 개수를 정합니다.</p>
 
 <h3 id="feedback">구조화된 피드백</h3>
-<p>피드백은 현상, 기준, 요청의 세 부분으로 나눠 작성합니다. "다시 해 줘", "더 좋게" 같은 피드백은 수정 방향을 알려 주지 않기 때문입니다. <a href="#tbl-4-7">표 4-7</a>은 세 부분의 내용과 작성 예제입니다.</p>
+<p>피드백은 현상, 기준, 요청의 세 부분으로 나눠 작성합니다. "다시 해 줘", "더 좋게" 같은 피드백은 수정 방향을 알려 주지 않기 때문입니다. 표 4-7은 세 부분의 내용과 작성 예제입니다.</p>
 <figure class="fig" id="tbl-4-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w60"></colgroup>
 <thead><tr><th>부분</th><th>내용</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>현상</td><td>결과에서 문제가 된 부분을 지목</td><td>두 번째 문단의 매출 수치가 표와 다릅니다.</td></tr>
 <tr><td>기준</td><td>무엇이 맞는지, 왜 문제인지</td><td>표의 3분기 매출은 12억 원입니다.</td></tr>
-<tr><td>요청</td><td>수정 범위와 방식</td><td>두 번째 문단만 표 수치로 수정하고 나머지는 그대로 두십시오.</td></tr>
+<tr><td>요청</td><td>수정 범위와 방식</td><td>두 번째 문단만 표 수치로 수정하고 나머지는 그대로 둬.</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4-7. 피드백 구성</b><ul class="capnote"><li>피드백을 현상, 기준, 요청으로 나눈 작성 예제</li></ul></figcaption></figure>
 <p>특히 요청 부분에는 수정 범위를 적습니다. 범위를 적지 않으면 모델이 문제가 없던 부분까지 다시 작성하고, 사람은 이미 확인한 부분을 다시 검토해야 합니다.</p>
 
 <h3 id="conversation">대화 맥락 관리</h3>
-<p>같은 대화에서 수정을 이어 가면 앞의 지시와 결과가 맥락으로 쌓입니다. 쌓인 맥락 덕분에 같은 설명을 반복하지 않아도 되지만, 초기의 잘못된 가정이나 폐기한 초안도 함께 남아 결과에 영향을 줍니다. 따라서 상황에 따라 대화를 이어 갈지 새로 시작할지 정합니다(<a href="#tbl-4-8">표 4-8</a>).</p>
+<p>같은 대화에서 수정을 이어 가면 앞의 지시와 결과가 맥락으로 쌓입니다. 쌓인 맥락 덕분에 같은 설명을 반복하지 않아도 되지만, 초기의 잘못된 가정이나 폐기한 초안도 함께 남아 결과에 영향을 줍니다. 따라서 상황에 따라 대화를 이어 갈지 새로 시작할지 정합니다(표 4-8).</p>
 <figure class="fig" id="tbl-4-8"><div class="table-wrap"><table><colgroup><col class="w40"><col class="w60"></colgroup>
 <thead><tr><th>상황</th><th>권장 방식</th></tr></thead>
 <tbody>
