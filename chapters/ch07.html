@@ -72,7 +72,7 @@
 <tr><td>내재적 환각</td><td>주어진 입력 자료와 모순되는 내용 생성</td><td>요약에 원문과 다른 수치 기재</td></tr>
 <tr><td>외재적 환각</td><td>입력으로 확인할 수 없는 내용 생성</td><td>존재하지 않는 논문, 판례 인용</td></tr>
 </tbody></table></div>
-<figcaption><b>표 7-1. 환각 유형</b><ul class="capnote"><li>내재적 환각과 외재적 환각의 정의와 예제</li><li>Ji 외(2023)의 구분 기준</li></ul></figcaption></figure>
+<figcaption><b>표 7-1. 환각 유형</b><ul class="capnote"><li>Ji 외(2023)의 구분에 따른 내재적 환각과 외재적 환각의 정의와 예제</li></ul></figcaption></figure>
 
 
 <h2 id="features">환각의 특징</h2>
@@ -84,6 +84,7 @@
 
 
 <h2 id="signals">의심 신호</h2>
+<p>환각은 결과에 나타나는 몇 가지 신호로 먼저 의심할 수 있습니다.</p>
 <figure class="fig" id="tbl-7-2"><div class="table-wrap"><table><colgroup><col class="w30"><col class="w40"><col class="w30"></colgroup>
 <thead><tr><th>신호</th><th>예제</th><th>확인 방법</th></tr></thead>
 <tbody>
@@ -97,6 +98,7 @@
 
 
 <h2 id="measures">대응 방법</h2>
+<p>환각을 줄이는 방법은 적용 위치에 따라 프롬프트, 시스템, 사용자 검토로 나뉩니다.</p>
 <figure class="fig" id="tbl-7-3"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w65"></colgroup>
 <thead><tr><th>방법</th><th>적용 위치</th><th>작성 예제</th></tr></thead>
 <tbody>
@@ -109,7 +111,7 @@
 </tbody></table></div>
 <figcaption><b>표 7-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 작성 예제</li></ul></figcaption></figure>
 
-<figure class="fig diagram" id="fig-7-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/></svg></div><figcaption><b>그림 7-1. 검색 증강 생성(RAG) 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시의 흐름</li><li>출처 표시가 있어야 사람이 원문과 대조 가능</li></ul></figcaption></figure>
+<figure class="fig diagram" id="fig-7-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/></svg></div><figcaption><b>그림 7-1. 검색 증강 생성(RAG) 흐름</b><ul class="capnote"><li>질문부터 원문 대조를 위한 출처 표시까지 RAG의 5단계 흐름</li></ul></figcaption></figure>
 
 
 <h2 id="case">사례</h2>
@@ -132,11 +134,13 @@
 <ul><li>수치: 원문의 값, 단위, 기준 연도와 일치</li><li>인용: 원문에 같은 문장 존재</li><li>고유명사: 인물, 기관, 제품 이름의 철자</li><li>날짜: 사건 순서와 연도</li><li>참고문헌: 실제 존재와 서지 정보</li></ul>
 
 <h2 id="cycle">개선 절차</h2>
-<figure class="fig diagram" id="fig-7-2"><div class="svg-wrap" role="img" aria-label="목표 정의부터 기록까지 여섯 단계와 수정 후 재실행으로 돌아가는 반복"><svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m2-ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="70.9">1. 목표 정의</tspan></text><line x1="130" y1="66" x2="158" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="158" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="218.0" y="70.9">2. 평가 기준</tspan></text><line x1="278" y1="66" x2="306" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="306" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="366.0" y="70.9">3. 초안 실행</tspan></text><line x1="426" y1="66" x2="454" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="454" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="514.0" y="70.9">4. 평가</tspan></text><line x1="574" y1="66" x2="602" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="602" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="662.0" y="70.9">5. 수정</tspan></text><line x1="722" y1="66" x2="750" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="750" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="810.0" y="70.9">6. 기록</tspan></text><path d="M 662 92 Q 662 150 366 150 L 366 96" fill="none" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><text x="400" y="170" font-size="12" fill="#625D52" text-anchor="middle">불합격 기준이 남으면 3단계로 돌아갑니다</text></svg></div><figcaption><b>그림 7-2. 프롬프트 개선 절차</b><ul class="capnote"><li>목표 정의부터 기록까지 6단계</li><li>불합격 기준이 남으면 초안 실행 단계부터 반복</li></ul></figcaption></figure>
+<p>프롬프트는 목표 정의부터 기록까지 6단계 절차를 반복하며 개선합니다.</p>
+<figure class="fig diagram" id="fig-7-2"><div class="svg-wrap" role="img" aria-label="목표 정의부터 기록까지 여섯 단계와 수정 후 재실행으로 돌아가는 반복"><svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m2-ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="70.0" y="70.9">1. 목표 정의</tspan></text><line x1="130" y1="66" x2="158" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="158" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="218.0" y="70.9">2. 평가 기준</tspan></text><line x1="278" y1="66" x2="306" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="306" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="366.0" y="70.9">3. 초안 실행</tspan></text><line x1="426" y1="66" x2="454" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="454" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="514.0" y="70.9">4. 평가</tspan></text><line x1="574" y1="66" x2="602" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="602" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="662.0" y="70.9">5. 수정</tspan></text><line x1="722" y1="66" x2="750" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><rect x="750" y="40" width="120" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="810.0" y="70.9">6. 기록</tspan></text><path d="M 662 92 Q 662 150 366 150 L 366 96" fill="none" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-ah2)"/><text x="400" y="170" font-size="12" fill="#625D52" text-anchor="middle">불합격 기준이 남으면 3단계로 돌아갑니다</text></svg></div><figcaption><b>그림 7-2. 프롬프트 개선 절차</b><ul class="capnote"><li>목표 정의부터 기록까지 6단계, 불합격 기준이 남으면 초안 실행부터 반복</li></ul></figcaption></figure>
 <ol><li><b>목표 정의</b>: 결과물의 용도, 독자, 형식을 적습니다.</li><li><b>평가 기준 작성</b>: 합격과 불합격을 가르는 기준을 적습니다.</li><li><b>초안 실행</b>: 프롬프트를 실행하고 결과를 저장합니다.</li><li><b>평가</b>: 기준별로 결과를 점검합니다.</li><li><b>수정</b>: 실패한 기준에 해당하는 요소 하나를 고칩니다.</li><li><b>기록</b>: 프롬프트, 결과, 평가를 함께 저장합니다.</li></ol>
 
 
 <h2 id="criteria">평가 기준표</h2>
+<p>결과물은 정확성, 완전성, 형식, 어조의 네 기준으로 평가합니다.</p>
 <figure class="fig" id="tbl-7-4"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w40"></colgroup>
 <thead><tr><th>기준</th><th>확인 내용</th><th>불합격 예제</th></tr></thead>
 <tbody>
@@ -149,6 +153,7 @@
 
 
 <h2 id="fixes">실패 유형별 수정</h2>
+<p>결과가 실패하면 실패 유형에 대응하는 5요소를 수정합니다.</p>
 <figure class="fig" id="tbl-7-5"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w50"></colgroup>
 <thead><tr><th>실패 유형</th><th>고칠 요소</th><th>수정 예제</th></tr></thead>
 <tbody>
@@ -159,7 +164,7 @@
 <tr><td>형식 불일치</td><td>출력 형식</td><td>빈 틀 예시 제공</td></tr>
 <tr><td>결과가 매번 다름</td><td>출력 형식과 예시</td><td>Few-shot 예시 추가(Chapter 4)</td></tr>
 </tbody></table></div>
-<figcaption><b>표 7-5. 실패 유형과 수정 방법</b><ul class="capnote"><li>실패 유형별로 고칠 요소와 수정 예제</li><li>고칠 요소는 Chapter 3 5요소 기준</li></ul></figcaption></figure>
+<figcaption><b>표 7-5. 실패 유형과 수정 방법</b><ul class="capnote"><li>실패 유형별로 고칠 5요소(Chapter 3 기준)와 수정 예제</li></ul></figcaption></figure>
 
 
 <h2 id="feedback">구조화된 피드백</h2>

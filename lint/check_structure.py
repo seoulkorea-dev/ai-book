@@ -1,0 +1,27 @@
+"""원고 구조 검사 (STYLE.md 3절, CLAUDE.md 캡션 규칙). 위반이 없으면 출력 없음.
+1. 캡션 설명(capnote)은 정확히 1줄
+2. 절 제목(h2, h3) 바로 뒤에 그림이나 표를 두지 않음
+3. 요약 그림은 캡션에서 가리키는 같은 페이지의 표보다 앞에 둠
+"""
+import glob, re, sys
+
+ROOT = __file__.rsplit('/lint/', 1)[0]
+pages = ([f'{ROOT}/index.html'] + sorted(glob.glob(f'{ROOT}/chapters/*.html'))
+         + sorted(glob.glob(f'{ROOT}/appendix/*.html')) + sorted(glob.glob(f'{ROOT}/wiki/*.html')))
+errors = []
+for path in pages:
+    s = open(path, encoding='utf-8').read()
+    name = path[len(ROOT) + 1:]
+    for m in re.finditer(r'<figcaption><b>([^<.]+)\.[^<]*</b>(.*?)</figcaption>', s, re.S):
+        n = len(re.findall(r'<li>', m.group(2)))
+        if n != 1:
+            errors.append(f'{name}: {m.group(1)} 캡션 설명 {n}줄')
+    for m in re.finditer(r'<(h2|h3)[^>]*>([^<]*)</\1>\s*<figure', s, re.S):
+        errors.append(f'{name}: 절 "{re.sub(r"<[^>]+>", "", m.group(2))}" 제목 바로 뒤에 그림 또는 표')
+    pos = {m.group(1): m.start() for m in re.finditer(r'<figcaption><b>((?:표|그림) [0-9A-Z]+(?:-\d+)?)\.', s)}
+    for m in re.finditer(r'<figcaption><b>(그림 [^<.]+)\.[^<]*</b>(.*?)</figcaption>', s, re.S):
+        for ref in re.findall(r'표 [0-9A-Z]+-\d+', m.group(2)):
+            if ref in pos and pos[ref] < m.start():
+                errors.append(f'{name}: {m.group(1)}이 요약하는 {ref}보다 뒤에 있음')
+print('\n'.join(errors), end='\n' if errors else '')
+sys.exit(1 if errors else 0)
