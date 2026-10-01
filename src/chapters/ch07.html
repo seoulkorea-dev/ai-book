@@ -36,7 +36,7 @@
 <figcaption><b>표 7-2. 환각 의심 신호</b><ul class="capnote"><li>지나치게 정확한 수치, 처음 보는 출처 등 의심 신호 5개와 확인 방법</li></ul></figcaption></figure>
 
 <h2 id="measures">대응 방법</h2>
-<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고 모름을 허용해 환각이 생길 여지를 줄이고, 시스템에서는 검색으로 근거를 보충하고, 사용자는 마지막에 원문과 대조합니다. 표 7-3은 방법별 적용 위치와 작성 예제입니다.</p>
+<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고 모름을 허용해 환각이 생길 여지를 줄이고, 시스템에서는 검색으로 근거를 보충하고, 사용자는 마지막에 원문과 대조합니다. 표 7-3은 방법별 적용 위치와 적용 예제입니다.</p>
 <figure class="fig" id="tbl-7-3"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w65"></colgroup>
 <thead><tr><th>방법</th><th>적용 위치</th><th>적용 예제</th></tr></thead>
 <tbody>
@@ -47,7 +47,7 @@
 <tr><td>검색 증강 생성(RAG)</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 포함(그림 7-1)</td></tr>
 <tr><td>원문 대조</td><td>사용자 검토</td><td>수치, 인용, 고유명사를 원문과 대조</td></tr>
 </tbody></table></div>
-<figcaption><b>표 7-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 작성 예제</li></ul></figcaption></figure>
+<figcaption><b>표 7-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 적용 예제</li></ul></figcaption></figure>
 <p>검색 증강 생성(RAG)은 질문과 관련된 문서를 검색해 프롬프트에 포함한 뒤 답을 생성하는 방식입니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. 그림 7-1은 그 흐름입니다.</p>
 <figure class="fig diagram" id="fig-7-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/></svg></div><figcaption><b>그림 7-1. 검색 증강 생성(RAG) 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시의 흐름</li></ul></figcaption></figure>
 
@@ -59,7 +59,7 @@
 <p>Google은 2023년 2월 Bard를 소개하는 홍보 자료에서, 제임스 웹 우주망원경이 태양계 밖 행성을 처음 촬영했다는 Bard의 답변을 보여 주었습니다. 태양계 밖 행성을 처음 촬영한 것은 2004년 유럽남방천문대의 VLT였습니다. 오류가 보도된 날 모회사 Alphabet의 주가가 하락했습니다.</p>
 
 <h2 id="automation-bias">자동화 편향</h2>
-<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. 자동화 시스템의 결과를 확인 없이 신뢰하는 이 경향을 자동화 편향이라고 합니다. 자동화 편향은 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 경향입니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
+<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 이 경향을 자동화 편향이라고 합니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
 <ul><li><b>목록에 따른 확인</b>: 확인 항목을 목록으로 정해 두고 매번 같은 순서로 확인합니다.</li><li><b>제삼자 확인</b>: 중요도가 높은 결과는 작성자가 아닌 사람이 한 번 더 확인합니다.</li><li><b>예상 답 기록</b>: AI 결과를 받기 전에 예상 답을 먼저 적어 두면 차이를 발견하기 쉽습니다.</li></ul>
 
 <h2 id="checklist">검토 목록</h2>
