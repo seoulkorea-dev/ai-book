@@ -7,7 +7,19 @@ import glob
 import re
 from collections import Counter
 
-B = re.compile(r"고르[^게]|고릅|고른|골라|고치|고칩|고친|고쳐|바꾸|바꿉|바꿔|바뀌|바꾼|바꿀|바꿨|고칠|고쳤|붙인|붙일|붙였|넣을|넣은|넣었|골랐|(?<![가-힣])고를|틀릴|틀렸|썼|(?<![가-힣])쓸 |(?<![가-힣])쓴 |넣[어으습지는]|붙여|붙이|붙입|틀린|틀리|알아채|잘하는|못하는|좋아지|나빠지|만들어 내|찾아내|씁니다|쓰십시오|쓰는|쓰면|끄는")
+# 치환 대상 동사는 어간 뒤 모든 어미를 잡는다(관형형, 과거형, 연결형). 앞에 한글이 붙으면 다른 낱말(원고를, 덧붙이다)이라 제외
+B = re.compile(
+    r"(?<![가-힣])(?:쓰[고지기며면는]|써[도서야 ]|썼|씁|쓸 |쓴 |쓰십시오)"
+    r"|(?<![가-힣])넣[고기어으을은었지는습]"
+    r"|(?<![가-힣])(?:바꾸|바꿉|바꿔|바뀌|바꾼|바꿀|바꿨)"
+    r"|(?<![가-힣])(?:고르|고릅|고른|골라|골랐|고를)"
+    r"|(?<![가-힣])(?:고치|고칩|고친|고쳐|고칠|고쳤)"
+    r"|(?<![가-힣])(?:붙이|붙입|붙인|붙일|붙여|붙였)"
+    r"|(?<![가-힣])(?:틀리|틀린|틀릴|틀렸)"
+    r"|알아채|잘하는|못하는|좋아지|나빠지|만들어 내|찾아내|끄는"
+)
+# 정상 예외: 고르지 않다, 고르게(균등하다 뜻), 붙여 넣다, 읽기와 쓰기(권한 이름), 일부러 보인 나쁜 예(개선 전 프롬프트)
+EXCEPT = re.compile(r"고르지 않|고르게|붙여 넣|읽기와 쓰기|이 코드 고쳐 줘|자기소개서 써 줘")
 files = ["index.html"] + sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html")) + sorted(glob.glob("wiki/*.html"))
 total = Counter()
 for f in files:
@@ -33,6 +45,8 @@ for f in files:
     for n, line in enumerate(body.split("\n"), 1):
         text = re.sub(r"<svg.*?</svg>|<[^>]+>", " ", line)
         for m in B.finditer(text):
+            if EXCEPT.search(text[max(0, m.start() - 10):m.end() + 10]):
+                continue
             total[m.group(0)] += 1
             print(f"경고 {f}:{n}: {m.group(0)} | {text[max(0, m.start() - 20):m.end() + 15].strip()}")
 if total:
