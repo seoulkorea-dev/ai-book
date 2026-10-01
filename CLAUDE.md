@@ -15,7 +15,7 @@
 2. `src/`의 조각을 고친다. 목차, 페이지 제목, 설명은 `src/site.json`
 3. `python3 tools/build.py`
 4. 검사를 실행하고 출력을 그대로 보고한다
-   - `grep -nEf lint/banned.txt index.html chapters/*.html appendix/*.html wiki/*.html` 출력 없어야 함
+   - `LC_ALL=C.UTF-8 grep -nEf lint/banned.txt index.html chapters/*.html appendix/*.html wiki/*.html` 출력 없어야 함 (한글 패턴이 바이트 단위로 해석되지 않도록 UTF-8 로케일 지정)
    - `python3 lint/check_numbers.py` 출력 없어야 함
    - `python3 lint/check_structure.py` 출력 없어야 함
    - `python3 lint/check_style.py | tail -1` 경고 합계만 보고
@@ -39,6 +39,7 @@ echo "로컬 $LOCAL / 원격 $REMOTE / 배포 $DEPLOY"
 - 표 열 이름의 "예"는 "예제"
 - 전개는 절충식(STYLE.md 3절): 절 첫 문장에 결론, 절 제목 바로 뒤에 그림이나 표 금지, 요약 그림은 표보다 앞
 - 제품명은 참고 예제로만, 평가 표현 금지, 알파벳순
+- reviews/는 검수 기록 폴더다. 검수 Agent가 MD로 전달한 결과를 작성 A가 원고에 반영한 뒤, 그 MD를 수정 없이 commit, push한다. git push는 작성 A만 한다
 - 프롬프트 5요소: 목적, 역할, 맥락, 출력 형식, 제약 조건 (이 순서)
 - 출처 유형 표시(배지)는 쓰지 않는다. 출처는 문장 안에 주체와 제목으로 밝힌다
 - 사실 추가는 원문 확인 후. 확인하지 못한 사실은 넣지 않고 사용자에게 알린다
@@ -51,5 +52,5 @@ echo "로컬 $LOCAL / 원격 $REMOTE / 배포 $DEPLOY"
    - 첫 열 번호는 계층, 단계, 절차처럼 순서가 있는 표에만
    - 설명 열은 첫 열만으로 뜻이 불분명한 표에만
    - 빗금(/) 쓰지 않음
-   - 표 2-2(생태계 계층)는 사용자 쪽 계층부터: 1. 애플리케이션, 2. 에이전트, 3. 연동, 4. API, 5. 모델 (Chapter 2 본문 설명 순서도 함께 변경)
+   - 표 2-2(생태계 계층)는 사용자 쪽 계층부터: 1. 제품, 2. 에이전트, 3. 연동, 4. API, 5. 모델 (반영 완료)
 3. B 배제어 치환 (`lint/check_style.py` 경고 260건): 프롬프트 예제에도 적용, 검사는 경고만. 치환표는 사용자 확인 대기

@@ -73,7 +73,7 @@
 <tr><td>멀티모달</td><td>텍스트, 이미지, 음성을 함께 입력받고 생성</td><td>Google Gemini 발표 (2023년 12월)</td></tr>
 <tr><td>연동 규격</td><td>AI와 외부 도구를 잇는 공개 규격</td><td>Anthropic MCP 공개 (2024년 11월)</td></tr>
 <tr><td>에이전트</td><td>도구를 호출해 여러 단계 작업을 수행</td><td>Anthropic 「Building effective agents」 발표 (2024년 12월)</td></tr>
-<tr><td>긴 컨텍스트</td><td>긴 문서를 한 번에 처리</td><td>Google Gemini 1.5 Pro 발표, 최대 100만 토큰 (2024년 2월)</td></tr>
+<tr><td>긴 컨텍스트</td><td>긴 문서를 한 번에 처리</td><td>Google Gemini 1.5 Pro 발표, 시험 공개에서 최대 100만 토큰 (2024년 2월)</td></tr>
 <tr><td>개인화</td><td>이전 대화와 사용자 설정을 기억해 반영</td><td>ChatGPT 메모리 기능 발표 (2024년 2월)</td></tr>
 </tbody></table></div>
 <figcaption><b>표 F-1. 생성형 AI 기술 변화</b><ul class="capnote"><li>추론 모델, 멀티모달, 연동 규격, 에이전트, 긴 컨텍스트, 개인화의 내용과 사례</li></ul></figcaption></figure>
@@ -90,7 +90,7 @@
 
 <h2 id="agents">에이전트</h2>
 <p>에이전트는 목표를 받아 도구 호출, 결과 확인, 다음 행동 결정을 반복하는 AI 시스템입니다. Anthropic은 「Building effective agents」에서 코드로 정한 순서대로 실행하는 워크플로와, 모델이 과정을 스스로 결정하는 에이전트를 구분하고, 가장 단순한 방식부터 시작하도록 권장했습니다.</p>
-<p>에이전트는 사람이 관여하는 정도에 따라 네 단계로 나눌 수 있습니다. <a href="#tbl-F-2">표 F-2</a>는 이 책이 정리한 구분이며, <a href="#fig-F-1">그림 F-1</a>은 같은 단계를 자율성 순서로 배치한 것입니다. Chapter 6의 맡기는 방식(<a href="../chapters/ch06.html#tbl-6-5">표 6-5</a>)이 작업 하나에 대한 구분이라면, 이 구분은 에이전트 제품의 자율성에 대한 구분입니다.</p>
+<p>에이전트는 사람이 관여하는 정도에 따라 네 단계로 나눌 수 있습니다. <a href="#tbl-F-2">표 F-2</a>는 이 책이 정리한 구분이며, <a href="#fig-F-1">그림 F-1</a>은 같은 단계를 자율성 순서로 배치한 것입니다. Chapter 6의 맡기는 방식(<a href="../chapters/ch06.html#tbl-6-2">표 6-2</a>)이 작업 하나에 대한 구분이라면, 이 구분은 에이전트 제품의 자율성에 대한 구분입니다.</p>
 <figure class="fig diagram" id="fig-F-1"><div class="svg-wrap" role="img" aria-label="제안, 승인 후 실행, 범위 안 자율, 자율 실행의 네 단계와 단계별 사람의 역할"><svg viewBox="0 0 900 225" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="110" width="200" height="60" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text x="110" y="136" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">1. 제안</text><text x="110" y="158" font-size="12" fill="#625D52" text-anchor="middle">사람: 직접 실행</text><rect x="230" y="80" width="200" height="90" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text x="330" y="106" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">2. 승인 후 실행</text><text x="330" y="128" font-size="12" fill="#625D52" text-anchor="middle">사람: 단계마다 승인</text><rect x="450" y="50" width="200" height="120" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text x="550" y="76" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">3. 범위 안 자율</text><text x="550" y="98" font-size="12" fill="#625D52" text-anchor="middle">사람: 권한 설정, 결과 검토</text><rect x="670" y="20" width="200" height="150" rx="8" fill="#DCD2B8" stroke="#8a8272"/><text x="770" y="46" font-size="14" font-weight="700" fill="#2B2A26" text-anchor="middle">4. 자율 실행</text><text x="770" y="68" font-size="12" fill="#625D52" text-anchor="middle">사람: 목표 설정, 사후 감사</text><line x1="10" y1="195" x2="880" y2="195" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><text x="445" y="215" font-size="12" fill="#625D52" text-anchor="middle">오른쪽으로 갈수록 사람 확인 없이 실행되는 작업이 늘어납니다</text></svg></div><figcaption><b>그림 F-1. 에이전트 자율성 단계</b><ul class="capnote"><li>표 F-2의 네 단계를 자율성 순서로 배치한 그림</li></ul></figcaption></figure>
 <figure class="fig" id="tbl-F-2"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col><col><col></colgroup>
 <thead><tr><th>단계</th><th>AI의 행동</th><th>사람의 역할</th><th>예제</th></tr></thead>
@@ -110,7 +110,7 @@
 <p>대화형 제품은 사용자 지침, 프로젝트, 메모리 기능으로 사용자의 선호와 배경을 저장해 다음 대화에 반영합니다. 같은 맥락을 매번 입력하지 않아도 되지만, 제품이 무엇을 저장했는지는 사용자가 확인해야 합니다. 메모리 목록을 주기적으로 확인하고, 민감한 정보는 삭제하고, 필요하면 기능을 해제합니다.</p>
 
 <h2 id="governance">규제와 표준</h2>
-<p>기술 변화와 함께 규제와 표준도 변화했습니다. <a href="#tbl-F-3">표 F-3</a>은 법률, 보안 표준, 규격 관리 기구의 주요 변화와 시점입니다.</p>
+<p>규제와 표준은 기술 변화를 따라 법률, 보안 표준, 규격 관리 기구의 세 방향으로 변화했습니다. <a href="#tbl-F-3">표 F-3</a>은 법률, 보안 표준, 규격 관리 기구의 주요 변화와 시점입니다.</p>
 <figure class="fig" id="tbl-F-3"><div class="table-wrap"><table class="fit-3"><colgroup><col class="w30"><col class="w55"><col></colgroup>
 <thead><tr><th>변화</th><th>내용</th><th>시점</th></tr></thead>
 <tbody>
