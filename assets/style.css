@@ -224,3 +224,5 @@ aside.footnote h4 { margin: 0 0 0.3rem; font-size: 18px; }
 /* 캡션 설명: 개조식 */
 figcaption ul.capnote { margin: 0.25rem 0 0; padding-left: 1.1rem; }
 figcaption ul.capnote li { margin: 0.1rem 0; }
+/* 표지 부제 */
+.subtitle { margin: -0.4rem 0 1.4rem; font-size: 1.15rem; color: var(--muted); font-weight: 600; }

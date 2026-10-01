@@ -56,8 +56,8 @@
     "index": {
       "path": "index.html",
       "nav": "시작하며: 이 책의 활용법",
-      "title": "생성형 AI 실전 가이드",
-      "desc": "생성형 AI의 원리, 활용, 위험 관리 안내서"
+      "title": "생성형 AI, 묻고 확인하고 활용하기",
+      "desc": "작동 원리, 프롬프트, 검증, 책임"
     },
     "ch01": {
       "path": "chapters/ch01.html",

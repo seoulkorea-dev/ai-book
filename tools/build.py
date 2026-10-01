@@ -12,8 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
-BOOK = "생성형 AI 실전 가이드"
-SUB = "원리, 활용, 위험 관리"
+BOOK = "생성형 AI, 묻고 확인하고 활용하기"
+SUB = "작동 원리, 프롬프트, 검증, 책임"
 
 site = json.loads((SRC / "site.json").read_text(encoding="utf-8"))
 NAV = site["nav"]
