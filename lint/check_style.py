@@ -7,7 +7,7 @@ import glob
 import re
 from collections import Counter
 
-B = re.compile(r"고르[^게]|고릅|고른|골라|고치|고칩|고친|고쳐|바꾸|바꿉|바꿔|바뀌|넣[어으습지는]|붙여|붙이|붙입|틀린|틀리|알아채|잘하는|못하는|좋아지|나빠지|만들어 내|찾아내|씁니다|쓰십시오|쓰는|쓰면|끄는")
+B = re.compile(r"고르[^게]|고릅|고른|골라|고치|고칩|고친|고쳐|바꾸|바꿉|바꿔|바뀌|바꾼|바꿀|바꿨|넣[어으습지는]|붙여|붙이|붙입|틀린|틀리|알아채|잘하는|못하는|좋아지|나빠지|만들어 내|찾아내|씁니다|쓰십시오|쓰는|쓰면|끄는")
 files = ["index.html"] + sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html")) + sorted(glob.glob("wiki/*.html"))
 total = Counter()
 for f in files:
