@@ -57,7 +57,7 @@
 <p class="eyebrow-part">프롬프트 엔지니어링</p>
 <h1>기초</h1>
 <p class="lead">프롬프트의 요소, 모델 설정, 작성 원칙을 정리합니다.</p><h2 id="elements">프롬프트의 요소</h2>
-<p>목적, 역할, 맥락, 출력 형식, 제약 조건의 5요소로 구성됩니다. 처리할 입력 자료는 구분 기호로 감싸 지시와 분리합니다. 상세 내용은 <a href="../chapters/ch02.html">Chapter 2</a>에서 다룹니다.</p>
+<p>목적, 역할, 맥락, 출력 형식, 제약 조건으로 구성됩니다. 처리할 입력 자료는 구분 기호로 감싸 지시와 분리합니다. 상세 내용은 <a href="../chapters/ch02.html">Chapter 2</a>에서 다룹니다.</p>
 <h2 id="settings">LLM 설정</h2>
 <p>LLM의 생성 결과는 temperature, top_p 같은 생성 설정으로 조절합니다.</p>
 <figure class="fig" id="tbl-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w35"></colgroup>
@@ -70,7 +70,7 @@
 </tbody></table></div>
 <figcaption><b>표 1. 주요 생성 설정</b><ul class="capnote"><li>temperature, top_p, max tokens, stop sequence의 효과와 사용 예제</li></ul></figcaption></figure><p>일부 모델은 temperature, top_p를 지원하지 않습니다. Anthropic은 Claude Opus 4.7부터 temperature, top_p, top_k를 기본값이 아닌 값으로 보내면 400 오류를 돌려주고, 프롬프트로 동작을 조정하도록 안내합니다. 관련: <a href="../chapters/ch03.html#sampling">Chapter 3</a></p>
 <h2 id="tips">작성 원칙</h2>
-<ul><li>작업을 동사로 구체적으로 적습니다.</li><li>독자와 용도를 적습니다.</li><li>출력 형식을 예시로 보여 줍니다.</li><li>금지 사항보다 해야 할 일을 먼저 적습니다.</li><li>입력 데이터는 구분 기호로 감쌉니다.</li></ul>
+<ul><li>작업을 동사로 구체적으로 적습니다.</li><li>읽을 사람과 용도를 적습니다.</li><li>출력 형식을 예시로 보여 줍니다.</li><li>금지 사항보다 해야 할 일을 먼저 적습니다.</li><li>입력 데이터는 구분 기호로 감쌉니다.</li></ul>
 <h2 id="system">시스템 프롬프트</h2>
 <p>시스템 프롬프트는 대화 전체에 적용되는 기본 지시입니다. 역할, 규칙, 출력 형식처럼 매번 반복할 내용을 둡니다.</p>
 
