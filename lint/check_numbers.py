@@ -14,8 +14,8 @@ import re
 import sys
 
 files = sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html")) + sorted(glob.glob("wiki/*.html"))
-CAP = re.compile(r"<figcaption><b>((그림|표) (?:([0-9A-Z]+)-)?([0-9]+))\.")
-REF = re.compile(r"(?:그림|표) [0-9A-Z]+-[0-9]+")
+CAP = re.compile(r"<figcaption><b>((그림|표) (?:([0-9A-Z]+|부[0-9]+)-)?([0-9]+))\.")
+REF = re.compile(r"(?:그림|표) (?:[0-9A-Z]+|부[0-9]+)-[0-9]+")
 errors = []
 owner = {}
 
@@ -35,7 +35,7 @@ for f in files:
 for f in files:
     html = open(f, encoding="utf-8").read()
     body = re.sub(r"<(figcaption|pre|svg)[^>]*>.*?</\1>", "", html, flags=re.S)
-    linked = set(re.findall(r"<a [^>]*>((?:그림|표) [0-9A-Z]+-[0-9]+)</a>", body))
+    linked = set(re.findall(r"<a [^>]*>((?:그림|표) (?:[0-9A-Z]+|부[0-9]+)-[0-9]+)</a>", body))
     plain = re.sub(r"<a [^>]*>.*?</a>", "", body, flags=re.S)
     plain = re.sub(r"<[^>]+>", " ", plain)
     for r in sorted(set(REF.findall(re.sub(r"<[^>]+>", " ", body)))):
@@ -48,7 +48,7 @@ for f in files:
 BATCHIM = set("013678")
 PAIR = {"은": "는", "는": "은", "이": "가", "가": "이", "을": "를", "를": "을", "과": "와", "와": "과"}
 WITH = set("은이을과")
-JOSA = re.compile(r"((?:표|그림) (?:[0-9A-Z]+-)?(\d+))(?:</a>)?([은는이가을를과와])(?![가-힣])")
+JOSA = re.compile(r"((?:표|그림) (?:(?:[0-9A-Z]+|부[0-9]+)-)?(\d+))(?:</a>)?([은는이가을를과와])(?![가-힣])")
 for f in files:
     body = open(f, encoding="utf-8").read()
     for m in JOSA.finditer(body):
