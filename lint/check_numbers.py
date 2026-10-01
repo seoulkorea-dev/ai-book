@@ -5,6 +5,7 @@
 2. 장 번호-순번 형식(예: 표 3-1)이 여러 페이지에서 중복되지 않는지
 3. 본문이 가리키는 번호가 실제로 있는지
 4. 본문의 번호 참조에 링크가 걸려 있는지
+6. 파일과 번호 접두가 맞는지(chapters/chNN.html은 NN, 부록 terms=부1, prompts=부2, references=부3), 캡션이 든 figure의 id가 캡션 번호와 같은지(tbl-N-n, fig-N-n). 현행 부록 A~F와 위키는 재구성 4단계 전환 전까지 제외
 5. 번호 뒤 조사가 마지막 숫자의 받침과 맞는지(0, 1, 3, 6, 7, 8 뒤에는 은, 이, 을, 과, 나머지 숫자 뒤에는 는, 가, 를, 와)
 
 표지(index.html)는 번호와 캡션을 두지 않으므로 검사하지 않는다.
@@ -55,6 +56,23 @@ for f in files:
         need_with = m.group(2)[-1] in BATCHIM
         if (m.group(3) in WITH) != need_with:
             errors.append(f"조사 오류: {f} {m.group(1)}{m.group(3)} → {m.group(1)}{PAIR[m.group(3)]}")
+
+# 6. 파일과 번호 접두, figure id 일치
+APPX = {"appendix/terms.html": "부1", "appendix/prompts.html": "부2", "appendix/references.html": "부3"}
+FIG = re.compile(r'<figure[^>]*\bid="([^"]*)"[^>]*>.*?<figcaption><b>(그림|표) ([0-9A-Z]+|부[0-9]+)-([0-9]+)\.', re.S)
+for f in files:
+    m = re.match(r"chapters/ch0*([0-9]+)\.html$", f)
+    want = m.group(1) if m else APPX.get(f)
+    if want is None:
+        continue
+    body = open(f, encoding="utf-8").read()
+    for g in FIG.finditer(body):
+        fid, kind, pre, num = g.groups()
+        if pre != want:
+            errors.append(f"파일과 번호 접두 불일치: {f} {kind} {pre}-{num} (기대 {want}-)")
+        exp = ("tbl" if kind == "표" else "fig") + f"-{pre}-{num}"
+        if fid != exp:
+            errors.append(f"id와 캡션 번호 불일치: {f} id={fid} 캡션={kind} {pre}-{num} (기대 id={exp})")
 
 idx = open("index.html", encoding="utf-8").read()
 if "<figcaption" in idx:
