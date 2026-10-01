@@ -106,14 +106,10 @@
 <p>검색 증강 생성(Retrieval-augmented Generation, RAG)은 질문과 관련된 문서를 검색해 프롬프트에 포함한 뒤 답을 생성하는 방식입니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. <a href="#fig-4-1">그림 4-1</a>은 그 흐름입니다.</p>
 <figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/></svg></div><figcaption><b>그림 4-1. 검색 증강 생성 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시의 흐름</li></ul></figcaption></figure>
 
-<h2 id="case">사례</h2>
-<p>다음 두 사례는 환각을 확인하지 않은 결과가 실제 피해로 이어진 경우입니다.</p>
-<h3>가짜 판례 인용</h3>
-<p>미국 뉴욕 남부 연방지방법원은 2023년 6월 22일 Mata v. Avianca 사건에서, ChatGPT가 생성한 존재하지 않는 판례를 인용한 변호사 두 명과 법률 사무소에 공동으로 5,000달러의 제재금을 부과했습니다. 변호사는 ChatGPT에 판례가 실제로 있는지 물었고, ChatGPT는 있다고 답했습니다. 결과를 만든 AI에게 다시 묻는 것은 검증이 아닙니다. 자세한 내용은 <a href="../wiki/cases.html">위키 사례 연구</a>에서 다룹니다.</p>
-<h3>제품 발표 속 오류</h3>
-<p>Google은 2023년 2월 Bard를 소개하는 홍보 자료에서, 제임스 웹 우주망원경이 태양계 밖 행성을 처음 촬영했다는 Bard의 답변을 보여 주었습니다. 태양계 밖 행성을 처음 촬영한 것은 2004년 유럽남방천문대의 VLT였습니다. 오류가 보도된 날 모회사 Alphabet의 주가가 하락했습니다.</p>
-
 <h2 id="automation-bias">자동화 편향</h2>
+<p>환각을 확인하지 않은 결과는 실제 피해로 이어집니다. 다음 두 경우가 그 예입니다.</p>
+<p>미국 뉴욕 남부 연방지방법원은 2023년 6월 22일 Mata v. Avianca 사건에서, ChatGPT가 생성한 존재하지 않는 판례를 인용한 변호사 두 명과 법률 사무소에 공동으로 5,000달러의 제재금을 부과했습니다. 변호사는 ChatGPT에 판례가 실제로 있는지 물었고, ChatGPT는 있다고 답했습니다. 결과를 만든 AI에게 다시 묻는 것은 검증이 아닙니다. 자세한 내용은 <a href="../wiki/cases.html">위키 사례 연구</a>에서 다룹니다.</p>
+<p>Google은 2023년 2월 Bard를 소개하는 홍보 자료에서, 제임스 웹 우주망원경이 태양계 밖 행성을 처음 촬영했다는 Bard의 답변을 보여 주었습니다. 태양계 밖 행성을 처음 촬영한 것은 2004년 유럽남방천문대의 VLT였습니다. 오류가 보도된 날 모회사 Alphabet의 주가가 하락했습니다.</p>
 <p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 이 경향을 자동화 편향(Automation Bias)이라고 합니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
 <ul><li><b>목록에 따른 확인</b>: 확인 항목을 목록으로 정해 두고 매번 같은 순서로 확인합니다.</li><li><b>제삼자 확인</b>: 중요도가 높은 결과는 작성자가 아닌 사람이 한 번 더 확인합니다.</li><li><b>예상 답 기록</b>: AI 결과를 받기 전에 예상 답을 먼저 적어 두면 차이를 발견하기 쉽습니다.</li></ul>
 
@@ -159,30 +155,33 @@
 <p>여러 번 사용할 프롬프트는 대표 입력 몇 개를 시험 입력 모음으로 만들어 관리합니다. 프롬프트를 수정할 때마다 모음 전체로 다시 실행하면, 한 입력의 결과를 개선하려다 다른 입력의 결과가 저하되는 문제를 발견할 수 있습니다.</p>
 
 <h3 id="record">기록 방법</h3>
-<p>개선 절차의 마지막 단계인 기록은 날짜, 목적, 변경, 결과, 다음 과제의 다섯 항목으로 작성합니다. 변경 항목에 수정한 요소 하나만 적으면, 결과 변화가 어느 수정에서 비롯되었는지 추적할 수 있습니다.</p>
-<pre><code>날짜: 2026-09-30
-목적: 공지문 핵심 항목 정리
-변경: 형식에 &#x27;기한&#x27; 열 추가
-결과: 시험 입력 5건 중 5건 형식 합격
-다음 과제: 기한이 없는 항목 표기 방법 결정</code></pre>
+<p>프롬프트를 고칠 때마다 무엇을 변경했고 결과가 어떻게 달라졌는지 기록합니다. 한 번에 한 요소만 변경하고 기록하면, 결과가 좋아졌을 때 어느 수정 덕분인지 알 수 있습니다. 기록 항목(차수, 바꾼 요소, 결과, 다음에 할 일)은 이 책이 정한 형식입니다. <a href="#tbl-4-6">표 4-6</a>은 교육 안내문을 표로 정리하는 프롬프트를 세 번 수정한 기록의 예입니다.</p>
+<figure class="fig" id="tbl-4-6"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w35"><col></colgroup>
+<thead><tr><th>차수</th><th>바꾼 요소</th><th>결과</th><th>다음에 할 일</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>처음 요청 "이 교육 안내문 정리해 줘."</td><td>문단으로 요약되어 신청 기한이 문장 속에 묻힘</td><td>출력 형식 지정</td></tr>
+<tr><td>2</td><td>출력 형식: 항목, 내용, 기한 표</td><td>신청 기한, 교육일, 준비물이 표에 따로 정리됨</td><td>안내문에 없는 내용이 섞였는지 확인</td></tr>
+<tr><td>3</td><td>제약 조건: 안내문에 없는 내용은 포함하지 마</td><td>안내문에 없던 "점심 제공" 항목이 사라짐</td><td>기록 종료</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-6. 프롬프트 수정 기록 예</b><ul class="capnote"><li>교육 안내문 정리 프롬프트를 세 번 수정한 차수별 변경과 결과</li></ul></figcaption></figure>
 <h2 id="revision">대화 중 수정</h2>
 <p>대화 중에 결과를 수정할 때는 피드백 방식, 대화를 이어 갈지 여부, 안의 개수를 정합니다.</p>
 
 <h3 id="feedback">구조화된 피드백</h3>
-<p>피드백은 현상, 기준, 요청의 세 부분으로 나눠 작성합니다. "다시 해 줘", "더 좋게" 같은 피드백은 수정 방향을 알려 주지 않기 때문입니다. <a href="#tbl-4-6">표 4-6</a>은 세 부분의 내용과 작성 예제입니다.</p>
-<figure class="fig" id="tbl-4-6"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w60"></colgroup>
+<p>피드백은 현상, 기준, 요청의 세 부분으로 나눠 작성합니다. "다시 해 줘", "더 좋게" 같은 피드백은 수정 방향을 알려 주지 않기 때문입니다. <a href="#tbl-4-7">표 4-7</a>은 세 부분의 내용과 작성 예제입니다.</p>
+<figure class="fig" id="tbl-4-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w60"></colgroup>
 <thead><tr><th>부분</th><th>내용</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>현상</td><td>결과에서 문제가 된 부분을 지목</td><td>두 번째 문단의 매출 수치가 표와 다릅니다.</td></tr>
 <tr><td>기준</td><td>무엇이 맞는지, 왜 문제인지</td><td>표의 3분기 매출은 12억 원입니다.</td></tr>
 <tr><td>요청</td><td>수정 범위와 방식</td><td>두 번째 문단만 표 수치로 수정하고 나머지는 그대로 두십시오.</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-6. 피드백 구성</b><ul class="capnote"><li>피드백을 현상, 기준, 요청으로 나눈 작성 예제</li></ul></figcaption></figure>
+<figcaption><b>표 4-7. 피드백 구성</b><ul class="capnote"><li>피드백을 현상, 기준, 요청으로 나눈 작성 예제</li></ul></figcaption></figure>
 <p>특히 요청 부분에는 수정 범위를 적습니다. 범위를 적지 않으면 모델이 문제가 없던 부분까지 다시 작성하고, 사람은 이미 확인한 부분을 다시 검토해야 합니다.</p>
 
 <h3 id="conversation">대화 맥락 관리</h3>
-<p>같은 대화에서 수정을 이어 가면 앞의 지시와 결과가 맥락으로 쌓입니다. 쌓인 맥락 덕분에 같은 설명을 반복하지 않아도 되지만, 초기의 잘못된 가정이나 폐기한 초안도 함께 남아 결과에 영향을 줍니다. 따라서 상황에 따라 대화를 이어 갈지 새로 시작할지 정합니다(<a href="#tbl-4-7">표 4-7</a>).</p>
-<figure class="fig" id="tbl-4-7"><div class="table-wrap"><table><colgroup><col class="w40"><col class="w60"></colgroup>
+<p>같은 대화에서 수정을 이어 가면 앞의 지시와 결과가 맥락으로 쌓입니다. 쌓인 맥락 덕분에 같은 설명을 반복하지 않아도 되지만, 초기의 잘못된 가정이나 폐기한 초안도 함께 남아 결과에 영향을 줍니다. 따라서 상황에 따라 대화를 이어 갈지 새로 시작할지 정합니다(<a href="#tbl-4-8">표 4-8</a>).</p>
+<figure class="fig" id="tbl-4-8"><div class="table-wrap"><table><colgroup><col class="w40"><col class="w60"></colgroup>
 <thead><tr><th>상황</th><th>권장 방식</th></tr></thead>
 <tbody>
 <tr><td>같은 결과물을 조금씩 다듬음</td><td>같은 대화에서 계속</td></tr>
@@ -190,17 +189,17 @@
 <tr><td>대화가 길어져 앞의 지시가 무시됨</td><td>지금까지 확정한 조건을 요약하게 한 뒤 새 대화에 입력</td></tr>
 <tr><td>여러 결과물을 한 대화에서 만듦</td><td>결과물별로 대화 분리</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-7. 대화를 이어 갈 때와 새로 시작할 때</b><ul class="capnote"><li>같은 대화를 이어 갈 상황과 새 대화를 열 상황의 구분</li></ul></figcaption></figure>
+<figcaption><b>표 4-8. 대화를 이어 갈 때와 새로 시작할 때</b><ul class="capnote"><li>같은 대화를 이어 갈 상황과 새 대화를 열 상황의 구분</li></ul></figcaption></figure>
 
 <h3 id="parallel">병렬 탐색</h3>
 <p>결과물의 방향이 정해지지 않았을 때는 하나를 수정해 나가기보다 서로 다른 안을 여러 개 만든 뒤 선택합니다. 한 안을 계속 수정하면 처음 방향에서 벗어나기 어렵기 때문입니다. 아래 예제는 구성 방식이 다른 목차 세 가지를 요청합니다.</p>
-<pre><code>[주제]의 발표 자료 목차를 세 가지 방향으로 만들어 줘.
+<pre><code>사내 문서 보관 규칙 개정 설명회의 발표 자료 목차를 세 가지 방향으로 만들어 줘.
 1안은 문제 제기로 시작하고, 2안은 결론을 먼저 제시하고, 3안은 사례로 시작해 줘.
 각 안 아래에 그 구성이 맞는 청중을 한 문장으로 적어 줘.</code></pre>
 
 
 </article>
-<footer class="site-foot">생성형 AI, 묻고 확인하고 활용하기: 작동 원리, 프롬프트, 검증, 책임. 최종 업데이트 2026년 9월 30일.</footer>
+<footer class="site-foot">생성형 AI, 묻고 확인하고 활용하기: 작동 원리, 프롬프트, 검증, 책임.</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#types">환각 유형</a></li>
@@ -208,7 +207,6 @@
 <li><a href="#causes">환각의 원인</a></li>
 <li><a href="#signals">의심 신호</a></li>
 <li><a href="#measures">대응 방법</a></li>
-<li><a href="#case">사례</a></li>
 <li><a href="#automation-bias">자동화 편향</a></li>
 <li><a href="#checklist">검토 목록</a></li>
 <li><a href="#practice">확인 연습</a></li>

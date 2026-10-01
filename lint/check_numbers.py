@@ -50,11 +50,14 @@ BATCHIM = set("013678")
 PAIR = {"은": "는", "는": "은", "이": "가", "가": "이", "을": "를", "를": "을", "과": "와", "와": "과"}
 WITH = set("은이을과")
 JOSA = re.compile(r"((?:표|그림) (?:(?:[0-9A-Z]+|부[0-9]+)-)?(\d+))(?:</a>)?([은는이가을를과와])(?![가-힣])")
-for f in files:
+for f in files + ["index.html"]:
     body = open(f, encoding="utf-8").read()
     for m in JOSA.finditer(body):
         need_with = m.group(2)[-1] in BATCHIM
         if (m.group(3) in WITH) != need_with:
+            errors.append(f"조사 오류: {f} {m.group(1)}{m.group(3)} → {m.group(1)}{PAIR[m.group(3)]}")
+    for m in re.finditer(r"(Chapter (\d+))(?:</a>)?([은는이가을를과와])(?![가-힣])", body):
+        if (m.group(3) in WITH) != (m.group(2)[-1] in BATCHIM):
             errors.append(f"조사 오류: {f} {m.group(1)}{m.group(3)} → {m.group(1)}{PAIR[m.group(3)]}")
 
 # 6. 파일과 번호 접두, figure id 일치

@@ -20,7 +20,6 @@ NAV = site["nav"]
 META = site["pages"]
 ORDER = [pid for _, ids in NAV for pid in ids]
 BODY = {pid: (SRC / META[pid]["path"]).read_text(encoding="utf-8") for pid in ORDER}
-UPDATED = site.get("updated", "")
 
 
 def rel(frm, to):
@@ -110,7 +109,7 @@ def page(pid, body):
     m = META[pid]
     cp = m["path"]
     full_title = BOOK if pid == "index" else f"{m['title']} | {BOOK}"
-    foot = f"{BOOK}: {SUB}." + (f" 최종 업데이트 {UPDATED}." if UPDATED else "")
+    foot = f"{BOOK}: {SUB}."
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>

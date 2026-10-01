@@ -1,6 +1,6 @@
 """B 배제어 경고 검사. 한자어 치환 후보를 출력만 하고 종료 코드는 항상 0이다.
 
-치환 기준은 STYLE.md의 어휘 선택 절차를 따른다. 코드 상자(<pre>) 속 프롬프트 예제는 검사하지 않는다. 뜻에 따라 바꿀 말이 다르므로
+치환 기준은 STYLE.md의 어휘 선택 절차를 따른다. 코드 상자 속 프롬프트도 검사한다. 뜻에 따라 바꿀 말이 다르므로
 자동으로 고치지 않고, 위치와 문맥만 보여 준다.
 """
 import glob
@@ -20,7 +20,6 @@ for f in files:
         if k:
             total["코드 상자 십시오"] += k
             print(f"경고 {f}: 코드 상자 속 '십시오' {k}건")
-    body = re.sub(r"<pre.*?</pre>", lambda m: "\n" * m.group(0).count("\n"), body, flags=re.S)
     for n, line in enumerate(body.split("\n"), 1):
         text = re.sub(r"<svg.*?</svg>|<[^>]+>", " ", line)
         for m in B.finditer(text):
