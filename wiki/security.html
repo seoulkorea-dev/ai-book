@@ -61,9 +61,9 @@
 <article>
 <p class="eyebrow-part">위키</p>
 <h1>보안</h1>
-<p class="lead">생성형 AI와 에이전트를 쓸 때의 보안 위협과 대응입니다.</p><h2 id="injection">프롬프트 인젝션</h2>
+<p class="lead">이 쪽은 생성형 AI와 에이전트를 사용할 때의 보안 위협과 대응을 정리합니다.</p><h2 id="injection">프롬프트 인젝션</h2>
 
-<p>프롬프트 인젝션은 입력 데이터 안에 숨긴 문장이 AI의 원래 지시를 바꾸는 공격입니다. OWASP는 「Top 10 for LLM Applications」 2025년 판에서 첫 번째 위험 항목(LLM01)으로 분류했습니다.</p>
+<p>프롬프트 인젝션은 입력 데이터 안에 숨긴 문장이 AI의 원래 지시를 변경하는 공격입니다. OWASP는 「Top 10 for LLM Applications」 2025년 판에서 첫 번째 위험 항목(LLM01)으로 분류했습니다.</p>
 <figure class="fig" id="tbl-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w50"></colgroup>
 <thead><tr><th>유형</th><th>경로</th><th>예제</th></tr></thead>
 <tbody>
@@ -80,7 +80,7 @@
 <tr><td>사람 승인</td><td>발송, 결제, 삭제 전에 사람 확인</td></tr>
 <tr><td>입력 경계 표시</td><td>외부 내용을 태그로 감싸 지시가 아닌 데이터로 표시</td></tr>
 <tr><td>입출력 검사</td><td>알려진 공격 문장, 외부 링크, 민감 정보를 검사</td></tr>
-<tr><td>최소 노출</td><td>시스템 프롬프트에 비밀번호, 키를 넣지 않음</td></tr>
+<tr><td>최소 노출</td><td>시스템 프롬프트에 비밀번호, 키를 포함하지 않음</td></tr>
 </tbody></table></div>
 <figcaption><b>표 2. 다층 방어</b><ul class="capnote"><li>권한 최소화, 사람 승인, 입력 경계 표시, 입출력 검사, 최소 노출의 방법</li></ul></figcaption></figure>
 <h2 id="agent">AI 에이전트 보안</h2>
@@ -105,7 +105,7 @@
 <tr><td>격리</td><td>실행 환경을 운영 환경과 분리</td></tr>
 <tr><td>기록</td><td>도구 호출과 결과를 감사 로그로 저장</td></tr>
 <tr><td>자산 목록</td><td>조직 안의 에이전트를 목록으로 관리</td></tr>
-<tr><td>자격 증명 보호</td><td>비밀번호, API 키를 프롬프트에 넣지 않음</td></tr>
+<tr><td>자격 증명 보호</td><td>비밀번호, API 키를 프롬프트에 포함하지 않음</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4. 에이전트 보안 통제</b><ul class="capnote"><li>최소 권한부터 자격 증명 보호까지 에이전트 보안 통제 8개의 적용 방법</li></ul></figcaption></figure>
 <p>관련: <a href="../chapters/ch08.html#security">Chapter 8</a></p>

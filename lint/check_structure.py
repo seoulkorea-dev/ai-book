@@ -1,7 +1,8 @@
 """원고 구조 검사 (STYLE.md 3절, CLAUDE.md 캡션 규칙). 위반이 없으면 출력 없음.
 1. 캡션 설명(capnote)은 정확히 1줄
 2. 절 제목(h2, h3) 바로 뒤에 그림이나 표를 두지 않음
-3. 요약 그림은 캡션에서 가리키는 같은 페이지의 표보다 앞에 둠
+3. 요약 그림은 캡션에서 가리키는 같은 절의 표보다 앞에 둠
+4. 병합 셀(rowspan)이 있는 표에는 둘째 열 이후의 줄바꿈 금지 클래스(fit-2~)를 쓰지 않음
 """
 import glob, re, sys
 
@@ -18,10 +19,17 @@ for path in pages:
             errors.append(f'{name}: {m.group(1)} 캡션 설명 {n}줄')
     for m in re.finditer(r'<(h2|h3)[^>]*>([^<]*)</\1>\s*<figure', s, re.S):
         errors.append(f'{name}: 절 "{re.sub(r"<[^>]+>", "", m.group(2))}" 제목 바로 뒤에 그림 또는 표')
+    heads = [m.start() for m in re.finditer(r'<h2[\s>]', s)]
+    section = lambda p: sum(1 for h in heads if h < p)
     pos = {m.group(1): m.start() for m in re.finditer(r'<figcaption><b>((?:표|그림) [0-9A-Z]+(?:-\d+)?)\.', s)}
     for m in re.finditer(r'<figcaption><b>(그림 [^<.]+)\.[^<]*</b>(.*?)</figcaption>', s, re.S):
         for ref in re.findall(r'표 [0-9A-Z]+-\d+', m.group(2)):
-            if ref in pos and pos[ref] < m.start():
-                errors.append(f'{name}: {m.group(1)}이 요약하는 {ref}보다 뒤에 있음')
+            if ref in pos and pos[ref] < m.start() and section(pos[ref]) == section(m.start()):
+                errors.append(f'{name}: {m.group(1)}이 같은 절의 {ref}보다 뒤에 있음')
+    for m in re.finditer(r'<table class="([^"]*)">.*?</table>', s, re.S):
+        late = [c for c in m.group(1).split() if re.fullmatch(r'fit-[2-9]', c)]
+        if late and 'rowspan' in m.group(0):
+            cap = re.search(r'<figcaption><b>([^<.]+)\.', s[m.end():m.end() + 300])
+            errors.append(f'{name}: {cap.group(1) if cap else "표"} 병합 셀이 있어 {" ".join(late)} 사용 불가')
 print('\n'.join(errors), end='\n' if errors else '')
 sys.exit(1 if errors else 0)

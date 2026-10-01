@@ -1,8 +1,8 @@
 <p class="eyebrow-part">위키</p>
 <h1>개념</h1>
-<p class="lead">본문의 핵심 개념을 정의하고, 본문에서 다루지 않은 세부 사항을 덧붙입니다.</p><h2 id="prompt">프롬프트</h2>
+<p class="lead">이 쪽은 본문의 핵심 개념을 정의하고, 본문에서 다루지 않은 세부 사항을 보충합니다.</p><h2 id="prompt">프롬프트</h2>
 
-<p>모델에 주는 입력 전체입니다. 목적, 역할, 맥락, 출력 형식, 제약 조건의 5요소로 구성되고, 처리할 입력 자료는 구분 기호로 감싸 따로 붙입니다.</p>
+<p>모델에 주는 입력 전체입니다. 목적, 역할, 맥락, 출력 형식, 제약 조건의 5요소로 구성되고, 처리할 입력 자료는 구분 기호로 감싸 지시와 분리합니다.</p>
 <figure class="fig" id="tbl-1"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w50"></colgroup>
 <thead><tr><th>종류</th><th>작성자</th><th>역할</th></tr></thead>
 <tbody>
@@ -30,30 +30,30 @@
 <tr><td>법률</td><td>존재하지 않는 판례 인용으로 제재</td></tr>
 <tr><td>의료</td><td>잘못된 약물, 용량 정보로 건강 위험</td></tr>
 <tr><td>학술</td><td>가짜 참고문헌 인용으로 연구 부정 판정</td></tr>
-<tr><td>금융</td><td>틀린 수치로 잘못된 투자 판단</td></tr>
+<tr><td>금융</td><td>오류가 있는 수치로 잘못된 투자 판단</td></tr>
 <tr><td>언론</td><td>오보와 신뢰 하락</td></tr>
 </tbody></table></div>
 <figcaption><b>표 3. 환각이 특히 위험한 분야</b><ul class="capnote"><li>법률, 의료, 학술, 금융, 언론 분야별 환각의 위험</li></ul></figcaption></figure>
 <p>프롬프트가 답을 강요해도 환각이 늘어납니다. 근거가 두 가지뿐인 주제에 다섯 가지를 요구하면 나머지를 만들어 채울 수 있습니다. 관련: <a href="../chapters/ch07.html">Chapter 7</a></p>
 <h2 id="token">토큰</h2>
 
-<p>모델이 처리하는 텍스트 단위입니다. 토크나이저가 텍스트를 토큰으로 나누고, 모델은 토큰을 숫자 번호로 바꿔 처리합니다. 사용 요금과 컨텍스트 윈도는 토큰 수로 계산합니다.</p>
+<p>모델이 처리하는 텍스트 단위입니다. 토크나이저가 텍스트를 토큰으로 나누고, 모델은 토큰을 숫자 번호로 변환해 처리합니다. 사용 요금과 컨텍스트 윈도는 토큰 수로 계산합니다.</p>
 <figure class="fig" id="tbl-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w35"></colgroup>
 <thead><tr><th>방식</th><th>원리</th><th>제안</th></tr></thead>
 <tbody>
 <tr><td>BPE</td><td>자주 함께 나오는 글자 쌍을 반복해서 합칩니다.</td><td>Sennrich 외, 2016 (기계 번역 적용)</td></tr>
-<tr><td>WordPiece</td><td>학습 데이터의 가능도를 높이는 조각을 고릅니다.</td><td>Google</td></tr>
+<tr><td>WordPiece</td><td>학습 데이터의 가능도를 높이는 조각을 선택합니다.</td><td>Schuster와 Nakajima, 2012 (Google)</td></tr>
 <tr><td>SentencePiece</td><td>공백을 포함한 원문 그대로를 조각으로 나눕니다.</td><td>Kudo와 Richardson, 2018</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4. 주요 토큰화 방식</b><ul class="capnote"><li>BPE, WordPiece, SentencePiece의 원리와 제안</li></ul></figcaption></figure>
-<p>같은 뜻이라도 언어에 따라 토큰 수가 다르고, 한국어는 영어보다 토큰 수가 많은 경우가 흔합니다. 토큰 수를 줄이려면 인사말과 반복 지시를 생략하고, 긴 문서는 필요한 부분만 넣습니다. 관련: <a href="../chapters/ch01.html#token">Chapter 1</a>, <a href="pe-research.html">연구: 토큰화</a></p>
+<p>같은 뜻이라도 언어와 토크나이저에 따라 토큰 수가 다르며, 영어 중심 토크나이저에서는 한국어 문장이 더 많은 토큰으로 나뉠 수 있습니다. 토큰 수를 줄이려면 인사말과 반복 지시를 생략하고, 긴 문서는 필요한 부분만 입력합니다. 관련: <a href="../chapters/ch01.html#token">Chapter 1</a>, <a href="pe-research.html">연구: 토큰화</a></p>
 <h2 id="context-window">컨텍스트 윈도</h2>
 
 <p>모델이 한 번에 처리하는 토큰의 최대 개수입니다. 시스템 프롬프트, 이전 대화, 첨부 문서, 현재 입력, 답변이 모두 포함됩니다. 대화가 길어지면 새 입력과 답변에 쓸 공간이 줄어듭니다.</p>
 <figure class="fig" id="tbl-5"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w80"></colgroup>
 <thead><tr><th>방법</th><th>절차</th></tr></thead>
 <tbody>
-<tr><td>순차 요약</td><td>문서를 나눠 부분별로 요약하고, 요약을 모아 다시 요약합니다.</td></tr>
+<tr><td>순차 요약</td><td>문서를 앞에서부터 나눠 읽으며, 앞 부분의 요약에 다음 부분의 내용을 더해 요약을 갱신합니다.</td></tr>
 <tr><td>계층 요약</td><td>절 단위 요약, 장 단위 요약, 전체 요약 순서로 올라갑니다.</td></tr>
 <tr><td>질문 기반 추출</td><td>질문과 관련된 부분만 찾아 넣고 답을 생성합니다(RAG).</td></tr>
 </tbody></table></div>
@@ -72,17 +72,17 @@
 <figcaption><b>표 6. 편향 유형</b><ul class="capnote"><li>성별 편향, 문화 편향, 확증 편향 강화의 예제</li></ul></figcaption></figure>
 <p>집단만 바꾼 같은 질문을 여러 번 실행해 경향을 비교합니다. 관련: <a href="../chapters/ch08.html#bias">Chapter 8</a></p>
 <h2 id="role">역할 부여</h2>
-<p>모델에게 직무나 관점을 지정해 설명 수준과 용어를 조정하는 방법입니다. 역할은 모델에 전문 지식을 더하지 않으므로 사실 확인은 따로 합니다. 작업, 형식 지시와 함께 씁니다. 관련: <a href="../chapters/ch03.html#role">Chapter 3</a></p>
+<p>모델에게 직무나 관점을 지정해 설명 수준과 용어를 조정하는 방법입니다. 역할은 모델에 없는 전문 지식을 추가하지 않으므로 사실 확인은 따로 합니다. 역할은 설명의 관점만 정하므로 목적, 출력 형식과 함께 작성합니다. 관련: <a href="../chapters/ch03.html#role">Chapter 3</a></p>
 <h2 id="few-shot">Few-shot</h2>
 
-<p>입력과 출력 예시 몇 개를 프롬프트에 넣어 작업 방식과 형식을 보여 주는 기법입니다. Brown 외(2020)가 GPT-3 연구에서 예시만으로 여러 작업을 수행하는 결과를 발표했습니다. 모델의 가중치를 바꾸지 않고 프롬프트 안의 예시만으로 따르게 하므로 맥락 내 학습(in-context learning)이라고도 합니다.</p>
+<p>입력과 출력 예시 몇 개를 프롬프트에 포함해 작업 방식과 형식을 보여 주는 기법입니다. Brown 외(2020)가 GPT-3 연구에서 예시만으로 여러 작업을 수행하는 결과를 발표했습니다. 모델의 가중치를 변경하지 않고 프롬프트 안의 예시만으로 따르게 하므로 맥락 내 학습(in-context learning)이라고도 합니다.</p>
 <figure class="fig" id="tbl-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w50"></colgroup>
 <thead><tr><th>항목</th><th>Few-shot</th><th>미세 조정</th></tr></thead>
 <tbody>
 <tr><td>필요 데이터</td><td>예시 2개에서 10개</td><td>수십 개 이상, 제공사 권장 수량 확인</td></tr>
 <tr><td>준비 시간</td><td>즉시</td><td>학습 시간 필요</td></tr>
-<tr><td>변경</td><td>프롬프트만 고치면 됨</td><td>다시 학습</td></tr>
-<tr><td>적합한 경우</td><td>시험 작업, 자주 바뀌는 작업</td><td>같은 작업을 대량으로 반복</td></tr>
+<tr><td>변경</td><td>프롬프트만 수정</td><td>다시 학습</td></tr>
+<tr><td>적합한 경우</td><td>시험 작업, 자주 변경되는 작업</td><td>같은 작업을 대량으로 반복</td></tr>
 </tbody></table></div>
 <figcaption><b>표 7. Few-shot과 미세 조정 비교</b><ul class="capnote"><li>필요 데이터, 준비 시간, 변경 방법, 적합한 경우 기준의 비교</li></ul></figcaption></figure>
 <p>예시 순서도 결과에 영향을 줍니다(Zhao 외, 2021). 관련: <a href="../chapters/ch04.html#fewshot">Chapter 4</a></p>
