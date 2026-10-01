@@ -20,19 +20,17 @@
 <nav class="sidenav" id="sidenav" aria-label="전체 목차">
 <h2>전체 목차</h2>
 <ul>
-<li class="group"><a href="../index.html">표지와 머리말</a></li>
-<li class="group">Part 1 생성형 AI의 이해와 도구 선택</li>
-<li><a href="../chapters/ch01.html">Chapter 1 생성형 AI의 작동 원리</a></li>
-<li><a href="../chapters/ch02.html">Chapter 2 도구 선택 기준과 활용 역량 자기 평가</a></li>
-<li class="group">Part 2 프롬프트 작성</li>
-<li><a href="../chapters/ch03.html">Chapter 3 프롬프트의 5요소</a></li>
-<li><a href="../chapters/ch04.html">Chapter 4 고급 프롬프트 기법과 자기 검토 요청</a></li>
-<li class="group">Part 3 학업과 업무에서 AI와 사람의 역할 분담</li>
+<li class="group">시작하며</li>
+<li><a href="../index.html">시작하며: 이 책의 활용법</a></li>
+<li class="group">본문</li>
+<li><a href="../chapters/ch01.html">Chapter 1 생성형 AI의 기본 원리와 한계</a></li>
+<li><a href="../chapters/ch02.html">Chapter 2 프롬프트 작성의 기본</a></li>
+<li><a href="../chapters/ch03.html">Chapter 3 고급 프롬프트 기법과 AI 자기 검토</a></li>
+<li><a href="../chapters/ch04.html">Chapter 4 환각 대응과 교차 검증</a></li>
 <li><a href="../chapters/ch05.html">Chapter 5 학습, 자료 조사, 요약</a></li>
 <li><a href="../chapters/ch06.html">Chapter 6 업무 위임, 기획서 초안, 창작</a></li>
-<li class="group">Part 4 결과물 검증과 위험 관리</li>
-<li><a href="../chapters/ch07.html">Chapter 7 환각 대응과 결과 개선 절차</a></li>
-<li><a href="../chapters/ch08.html">Chapter 8 개인정보, 저작권, 보안과 조직 정책</a></li>
+<li><a href="../chapters/ch07.html">Chapter 7 나에게 맞는 AI 도구 선택과 역량 진단</a></li>
+<li><a href="../chapters/ch08.html">Chapter 8 AI 윤리, 법, 보안과 조직 정책</a></li>
 <li class="group">부록</li>
 <li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
 <li><a href="../appendix/b-tools.html">B. 도구 점검표</a></li>
@@ -62,7 +60,7 @@
 <p class="eyebrow-part">프롬프트 엔지니어링</p>
 <h1>기초</h1>
 <p class="lead">프롬프트의 요소, 모델 설정, 작성 원칙을 정리합니다.</p><h2 id="elements">프롬프트의 요소</h2>
-<p>목적, 역할, 맥락, 출력 형식, 제약 조건의 5요소로 구성됩니다. 처리할 입력 자료는 구분 기호로 감싸 지시와 분리합니다. 상세 내용은 <a href="../chapters/ch03.html">Chapter 3</a>에서 다룹니다.</p>
+<p>목적, 역할, 맥락, 출력 형식, 제약 조건의 5요소로 구성됩니다. 처리할 입력 자료는 구분 기호로 감싸 지시와 분리합니다. 상세 내용은 <a href="../chapters/ch02.html">Chapter 2</a>에서 다룹니다.</p>
 <h2 id="settings">LLM 설정</h2>
 <p>LLM의 생성 결과는 temperature, top_p 같은 생성 설정으로 조절합니다.</p>
 <figure class="fig" id="tbl-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w35"></colgroup>
@@ -73,7 +71,7 @@
 <tr><td>max tokens</td><td>생성할 최대 토큰 수</td><td>답변 길이 제한</td></tr>
 <tr><td>stop sequence</td><td>특정 문자열이 나오면 생성 중단</td><td>형식 끝 표시</td></tr>
 </tbody></table></div>
-<figcaption><b>표 1. 주요 생성 설정</b><ul class="capnote"><li>temperature, top_p, max tokens, stop sequence의 효과와 사용 예제</li></ul></figcaption></figure><p>일부 모델은 temperature, top_p를 지원하지 않습니다. Anthropic은 Claude Opus 4.7부터 temperature, top_p, top_k를 기본값이 아닌 값으로 보내면 400 오류를 돌려주고, 프롬프트로 동작을 조정하도록 안내합니다. 관련: <a href="../chapters/ch04.html#sampling">Chapter 4</a></p>
+<figcaption><b>표 1. 주요 생성 설정</b><ul class="capnote"><li>temperature, top_p, max tokens, stop sequence의 효과와 사용 예제</li></ul></figcaption></figure><p>일부 모델은 temperature, top_p를 지원하지 않습니다. Anthropic은 Claude Opus 4.7부터 temperature, top_p, top_k를 기본값이 아닌 값으로 보내면 400 오류를 돌려주고, 프롬프트로 동작을 조정하도록 안내합니다. 관련: <a href="../chapters/ch03.html#sampling">Chapter 3</a></p>
 <h2 id="tips">작성 원칙</h2>
 <ul><li>작업을 동사로 구체적으로 적습니다.</li><li>독자와 용도를 적습니다.</li><li>출력 형식을 예시로 보여 줍니다.</li><li>금지 사항보다 해야 할 일을 먼저 적습니다.</li><li>입력 데이터는 구분 기호로 감쌉니다.</li></ul>
 <h2 id="system">시스템 프롬프트</h2>
