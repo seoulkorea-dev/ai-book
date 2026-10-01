@@ -150,3 +150,21 @@ for pid in ORDER:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page(pid, body), encoding="utf-8")
 print("pages:", len(ORDER))
+
+# 없어진 쪽의 이동 쪽: 안내 문장 1개, 새 위치 링크, meta refresh
+for old, (new, label) in site.get("redirects", {}).items():
+    href = rel(old, new)
+    (ROOT / old).parent.mkdir(parents=True, exist_ok=True)
+    (ROOT / old).write_text(f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={href}">
+<title>이동한 쪽 | {BOOK}</title>
+<link rel="canonical" href="{href}">
+</head>
+<body>
+<p>이 쪽의 내용은 <a href="{href}">{html.escape(label)}</a>로 옮겼습니다.</p>
+</body>
+</html>
+""", encoding="utf-8")

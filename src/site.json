@@ -23,11 +23,8 @@
       "부록",
       [
         "app-a",
-        "app-b",
         "app-c",
-        "app-d",
-        "app-e",
-        "app-f"
+        "app-d"
       ]
     ],
     [
@@ -116,12 +113,6 @@
       "title": "부록 A. 프롬프트 템플릿",
       "desc": "부록 A. 프롬프트 템플릿"
     },
-    "app-b": {
-      "path": "appendix/b-tools.html",
-      "nav": "B. 도구 점검표",
-      "title": "부록 B. 도구 점검표",
-      "desc": "부록 B. 도구 점검표"
-    },
     "app-c": {
       "path": "appendix/c-glossary.html",
       "nav": "C. 용어 사전",
@@ -133,18 +124,6 @@
       "nav": "D. 참고문헌",
       "title": "부록 D. 참고문헌",
       "desc": "부록 D. 참고문헌"
-    },
-    "app-e": {
-      "path": "appendix/e-self-check.html",
-      "nav": "E. 자가 진단",
-      "title": "부록 E. 자가 진단",
-      "desc": "부록 E. 자가 진단"
-    },
-    "app-f": {
-      "path": "appendix/f-trends.html",
-      "nav": "F. 주요 기술 변화",
-      "title": "F. 주요 기술 변화",
-      "desc": "이 부록은 전망을 싣지 않고, 발표 주체의 공식 발표로 확인되는 기술 변화를 정리합니다."
     },
     "wiki": {
       "path": "wiki/index.html",
@@ -231,5 +210,19 @@
       "desc": "위키: 프롬프트 엔지니어링 연구"
     }
   },
-  "updated": "2026년 9월 30일"
+  "updated": "2026년 9월 30일",
+  "redirects": {
+    "appendix/b-tools.html": [
+      "chapters/ch07.html#tool-sheet",
+      "Chapter 7 제품 비교 점검표"
+    ],
+    "appendix/e-self-check.html": [
+      "chapters/ch07.html#self-check",
+      "Chapter 7 장별 역량 진단"
+    ],
+    "appendix/f-trends.html": [
+      "index.html#structure",
+      "이 책의 구성(주요 기술 변화는 각 장으로 이동)"
+    ]
+  }
 }
