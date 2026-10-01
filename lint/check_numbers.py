@@ -5,6 +5,7 @@
 2. 장 번호-순번 형식(예: 표 3-1)이 여러 페이지에서 중복되지 않는지
 3. 본문이 가리키는 번호가 실제로 있는지
 4. 본문의 번호 참조에 링크가 걸려 있는지
+5. 번호 뒤 조사가 마지막 숫자의 받침과 맞는지(0, 1, 3, 6, 7, 8 뒤에는 은, 이, 을, 과, 나머지 숫자 뒤에는 는, 가, 를, 와)
 
 표지(index.html)는 번호와 캡션을 두지 않으므로 검사하지 않는다.
 """
@@ -42,6 +43,18 @@ for f in files:
             errors.append(f"없는 번호 참조: {f} {r}")
     for r in sorted(set(REF.findall(plain))):
         errors.append(f"링크 없는 번호 참조: {f} {r}")
+
+# 5. 번호 뒤 조사: 마지막 숫자를 읽었을 때 받침이 있으면 은/이/을/과, 없으면 는/가/를/와
+BATCHIM = set("013678")
+PAIR = {"은": "는", "는": "은", "이": "가", "가": "이", "을": "를", "를": "을", "과": "와", "와": "과"}
+WITH = set("은이을과")
+JOSA = re.compile(r"((?:표|그림) (?:[0-9A-Z]+-)?(\d+))(?:</a>)?([은는이가을를과와])(?![가-힣])")
+for f in files:
+    body = open(f, encoding="utf-8").read()
+    for m in JOSA.finditer(body):
+        need_with = m.group(2)[-1] in BATCHIM
+        if (m.group(3) in WITH) != need_with:
+            errors.append(f"조사 오류: {f} {m.group(1)}{m.group(3)} → {m.group(1)}{PAIR[m.group(3)]}")
 
 idx = open("index.html", encoding="utf-8").read()
 if "<figcaption" in idx:
