@@ -27,8 +27,8 @@
 <li><a href="../chapters/ch02.html"><span class="nav-num">Chapter 2</span><span class="nav-title">프롬프트 작성의 기본</span></a></li>
 <li><a href="../chapters/ch03.html"><span class="nav-num">Chapter 3</span><span class="nav-title">고급 프롬프트 기법과 AI 자기 검토</span></a></li>
 <li><a href="../chapters/ch04.html"><span class="nav-num">Chapter 4</span><span class="nav-title">환각 대응과 교차 검증</span></a></li>
-<li><a href="../chapters/ch05.html"><span class="nav-num">Chapter 5</span><span class="nav-title">학습, 자료 조사, 요약</span></a></li>
-<li><a href="../chapters/ch06.html"><span class="nav-num">Chapter 6</span><span class="nav-title">업무 위임, 기획서 초안, 창작</span></a></li>
+<li><a href="../chapters/ch05.html"><span class="nav-num">Chapter 5</span><span class="nav-title">AI를 활용한 학습, 자료 조사, 요약</span></a></li>
+<li><a href="../chapters/ch06.html"><span class="nav-num">Chapter 6</span><span class="nav-title">AI를 활용한 업무, 기획서 초안, 창작</span></a></li>
 <li><a href="../chapters/ch07.html" aria-current="page"><span class="nav-num">Chapter 7</span><span class="nav-title">나에게 맞는 AI 도구 선택과 역량 진단</span></a></li>
 <li><a href="../chapters/ch08.html"><span class="nav-num">Chapter 8</span><span class="nav-title">AI 윤리, 법, 보안과 조직 정책</span></a></li>
 <li class="group">부록</li>
@@ -80,7 +80,7 @@
 <p>기준을 적용하려면 비교 대상인 도구의 종류를 먼저 알아야 합니다. 이어지는 다섯 절은 기준을 적용할 도구의 종류를 설명합니다.</p>
 
 <h2 id="layers">생태계 5계층</h2>
-<p>생성형 AI 도구는 사용자가 접하는 제품부터 모델까지 다섯 계층으로 구성됩니다. 사용자는 제품과 에이전트(agent)를 직접 사용하고, 그 아래에서 연동 규격과 API가 제품을 모델과 외부 도구에 연결합니다. 도구는 같은 계층끼리 비교해야 합니다. 제품인 ChatGPT와 모델인 GPT를 비교하면 기준이 맞지 않기 때문입니다. 예를 들어 Claude는 제품의 이름이면서 모델 계열의 이름이므로, 비교할 때 어느 계층을 가리키는지 먼저 확인합니다.</p>
+<p>생성형 AI 도구는 사용자가 접하는 제품부터 모델까지 다섯 계층으로 구성됩니다. 사용자는 제품과 에이전트(Agent)를 직접 사용하고, 그 아래에서 연동 규격과 API가 제품을 모델과 외부 도구에 연결합니다. 도구는 같은 계층끼리 비교해야 합니다. 제품인 ChatGPT와 모델인 GPT를 비교하면 기준이 맞지 않기 때문입니다. 예를 들어 Claude는 제품의 이름이면서 모델 계열의 이름이므로, 비교할 때 어느 계층을 가리키는지 먼저 확인합니다.</p>
 <figure class="fig" id="tbl-7-2"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w40"></colgroup>
 <thead><tr><th>계층</th><th>역할</th><th>예제</th></tr></thead>
 <tbody>
@@ -114,7 +114,7 @@
 <tr><td>코드 실행</td><td>데이터 분석, 차트, 계산</td><td>실행 환경, 파일 보관 기간</td></tr>
 </tbody></table></div>
 <figcaption><b>표 7-4. 범용 제품의 공통 기능 유형</b><ul class="capnote"><li>파일 첨부, 웹 검색, 프로젝트, 메모리, 심층 조사, 코드 실행의 용도와 확인할 점</li></ul></figcaption></figure>
-<p>대화형 제품은 사용자 지침, 프로젝트, 메모리(memory) 기능으로 사용자의 선호와 배경을 저장해 다음 대화에 반영합니다. 같은 맥락을 매번 입력하지 않아도 되지만, 제품이 무엇을 저장했는지는 사용자가 확인해야 합니다. 메모리 목록을 주기적으로 확인하고, 민감한 정보는 삭제하고, 필요하면 기능을 해제합니다.</p>
+<p>대화형 제품은 사용자 지침, 프로젝트, 메모리(Memory) 기능으로 사용자의 선호와 배경을 저장해 다음 대화에 반영합니다. 같은 맥락을 매번 입력하지 않아도 되지만, 제품이 무엇을 저장했는지는 사용자가 확인해야 합니다. 메모리 목록을 주기적으로 확인하고, 민감한 정보는 삭제하고, 필요하면 기능을 해제합니다.</p>
 
 <h2 id="specialized">특화 도구</h2>
 <p>특화 도구는 검색, 코딩, 이미지 생성처럼 특정 작업에 맞춰 설계된 도구입니다. 범용 제품으로도 같은 작업을 수행할 수 있지만, 특화 도구는 그 작업에 필요한 기능(출처 링크, 저장소 연결, 시안 편집 등)을 기본으로 제공합니다. <a href="#tbl-7-5">표 7-5</a>는 유형별 용도와 사례입니다. 사례는 유형을 이해하기 위한 참고이며, 제품의 순위나 대표성을 뜻하지 않습니다.</p>
@@ -131,7 +131,7 @@
 <figcaption><b>표 7-5. 특화 도구 유형</b><ul class="capnote"><li>검색, 업무 도구 내장, 코딩, 이미지, 영상, 문서 기반 조사 도구의 용도와 사례</li></ul></figcaption></figure>
 
 <h2 id="open">오픈 가중치 모델</h2>
-<p>오픈 가중치 모델(open-weight model)은 학습을 마친 모델의 가중치 파일을 공개해, 누구나 내려받아 자기 컴퓨터나 서버에서 실행할 수 있는 모델입니다. Meta의 Llama 계열, Mistral AI의 모델, Alibaba의 Qwen 계열, OpenAI의 gpt-oss 등이 있습니다.</p>
+<p>오픈 가중치 모델(Open-weight Model)은 학습을 마친 모델의 가중치 파일을 공개해, 누구나 내려받아 자기 컴퓨터나 서버에서 실행할 수 있는 모델입니다. Meta의 Llama 계열, Mistral AI의 모델, Alibaba의 Qwen 계열, OpenAI의 gpt-oss 등이 있습니다.</p>
 <p>앞에서 설명한 범용 제품과 특화 도구는 제공 회사의 서버에서 모델을 실행하고, 사용자는 화면이나 API로 이용합니다. 이 책은 이 방식을 제품형 서비스라고 부릅니다. 두 방식의 가장 큰 차이는 데이터가 외부로 전송되는지 여부이며, 오픈 가중치 모델은 데이터를 내부에 두는 대신 실행 장비와 운영 인력이 필요합니다. <a href="#tbl-7-6">표 7-6</a>은 두 방식의 장점과 단점을 비교합니다.</p>
 <figure class="fig" id="tbl-7-6"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w50"></colgroup>
 <thead><tr><th>구분</th><th>장점</th><th>단점</th></tr></thead>
@@ -256,28 +256,28 @@
 <p>역량 진단은 장별 학습 결과를 "할 수 있다"를 기준으로 점검하는 문항입니다. 할 수 있는 항목에 표시하고, 표시하지 못한 항목이 있는 Chapter를 다시 읽습니다. 내용을 알아도 실제로 수행한 적이 없으면 표시하지 않습니다. 지식과 수행 능력은 다르기 때문입니다.</p>
 
 <h3 id="sc-1">Chapter 1 생성형 AI의 기본 원리와 한계</h3>
-<ul><li>LLM이 문장을 만드는 과정을 토큰(token) 단위로 설명할 수 있습니다.</li><li>같은 질문에도 답이 달라지는 이유를 확률에 따른 토큰 선택으로 설명할 수 있습니다.</li><li>컨텍스트 윈도(context window)의 의미와 긴 입력의 중간 정보가 덜 반영되는 문제를 설명할 수 있습니다.</li><li>생성형 AI의 강점과 약점을 작업 유형별로 구분할 수 있습니다.</li></ul>
+<ul><li>LLM이 문장을 만드는 과정을 토큰(Token) 단위로 설명할 수 있습니다.</li><li>같은 질문에도 답이 달라지는 이유를 확률에 따른 토큰 선택으로 설명할 수 있습니다.</li><li>컨텍스트 윈도(Context Window)의 의미와 긴 입력의 중간 정보가 덜 반영되는 문제를 설명할 수 있습니다.</li><li>생성형 AI의 강점과 약점을 작업 유형별로 구분할 수 있습니다.</li></ul>
 
 <h3 id="sc-2">Chapter 2 프롬프트 작성의 기본</h3>
-<ul><li>목적, 역할, 맥락, 출력 형식, 제약 조건의 프롬프트 구성 요소를 갖춘 프롬프트(prompt)를 작성할 수 있습니다.</li><li>모호한 표현을 기준, 수치, 대상으로 변환할 수 있습니다.</li><li>입력 자료를 구분 기호로 감쌀 수 있습니다.</li></ul>
+<ul><li>목적, 역할, 맥락, 출력 형식, 제약 조건의 프롬프트 구성 요소를 갖춘 프롬프트(Prompt)를 작성할 수 있습니다.</li><li>모호한 표현을 기준, 수치, 대상으로 변환할 수 있습니다.</li><li>입력 자료를 구분 기호로 감쌀 수 있습니다.</li></ul>
 
 <h3 id="sc-3">Chapter 3 고급 프롬프트 기법과 AI 자기 검토</h3>
 <ul><li>Few-shot 예시를 분류별로 고르게 포함할 수 있습니다.</li><li>계산이 들어간 작업에 단계를 지정한 단계별 추론(Chain of Thought, CoT)을 사용할 수 있습니다.</li><li>한국어 프롬프트에서 문체와 한국 기준을 지정할 수 있습니다.</li><li>AI에게 반론과 조건 충족 여부를 점검하게 할 수 있습니다.</li></ul>
 
 <h3 id="sc-4">Chapter 4 환각 대응과 교차 검증</h3>
-<ul><li>내재적 환각(hallucination)과 외재적 환각을 구분할 수 있습니다.</li><li>환각 의심 신호를 알아보고 원문으로 확인할 수 있습니다.</li><li>평가 기준표를 만들고 한 번에 한 요소만 수정할 수 있습니다.</li><li>피드백을 현상, 기준, 요청으로 나눠 줄 수 있습니다.</li></ul>
+<ul><li>내재적 환각(Hallucination)과 외재적 환각을 구분할 수 있습니다.</li><li>환각 의심 신호를 알아보고 원문으로 확인할 수 있습니다.</li><li>평가 기준표를 만들고 한 번에 한 요소만 수정할 수 있습니다.</li><li>피드백을 현상, 기준, 요청으로 나눠 줄 수 있습니다.</li></ul>
 
-<h3 id="sc-5">Chapter 5 학습, 자료 조사, 요약</h3>
+<h3 id="sc-5">Chapter 5 AI를 활용한 학습, 자료 조사, 요약</h3>
 <ul><li>AI를 튜터로 활용할 때 답 대신 힌트를 요청할 수 있습니다.</li><li>AI가 제시한 참고문헌의 존재를 원문으로 확인할 수 있습니다.</li></ul>
 
-<h3 id="sc-6">Chapter 6 업무 위임, 기획서 초안, 창작</h3>
-<ul><li>업무 데이터를 공개, 내부, 개인정보, 고유식별정보, 영업 비밀로 분류할 수 있습니다.</li><li>코드 실행 기능으로 계산한 결과를 원본과 대조할 수 있습니다.</li><li>AI 도입 단계별로 사람의 검토(human in the loop) 지점을 정할 수 있습니다.</li><li>이미지 프롬프트를 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소로 작성할 수 있습니다.</li></ul>
+<h3 id="sc-6">Chapter 6 AI를 활용한 업무, 기획서 초안, 창작</h3>
+<ul><li>업무 데이터를 공개, 내부, 개인정보, 고유식별정보, 영업 비밀로 분류할 수 있습니다.</li><li>코드 실행 기능으로 계산한 결과를 원본과 대조할 수 있습니다.</li><li>AI 도입 단계별로 사람의 검토(Human in the Loop) 지점을 정할 수 있습니다.</li><li>이미지 프롬프트를 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소로 작성할 수 있습니다.</li></ul>
 
 <h3 id="sc-7">Chapter 7 나에게 맞는 AI 도구 선택과 역량 진단</h3>
 <ul><li>제품형 서비스와 오픈 가중치 모델의 차이를 설명할 수 있습니다.</li><li>선택 기준과 추가 확인 항목으로 제품을 비교할 수 있습니다.</li><li>역량 10개의 자기 평가 단계를 정하고 연습 과제를 선택할 수 있습니다.</li></ul>
 
 <h3 id="sc-8">Chapter 8 AI 윤리, 법, 보안과 조직 정책</h3>
-<ul><li>집단만 변경한 프롬프트를 여러 번 실행해 편향(bias)을 점검할 수 있습니다.</li><li>창작물의 권리 침해 요소와 도구 약관의 표시 요구를 점검할 수 있습니다.</li><li>AI 사용 사실을 도구, 범위, 확인 방법까지 표기할 수 있습니다.</li><li>자신의 과의존 신호를 점검할 수 있습니다.</li><li>프롬프트 인젝션(prompt injection)의 대응 방법을 설명할 수 있습니다.</li><li>적용 법률의 시행일을 원문으로 확인할 수 있습니다.</li></ul>
+<ul><li>집단만 변경한 프롬프트를 여러 번 실행해 편향(Bias)을 점검할 수 있습니다.</li><li>창작물의 권리 침해 요소와 도구 약관의 표시 요구를 점검할 수 있습니다.</li><li>AI 사용 사실을 도구, 범위, 확인 방법까지 표기할 수 있습니다.</li><li>자신의 과의존 신호를 점검할 수 있습니다.</li><li>프롬프트 인젝션(Prompt Injection)의 대응 방법을 설명할 수 있습니다.</li><li>적용 법률의 시행일을 원문으로 확인할 수 있습니다.</li></ul>
 
 <h3 id="score">점수 계산</h3>
 <p>표시한 항목 수를 Chapter별로 <a href="#tbl-7-13">표 7-13</a>에 기록합니다. 통과 기준에 미달한 Chapter가 있으면 그 Chapter를 다시 읽습니다.</p>

@@ -27,8 +27,8 @@
 <li><a href="../chapters/ch02.html"><span class="nav-num">Chapter 2</span><span class="nav-title">프롬프트 작성의 기본</span></a></li>
 <li><a href="../chapters/ch03.html"><span class="nav-num">Chapter 3</span><span class="nav-title">고급 프롬프트 기법과 AI 자기 검토</span></a></li>
 <li><a href="../chapters/ch04.html" aria-current="page"><span class="nav-num">Chapter 4</span><span class="nav-title">환각 대응과 교차 검증</span></a></li>
-<li><a href="../chapters/ch05.html"><span class="nav-num">Chapter 5</span><span class="nav-title">학습, 자료 조사, 요약</span></a></li>
-<li><a href="../chapters/ch06.html"><span class="nav-num">Chapter 6</span><span class="nav-title">업무 위임, 기획서 초안, 창작</span></a></li>
+<li><a href="../chapters/ch05.html"><span class="nav-num">Chapter 5</span><span class="nav-title">AI를 활용한 학습, 자료 조사, 요약</span></a></li>
+<li><a href="../chapters/ch06.html"><span class="nav-num">Chapter 6</span><span class="nav-title">AI를 활용한 업무, 기획서 초안, 창작</span></a></li>
 <li><a href="../chapters/ch07.html"><span class="nav-num">Chapter 7</span><span class="nav-title">나에게 맞는 AI 도구 선택과 역량 진단</span></a></li>
 <li><a href="../chapters/ch08.html"><span class="nav-num">Chapter 8</span><span class="nav-title">AI 윤리, 법, 보안과 조직 정책</span></a></li>
 <li class="group">부록</li>
@@ -55,7 +55,7 @@
 <main id="main">
 <article>
 <h1>Chapter 4 환각 대응과 교차 검증</h1>
-<p class="lead">환각(hallucination)은 AI가 사실이 아니거나 입력과 맞지 않는 내용을 사실처럼 생성하는 현상입니다. 이 장은 환각을 알아보고 확인하는 방법과, 평가 기준에 따라 결과를 개선하는 절차를 다룹니다. 이 장에서 교차 검증은 AI 결과를 여러 출처와 원문에 대조해 확인하는 것을 뜻하며, 데이터 분석의 교차 검증(cross-validation)과는 다릅니다.</p>
+<p class="lead">환각(Hallucination)은 AI가 사실이 아니거나 입력과 맞지 않는 내용을 사실처럼 생성하는 현상입니다. 이 장은 환각을 알아보고 확인하는 방법과, 평가 기준에 따라 결과를 개선하는 절차를 다룹니다. 이 장에서 교차 검증은 AI 결과를 여러 출처와 원문에 대조해 확인하는 것을 뜻하며, 데이터 분석의 교차 검증(Cross-validation)과는 다릅니다.</p>
 <ul class="summary"><li>환각은 문장이 자연스러워 겉보기로 구분하기 어려우므로, 원문 대조로 확인합니다.</li><li>근거 자료를 함께 제공하고 출처를 표시하게 하면 대조할 수 있는 결과를 얻습니다.</li><li>결과 개선은 평가 기준을 먼저 정하고, 한 번에 한 요소만 수정하는 방식으로 진행합니다.</li></ul>
 
 <h2 id="types">환각 유형</h2>
@@ -73,8 +73,8 @@
 <ul><li><b>자연스러운 문장</b>: 문장이 매끄럽고 어조가 확신에 차 있습니다.</li><li><b>구체적인 세부 정보</b>: 저자, 연도, 사건 번호, 쪽수처럼 구체적인 정보를 포함합니다.</li><li><b>되풀이와 보강</b>: 다시 물어도 같은 내용을 되풀이하거나, 근거를 새로 만들어 추가합니다.</li><li><b>사실과 오류의 혼합</b>: 사실과 오류가 한 문단 안에 섞여 있습니다.</li></ul>
 
 <h2 id="causes">환각의 원인</h2>
-<p>환각은 모델이 문장을 만드는 방식에서 비롯됩니다. 모델은 사실 여부가 아니라 다음 토큰(token)의 확률로 문장을 만들기 때문에, 확률이 높은 문장이 사실과 다를 수 있습니다. 구체적인 원인은 네 가지입니다.</p>
-<ul><li><b>확률 기반 생성</b>: 모델은 사실을 확인하지 않고 그럴듯한 다음 토큰을 선택합니다.</li><li><b>드문 정보</b>: 학습 데이터에 없거나 드문 정보는 그럴듯한 조합으로 채웁니다.</li><li><b>지식 기준일(knowledge cutoff)</b>: 학습 데이터 수집 시점 이후의 사실을 모릅니다.</li><li><b>답을 강요하는 프롬프트(prompt)</b>: 이유가 두 가지뿐인 주제에 다섯 가지를 요구하면 나머지를 만들어 채울 수 있습니다.</li></ul>
+<p>환각은 모델이 문장을 만드는 방식에서 비롯됩니다. 모델은 사실 여부가 아니라 다음 토큰(Token)의 확률로 문장을 만들기 때문에, 확률이 높은 문장이 사실과 다를 수 있습니다. 구체적인 원인은 네 가지입니다.</p>
+<ul><li><b>확률 기반 생성</b>: 모델은 사실을 확인하지 않고 그럴듯한 다음 토큰을 선택합니다.</li><li><b>드문 정보</b>: 학습 데이터에 없거나 드문 정보는 그럴듯한 조합으로 채웁니다.</li><li><b>지식 기준일(Knowledge Cutoff)</b>: 학습 데이터 수집 시점 이후의 사실을 모릅니다.</li><li><b>답을 강요하는 프롬프트(Prompt)</b>: 이유가 두 가지뿐인 주제에 다섯 가지를 요구하면 나머지를 만들어 채울 수 있습니다.</li></ul>
 <p>평가 방식도 원인의 하나입니다. OpenAI 연구진(Kalai 외)은 2025년 9월 논문 「Why Language Models Hallucinate」에서, 정답만 채점하는 평가 방식이 모른다고 답하기보다 추측하도록 모델을 유도한다고 밝혔습니다.</p>
 
 <h2 id="signals">의심 신호</h2>
@@ -99,12 +99,12 @@
 <tr><td>출처 표시 요구</td><td>프롬프트</td><td>각 주장 뒤에 근거 문단 번호를 적으십시오.</td></tr>
 <tr><td>모름 허용</td><td>프롬프트</td><td>근거가 없으면 '자료에 없음'이라고 답하십시오.</td></tr>
 <tr><td>개수 강요 제거</td><td>프롬프트</td><td>근거가 있는 이유를 모두 적으십시오. 개수는 정하지 않습니다.</td></tr>
-<tr><td>검색 증강 생성(RAG)</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 포함(<a href="#fig-4-1">그림 4-1</a>)</td></tr>
+<tr><td>검색 증강 생성</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 포함(<a href="#fig-4-1">그림 4-1</a>)</td></tr>
 <tr><td>원문 대조</td><td>사용자 검토</td><td>수치, 인용, 고유명사를 원문과 대조</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 적용 예제</li></ul></figcaption></figure>
-<p>검색 증강 생성(Retrieval-Augmented Generation, RAG)은 질문과 관련된 문서를 검색해 프롬프트에 포함한 뒤 답을 생성하는 방식입니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. <a href="#fig-4-1">그림 4-1</a>은 그 흐름입니다.</p>
-<figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/></svg></div><figcaption><b>그림 4-1. 검색 증강 생성(RAG) 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시의 흐름</li></ul></figcaption></figure>
+<p>검색 증강 생성(Retrieval-augmented Generation, RAG)은 질문과 관련된 문서를 검색해 프롬프트에 포함한 뒤 답을 생성하는 방식입니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. <a href="#fig-4-1">그림 4-1</a>은 그 흐름입니다.</p>
+<figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">넣기</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/></svg></div><figcaption><b>그림 4-1. 검색 증강 생성 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시의 흐름</li></ul></figcaption></figure>
 
 <h2 id="case">사례</h2>
 <p>다음 두 사례는 환각을 확인하지 않은 결과가 실제 피해로 이어진 경우입니다.</p>
@@ -114,7 +114,7 @@
 <p>Google은 2023년 2월 Bard를 소개하는 홍보 자료에서, 제임스 웹 우주망원경이 태양계 밖 행성을 처음 촬영했다는 Bard의 답변을 보여 주었습니다. 태양계 밖 행성을 처음 촬영한 것은 2004년 유럽남방천문대의 VLT였습니다. 오류가 보도된 날 모회사 Alphabet의 주가가 하락했습니다.</p>
 
 <h2 id="automation-bias">자동화 편향</h2>
-<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 이 경향을 자동화 편향(automation bias)이라고 합니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
+<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 이 경향을 자동화 편향(Automation Bias)이라고 합니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
 <ul><li><b>목록에 따른 확인</b>: 확인 항목을 목록으로 정해 두고 매번 같은 순서로 확인합니다.</li><li><b>제삼자 확인</b>: 중요도가 높은 결과는 작성자가 아닌 사람이 한 번 더 확인합니다.</li><li><b>예상 답 기록</b>: AI 결과를 받기 전에 예상 답을 먼저 적어 두면 차이를 발견하기 쉽습니다.</li></ul>
 
 <h2 id="checklist">검토 목록</h2>
@@ -194,9 +194,9 @@
 
 <h3 id="parallel">병렬 탐색</h3>
 <p>결과물의 방향이 정해지지 않았을 때는 하나를 수정해 나가기보다 서로 다른 안을 여러 개 만든 뒤 선택합니다. 한 안을 계속 수정하면 처음 방향에서 벗어나기 어렵기 때문입니다. 아래 예제는 구성 방식이 다른 목차 세 가지를 요청합니다.</p>
-<pre><code>[주제]의 발표 자료 목차를 세 가지 방향으로 만드십시오.
-1안은 문제 제기로 시작하고, 2안은 결론을 먼저 제시하고, 3안은 사례로 시작하십시오.
-각 안 아래에 그 구성이 맞는 청중을 한 문장으로 적으십시오.</code></pre>
+<pre><code>[주제]의 발표 자료 목차를 세 가지 방향으로 만들어 줘.
+1안은 문제 제기로 시작하고, 2안은 결론을 먼저 제시하고, 3안은 사례로 시작해 줘.
+각 안 아래에 그 구성이 맞는 청중을 한 문장으로 적어 줘.</code></pre>
 
 
 </article>

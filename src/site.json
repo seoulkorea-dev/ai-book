@@ -85,14 +85,14 @@
     },
     "ch05": {
       "path": "chapters/ch05.html",
-      "nav": "Chapter 5 학습, 자료 조사, 요약",
-      "title": "Chapter 5 학습, 자료 조사, 요약",
+      "nav": "Chapter 5 AI를 활용한 학습, 자료 조사, 요약",
+      "title": "Chapter 5 AI를 활용한 학습, 자료 조사, 요약",
       "desc": "학습과 연구에서 생성형 AI는 설명, 질문, 연습 문제, 요약, 자료 탐색을 돕고, 사실과 출처 확인은 사용자가 합니다."
     },
     "ch06": {
       "path": "chapters/ch06.html",
-      "nav": "Chapter 6 업무 위임, 기획서 초안, 창작",
-      "title": "Chapter 6 업무 위임, 기획서 초안, 창작",
+      "nav": "Chapter 6 AI를 활용한 업무, 기획서 초안, 창작",
+      "title": "Chapter 6 AI를 활용한 업무, 기획서 초안, 창작",
       "desc": "업무와 창작에서 생성형 AI는 초안, 정리, 분석, 아이디어를 맡고, 최종 판단과 발송은 사람이 합니다."
     },
     "ch07": {

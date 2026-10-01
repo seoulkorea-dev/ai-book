@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Chapter 5 학습, 자료 조사, 요약 | 생성형 AI 실전 가이드</title>
+<title>Chapter 5 AI를 활용한 학습, 자료 조사, 요약 | 생성형 AI 실전 가이드</title>
 <meta name="description" content="학습과 연구에서 생성형 AI는 설명, 질문, 연습 문제, 요약, 자료 탐색을 돕고, 사실과 출처 확인은 사용자가 합니다.">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -27,8 +27,8 @@
 <li><a href="../chapters/ch02.html"><span class="nav-num">Chapter 2</span><span class="nav-title">프롬프트 작성의 기본</span></a></li>
 <li><a href="../chapters/ch03.html"><span class="nav-num">Chapter 3</span><span class="nav-title">고급 프롬프트 기법과 AI 자기 검토</span></a></li>
 <li><a href="../chapters/ch04.html"><span class="nav-num">Chapter 4</span><span class="nav-title">환각 대응과 교차 검증</span></a></li>
-<li><a href="../chapters/ch05.html" aria-current="page"><span class="nav-num">Chapter 5</span><span class="nav-title">학습, 자료 조사, 요약</span></a></li>
-<li><a href="../chapters/ch06.html"><span class="nav-num">Chapter 6</span><span class="nav-title">업무 위임, 기획서 초안, 창작</span></a></li>
+<li><a href="../chapters/ch05.html" aria-current="page"><span class="nav-num">Chapter 5</span><span class="nav-title">AI를 활용한 학습, 자료 조사, 요약</span></a></li>
+<li><a href="../chapters/ch06.html"><span class="nav-num">Chapter 6</span><span class="nav-title">AI를 활용한 업무, 기획서 초안, 창작</span></a></li>
 <li><a href="../chapters/ch07.html"><span class="nav-num">Chapter 7</span><span class="nav-title">나에게 맞는 AI 도구 선택과 역량 진단</span></a></li>
 <li><a href="../chapters/ch08.html"><span class="nav-num">Chapter 8</span><span class="nav-title">AI 윤리, 법, 보안과 조직 정책</span></a></li>
 <li class="group">부록</li>
@@ -54,7 +54,7 @@
 </ul></nav>
 <main id="main">
 <article>
-<h1>Chapter 5 학습, 자료 조사, 요약</h1>
+<h1>Chapter 5 AI를 활용한 학습, 자료 조사, 요약</h1>
 <p class="lead">학습과 연구에서 생성형 AI는 설명, 질문, 연습 문제, 요약, 자료 탐색을 돕고, 사용자는 사실과 출처를 확인합니다. 역할을 이렇게 나누는 이유는 AI가 학습을 대신하면 배운 것이 남지 않고, 출처 확인을 AI에 맡기면 AI가 만든 오류를 같은 AI가 확인하게 되기 때문입니다.</p>
 <ul class="summary"><li>AI에게 답 대신 힌트와 질문을 요청하면 스스로 푸는 과정이 남습니다.</li><li>AI가 제시한 참고문헌은 원문을 열어 존재와 내용을 확인합니다.</li><li>과제와 논문에 AI를 사용하기 전에 기관의 규정을 확인합니다.</li></ul>
 
@@ -75,27 +75,27 @@
 
 <h2 id="explain">개념 설명 요청</h2>
 <p>개념 설명을 요청할 때는 수준, 형식, 분량을 지정합니다. 지정하지 않으면 설명의 수준이 요청한 사람과 맞지 않고, 교재와 비교하기도 어렵습니다. 아래 예제는 수준(전공 지식 없이 이해할 수 있는 수준), 형식(표), 추가 항목(혼동하는 개념)을 지정합니다.</p>
-<pre><code>광합성의 명반응과 캘빈 회로를 전공 지식 없이 이해할 수 있는 수준으로 설명하십시오.
+<pre><code>광합성의 명반응과 캘빈 회로를 전공 지식 없이 이해할 수 있는 수준으로 설명해 줘.
 각 과정의 장소, 입력, 출력을 표로 정리하고,
-처음 배울 때 자주 혼동하는 개념 두 가지를 표 아래에 적으십시오.</code></pre>
+처음 배울 때 자주 혼동하는 개념 두 가지를 표 아래에 적어 줘.</code></pre>
 <p>설명이 이해되지 않으면 비유를 요청하기보다 다른 예시나 그림을 사용한 설명을 요청합니다. 비유는 개념의 일부만 대응하므로 잘못된 이해로 이어질 수 있습니다.</p>
 
 <h2 id="tutor">튜터로 활용</h2>
 <p>AI를 튜터로 활용할 때는 답을 주지 말라는 제약 조건을 먼저 둡니다. AI에게 답을 바로 받으면 과제는 끝나도 배운 것이 남지 않기 때문입니다. 아래 예제는 힌트를 한 번에 하나만 주고, 사용자가 제시한 답의 정오와 이유만 알려 주도록 지시합니다.</p>
-<pre><code>나는 [과목]을 처음 공부합니다.
-다음 문제를 풀고 싶습니다. 정답과 풀이를 바로 알려 주지 마십시오.
-풀이가 멈춘 지점을 묻고, 한 번에 힌트 하나만 주십시오.
-내가 답을 제시하면 맞는지와 틀린 이유만 알려 주십시오.
+<pre><code>나는 [과목]을 처음 공부해.
+다음 문제를 풀고 싶어. 정답과 풀이를 바로 알려 주지 마.
+풀이가 멈춘 지점을 묻고, 한 번에 힌트 하나만 줘.
+내가 답을 말하면 맞는지와 틀린 이유만 알려 줘.
 
 &lt;문제&gt;
 [문제]
 &lt;/문제&gt;</code></pre>
 <h3>소크라테스식 질문</h3>
 <p>소크라테스식 질문은 질문하는 쪽과 답하는 쪽을 반대로 해 AI가 질문하고 사용자가 답하는 방법입니다. 개념을 설명할 수 있는지 스스로 확인하는 데 적합합니다. 질문을 쉬운 것부터 하나씩 받으면 이해가 끊기는 지점을 찾을 수 있습니다.</p>
-<pre><code>[개념]을 내가 제대로 이해했는지 확인하고 싶습니다.
-질문을 한 번에 하나씩 하십시오. 쉬운 질문에서 시작해 점점 어렵게 하십시오.
-내 답이 틀리면 정답을 말하지 말고, 틀린 부분을 다시 생각하게 하는 질문을 하십시오.
-질문 다섯 개가 끝나면 내가 약한 부분을 정리해 주십시오.</code></pre>
+<pre><code>[개념]을 내가 제대로 이해했는지 확인하고 싶어.
+질문을 한 번에 하나씩 해 줘. 쉬운 질문에서 시작해 점점 어렵게 해 줘.
+내 답이 틀리면 정답을 말하지 말고, 틀린 부분을 다시 생각하게 하는 질문을 해 줘.
+질문 다섯 개가 끝나면 내가 약한 부분을 정리해 줘.</code></pre>
 
 <h2 id="notes">노트와 복습 자료</h2>
 <p>AI는 강의 내용을 정해진 형식의 복습 자료로 변환하는 작업에 적합합니다. 형식마다 용도가 다르므로 복습 목적에 맞는 형식을 선택합니다. <a href="#tbl-5-2">표 5-2</a>는 형식별 요청 방법과 용도입니다.</p>
@@ -112,10 +112,10 @@
 
 <h2 id="plan">학습 계획</h2>
 <p>학습 계획은 기간, 목표, 하루 가용 시간, 현재 수준을 입력해 주 단위 일정으로 요청합니다. 아래 템플릿의 대괄호 안에 자신의 조건을 입력하고, 점검 방법 열을 포함해 진도를 확인할 수 있게 합니다.</p>
-<pre><code>나는 [기간] 안에 [목표]를 달성하려고 합니다.
-하루에 쓸 수 있는 시간은 [시간]이고, 현재 수준은 [수준]입니다.
-주 단위 학습 계획을 표로 만드십시오. 열: 주차, 학습 내용, 연습 과제, 점검 방법.
-마지막 주에는 전체 복습과 모의 평가를 넣으십시오.</code></pre>
+<pre><code>나는 [기간] 안에 [목표]를 달성하려고 해.
+하루에 쓸 수 있는 시간은 [시간]이고, 현재 수준은 [수준]이야.
+주 단위 학습 계획을 표로 만들어 줘. 열: 주차, 학습 내용, 연습 과제, 점검 방법.
+마지막 주에는 전체 복습과 모의 평가를 넣어 줘.</code></pre>
 
 <h2 id="language">외국어 학습</h2>
 <p>외국어 학습에서 AI는 교정, 대화 상대, 어휘 정리의 세 가지 역할을 맡습니다.</p>

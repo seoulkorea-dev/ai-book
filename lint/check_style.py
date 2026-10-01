@@ -13,6 +13,13 @@ total = Counter()
 for f in files:
     body = open(f, encoding="utf-8").read()
     # 코드 상자 속 프롬프트 예제는 예외(STYLE.md 배제어). 줄 번호를 유지하도록 줄바꿈만 남긴다
+    # 코드 상자 속 프롬프트 말투는 "~해 줘"(STYLE.md). "십시오"가 남으면 따로 경고
+    for m in re.finditer(r"<pre.*?</pre>", body, flags=re.S):
+        # 입력 자료 태그(&lt;공지문&gt; 등) 안의 원문은 원래 문체를 유지하므로 제외
+        k = re.sub(r"&lt;([^&/]+)&gt;.*?&lt;/\1&gt;", "", m.group(0), flags=re.S).count("십시오")
+        if k:
+            total["코드 상자 십시오"] += k
+            print(f"경고 {f}: 코드 상자 속 '십시오' {k}건")
     body = re.sub(r"<pre.*?</pre>", lambda m: "\n" * m.group(0).count("\n"), body, flags=re.S)
     for n, line in enumerate(body.split("\n"), 1):
         text = re.sub(r"<svg.*?</svg>|<[^>]+>", " ", line)
