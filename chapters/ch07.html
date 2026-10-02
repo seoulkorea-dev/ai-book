@@ -71,9 +71,9 @@
 <figure class="fig" id="tbl-7-2"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w40"></colgroup>
 <thead><tr><th>계층</th><th>역할</th><th>예제</th></tr></thead>
 <tbody>
-<tr><td>1. 제품</td><td>사람이 사용하는 앱과 웹 화면</td><td>ChatGPT, Claude, Gemini 앱</td></tr>
+<tr><td>1. 제품</td><td>사람이 직접 대화하는 화면</td><td>대화형 AI 앱, 웹 서비스</td></tr>
 <tr><td>2. 에이전트</td><td>도구를 스스로 호출해 여러 단계 작업을 수행하는 시스템</td><td>코딩 에이전트, 브라우저 에이전트</td></tr>
-<tr><td>3. 연동</td><td>AI 애플리케이션과 외부 데이터, 도구를 잇는 규격</td><td>MCP(Model Context Protocol)</td></tr>
+<tr><td>3. 연동</td><td>AI 애플리케이션과 외부 데이터, 도구를 잇는 규격</td><td>MCP 같은 연동 규격</td></tr>
 <tr><td>4. API</td><td>프로그램이 모델을 호출하는 통로</td><td>OpenAI API, Claude API, Gemini API</td></tr>
 <tr><td>5. 모델</td><td>입력을 받아 결과를 생성하는 학습된 신경망</td><td>GPT 계열, Claude 계열, Gemini 계열</td></tr>
 </tbody></table></div>
@@ -84,9 +84,9 @@
 <figure class="fig" id="tbl-7-3"><div class="table-wrap"><table class="fit-1 fit-2 fit-3 wrap-url"><colgroup><col><col><col><col class="w25"><col><col></colgroup>
 <thead><tr><th>제품</th><th>발표 주체</th><th>모델 계열</th><th>사용 형태</th><th>공식 안내</th><th>개발 문서</th></tr></thead>
 <tbody>
-<tr><td>ChatGPT</td><td>OpenAI</td><td>GPT 계열</td><td>웹, 데스크톱 앱, 모바일 앱, API(별도)</td><td>help.openai.com</td><td>platform.openai.com/docs</td></tr>
-<tr><td>Claude</td><td>Anthropic</td><td>Claude 계열</td><td>웹, 데스크톱 앱, 모바일 앱, API(별도)</td><td>support.claude.com</td><td>platform.claude.com/docs</td></tr>
-<tr><td>Gemini</td><td>Google</td><td>Gemini 계열</td><td>웹, 모바일 앱, Google Workspace 연동, API(별도)</td><td>support.google.com/gemini</td><td>ai.google.dev</td></tr>
+<tr><td>ChatGPT</td><td>OpenAI</td><td>GPT 계열</td><td>웹과 앱(PC, 모바일), 개발자용 API</td><td>help.openai.com</td><td>platform.openai.com/docs</td></tr>
+<tr><td>Claude</td><td>Anthropic</td><td>Claude 계열</td><td>웹과 앱(PC, 모바일), 개발자용 API</td><td>support.claude.com</td><td>platform.claude.com/docs</td></tr>
+<tr><td>Gemini</td><td>Google</td><td>Gemini 계열</td><td>웹과 모바일 앱, Google Workspace 안, 개발자용 API</td><td>support.google.com/gemini</td><td>ai.google.dev</td></tr>
 </tbody></table></div>
 <figcaption><b>표 7-3. 범용 대화형 제품</b><ul class="capnote"><li>ChatGPT, Claude, Gemini의 발표 주체, 모델 계열, 사용 형태, 공식 안내, 개발 문서 주소</li></ul></figcaption></figure>
 <p>세 제품은 대화, 파일 첨부, 이미지 이해, 웹 검색 기능을 공통으로 제공합니다. 기능 이름, 모델 버전, 요금제는 자주 변경되므로 현재 기능은 표 7-3의 공식 안내에서 확인합니다. 이 책은 기능 목록 대신 기능 유형과 유형별로 확인할 점을 표 7-4로 설명합니다.</p>
@@ -257,18 +257,18 @@
 
 <h3 id="score">점수 계산</h3>
 <p>표시한 항목 수를 Chapter별로 표 7-12에 기록합니다. 통과 기준에 미달한 Chapter가 있으면 그 Chapter를 다시 읽습니다.</p>
-<figure class="fig" id="tbl-7-12"><div class="table-wrap"><table class="fit-1 fit-2 fit-3"><colgroup><col><col><col></colgroup>
+<figure class="fig" id="tbl-7-12"><div class="table-wrap"><table class="fit-2 fit-3"><colgroup><col><col><col></colgroup>
 <thead><tr><th>Chapter</th><th>표시 수</th><th>통과 기준</th></tr></thead>
 <tbody>
-<tr><td>Chapter 1</td><td>____ / 4</td><td>3개 이상</td></tr>
-<tr><td>Chapter 2</td><td>____ / 3</td><td>2개 이상</td></tr>
-<tr><td>Chapter 3</td><td>____ / 4</td><td>3개 이상</td></tr>
-<tr><td>Chapter 4</td><td>____ / 4</td><td>3개 이상</td></tr>
-<tr><td>Chapter 5</td><td>____ / 3</td><td>2개 이상</td></tr>
-<tr><td>Chapter 6</td><td>____ / 4</td><td>3개 이상</td></tr>
-<tr><td>Chapter 7</td><td>____ / 3</td><td>2개 이상</td></tr>
-<tr><td>Chapter 8</td><td>____ / 6</td><td>4개 이상</td></tr>
-<tr><td>합계</td><td>____ / 31</td><td></td></tr>
+<tr><td>Chapter 1 생성형 AI의 기본 원리와 한계</td><td>4문항 중 ___개</td><td>3개 이상</td></tr>
+<tr><td>Chapter 2 프롬프트 작성의 기본</td><td>3문항 중 ___개</td><td>2개 이상</td></tr>
+<tr><td>Chapter 3 고급 프롬프트 기법과 AI 자기 검토</td><td>4문항 중 ___개</td><td>3개 이상</td></tr>
+<tr><td>Chapter 4 환각 대응과 교차 검증</td><td>4문항 중 ___개</td><td>3개 이상</td></tr>
+<tr><td>Chapter 5 AI를 활용한 학습, 자료 조사, 요약</td><td>3문항 중 ___개</td><td>2개 이상</td></tr>
+<tr><td>Chapter 6 AI를 활용한 업무, 기획서 초안, 창작</td><td>4문항 중 ___개</td><td>3개 이상</td></tr>
+<tr><td>Chapter 7 나에게 맞는 AI 도구 선택과 역량 진단</td><td>3문항 중 ___개</td><td>2개 이상</td></tr>
+<tr><td>Chapter 8 AI 윤리, 법, 보안과 조직 정책</td><td>6문항 중 ___개</td><td>4개 이상</td></tr>
+<tr><td>합계</td><td>31문항 중 ___개</td><td></td></tr>
 </tbody></table></div>
 <figcaption><b>표 7-12. Chapter별 점수</b><ul class="capnote"><li>Chapter별 표시한 항목 수를 적는 칸과 통과 기준(문항 수의 3분의 2 이상, 올림)</li></ul></figcaption></figure>
 

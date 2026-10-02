@@ -31,5 +31,19 @@ for path in pages:
         if late and 'rowspan' in m.group(0):
             cap = re.search(r'<figcaption><b>([^<.]+)\.', s[m.end():m.end() + 300])
             errors.append(f'{name}: {cap.group(1) if cap else "표"} 병합 셀이 있어 {" ".join(late)} 사용 불가')
+    # 용어 풀이 표제어: 한글(원어) 또는 한글(원어, 약어). 괄호 붙임, 원어 각 단어 첫 글자 대문자(관사, 전치사, 접속사와 하이픈 뒤 제외), 약어는 뒤
+    if name.endswith('terms.html'):
+        SMALLW = {'a', 'an', 'the', 'of', 'in', 'on', 'to', 'for', 'and'}
+        for dt in re.findall(r'<dt[^>]*>(.*?)</dt>', s):
+            if re.search(r'[가-힣] \(', dt):
+                errors.append(f'{name}: 표제어 괄호 앞 공백: {dt}')
+            if re.search(r'\([A-Z]{2,6}, ', dt):
+                errors.append(f'{name}: 표제어 약어가 원어보다 먼저: {dt}')
+            m = re.search(r'\(([A-Za-z][^)]*)\)', dt)
+            if m:
+                words = m.group(1).split(',')[0].split(' ')
+                bad = [w for i, w in enumerate(words) if w and w[0].islower() and not (i > 0 and w in SMALLW)]
+                if bad:
+                    errors.append(f'{name}: 표제어 원어 첫 글자 소문자: {dt}')
 print('\n'.join(errors), end='\n' if errors else '')
 sys.exit(1 if errors else 0)
