@@ -226,3 +226,5 @@ figcaption ul.capnote { margin: 0.25rem 0 0; padding-left: 1.1rem; }
 figcaption ul.capnote li { margin: 0.1rem 0; }
 /* 표지 부제 */
 .subtitle { margin: -0.4rem 0 1.4rem; font-size: 1.15rem; color: var(--muted); font-weight: 600; }
+/* 부록 머리의 한 줄 안내 상자(요점 상자와 구분) */
+.tip { margin: 0 0 1.6rem; padding: 0.6rem 0.9rem; background: var(--panel); border-left: 3px solid var(--link); border-radius: 4px; color: var(--ink); }

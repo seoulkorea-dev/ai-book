@@ -85,9 +85,9 @@
     },
     "app-a": {
       "path": "appendix/prompts.html",
-      "nav": "1. 프롬프트 예문 모음",
-      "title": "부록 1. 프롬프트 예문 모음",
-      "desc": "부록 1. 프롬프트 예문 모음"
+      "nav": "1. 분야별 프롬프트 예문 모음",
+      "title": "부록 1. 분야별 프롬프트 예문 모음",
+      "desc": "부록 1. 분야별 프롬프트 예문 모음"
     },
     "app-c": {
       "path": "appendix/terms.html",
@@ -173,7 +173,7 @@
     ],
     "appendix/a-templates.html": [
       "appendix/prompts.html",
-      "부록 1. 프롬프트 예문 모음"
+      "부록 1. 분야별 프롬프트 예문 모음"
     ],
     "appendix/c-glossary.html": [
       "appendix/terms.html",
