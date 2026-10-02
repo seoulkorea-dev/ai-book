@@ -82,6 +82,7 @@ echo "로컬 $LOCAL / 원격 $REMOTE / 배포 $DEPLOY"
 | Chapter 6 | AI를 활용한 업무, 기획서 초안, 창작 | chapters/ch06.html | 현재 ch06 + 부록 F 산업별 확인 항목 |
 | Chapter 7 | 나에게 맞는 AI 도구 선택과 역량 진단 | chapters/ch07.html | 현재 ch02 + 부록 B 점검표. 장별 역량 진단(옛 부록 E)은 2026-10-02 16차(누적 40차) 사용자 결정으로 삭제, 역량은 자기 평가표(표 7-10)로 점검 |
 | Chapter 8 | AI 윤리, 법, 보안과 조직 정책 | chapters/ch08.html | 현재 ch08 + 부록 F 에이전트 자율성, 규제와 표준 |
+| 마치며 | 마치며: 묻고 확인하는 습관 | chapters/epilogue.html | 2026-10-02 신설(사용자 결정: 장 번호 없음, 그림 규칙 적용하지 않음) |
 | 부록 1 | 분야별 프롬프트 예문 모음 | appendix/prompts.html | 옛 부록 A |
 | 부록 2 | 용어 풀이 | appendix/terms.html | 옛 부록 C |
 | 부록 3 | 참고 자료 | appendix/references.html | 옛 부록 D |

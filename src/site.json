@@ -20,6 +20,12 @@
       ]
     ],
     [
+      "마치며",
+      [
+        "epilogue"
+      ]
+    ],
+    [
       "부록",
       [
         "app-a",
@@ -82,6 +88,12 @@
       "nav": "Chapter 8 AI 윤리, 법, 보안과 조직 정책",
       "title": "Chapter 8 AI 윤리, 법, 보안과 조직 정책",
       "desc": "책임 있는 사용은 편향, 개인정보, 저작권, 보안을 점검하고, 조직이 사용 정책과 규제 대응을 갖추는 것입니다."
+    },
+    "epilogue": {
+      "path": "chapters/epilogue.html",
+      "nav": "마치며: 묻고 확인하는 습관",
+      "title": "마치며: 묻고 확인하는 습관",
+      "desc": "AI는 초안을 만들고, 사람은 묻고 확인해 결정합니다."
     },
     "app-a": {
       "path": "appendix/prompts.html",
