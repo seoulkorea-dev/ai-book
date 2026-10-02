@@ -8,7 +8,7 @@ import glob, re, sys
 
 ROOT = __file__.rsplit('/lint/', 1)[0]
 pages = ([f'{ROOT}/index.html'] + sorted(glob.glob(f'{ROOT}/chapters/*.html'))
-         + sorted(glob.glob(f'{ROOT}/appendix/*.html')) + sorted(glob.glob(f'{ROOT}/wiki/*.html')))
+         + sorted(glob.glob(f'{ROOT}/appendix/*.html')))
 errors = []
 for path in pages:
     s = open(path, encoding='utf-8').read()

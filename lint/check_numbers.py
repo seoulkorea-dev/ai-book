@@ -5,7 +5,7 @@
 2. 장 번호-순번 형식(예: 표 3-1)이 여러 페이지에서 중복되지 않는지
 3. 본문이 가리키는 번호가 실제로 있는지
 4. 다른 쪽 번호 참조에는 링크가 걸려 있고, 같은 쪽 번호 참조에는 링크가 없는지
-6. 파일과 번호 접두가 맞는지(chapters/chNN.html은 NN, 부록 terms=부1, prompts=부2, references=부3), 캡션이 든 figure의 id가 캡션 번호와 같은지(tbl-N-n, fig-N-n). 현행 부록 A~F와 위키는 재구성 4단계 전환 전까지 제외
+6. 파일과 번호 접두가 맞는지(chapters/chNN.html은 NN, 부록 prompts=부1, terms=부2, references=부3)
 5. 번호 뒤 조사가 마지막 숫자의 받침과 맞는지(0, 1, 3, 6, 7, 8 뒤에는 은, 이, 을, 과, 나머지 숫자 뒤에는 는, 가, 를, 와)
 
 표지(index.html)는 번호와 캡션을 두지 않으므로 검사하지 않는다.
@@ -14,7 +14,7 @@ import glob
 import re
 import sys
 
-files = sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html")) + sorted(glob.glob("wiki/*.html"))
+files = sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html"))
 CAP = re.compile(r"<figcaption><b>((그림|표) (?:([0-9A-Z]+|부[0-9]+)-)?([0-9]+))\.")
 REF = re.compile(r"(?:그림|표) (?:[0-9A-Z]+|부[0-9]+)-[0-9]+")
 errors = []
@@ -65,7 +65,7 @@ for f in files + ["index.html"]:
             errors.append(f"조사 오류: {f} {m.group(1)}{m.group(3)} → {m.group(1)}{PAIR[m.group(3)]}")
 
 # 6. 파일과 번호 접두, figure id 일치
-APPX = {"appendix/terms.html": "부1", "appendix/prompts.html": "부2", "appendix/references.html": "부3"}
+APPX = {"appendix/prompts.html": "부1", "appendix/terms.html": "부2", "appendix/references.html": "부3"}
 FIG = re.compile(r'<figure[^>]*\bid="([^"]*)"[^>]*>.*?<figcaption><b>(그림|표) ([0-9A-Z]+|부[0-9]+)-([0-9]+)\.', re.S)
 for f in files:
     m = re.match(r"chapters/ch0*([0-9]+)\.html$", f)

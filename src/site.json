@@ -26,30 +26,6 @@
         "app-c",
         "app-d"
       ]
-    ],
-    [
-      "위키",
-      [
-        "wiki",
-        "w-concepts",
-        "w-tools",
-        "w-cases",
-        "w-security",
-        "w-governance"
-      ]
-    ],
-    [
-      "위키: 프롬프트 엔지니어링 (웹 전용)",
-      [
-        "w-pe-foundations",
-        "w-pe-techniques",
-        "w-pe-reasoning",
-        "w-pe-rag",
-        "w-pe-agents",
-        "w-pe-applications",
-        "w-pe-evaluation",
-        "w-pe-research"
-      ]
     ]
   ],
   "pages": {
@@ -108,106 +84,22 @@
       "desc": "책임 있는 사용은 편향, 개인정보, 저작권, 보안을 점검하고, 조직이 사용 정책과 규제 대응을 갖추는 것입니다."
     },
     "app-a": {
-      "path": "appendix/a-templates.html",
-      "nav": "A. 프롬프트 템플릿",
-      "title": "부록 A. 프롬프트 템플릿",
-      "desc": "부록 A. 프롬프트 템플릿"
+      "path": "appendix/prompts.html",
+      "nav": "1. 프롬프트 예문 모음",
+      "title": "부록 1. 프롬프트 예문 모음",
+      "desc": "부록 1. 프롬프트 예문 모음"
     },
     "app-c": {
-      "path": "appendix/c-glossary.html",
-      "nav": "C. 용어 사전",
-      "title": "부록 C. 용어 사전",
-      "desc": "부록 C. 용어 사전"
+      "path": "appendix/terms.html",
+      "nav": "2. 용어 풀이",
+      "title": "부록 2. 용어 풀이",
+      "desc": "부록 2. 용어 풀이"
     },
     "app-d": {
-      "path": "appendix/d-references.html",
-      "nav": "D. 참고문헌",
-      "title": "부록 D. 참고문헌",
-      "desc": "부록 D. 참고문헌"
-    },
-    "wiki": {
-      "path": "wiki/index.html",
-      "nav": "위키 홈",
-      "title": "위키",
-      "desc": "위키"
-    },
-    "w-concepts": {
-      "path": "wiki/concepts.html",
-      "nav": "개념",
-      "title": "위키: 개념",
-      "desc": "위키: 개념"
-    },
-    "w-tools": {
-      "path": "wiki/tools.html",
-      "nav": "도구",
-      "title": "위키: 도구",
-      "desc": "위키: 도구"
-    },
-    "w-cases": {
-      "path": "wiki/cases.html",
-      "nav": "사례 연구",
-      "title": "위키: 사례 연구",
-      "desc": "위키: 사례 연구"
-    },
-    "w-security": {
-      "path": "wiki/security.html",
-      "nav": "보안",
-      "title": "위키: 보안",
-      "desc": "위키: 보안"
-    },
-    "w-governance": {
-      "path": "wiki/governance.html",
-      "nav": "거버넌스",
-      "title": "위키: 거버넌스",
-      "desc": "위키: 거버넌스"
-    },
-    "w-pe-foundations": {
-      "path": "wiki/pe-foundations.html",
-      "nav": "프롬프트 엔지니어링: 기초",
-      "title": "위키: 프롬프트 엔지니어링 기초",
-      "desc": "위키: 프롬프트 엔지니어링 기초"
-    },
-    "w-pe-techniques": {
-      "path": "wiki/pe-techniques.html",
-      "nav": "프롬프트 엔지니어링: 기법",
-      "title": "위키: 프롬프트 엔지니어링 기법",
-      "desc": "위키: 프롬프트 엔지니어링 기법"
-    },
-    "w-pe-reasoning": {
-      "path": "wiki/pe-reasoning.html",
-      "nav": "프롬프트 엔지니어링: 추론",
-      "title": "위키: 프롬프트 엔지니어링 추론",
-      "desc": "위키: 프롬프트 엔지니어링 추론"
-    },
-    "w-pe-rag": {
-      "path": "wiki/pe-rag.html",
-      "nav": "프롬프트 엔지니어링: RAG",
-      "title": "위키: 프롬프트 엔지니어링 RAG",
-      "desc": "위키: 프롬프트 엔지니어링 RAG"
-    },
-    "w-pe-agents": {
-      "path": "wiki/pe-agents.html",
-      "nav": "프롬프트 엔지니어링: 에이전트",
-      "title": "위키: 프롬프트 엔지니어링 에이전트",
-      "desc": "위키: 프롬프트 엔지니어링 에이전트"
-    },
-    "w-pe-applications": {
-      "path": "wiki/pe-applications.html",
-      "nav": "프롬프트 엔지니어링: 응용",
-      "title": "위키: 프롬프트 엔지니어링 응용",
-      "desc": "위키: 프롬프트 엔지니어링 응용"
-    },
-    "w-pe-evaluation": {
-      "path": "wiki/pe-evaluation.html",
-      "nav": "프롬프트 엔지니어링: 평가와 안전",
-      "title": "위키: 프롬프트 엔지니어링 평가와 안전",
-      "desc": "위키: 프롬프트 엔지니어링 평가와 안전"
-    },
-    "w-pe-research": {
-      "path": "wiki/pe-research.html",
-      "nav": "프롬프트 엔지니어링: 연구",
-      "title": "위키: 프롬프트 엔지니어링 연구",
-      "desc": "위키: 프롬프트 엔지니어링 연구"
+      "path": "appendix/references.html",
+      "nav": "3. 참고 자료",
+      "title": "부록 3. 참고 자료",
+      "desc": "부록 3. 참고 자료"
     }
   },
   "redirects": {
@@ -222,6 +114,74 @@
     "appendix/f-trends.html": [
       "index.html#structure",
       "이 책의 구성(주요 기술 변화는 각 장으로 이동)"
+    ],
+    "wiki/index.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "wiki/concepts.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "wiki/tools.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "wiki/cases.html": [
+      "chapters/ch04.html#automation-bias",
+      "Chapter 4 자동화 편향"
+    ],
+    "wiki/security.html": [
+      "chapters/ch08.html#security",
+      "Chapter 8 보안 위협"
+    ],
+    "wiki/governance.html": [
+      "chapters/ch06.html#stages",
+      "Chapter 6 도입 단계"
+    ],
+    "wiki/pe-foundations.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "wiki/pe-techniques.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "wiki/pe-reasoning.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "wiki/pe-rag.html": [
+      "chapters/ch04.html#measures",
+      "Chapter 4 대응 방법"
+    ],
+    "wiki/pe-agents.html": [
+      "chapters/ch08.html#agents",
+      "Chapter 8 에이전트 자율성"
+    ],
+    "wiki/pe-applications.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "wiki/pe-evaluation.html": [
+      "chapters/ch08.html#security",
+      "Chapter 8 보안 위협"
+    ],
+    "wiki/pe-research.html": [
+      "index.html",
+      "시작하며: 이 책의 활용법"
+    ],
+    "appendix/a-templates.html": [
+      "appendix/prompts.html",
+      "부록 1. 프롬프트 예문 모음"
+    ],
+    "appendix/c-glossary.html": [
+      "appendix/terms.html",
+      "부록 2. 용어 풀이"
+    ],
+    "appendix/d-references.html": [
+      "appendix/references.html",
+      "부록 3. 참고 자료"
     ]
   }
 }

@@ -32,25 +32,9 @@
 <li><a href="../chapters/ch07.html"><span class="nav-num">Chapter 7</span><span class="nav-title">나에게 맞는 AI 도구 선택과 역량 진단</span></a></li>
 <li><a href="../chapters/ch08.html"><span class="nav-num">Chapter 8</span><span class="nav-title">AI 윤리, 법, 보안과 조직 정책</span></a></li>
 <li class="group">부록</li>
-<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
-<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
-<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
-<li class="group">위키</li>
-<li><a href="../wiki/index.html">위키 홈</a></li>
-<li><a href="../wiki/concepts.html">개념</a></li>
-<li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html">사례 연구</a></li>
-<li><a href="../wiki/security.html">보안</a></li>
-<li><a href="../wiki/governance.html">거버넌스</a></li>
-<li class="group">위키: 프롬프트 엔지니어링 (웹 전용)</li>
-<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
-<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
-<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
-<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
-<li><a href="../wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
-<li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
-<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
-<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li><a href="../appendix/prompts.html">1. 프롬프트 예문 모음</a></li>
+<li><a href="../appendix/terms.html">2. 용어 풀이</a></li>
+<li><a href="../appendix/references.html">3. 참고 자료</a></li>
 </ul></nav>
 <main id="main">
 <article>
@@ -117,7 +101,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 <p>단순 조회, 짧은 번역, 창작 초안처럼 추론 단계가 없는 작업에는 단계별 추론을 적용하지 않습니다. 정확도는 높아지지 않고 답변만 길어지기 때문입니다.</p>
 
 <h2 id="react">ReAct</h2>
-<p>ReAct는 추론(Reasoning)과 행동(Acting)을 번갈아 수행하는 방식입니다. 모델이 필요한 정보를 판단하고, 검색 같은 도구를 호출하고, 그 결과를 관찰해 다음 행동을 정하는 과정을 반복합니다(그림 3-1). 모델이 학습하지 않은 정보도 도구로 확인할 수 있어 최신 정보가 필요한 질문에 적합하며, AI 에이전트(Agent)의 기본 동작 방식이기도 합니다. 자세한 내용은 <a href="../wiki/pe-agents.html">위키 에이전트</a>에서 다룹니다.</p>
+<p>ReAct는 추론(Reasoning)과 행동(Acting)을 번갈아 수행하는 방식입니다. 모델이 필요한 정보를 판단하고, 검색 같은 도구를 호출하고, 그 결과를 관찰해 다음 행동을 정하는 과정을 반복합니다(그림 3-1). 모델이 학습하지 않은 정보도 도구로 확인할 수 있어 최신 정보가 필요한 질문에 적합하며, AI 에이전트(Agent)의 기본 동작 방식이기도 합니다. 에이전트의 구성과 통제는 <a href="../chapters/ch08.html#agents">Chapter 8</a>에서 다룹니다.</p>
 <figure class="fig diagram" id="fig-3-1"><div class="svg-wrap" role="img" aria-label="질문에서 추론, 행동, 관찰을 반복한 뒤 답변으로 가는 흐름"><svg viewBox="0 0 900 170" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="90" width="130" height="56" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="75.0" y="122.9">질문</tspan></text><line x1="140" y1="118" x2="190" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="190" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="265.0" y="113.5">추론</tspan><tspan x="265.0" y="132.3">필요한 정보 판단</tspan></text><line x1="340" y1="118" x2="390" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="390" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="465.0" y="113.5">행동</tspan><tspan x="465.0" y="132.3">도구 호출(검색 등)</tspan></text><line x1="540" y1="118" x2="590" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="590" y="90" width="150" height="56" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="665.0" y="113.5">관찰</tspan><tspan x="665.0" y="132.3">도구 결과 확인</tspan></text><path d="M 665 90 Q 665 30 440 30 Q 265 30 265 86" fill="none" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><text x="465" y="24" font-size="12" fill="#625D52" text-anchor="middle">정보가 부족하면 다시 추론</text><line x1="740" y1="118" x2="790" y2="118" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah1)"/><rect x="790" y="90" width="100" height="56" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="840.0" y="122.9">답변</tspan></text></svg></div><figcaption><b>그림 3-1. ReAct의 반복 구조</b><ul class="capnote"><li>추론, 행동, 관찰을 반복하다가 정보가 충분하면 답변하는 구조</li></ul></figcaption></figure>
 
 <h2 id="chaining">프롬프트 체이닝</h2>

@@ -32,25 +32,9 @@
 <li><a href="chapters/ch07.html"><span class="nav-num">Chapter 7</span><span class="nav-title">나에게 맞는 AI 도구 선택과 역량 진단</span></a></li>
 <li><a href="chapters/ch08.html"><span class="nav-num">Chapter 8</span><span class="nav-title">AI 윤리, 법, 보안과 조직 정책</span></a></li>
 <li class="group">부록</li>
-<li><a href="appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
-<li><a href="appendix/c-glossary.html">C. 용어 사전</a></li>
-<li><a href="appendix/d-references.html">D. 참고문헌</a></li>
-<li class="group">위키</li>
-<li><a href="wiki/index.html">위키 홈</a></li>
-<li><a href="wiki/concepts.html">개념</a></li>
-<li><a href="wiki/tools.html">도구</a></li>
-<li><a href="wiki/cases.html">사례 연구</a></li>
-<li><a href="wiki/security.html">보안</a></li>
-<li><a href="wiki/governance.html">거버넌스</a></li>
-<li class="group">위키: 프롬프트 엔지니어링 (웹 전용)</li>
-<li><a href="wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
-<li><a href="wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
-<li><a href="wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
-<li><a href="wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
-<li><a href="wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
-<li><a href="wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
-<li><a href="wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
-<li><a href="wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li><a href="appendix/prompts.html">1. 프롬프트 예문 모음</a></li>
+<li><a href="appendix/terms.html">2. 용어 풀이</a></li>
+<li><a href="appendix/references.html">3. 참고 자료</a></li>
 </ul></nav>
 <main id="main">
 <article>
@@ -98,7 +82,7 @@
 <ul><li><b>유럽연합</b>: 인공지능법(Regulation (EU) 2024/1689)은 2024년 8월 1일 발효되었고, 2025년 2월부터 조항별로 단계적으로 적용됩니다. 적용 일정은 Chapter 8 <a href="chapters/ch08.html#fig-8-2">그림 8-2</a>에서 다룹니다.</li><li><b>한국</b>: 「인공지능 발전과 신뢰 기반 조성 등에 관한 기본법」은 2025년 1월 21일 공포되었고 2026년 1월 22일 시행되었습니다. 과학기술정보통신부는 시행 뒤 1년 이상 사실조사와 과태료 부과를 유예하는 계도 기간을 두었습니다.</li></ul>
 
 <h3 id="responsibility">사용자의 책임</h3>
-<p>AI가 생성한 문장, 인용, 코드를 그대로 제출하면 그 책임은 제출한 사람에게 있습니다. 미국 법원은 AI가 생성한 존재하지 않는 판례를 인용한 변호사에게 제재금을 부과했습니다. 도구가 결과를 만들어도 책임은 도구로 넘어가지 않는다는 것을 보여 주는 사례이며, 자세한 내용은 <a href="chapters/ch04.html#automation-bias">Chapter 4</a>와 <a href="wiki/cases.html">위키 사례 연구</a>에서 다룹니다.</p>
+<p>AI가 생성한 문장, 인용, 코드를 그대로 제출하면 그 책임은 제출한 사람에게 있습니다. 미국 법원은 AI가 생성한 존재하지 않는 판례를 인용한 변호사에게 제재금을 부과했습니다. 도구가 결과를 만들어도 책임은 도구로 넘어가지 않는다는 것을 보여 주는 사례이며, 자세한 내용은 <a href="chapters/ch04.html#automation-bias">Chapter 4</a>에서 다룹니다.</p>
 
 <h2 id="structure">이 책의 구성과 읽는 방법</h2>
 <p>이 책은 생성형 AI의 원리에서 시작해 프롬프트 작성, 고급 기법, 결과 검증, 학습과 업무 활용, 도구 선택과 역량 진단, 책임 있는 사용 순서로 진행합니다. 앞 장의 개념을 뒤 장에서 사용하므로 Chapter 1부터 순서대로 읽습니다.</p>
@@ -114,7 +98,7 @@
 <tr><td><a href="chapters/ch07.html">Chapter 7 나에게 맞는 AI 도구 선택과 역량 진단</a></td><td>도구 선택, 역량 진단</td></tr>
 <tr><td><a href="chapters/ch08.html">Chapter 8 AI 윤리, 법, 보안과 조직 정책</a></td><td>편향, 개인정보, 저작권, 보안, 규제</td></tr>
 </tbody></table></div></figure>
-<p>부록은 본문을 실제 작업에 적용할 때 필요한 자료로, 프롬프트 템플릿, 용어 사전, 참고문헌을 담습니다. 도구 점검표와 역량 진단은 Chapter 7에, 주요 기술 변화는 해당 장에 들어 있습니다. 위키는 본문에 나오는 개념, 도구, 사례, 보안, 거버넌스를 따로 정리하고, 프롬프트 엔지니어링 항목은 웹 전용 참고 자료로 둡니다.</p>
+<p>부록은 본문을 실제 작업에 적용할 때 필요한 자료로, 프롬프트 예문 모음, 용어 풀이, 참고 자료를 담습니다. 도구 점검표와 역량 진단은 Chapter 7에, 주요 기술 변화는 해당 장에 들어 있습니다.</p>
 
 <h3 id="chapter-form">장의 구성</h3>
 <p>모든 장은 같은 구성을 따릅니다. 첫 문단에서 장의 주제를 정의하고, 요점 상자에서 핵심을 정리한 뒤, 본문 절에서 개념, 방법, 사례를 설명합니다.</p>
@@ -126,7 +110,7 @@
 <tr><td>본문 절</td><td>개념, 방법, 사례를 설명</td></tr>
 <tr><td>표와 그림</td><td>비교, 절차, 관계를 정리하고 번호, 제목, 설명을 둠</td></tr>
 <tr><td>프롬프트 예제</td><td>바로 실행할 수 있는 입력 예제를 코드 상자에 수록</td></tr>
-<tr><td>연결 링크</td><td>관련된 장, 부록, 위키 항목으로 연결</td></tr>
+<tr><td>연결 링크</td><td>관련된 장, 부록으로 연결</td></tr>
 </tbody></table></div></figure>
 
 </article>

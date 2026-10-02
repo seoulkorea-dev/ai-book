@@ -42,11 +42,21 @@
 <tr><td>4. 에이전트 운영</td><td>에이전트가 여러 단계 작업을 수행</td><td>작업 권한 제한, 사람 승인, 감사 기록</td></tr>
 </tbody></table></div>
 <figcaption><b>표 6-3. 업무 AI 도입 단계</b><ul class="capnote"><li>개인 사용부터 에이전트까지 도입 4단계와 단계별 필요한 통제</li></ul></figcaption></figure>
-<p>조직 정책은 <a href="../chapters/ch08.html">Chapter 8</a>에서, 에이전트 도입 절차는 <a href="../wiki/governance.html">위키 거버넌스</a>에서 다룹니다.</p>
+<p>조직 정책은 <a href="../chapters/ch08.html">Chapter 8</a> 4단계(에이전트 운영)로 넘어갈 때는 도입 단계마다 통제 항목을 정합니다. 표 6-4는 단계별 확인 항목입니다.</p>
+<figure class="fig" id="tbl-6-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col></colgroup>
+<thead><tr><th>단계</th><th>확인 항목</th></tr></thead>
+<tbody>
+<tr><td>업무 선정</td><td>실패 시 영향, 되돌릴 수 있는지 여부</td></tr>
+<tr><td>권한 설계</td><td>접근할 시스템과 데이터, 작업별 승인자</td></tr>
+<tr><td>시험 운영</td><td>제한된 사용자와 데이터로 결과 검증</td></tr>
+<tr><td>운영</td><td>감사 로그, 오류 보고 경로, 중단 절차</td></tr>
+<tr><td>평가</td><td>정확도, 처리 시간, 사람 개입 빈도 측정</td></tr>
+</tbody></table></div>
+<figcaption><b>표 6-4. 에이전트 도입 단계별 통제</b><ul class="capnote"><li>업무 선정부터 평가까지 단계별 확인 항목</li></ul></figcaption></figure>
 
 <h2 id="data">입력 데이터 관리</h2>
-<p>업무에 AI를 사용할 때 가장 먼저 정할 것은 어떤 데이터를 입력할 수 있는지입니다. 입력한 데이터는 제품의 데이터 처리 정책에 따라 외부 서버에 저장되거나 학습에 사용될 수 있기 때문입니다. 표 6-4는 데이터를 다섯 유형으로 나누고 유형별 입력 기준을 정리합니다.</p>
-<figure class="fig" id="tbl-6-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w45"></colgroup>
+<p>업무에 AI를 사용할 때 가장 먼저 정할 것은 어떤 데이터를 입력할 수 있는지입니다. 입력한 데이터는 제품의 데이터 처리 정책에 따라 외부 서버에 저장되거나 학습에 사용될 수 있기 때문입니다. 표 6-5는 데이터를 다섯 유형으로 나누고 유형별 입력 기준을 정리합니다.</p>
+<figure class="fig" id="tbl-6-5"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w45"></colgroup>
 <thead><tr><th>데이터 유형</th><th>예제</th><th>입력 기준</th></tr></thead>
 <tbody>
 <tr><td>공개 정보</td><td>보도 자료, 공개 문서</td><td>허용 도구에 입력</td></tr>
@@ -55,13 +65,13 @@
 <tr><td>고유식별정보</td><td>주민등록번호, 여권번호, 운전면허번호</td><td>입력하지 않음</td></tr>
 <tr><td>영업 비밀</td><td>원가, 계약 조건, 미공개 제품 정보</td><td>원칙적으로 입력하지 않음. 조직이 승인한 환경에서만 입력</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-4. 입력 데이터 분류</b><ul class="capnote"><li>공개 정보, 내부 정보, 개인정보, 고유식별정보, 영업 비밀의 입력 기준</li></ul></figcaption></figure>
+<figcaption><b>표 6-5. 입력 데이터 분류</b><ul class="capnote"><li>공개 정보, 내부 정보, 개인정보, 고유식별정보, 영업 비밀의 입력 기준</li></ul></figcaption></figure>
 <p>개인정보를 입력해야 하는 경우에는 가명처리를 거칩니다. 가명처리는 추가 정보 없이는 특정 개인을 알아볼 수 없도록 개인정보의 일부를 삭제하거나 대체하는 처리입니다(「개인정보 보호법」 제2조). 예를 들어 고객 이름은 '고객 A'로 대체하고 연락처는 삭제한 뒤 입력합니다. 또한 개인 계정과 조직 계정은 데이터 처리 조건이 다르므로, 업무 데이터는 조직이 계약한 계정에서 처리합니다.</p>
 
 <h2 id="analysis">데이터 분석</h2>
 <p>데이터 분석은 코드 실행 기능이 있는 제품에서 수행합니다. 기능이 없는 대화에서 모델이 직접 계산한 수치에는 오류가 생길 수 있기 때문입니다(<a href="../chapters/ch01.html#strengths">Chapter 1</a>). 코드 실행 기능이 있으면 모델이 표 파일을 읽고 코드를 실행해 계산, 차트, 요약을 만듭니다. 아래 예제는 계산을 코드로 수행하게 하고, 확인할 수 없는 원인은 '추정'으로 표시하게 합니다.</p>
-<p>아래 표는 예제에 사용할 가상 자료입니다(표 6-5). 표 6-5를 담은 파일을 첨부했다고 가정합니다.</p>
-<figure class="fig" id="tbl-6-5"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col></colgroup>
+<p>아래 표는 예제에 사용할 가상 자료입니다(표 6-6). 표 6-6을 담은 파일을 첨부했다고 가정합니다.</p>
+<figure class="fig" id="tbl-6-6"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col></colgroup>
 <thead><tr><th>월</th><th>매출</th></tr></thead>
 <tbody>
 <tr><td>1월</td><td>1,200만 원</td></tr>
@@ -69,7 +79,7 @@
 <tr><td>3월</td><td>1,350만 원</td></tr>
 <tr><td>4월</td><td>1,320만 원</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-5. 월별 매출(가상 자료)</b><ul class="capnote"><li>데이터 분석 예제에 사용하는 가상의 1월부터 4월까지 매출</li></ul></figcaption></figure>
+<figcaption><b>표 6-6. 월별 매출(가상 자료)</b><ul class="capnote"><li>데이터 분석 예제에 사용하는 가상의 1월부터 4월까지 매출</li></ul></figcaption></figure>
 <pre><code>첨부한 월별 매출 파일을 분석해 줘.
 1. 코드를 실행해 월별 합계와 전월 대비 증감률을 표로 만들어 줘.
 2. 증감률이 가장 큰 달 두 개를 적어 줘.
@@ -92,8 +102,8 @@
 <p>예제의 자료는 가상의 예입니다.</p>
 
 <h2 id="project">프로젝트 관리</h2>
-<p>프로젝트 관리에서 AI는 작업 분해, 일정표, 위험 목록, 주간 보고처럼 구조가 정해진 문서를 만듭니다. 문서의 형식은 AI가 갖추지만, 일정과 위험이 실제 조직 사정에 맞는지는 사람이 판단해야 합니다. 표 6-6은 작업별 요청 예제와 확인할 점입니다.</p>
-<figure class="fig" id="tbl-6-6"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col class="w65"><col></colgroup>
+<p>프로젝트 관리에서 AI는 작업 분해, 일정표, 위험 목록, 주간 보고처럼 구조가 정해진 문서를 만듭니다. 문서의 형식은 AI가 갖추지만, 일정과 위험이 실제 조직 사정에 맞는지는 사람이 판단해야 합니다. 표 6-7은 작업별 요청 예제와 확인할 점입니다.</p>
+<figure class="fig" id="tbl-6-7"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col class="w65"><col></colgroup>
 <thead><tr><th>작업</th><th>요청 예제</th><th>확인할 점</th></tr></thead>
 <tbody>
 <tr><td>작업 분해</td><td>목표를 3단계 깊이의 작업 목록으로 나눠 줘.</td><td>누락된 작업, 중복 작업</td></tr>
@@ -101,7 +111,7 @@
 <tr><td>위험 목록</td><td>위험을 발생 가능성과 영향으로 표시하고 대응을 적어 줘.</td><td>누락된 위험, 대응의 실행 가능성</td></tr>
 <tr><td>주간 보고</td><td>완료, 진행, 지연 항목을 표로 정리해 줘.</td><td>상태가 실제와 같은지</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-6. 프로젝트 관리 활용</b><ul class="capnote"><li>작업 분해, 일정표, 위험 목록, 주간 보고의 요청 예제와 확인할 점</li></ul></figcaption></figure>
+<figcaption><b>표 6-7. 프로젝트 관리 활용</b><ul class="capnote"><li>작업 분해, 일정표, 위험 목록, 주간 보고의 요청 예제와 확인할 점</li></ul></figcaption></figure>
 
 <h2 id="communication">업무 소통</h2>
 <p>업무 소통 문서는 받는 사람과 목적이 분명하므로, 전달할 사실을 항목으로 입력하고 문체와 형식을 지정하면 수정할 부분이 적은 초안을 얻습니다.</p>
@@ -120,8 +130,8 @@
 <p>인사 업무에서 AI가 맡을 수 있는 범위는 문서 작성까지입니다. 채용 공고와 교육 자료 초안에는 AI를 사용할 수 있지만, 지원자 평가, 승진, 해고처럼 사람에게 영향을 주는 판단에는 AI 결과를 그대로 사용하지 않습니다. 학습 데이터의 편향(Bias)이 판단에 반영될 수 있기 때문이며, 이유와 사례는 <a href="../chapters/ch08.html#bias">Chapter 8</a>에서 다룹니다.</p>
 
 <h2 id="types">생성 유형</h2>
-<p>창작에서 AI가 생성하는 결과물은 글, 이미지, 음성, 음악, 영상의 다섯 유형입니다. 유형마다 권리와 표시 의무의 쟁점이 다르므로, 결과물을 사용하기 전에 확인할 사항도 다릅니다(표 6-7).</p>
-<figure class="fig" id="tbl-6-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
+<p>창작에서 AI가 생성하는 결과물은 글, 이미지, 음성, 음악, 영상의 다섯 유형입니다. 유형마다 권리와 표시 의무의 쟁점이 다르므로, 결과물을 사용하기 전에 확인할 사항도 다릅니다(표 6-8).</p>
+<figure class="fig" id="tbl-6-8"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
 <thead><tr><th>유형</th><th>작업 예제</th><th>확인 사항</th></tr></thead>
 <tbody>
 <tr><td>글</td><td>기획안, 광고 문구, 대본 초안</td><td>기존 문구와의 유사성</td></tr>
@@ -130,7 +140,7 @@
 <tr><td>음악</td><td>배경 음악, 효과음</td><td>도구 약관의 상업적 이용 조건</td></tr>
 <tr><td>영상</td><td>짧은 홍보 영상, 장면 시안</td><td>실존 인물이 등장하는 경우 딥페이크 표시 의무</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-7. 창작 생성 유형</b><ul class="capnote"><li>글, 이미지, 음성, 음악, 영상의 작업 예제와 확인 사항</li></ul></figcaption></figure>
+<figcaption><b>표 6-8. 창작 생성 유형</b><ul class="capnote"><li>글, 이미지, 음성, 음악, 영상의 작업 예제와 확인 사항</li></ul></figcaption></figure>
 
 <h2 id="workflow">창작 작업 절차</h2>
 <p>창작 작업은 AI가 후보를 만들고 사람이 선택과 점검을 맡는 구조로 진행합니다.</p>
@@ -148,8 +158,8 @@
 각 안의 차이를 한 줄로 요약해 줘.</code></pre>
 
 <h2 id="platform">플랫폼별 콘텐츠</h2>
-<p>플랫폼을 맥락으로 적고 플랫폼별 조건을 지정하면 형식이 맞는 초안을 얻습니다. 같은 내용도 게시할 플랫폼에 따라 길이, 구조, 문체가 다르기 때문입니다. 표 6-8은 플랫폼별 형식과 요청 시 적을 조건입니다.</p>
-<figure class="fig" id="tbl-6-8"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
+<p>플랫폼을 맥락으로 적고 플랫폼별 조건을 지정하면 형식이 맞는 초안을 얻습니다. 같은 내용도 게시할 플랫폼에 따라 길이, 구조, 문체가 다르기 때문입니다. 표 6-9는 플랫폼별 형식과 요청 시 적을 조건입니다.</p>
+<figure class="fig" id="tbl-6-9"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
 <thead><tr><th>플랫폼</th><th>형식</th><th>요청 시 적을 조건</th></tr></thead>
 <tbody>
 <tr><td>블로그</td><td>제목, 소제목, 본문 문단</td><td>분량, 검색어, 소제목 수</td></tr>
@@ -158,12 +168,12 @@
 <tr><td>뉴스레터</td><td>제목, 요약, 본문, 행동 요청</td><td>발송 대상, 읽는 시간</td></tr>
 <tr><td>보도 자료</td><td>제목, 부제, 본문, 문의처</td><td>공식 문체, 인용할 담당자 발언</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-8. 플랫폼별 콘텐츠 형식</b><ul class="capnote"><li>블로그, 짧은 영상, SNS, 뉴스레터, 보도 자료의 형식과 요청 시 적을 조건</li></ul></figcaption></figure>
+<figcaption><b>표 6-9. 플랫폼별 콘텐츠 형식</b><ul class="capnote"><li>블로그, 짧은 영상, SNS, 뉴스레터, 보도 자료의 형식과 요청 시 적을 조건</li></ul></figcaption></figure>
 <p>원고 하나를 여러 플랫폼용으로 변환할 때는 원고를 입력 자료로 제공하고, 사실은 그대로 두고 형식만 변환하도록 제약 조건을 둡니다.</p>
 
 <h2 id="image-prompt">이미지 프롬프트 구성</h2>
-<p>이미지 프롬프트는 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 여섯 요소로 구성합니다(표 6-9). 결과물이 그림이므로 화면에 담길 요소를 하나씩 지정해야 하기 때문입니다.</p>
-<figure class="fig" id="tbl-6-9"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
+<p>이미지 프롬프트는 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 여섯 요소로 구성합니다(표 6-10). 결과물이 그림이므로 화면에 담길 요소를 하나씩 지정해야 하기 때문입니다.</p>
+<figure class="fig" id="tbl-6-10"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
 <thead><tr><th>요소</th><th>내용</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>주제</td><td>무엇을 그릴지</td><td>창가에 놓인 화분</td></tr>
@@ -173,8 +183,8 @@
 <tr><td>비율</td><td>가로세로 비율</td><td>16:9</td></tr>
 <tr><td>제외 요소</td><td>포함하지 않을 요소</td><td>글자, 로고, 사람 얼굴</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-9. 이미지 프롬프트 요소</b><ul class="capnote"><li>주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 내용과 작성 예제</li></ul></figcaption></figure>
-<p>표 6-9의 작성 예제를 순서대로 이으면 아래 프롬프트(Prompt)가 됩니다.</p>
+<figcaption><b>표 6-10. 이미지 프롬프트 요소</b><ul class="capnote"><li>주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 내용과 작성 예제</li></ul></figcaption></figure>
+<p>표 6-10의 작성 예제를 순서대로 이으면 아래 프롬프트(Prompt)가 됩니다.</p>
 <pre><code>발표 자료 표지에 사용할 이미지.
 창가에 놓인 화분, 정면에서 가까이 본 구도, 화면 오른쪽에 배치.
 평면 삽화 스타일, 오전 햇빛, 연한 초록과 베이지 색 조합.
@@ -184,3 +194,4 @@
 <h2 id="industry">산업별 확인 항목</h2>
 <p>AI 도입의 영향은 자기 산업에서 다섯 가지 항목으로 확인합니다. 산업별 영향은 기관마다 전망이 다르고 자주 변경되기 때문입니다.</p>
 <ol><li><b>적합한 작업</b>: 업무 가운데 초안 작성, 요약, 분류처럼 AI의 성능이 높은 작업</li><li><b>고위험 작업</b>: 결과에 오류가 있으면 피해가 큰 작업과 그 작업의 검토자</li><li><b>산업 규제</b>: 산업에 적용되는 규제(개인정보, 의료, 금융, 교육)가 AI 사용을 제한하는 범위</li><li><b>고지 대상</b>: AI 사용 사실을 알려야 하는 고객과 거래처</li><li><b>효과 측정</b>: 도입 효과를 측정할 지표</li></ol>
+<p>AI 도입 효과를 다룬 통계를 인용할 때는 세 가지를 확인합니다. '도입했다'에 시범 사용과 검토 단계가 섞였는지, '효과를 봤다'는 비율이 전체 기업 기준인지 도입한 기업 기준인지, 조사 주체와 시점과 대상 수가 무엇인지입니다. 기업이 자사 제품 홍보에 사용한 조사는 그 점을 감안합니다.</p>

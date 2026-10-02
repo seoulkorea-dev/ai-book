@@ -1,6 +1,6 @@
 """src/ 의 본문 조각을 읽어 배포용 HTML을 만든다.
 
-- 원고는 src/ 아래 HTML 조각(본문만)을 고친다. 루트의 index.html, chapters/, appendix/, wiki/ 는 빌드 결과물이므로 직접 고치지 않는다.
+- 원고는 src/ 아래 HTML 조각(본문만)을 고친다. 루트의 index.html, chapters/, appendix/ 는 빌드 결과물이므로 직접 고치지 않는다.
 - 목차와 페이지 정보는 src/site.json 에 있다.
 - 빌드는 다른 쪽의 "표 3-1", "그림 8-1" 참조에만 링크를 건다. 같은 쪽 참조는 글자만 둔다. 없는 번호를 가리키면 멈춘다.
 실행: python3 tools/build.py
@@ -164,7 +164,7 @@ for old, (new, label) in site.get("redirects", {}).items():
 <link rel="canonical" href="{href}">
 </head>
 <body>
-<p>이 쪽의 내용은 <a href="{href}">{html.escape(label)}</a>로 옮겼습니다.</p>
+<p>이 쪽의 내용을 옮겼습니다. 새 위치: <a href="{href}">{html.escape(label)}</a></p>
 </body>
 </html>
 """, encoding="utf-8")

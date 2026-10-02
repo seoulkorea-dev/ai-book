@@ -32,25 +32,9 @@
 <li><a href="../chapters/ch07.html"><span class="nav-num">Chapter 7</span><span class="nav-title">나에게 맞는 AI 도구 선택과 역량 진단</span></a></li>
 <li><a href="../chapters/ch08.html"><span class="nav-num">Chapter 8</span><span class="nav-title">AI 윤리, 법, 보안과 조직 정책</span></a></li>
 <li class="group">부록</li>
-<li><a href="../appendix/a-templates.html">A. 프롬프트 템플릿</a></li>
-<li><a href="../appendix/c-glossary.html">C. 용어 사전</a></li>
-<li><a href="../appendix/d-references.html">D. 참고문헌</a></li>
-<li class="group">위키</li>
-<li><a href="../wiki/index.html">위키 홈</a></li>
-<li><a href="../wiki/concepts.html">개념</a></li>
-<li><a href="../wiki/tools.html">도구</a></li>
-<li><a href="../wiki/cases.html">사례 연구</a></li>
-<li><a href="../wiki/security.html">보안</a></li>
-<li><a href="../wiki/governance.html">거버넌스</a></li>
-<li class="group">위키: 프롬프트 엔지니어링 (웹 전용)</li>
-<li><a href="../wiki/pe-foundations.html">프롬프트 엔지니어링: 기초</a></li>
-<li><a href="../wiki/pe-techniques.html">프롬프트 엔지니어링: 기법</a></li>
-<li><a href="../wiki/pe-reasoning.html">프롬프트 엔지니어링: 추론</a></li>
-<li><a href="../wiki/pe-rag.html">프롬프트 엔지니어링: RAG</a></li>
-<li><a href="../wiki/pe-agents.html">프롬프트 엔지니어링: 에이전트</a></li>
-<li><a href="../wiki/pe-applications.html">프롬프트 엔지니어링: 응용</a></li>
-<li><a href="../wiki/pe-evaluation.html">프롬프트 엔지니어링: 평가와 안전</a></li>
-<li><a href="../wiki/pe-research.html">프롬프트 엔지니어링: 연구</a></li>
+<li><a href="../appendix/prompts.html">1. 프롬프트 예문 모음</a></li>
+<li><a href="../appendix/terms.html">2. 용어 풀이</a></li>
+<li><a href="../appendix/references.html">3. 참고 자료</a></li>
 </ul></nav>
 <main id="main">
 <article>
@@ -92,7 +76,7 @@
 &lt;/문제&gt;</code></pre>
 <h3>소크라테스식 질문</h3>
 <p>소크라테스식 질문은 질문하는 쪽과 답하는 쪽을 반대로 해 AI가 질문하고 사용자가 답하는 방법입니다. 개념을 설명할 수 있는지 스스로 확인하는 데 적합합니다. 질문을 쉬운 것부터 하나씩 받으면 이해가 끊기는 지점을 찾을 수 있습니다.</p>
-<p>빈칸 템플릿은 <a href="../appendix/a-templates.html">부록 A</a>에 있습니다.</p>
+<p>빈칸 템플릿은 <a href="../appendix/prompts.html">부록 1</a>에 있습니다.</p>
 <pre><code>[개념]을 내가 제대로 이해했는지 확인하고 싶어.
 질문을 한 번에 하나씩 해 줘. 쉬운 질문에서 시작해 점점 어렵게 해 줘.
 내 답에 오류가 있으면 정답을 말하지 말고, 잘못 이해한 부분을 다시 생각하게 하는 질문을 해 줘.
@@ -113,7 +97,7 @@
 
 <h2 id="plan">학습 계획</h2>
 <p>학습 계획은 기간, 목표, 하루 가용 시간, 현재 수준을 입력해 주 단위 일정으로 요청합니다. 아래 템플릿의 대괄호 안에 자신의 조건을 입력하고, 점검 방법 열을 포함해 진도를 확인할 수 있게 합니다.</p>
-<p>빈칸 템플릿은 <a href="../appendix/a-templates.html">부록 A</a>에 있습니다.</p>
+<p>빈칸 템플릿은 <a href="../appendix/prompts.html">부록 1</a>에 있습니다.</p>
 <pre><code>나는 [기간] 안에 [목표]를 달성하려고 해.
 하루에 사용할 수 있는 시간은 [시간]이고, 현재 수준은 [수준]이야.
 주 단위 학습 계획을 표로 만들어 줘. 열: 주차, 학습 내용, 연습 과제, 점검 방법.
@@ -143,7 +127,9 @@
 <p>문헌 탐색은 AI에게 논문 제목을 받는 것보다, 검색어를 받아 학술 검색 서비스에서 직접 검색하는 방식이 안전합니다. 검색 결과는 실제 문헌만 보여 주기 때문입니다.</p>
 
 <h2 id="integrity">학술 윤리</h2>
-<p>과제나 논문에 AI를 사용하기 전에는 해당 기관의 규정을 확인하고 사용 범위를 밝힙니다. 규정은 기관마다 다르기 때문입니다. Nature는 2023년 1월 사설에서 대규모 언어 모델(Large Language Model, LLM)을 논문 저자로 인정하지 않으며, 모델을 사용한 경우 방법 또는 감사의 글에 밝히도록 하는 원칙을 발표했습니다. 사용 사실을 표기하는 방법은 <a href="../chapters/ch08.html#disclosure">Chapter 8</a>에서, 사례는 <a href="../wiki/cases.html">위키 사례 연구</a>에서 다룹니다.</p>
+<p>과제나 논문에 AI를 사용하기 전에는 해당 기관의 규정을 확인하고 사용 범위를 밝힙니다. 규정은 기관마다 다르기 때문입니다. Nature는 2023년 1월 사설에서 대규모 언어 모델(Large Language Model, LLM)을 논문 저자로 인정하지 않으며, 모델을 사용한 경우 방법 또는 감사의 글에 밝히도록 하는 원칙을 발표했습니다. 사용 사실을 표기하는 방법은 <a href="../chapters/ch08.html#disclosure">Chapter 8</a>에서 다룹니다.</p>
+<p>AI 탐지 도구의 판정은 부정행위의 근거로 사용하지 않습니다. OpenAI는 2023년 1월 공개한 AI 텍스트 판별기를 정확도가 낮다는 이유로 2023년 7월 20일 제공 중단했고, Liang 외(2023)는 여러 판별기가 영어 비원어민의 글을 AI가 작성한 글로 잘못 판정하는 경향을 보고했습니다. 사람이 작성한 글을 AI가 작성한 글로 판정하거나, AI가 작성한 글을 사람이 수정하면 탐지하지 못할 수 있으므로, 탐지 결과만으로 판단하지 않고 작성 과정과 초안 기록을 함께 확인합니다.</p>
+
 
 </article>
 <footer class="site-foot">생성형 AI, 묻고 확인하고 활용하기: 작동 원리, 프롬프트, 검증, 책임.</footer>
