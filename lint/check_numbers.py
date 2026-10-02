@@ -53,6 +53,7 @@ for f in files:
 BATCHIM = set("013678")
 PAIR = {"은": "는", "는": "은", "이": "가", "가": "이", "을": "를", "를": "을", "과": "와", "와": "과"}
 WITH = set("은이을과")
+ROEURO = re.compile(r"((?:표|그림) (?:(?:[0-9A-Z]+|부[0-9]+)-)?(\d+)|Chapter (\d+))(?:</a>)?(으로|로)(?![가-힣])")
 JOSA = re.compile(r"((?:표|그림) (?:(?:[0-9A-Z]+|부[0-9]+)-)?(\d+))(?:</a>)?([은는이가을를과와])(?![가-힣])")
 for f in files + ["index.html"]:
     body = open(f, encoding="utf-8").read()
@@ -63,6 +64,12 @@ for f in files + ["index.html"]:
     for m in re.finditer(r"(Chapter (\d+))(?:</a>)?([은는이가을를과와])(?![가-힣])", body):
         if (m.group(3) in WITH) != (m.group(2)[-1] in BATCHIM):
             errors.append(f"조사 오류: {f} {m.group(1)}{m.group(3)} → {m.group(1)}{PAIR[m.group(3)]}")
+    # 로/으로: 마지막 숫자가 0, 3, 6(영, 삼, 육)이면 "으로", 1, 7, 8(ㄹ 받침)과 받침 없는 2, 4, 5, 9는 "로"
+    for m in ROEURO.finditer(body):
+        d = (m.group(2) or m.group(3))[-1]
+        need = "으로" if d in "036" else "로"
+        if m.group(4) != need:
+            errors.append(f"조사 오류: {f} {m.group(1)}{m.group(4)} → {m.group(1)}{need}")
 
 # 6. 파일과 번호 접두, figure id 일치
 APPX = {"appendix/prompts.html": "부1", "appendix/terms.html": "부2", "appendix/references.html": "부3"}
