@@ -120,6 +120,9 @@ def page(pid, body):
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(m['desc'])}">
 <link rel="stylesheet" href="{rel(cp, 'assets/style.css')}">
+<link rel="icon" href="{rel(cp, 'assets/favicon.svg')}" type="image/svg+xml">
+<link rel="icon" href="{rel(cp, 'assets/favicon-32.png')}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{rel(cp, 'assets/apple-touch-icon.png')}">
 </head>
 <body>
 <a class="skip" href="#main">본문으로 이동</a>
@@ -162,6 +165,7 @@ for old, (new, label) in site.get("redirects", {}).items():
 <meta http-equiv="refresh" content="0; url={href}">
 <title>이동한 쪽 | {BOOK}</title>
 <link rel="canonical" href="{href}">
+<link rel="icon" href="{rel(old, 'assets/favicon.svg')}" type="image/svg+xml">
 </head>
 <body>
 <p>이 쪽의 내용을 옮겼습니다. 새 위치: <a href="{href}">{html.escape(label)}</a></p>
