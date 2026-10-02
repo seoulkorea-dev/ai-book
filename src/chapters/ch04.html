@@ -35,9 +35,9 @@
 <figcaption><b>표 4-2. 환각 의심 신호</b><ul class="capnote"><li>지나치게 정확한 수치, 처음 보는 출처 등 의심 신호 5개와 확인 방법</li></ul></figcaption></figure>
 
 <h2 id="measures">대응 방법</h2>
-<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고 모름을 허용해 환각이 생길 여지를 줄이고, 시스템에서는 검색으로 근거를 보충하고, 사용자는 마지막에 원문과 대조합니다. 표 4-3은 방법별 적용 위치와 적용 예제입니다.</p>
+<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고 모름을 허용해 환각이 생길 여지를 줄이고, 시스템에서는 검색으로 근거를 보충하고, 사용자는 마지막에 원문과 대조합니다. 표 4-3은 방법별 적용 위치와 작성 예제입니다.</p>
 <figure class="fig" id="tbl-4-3"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w65"></colgroup>
-<thead><tr><th>방법</th><th>적용 위치</th><th>적용 예제</th></tr></thead>
+<thead><tr><th>방법</th><th>적용 위치</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>근거 자료 제공</td><td>프롬프트</td><td>첨부 문서만 근거로 답해 줘.</td></tr>
 <tr><td>출처 표시 요구</td><td>프롬프트</td><td>각 주장 뒤에 근거 문단 번호를 적어 줘.</td></tr>
@@ -46,7 +46,7 @@
 <tr><td>검색 증강 생성</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 포함(그림 4-1)</td></tr>
 <tr><td>원문 대조</td><td>사용자 검토</td><td>수치, 인용, 고유명사를 원문과 대조</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 적용 예제</li></ul></figcaption></figure>
+<figcaption><b>표 4-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 원문 대조까지 대응 방법 6개의 적용 위치와 작성 예제</li></ul></figcaption></figure>
 <p>검색 증강 생성(Retrieval-augmented Generation, RAG)은 Lewis 외(2020)가 발표한 방식으로, 문서를 조각으로 나눠 저장해 두고, 질문과 가까운 조각을 검색해 프롬프트에 포함한 뒤 답을 생성하고, 답변에 근거 조각의 출처를 표시합니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. 그림 4-1은 그 흐름입니다.</p>
 <figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 삽입, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 900 205" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="10" y="40" width="120" height="52" rx="8" fill="#1f5a66" stroke="#1f5a66"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#FAF6EB"><tspan x="70.0" y="70.9">질문</tspan></text><line x1="130" y1="66" x2="170" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="170" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="70.9">1. 관련 문서 검색</tspan></text><rect x="170" y="140" width="150" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="245.0" y="170.9">문서 저장소</tspan></text><line x1="245" y1="140" x2="245" y2="94" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><line x1="320" y1="66" x2="360" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="360" y="40" width="170" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="445.0" y="61.4">2. 근거를 프롬프트에</tspan><tspan x="445.0" y="80.3">포함</tspan></text><line x1="530" y1="66" x2="570" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="570" y="40" width="150" height="52" rx="8" fill="#F1EBDB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="645.0" y="70.9">3. 답변 생성</tspan></text><line x1="720" y1="66" x2="760" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/><rect x="760" y="40" width="130" height="52" rx="8" fill="#E9E1CC" stroke="#8a8272"/><text text-anchor="middle" font-size="14" font-weight="700" fill="#2B2A26"><tspan x="825.0" y="70.9">4. 출처 표시</tspan></text><rect x="360" y="140" width="530" height="52" rx="8" fill="#FAF6EB" stroke="#8a8272"/><text text-anchor="middle" font-size="14" fill="#2B2A26"><tspan x="625.0" y="170.9">사람의 확인: 출처 문단을 열어 답변과 대조</tspan></text><line x1="825" y1="92" x2="825" y2="140" stroke="#625D52" stroke-width="1.5" marker-end="url(#ah1)"/></svg></div><figcaption><b>그림 4-1. 검색 증강 생성 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 포함, 답변 생성, 출처 표시의 흐름</li></ul></figcaption></figure>
 
@@ -72,14 +72,14 @@
 <h3 id="criteria">평가 기준표</h3>
 <p>평가 기준은 프롬프트를 실행하기 전에 정합니다. 결과를 본 뒤에 기준을 정하면 결과에 맞춰 기준이 느슨해지기 때문입니다. 표 4-4는 대부분의 문서 작업에 적용할 수 있는 기준 네 가지입니다.</p>
 <figure class="fig" id="tbl-4-4"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w40"></colgroup>
-<thead><tr><th>기준</th><th>확인 내용</th><th>불합격 예제</th></tr></thead>
+<thead><tr><th>기준</th><th>확인할 점</th><th>불합격 예제</th></tr></thead>
 <tbody>
 <tr><td>정확성</td><td>사실과 수치가 원문과 일치</td><td>원문에 없는 수치 등장</td></tr>
 <tr><td>완전성</td><td>요청한 항목이 모두 포함</td><td>기한 열 누락</td></tr>
 <tr><td>형식</td><td>지정한 형식과 분량 준수</td><td>표 대신 문단으로 작성</td></tr>
 <tr><td>어조</td><td>읽을 사람과 용도에 맞는 문체</td><td>보고서에 구어체 사용</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-4. 결과물 평가 기준</b><ul class="capnote"><li>정확성, 완전성, 형식, 어조의 확인 내용과 불합격 예제</li></ul></figcaption></figure>
+<figcaption><b>표 4-4. 결과물 평가 기준</b><ul class="capnote"><li>정확성, 완전성, 형식, 어조의 확인할 점과 불합격 예제</li></ul></figcaption></figure>
 
 <h3 id="fixes">실패 유형별 수정</h3>
 <p>평가에서 불합격한 기준은 프롬프트 구성 요소 가운데 수정할 요소를 알려 줍니다. 예를 들어 요청과 다른 작업을 수행했다면 목적이, 수준이 맞지 않으면 맥락이 불충분한 것입니다. 표 4-5는 실패 유형별로 수정할 요소와 수정 예제입니다.</p>
@@ -91,7 +91,7 @@
 <tr><td>관점이나 용어가 맞지 않음</td><td>역할</td><td>직무와 관점 지정</td></tr>
 <tr><td>없는 내용 생성</td><td>제약 조건</td><td>원문에 없으면 '확인 불가'로 표시하게 함</td></tr>
 <tr><td>형식 불일치</td><td>출력 형식</td><td>빈 틀 예시 제공</td></tr>
-<tr><td>결과가 매번 다름</td><td>출력 형식</td><td>Few-shot 예시 추가(Chapter 3)</td></tr>
+<tr><td>결과가 매번 다름</td><td>출력 형식(예시 추가)</td><td>Few-shot 예시 추가(Chapter 3), 생성 설정 temperature 낮춤(Chapter 3)</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4-5. 실패 유형과 수정 방법</b><ul class="capnote"><li>실패 유형별로 수정할 구성 요소와 수정 예제</li></ul></figcaption></figure>
 
@@ -116,8 +116,8 @@
 <figure class="fig" id="tbl-4-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w60"></colgroup>
 <thead><tr><th>부분</th><th>내용</th><th>작성 예제</th></tr></thead>
 <tbody>
-<tr><td>현상</td><td>결과에서 문제가 된 부분을 지목</td><td>두 번째 문단의 매출 수치가 표와 다릅니다.</td></tr>
-<tr><td>기준</td><td>무엇이 맞는지, 왜 문제인지</td><td>표의 3분기 매출은 12억 원입니다.</td></tr>
+<tr><td>현상</td><td>결과에서 문제가 된 부분을 지목</td><td>두 번째 문단의 매출 수치가 표와 달라.</td></tr>
+<tr><td>기준</td><td>무엇이 맞는지, 왜 문제인지</td><td>표의 3분기 매출은 12억 원이야.</td></tr>
 <tr><td>요청</td><td>수정 범위와 방식</td><td>두 번째 문단만 표 수치로 수정하고 나머지는 그대로 둬.</td></tr>
 </tbody></table></div>
 <figcaption><b>표 4-7. 피드백 구성</b><ul class="capnote"><li>피드백을 현상, 기준, 요청으로 나눈 작성 예제</li></ul></figcaption></figure>

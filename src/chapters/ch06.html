@@ -3,9 +3,9 @@
 <ul class="summary"><li>회사 정책이 허용한 도구와 계정만 사용합니다.</li><li>AI에 맡기는 방식(자동화, 증강, 대리)에 따라 검토 수준을 정합니다.</li><li>창작은 구조를 사람이 정하고, AI에게는 부분 초안을 요청합니다.</li></ul>
 
 <h2 id="tasks">업무 영역별 활용</h2>
-<p>AI는 대부분의 업무 영역에서 초안과 정리를 맡을 수 있지만, 영역마다 사람이 반드시 확인할 지점이 다릅니다. 문서는 사실과 어조를, 데이터 분석은 계산 결과를, 인사 업무는 차별 표현을 확인합니다. 표 6-1은 업무 영역 9개의 작업 예제와 사람의 검토(Human in the Loop) 지점입니다.</p>
+<p>AI는 대부분의 업무 영역에서 초안과 정리를 맡을 수 있지만, 영역마다 사람이 반드시 확인할 지점이 다릅니다. 문서는 사실과 어조를, 데이터 분석은 계산 결과를, 인사 업무는 차별 표현을 확인합니다. 표 6-1은 업무 영역 9개의 예제와 사람의 검토(Human in the Loop) 지점입니다.</p>
 <figure class="fig" id="tbl-6-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w35"></colgroup>
-<thead><tr><th>영역</th><th>작업 예제</th><th>사람의 검토 지점</th></tr></thead>
+<thead><tr><th>영역</th><th>예제</th><th>사람의 검토 지점</th></tr></thead>
 <tbody>
 <tr><td>문서 작성</td><td>보고서, 제안서, 메일 초안</td><td>사실, 수치, 어조</td></tr>
 <tr><td>회의</td><td>회의록 정리, 결정 사항 추출</td><td>담당자와 기한</td></tr>
@@ -17,7 +17,7 @@
 <tr><td>고객 응대</td><td>답변 초안, 자주 묻는 질문 정리</td><td>약관, 정책과의 일치</td></tr>
 <tr><td>코드</td><td>스크립트 작성, 오류 분석</td><td>실행 결과와 보안</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-1. 업무 영역별 활용</b><ul class="capnote"><li>문서 작성부터 코드까지 업무 영역 9개의 작업 예제와 사람의 검토 지점</li></ul></figcaption></figure>
+<figcaption><b>표 6-1. 업무 영역별 활용</b><ul class="capnote"><li>문서 작성부터 코드까지 업무 영역 9개의 예제와 사람의 검토 지점</li></ul></figcaption></figure>
 
 <h2 id="modes">AI에 맡기는 방식</h2>
 <p>AI에 맡기는 방식은 작업 하나를 AI에 맡길 때 사람이 관여하는 정도에 따른 구분입니다. Anthropic은 2025년 2월 「Anthropic Economic Index」 보고서에서 Claude 대화를 분석해, 작업 전체를 맡기는 자동화와 사람과 함께 작업하는 증강의 비율을 발표했습니다. 이 책은 여기에 AI가 도구를 직접 실행하는 대리 방식을 추가해 세 가지로 구분합니다. 표 6-2는 방식별 사람의 역할과 검토 수준입니다.</p>
@@ -28,7 +28,7 @@
 <tr><td>증강</td><td>대화하며 함께 다듬음</td><td>판단과 선택</td><td>단계마다 확인</td></tr>
 <tr><td>대리</td><td>AI가 도구를 실행해 작업 수행</td><td>권한 설정과 승인</td><td>실행 전 승인, 실행 기록 검토</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-2. AI 사용 방식</b><ul class="capnote"><li>자동화, 증강, 대리 방식별 사람의 역할과 검토 수준</li></ul></figcaption></figure>
+<figcaption><b>표 6-2. AI에 맡기는 방식</b><ul class="capnote"><li>자동화, 증강, 대리 방식별 사람의 역할과 검토 수준</li></ul></figcaption></figure>
 <p>익숙하지 않은 분야의 작업은 증강 방식으로 시작하고, 기준표로 반복 검증한 뒤에 자동화로 전환합니다. 대리 방식의 통제는 <a href="../chapters/ch08.html#human">Chapter 8</a>에서 다룹니다.</p>
 
 <h2 id="stages">도입 단계</h2>
@@ -42,7 +42,7 @@
 <tr><td>4. 에이전트 운영</td><td>에이전트가 여러 단계 작업을 수행</td><td>작업 권한 제한, 사람 승인, 감사 기록</td></tr>
 </tbody></table></div>
 <figcaption><b>표 6-3. 업무 AI 도입 단계</b><ul class="capnote"><li>개인 사용부터 에이전트까지 도입 4단계와 단계별 필요한 통제</li></ul></figcaption></figure>
-<p>조직 정책은 <a href="../chapters/ch08.html">Chapter 8</a> 4단계(에이전트 운영)로 넘어갈 때는 도입 단계마다 통제 항목을 정합니다. 표 6-4는 단계별 확인 항목입니다.</p>
+<p>조직 정책은 <a href="../chapters/ch08.html">Chapter 8</a>에서 다룹니다. 4단계(에이전트 운영)로 넘어갈 때는 도입 단계마다 통제 항목을 정합니다. 표 6-4는 단계별 확인 항목입니다.</p>
 <figure class="fig" id="tbl-6-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col></colgroup>
 <thead><tr><th>단계</th><th>확인 항목</th></tr></thead>
 <tbody>
@@ -102,16 +102,16 @@
 <p>예제의 자료는 가상의 예입니다.</p>
 
 <h2 id="project">프로젝트 관리</h2>
-<p>프로젝트 관리에서 AI는 작업 분해, 일정표, 위험 목록, 주간 보고처럼 구조가 정해진 문서를 만듭니다. 문서의 형식은 AI가 갖추지만, 일정과 위험이 실제 조직 사정에 맞는지는 사람이 판단해야 합니다. 표 6-7은 작업별 요청 예제와 확인할 점입니다.</p>
+<p>프로젝트 관리에서 AI는 작업 분해, 일정표, 위험 목록, 주간 보고처럼 구조가 정해진 문서를 만듭니다. 문서의 형식은 AI가 갖추지만, 일정과 위험이 실제 조직 사정에 맞는지는 사람이 판단해야 합니다. 표 6-7은 작업별 작성 예제와 확인할 점입니다.</p>
 <figure class="fig" id="tbl-6-7"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col class="w65"><col></colgroup>
-<thead><tr><th>작업</th><th>요청 예제</th><th>확인할 점</th></tr></thead>
+<thead><tr><th>작업</th><th>작성 예제</th><th>확인할 점</th></tr></thead>
 <tbody>
 <tr><td>작업 분해</td><td>목표를 3단계 깊이의 작업 목록으로 나눠 줘.</td><td>누락된 작업, 중복 작업</td></tr>
 <tr><td>일정표</td><td>작업 목록과 인원으로 주 단위 일정표를 만들어 줘.</td><td>선후 관계, 휴일</td></tr>
 <tr><td>위험 목록</td><td>위험을 발생 가능성과 영향으로 표시하고 대응을 적어 줘.</td><td>누락된 위험, 대응의 실행 가능성</td></tr>
 <tr><td>주간 보고</td><td>완료, 진행, 지연 항목을 표로 정리해 줘.</td><td>상태가 실제와 같은지</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-7. 프로젝트 관리 활용</b><ul class="capnote"><li>작업 분해, 일정표, 위험 목록, 주간 보고의 요청 예제와 확인할 점</li></ul></figcaption></figure>
+<figcaption><b>표 6-7. 프로젝트 관리 활용</b><ul class="capnote"><li>작업 분해, 일정표, 위험 목록, 주간 보고의 작성 예제와 확인할 점</li></ul></figcaption></figure>
 
 <h2 id="communication">업무 소통</h2>
 <p>업무 소통 문서는 받는 사람과 목적이 분명하므로, 전달할 사실을 항목으로 입력하고 문체와 형식을 지정하면 수정할 부분이 적은 초안을 얻습니다.</p>
@@ -132,7 +132,7 @@
 <h2 id="types">생성 유형</h2>
 <p>창작에서 AI가 생성하는 결과물은 글, 이미지, 음성, 음악, 영상의 다섯 유형입니다. 유형마다 권리와 표시 의무의 쟁점이 다르므로, 결과물을 사용하기 전에 확인할 사항도 다릅니다(표 6-8).</p>
 <figure class="fig" id="tbl-6-8"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
-<thead><tr><th>유형</th><th>작업 예제</th><th>확인 사항</th></tr></thead>
+<thead><tr><th>유형</th><th>예제</th><th>확인할 점</th></tr></thead>
 <tbody>
 <tr><td>글</td><td>기획안, 광고 문구, 대본 초안</td><td>기존 문구와의 유사성</td></tr>
 <tr><td>이미지</td><td>시안, 삽화, 배경</td><td>상표, 캐릭터, 실존 인물 포함 여부</td></tr>
@@ -140,7 +140,7 @@
 <tr><td>음악</td><td>배경 음악, 효과음</td><td>도구 약관의 상업적 이용 조건</td></tr>
 <tr><td>영상</td><td>짧은 홍보 영상, 장면 시안</td><td>실존 인물이 등장하는 경우 딥페이크 표시 의무</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-8. 창작 생성 유형</b><ul class="capnote"><li>글, 이미지, 음성, 음악, 영상의 작업 예제와 확인 사항</li></ul></figcaption></figure>
+<figcaption><b>표 6-8. 창작 생성 유형</b><ul class="capnote"><li>글, 이미지, 음성, 음악, 영상의 예제와 확인할 점</li></ul></figcaption></figure>
 
 <h2 id="workflow">창작 작업 절차</h2>
 <p>창작 작업은 AI가 후보를 만들고 사람이 선택과 점검을 맡는 구조로 진행합니다.</p>

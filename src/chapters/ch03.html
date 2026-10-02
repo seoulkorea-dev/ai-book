@@ -4,19 +4,19 @@
 
 <h2 id="overview">기법 요약</h2>
 <p>기법마다 효과가 있는 작업이 다르므로, 기법은 작업의 성격에 맞춰 선택합니다. 표 3-1은 이 장에서 다루는 기법 8개의 방법, 적합한 작업, 기법을 처음 제안한 논문입니다.</p>
-<figure class="fig" id="tbl-3-1"><div class="table-wrap"><table class="fit-1 fit-4"><colgroup><col><col class="w30"><col class="w40"><col></colgroup>
-<thead><tr><th>기법</th><th>방법</th><th>적합한 작업</th><th>원 논문</th></tr></thead>
+<figure class="fig" id="tbl-3-1"><div class="table-wrap"><table class="fit-1 fit-4"><colgroup><col><col class="w30"><col class="w30"><col></colgroup>
+<thead><tr><th>기법</th><th>핵심 메커니즘(방법)</th><th>가장 효과적인 작업(추천)</th><th>출처(원 논문)</th></tr></thead>
 <tbody>
-<tr><td>Zero-shot</td><td>예시 없이 지시만 줌</td><td>단순 요약, 번역</td><td>Brown 외, 2020</td></tr>
-<tr><td>Few-shot</td><td>입력과 출력 예시 몇 개를 줌</td><td>분류, 형식 맞추기</td><td>Brown 외, 2020</td></tr>
-<tr><td>Chain of Thought</td><td>추론 과정을 단계별로 작성하게 함</td><td>수학, 논리 문제</td><td>Wei 외, 2022</td></tr>
-<tr><td>Zero-shot CoT</td><td>&quot;단계별로 생각하라&quot;는 지시만 추가</td><td>예시 없는 추론 문제</td><td>Kojima 외, 2022</td></tr>
-<tr><td>Self-consistency</td><td>여러 추론 결과 중 다수 답을 채택</td><td>정답이 하나인 추론 문제</td><td>Wang 외, 2022</td></tr>
-<tr><td>Tree of Thoughts</td><td>여러 풀이 갈래를 만들고 평가해 선택</td><td>계획, 퍼즐처럼 탐색이 필요한 문제</td><td>Yao 외, 2023</td></tr>
-<tr><td>ReAct</td><td>추론과 도구 사용을 번갈아 수행</td><td>검색, 계산이 필요한 질문</td><td>Yao 외, 2022</td></tr>
-<tr><td>프롬프트 체이닝</td><td>작업을 나눠 앞 결과를 다음 입력으로 사용</td><td>긴 문서 처리, 다단계 작업</td><td>Wu 외, 2022</td></tr>
+<tr><td>Zero-shot</td><td>예시 없이 직관적인 지시만 전달</td><td>단순 요약, 감성 분석, 직관적 번역</td><td><a href="../appendix/references.html">Brown 외, 2020</a></td></tr>
+<tr><td>Few-shot</td><td>입력과 출력 예시 몇 개를 함께 전달</td><td>분류, 형식 맞추기, 문체 따라 하기</td><td><a href="../appendix/references.html">Brown 외, 2020</a></td></tr>
+<tr><td>Chain of Thought</td><td>추론 과정을 단계별로 작성하게 지시</td><td>계산 문제, 논리 문제</td><td><a href="../appendix/references.html">Wei 외, 2022</a></td></tr>
+<tr><td>Zero-shot CoT</td><td>&quot;단계별로 생각해 줘&quot;라는 지시만 추가</td><td>예시 없이 푸는 추론 문제</td><td><a href="../appendix/references.html">Kojima 외, 2022</a></td></tr>
+<tr><td>Self-consistency</td><td>같은 질문을 여러 번 추론해 다수 답을 채택</td><td>정답이 하나인 추론 문제</td><td><a href="../appendix/references.html">Wang 외, 2022</a></td></tr>
+<tr><td>Tree of Thoughts</td><td>여러 풀이 갈래를 만들고 평가해 선택</td><td>계획, 퍼즐처럼 탐색이 필요한 문제</td><td><a href="../appendix/references.html">Yao 외, 2023</a></td></tr>
+<tr><td>ReAct</td><td>추론과 도구 사용을 번갈아 수행</td><td>검색, 계산이 필요한 질문</td><td><a href="../appendix/references.html">Yao 외, 2022</a></td></tr>
+<tr><td>프롬프트 체이닝</td><td>작업을 나눠 앞 결과를 다음 입력으로 전달</td><td>긴 문서 처리, 다단계 작업</td><td><a href="../appendix/references.html">Wu 외, 2022</a></td></tr>
 </tbody></table></div>
-<figcaption><b>표 3-1. 프롬프트 기법 비교</b><ul class="capnote"><li>Zero-shot부터 프롬프트 체이닝까지 기법 8개의 방법, 적합한 작업, 원 논문</li></ul></figcaption></figure>
+<figcaption><b>표 3-1. 프롬프트 기법 비교</b><ul class="capnote"><li>Zero-shot부터 프롬프트 체이닝까지 기법 8개의 핵심 메커니즘, 효과적인 작업, 원 논문</li></ul></figcaption></figure>
 
 <h2 id="fewshot">Few-shot</h2>
 <p>Few-shot은 입력과 출력의 예시 몇 개를 프롬프트(Prompt)에 포함해 작업 방식을 보여 주는 기법입니다. 분류 기준이나 출력 형식을 말로 설명하기 어려울 때 예시가 그 역할을 대신합니다. 아래 예제는 문장 분류의 기준과 형식을 예시 세 개로 전달합니다.</p>
@@ -88,7 +88,7 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 <figure class="fig" id="tbl-3-3"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w45"></colgroup>
 <thead><tr><th>작업</th><th>조합</th><th>방법</th></tr></thead>
 <tbody>
-<tr><td>고객 문의 분류</td><td>구성 요소 + Few-shot</td><td>분류 기준을 제약에 적고, 분류별 예시 제공</td></tr>
+<tr><td>고객 문의 분류</td><td>구성 요소 + Few-shot</td><td>분류 기준을 제약 조건에 적고, 분류별 예시 제공</td></tr>
 <tr><td>계산이 들어간 보고</td><td>구조화된 단계별 추론 + 형식 지정</td><td>계산 단계를 지정하고, 결과는 표로 받음</td></tr>
 <tr><td>긴 문서 분석</td><td>프롬프트 체이닝 + 구분 기호</td><td>장별로 나눠 처리하고, 원문은 태그로 감쌈</td></tr>
 <tr><td>최신 자료 조사</td><td>ReAct(검색 기능) + 출처 표시 요구</td><td>검색 결과마다 출처 링크 표시 요청</td></tr>
@@ -104,9 +104,9 @@ B안: 협업 콘텐츠, 비용 800만 원, 예상 도달 15만 명
 <figure class="fig" id="tbl-3-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w60"><col class="w30"></colgroup>
 <thead><tr><th>설정</th><th>의미</th><th>사용 예제</th></tr></thead>
 <tbody>
-<tr><td>temperature</td><td>확률 분포를 평평하게 또는 뾰족하게 조절. 낮으면 확률이 높은 토큰을, 높으면 다양한 토큰을 선택</td><td>정보 추출, 분류는 낮게, 아이디어 발상은 높게</td></tr>
+<tr><td>temperature</td><td>확률 분포를 평평하게 또는 뾰족하게 조절(낮으면 확률이 높은 토큰, 높으면 다양한 토큰 선택)</td><td>정보 추출, 분류는 낮게, 아이디어 발상은 높게</td></tr>
 <tr><td>top_p</td><td>누적 확률이 p가 될 때까지의 후보 안에서만 선택</td><td>맥락과 무관한 단어를 줄일 때 낮춤</td></tr>
-<tr><td>최대 토큰 수</td><td>답변 길이의 상한</td><td>비용과 길이 제한</td></tr>
+<tr><td>최대 토큰 수</td><td>답변 길이의 상한</td><td>긴 보고서는 높게, 짧은 답은 낮게</td></tr>
 </tbody></table></div>
 <figcaption><b>표 3-4. 생성 설정</b><ul class="capnote"><li>temperature, top_p, 최대 토큰 수의 의미와 사용 예제</li></ul></figcaption></figure>
 <p>top_p 방식은 Holtzman 외가 2019년 논문 「The Curious Case of Neural Text Degeneration」에서 제안했습니다. temperature와 top_p는 둘 다 선택의 다양성을 조절하므로 둘 중 하나만 조정합니다.</p>
