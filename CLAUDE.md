@@ -80,7 +80,7 @@ echo "로컬 $LOCAL / 원격 $REMOTE / 배포 $DEPLOY"
 | Chapter 4 | 환각 대응과 교차 검증 | chapters/ch04.html | 현재 ch07 + 첫머리에 교차 검증 정의 |
 | Chapter 5 | AI를 활용한 학습, 자료 조사, 요약 | chapters/ch05.html | 현재 ch05 |
 | Chapter 6 | AI를 활용한 업무, 기획서 초안, 창작 | chapters/ch06.html | 현재 ch06 + 부록 F 산업별 확인 항목 |
-| Chapter 7 | 나에게 맞는 AI 도구 선택과 역량 진단 | chapters/ch07.html | 현재 ch02 + 부록 B 점검표 + 부록 E 자가 진단(장별로 변경) |
+| Chapter 7 | 나에게 맞는 AI 도구 선택과 역량 진단 | chapters/ch07.html | 현재 ch02 + 부록 B 점검표. 장별 역량 진단(옛 부록 E)은 2026-10-02 16차(누적 40차) 사용자 결정으로 삭제, 역량은 자기 평가표(표 7-10)로 점검 |
 | Chapter 8 | AI 윤리, 법, 보안과 조직 정책 | chapters/ch08.html | 현재 ch08 + 부록 F 에이전트 자율성, 규제와 표준 |
 | 부록 1 | 분야별 프롬프트 예문 모음 | appendix/prompts.html | 옛 부록 A |
 | 부록 2 | 용어 풀이 | appendix/terms.html | 옛 부록 C |
