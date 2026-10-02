@@ -42,6 +42,11 @@ for f in files:
         if k:
             total["코드 상자 십시오"] += k
             print(f"경고 {f}: 코드 상자 속 '십시오' {k}건")
+    # 본문 큰따옴표 안의 인용 프롬프트 말투도 "~해 줘"(코드 상자, 표 제외). 인용 프롬프트인지는 사람이 판단
+    prose = re.sub(r"<(pre|table|svg)\b.*?</\1>", " ", body, flags=re.S)
+    for q in re.findall(r'"([^"<>]*십시오[^"<>]*)"', re.sub(r"<[^>]+>", "", prose.replace("&quot;", '"'))):
+        total["인용 십시오"] += 1
+        print(f"경고 {f}: 큰따옴표 인용 '십시오' | {q[:40]}")
     for n, line in enumerate(body.split("\n"), 1):
         text = re.sub(r"<svg.*?</svg>|<[^>]+>", " ", line)
         for m in B.finditer(text):
