@@ -145,16 +145,66 @@
 <p>예제의 자료는 가상의 예입니다.</p>
 
 <h2 id="project">프로젝트 관리</h2>
-<p>프로젝트 관리에서 AI는 작업 분해, 일정표, 위험 목록, 주간 보고처럼 구조가 정해진 문서를 만듭니다. 문서의 형식은 AI가 갖추지만, 일정과 위험이 실제 조직 사정에 맞는지는 사람이 판단해야 합니다. 표 6-7은 작업별 작성 예제와 확인할 점입니다.</p>
-<figure class="fig" id="tbl-6-7"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col class="w65"><col></colgroup>
-<thead><tr><th>작업</th><th>작성 예제</th><th>확인할 점</th></tr></thead>
-<tbody>
-<tr><td>작업 분해</td><td>목표를 3단계 깊이의 작업 목록으로 나눠 줘.</td><td>누락된 작업, 중복 작업</td></tr>
-<tr><td>일정표</td><td>작업 목록과 인원으로 주 단위 일정표를 만들어 줘.</td><td>선후 관계, 휴일</td></tr>
-<tr><td>위험 목록</td><td>위험을 발생 가능성과 영향으로 표시하고 대응을 적어 줘.</td><td>누락된 위험, 대응의 실행 가능성</td></tr>
-<tr><td>주간 보고</td><td>완료, 진행, 지연 항목을 표로 정리해 줘.</td><td>상태가 실제와 같은지</td></tr>
-</tbody></table></div>
-<figcaption><b>표 6-7. 프로젝트 관리 활용</b><ul class="capnote"><li>작업 분해, 일정표, 위험 목록, 주간 보고의 작성 예제와 확인할 점</li></ul></figcaption></figure>
+<p>프로젝트 관리에서 AI는 착수, 작업 분해, 일정, 위험 관리, 진척 보고의 문서 초안을 만들고, 사람은 그 초안이 실제 조직 사정과 맞는지 판단합니다. AI는 문서의 형식을 갖추고 누락을 찾는 데 강하지만, 작업 기간, 담당자의 사정, 조직 안의 합의처럼 문서 밖의 사정은 알지 못하기 때문입니다. 그림 6-1은 단계별로 AI가 만드는 초안과 사람이 확인할 점입니다.</p>
+<figure class="fig diagram" id="fig-6-1"><div class="svg-wrap" role="img" aria-label="착수, 작업 분해, 일정, 위험 관리, 진척 보고의 다섯 단계마다 AI가 만드는 초안과 사람이 확인할 점, 진척 보고 때마다 위험 목록을 다시 점검하는 반복"><svg viewBox="0 0 760 290" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-a61" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker><marker id="m1-a61t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f5a66"/></marker></defs><rect x="8" y="12" width="138" height="196" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="30" cy="38" r="12" fill="#1f5a66"/><text x="30" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="48" y="44" font-size="16" fill="#2B2A26" font-weight="700">착수</text><text x="22" y="82" font-size="15" fill="#1f5a66" font-weight="700">AI</text><text x="22" y="104" font-size="15" fill="#2B2A26">착수 문서 초안</text><line x1="20" y1="128" x2="134" y2="128" stroke="#8a8272" stroke-dasharray="3 3"/><text x="22" y="156" font-size="15" fill="#8a5a00" font-weight="700">사람</text><text x="22" y="178" font-size="15" fill="#2B2A26">범위 합의</text><rect x="159" y="12" width="138" height="196" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="181" cy="38" r="12" fill="#1f5a66"/><text x="181" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="199" y="44" font-size="16" fill="#2B2A26" font-weight="700">작업 분해</text><text x="173" y="82" font-size="15" fill="#1f5a66" font-weight="700">AI</text><text x="173" y="104" font-size="15" fill="#2B2A26">산출물별 분해</text><line x1="171" y1="128" x2="285" y2="128" stroke="#8a8272" stroke-dasharray="3 3"/><text x="173" y="156" font-size="15" fill="#8a5a00" font-weight="700">사람</text><text x="173" y="178" font-size="15" fill="#2B2A26">작업 크기 점검</text><rect x="310" y="12" width="138" height="196" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="332" cy="38" r="12" fill="#1f5a66"/><text x="332" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="350" y="44" font-size="16" fill="#2B2A26" font-weight="700">일정</text><text x="324" y="82" font-size="15" fill="#1f5a66" font-weight="700">AI</text><text x="324" y="104" font-size="15" fill="#2B2A26">순서와 배치</text><line x1="322" y1="128" x2="436" y2="128" stroke="#8a8272" stroke-dasharray="3 3"/><text x="324" y="156" font-size="15" fill="#8a5a00" font-weight="700">사람</text><text x="324" y="178" font-size="15" fill="#2B2A26">기간, 제약 반영</text><rect x="461" y="12" width="138" height="196" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="483" cy="38" r="12" fill="#1f5a66"/><text x="483" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text><text x="501" y="44" font-size="16" fill="#2B2A26" font-weight="700">위험 관리</text><text x="475" y="82" font-size="15" fill="#1f5a66" font-weight="700">AI</text><text x="475" y="104" font-size="15" fill="#2B2A26">흔한 위험 나열</text><line x1="473" y1="128" x2="587" y2="128" stroke="#8a8272" stroke-dasharray="3 3"/><text x="475" y="156" font-size="15" fill="#8a5a00" font-weight="700">사람</text><text x="475" y="178" font-size="15" fill="#2B2A26">조직 위험 추가</text><rect x="612" y="12" width="138" height="196" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="634" cy="38" r="12" fill="#1f5a66"/><text x="634" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">5</text><text x="652" y="44" font-size="16" fill="#2B2A26" font-weight="700">진척 보고</text><text x="626" y="82" font-size="15" fill="#1f5a66" font-weight="700">AI</text><text x="626" y="104" font-size="15" fill="#2B2A26">보고 초안</text><line x1="624" y1="128" x2="738" y2="128" stroke="#8a8272" stroke-dasharray="3 3"/><text x="626" y="156" font-size="15" fill="#8a5a00" font-weight="700">사람</text><text x="626" y="178" font-size="15" fill="#2B2A26">수치 대조, 결정</text><line x1="146" y1="110" x2="157" y2="110" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a61)"/><line x1="297" y1="110" x2="308" y2="110" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a61)"/><line x1="448" y1="110" x2="459" y2="110" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a61)"/><line x1="599" y1="110" x2="610" y2="110" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a61)"/><path d="M681.0 208 V246 H530.0 V210" fill="none" stroke="#1f5a66" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#m1-a61t)"/><text x="605.5" y="276" font-size="15" fill="#1f5a66" font-weight="700" text-anchor="middle">보고 때마다 위험 목록 다시 점검</text></svg></div>
+<figcaption><b>그림 6-1. 프로젝트 관리 단계별 AI와 사람의 역할</b><ul class="capnote"><li>착수부터 진척 보고까지 AI가 만드는 초안과 사람이 확인할 점</li></ul></figcaption></figure>
+<p>이 절은 가상의 프로젝트 하나를 단계마다 이어서 예로 듭니다. 예제 프로젝트는 사내 교육 과정의 온라인 전환으로, 기간은 12주, 참여 인원은 6명, 목표는 오프라인 교육 과정 10개를 온라인으로 옮기는 것입니다. 예제의 프로젝트와 수치는 모두 가상의 예입니다.</p>
+
+<h3 id="project-start">착수</h3>
+<p>착수 단계에서는 프로젝트의 목적, 범위, 성공 기준을 한 문서로 정리합니다. 범위 밖 항목을 함께 적어 두면 진행 중에 요구가 계속 늘어나는 것을 막을 수 있습니다.</p>
+<pre><code>다음 메모를 바탕으로 프로젝트 착수 문서 초안을 작성해 줘.
+항목은 목적, 범위 안, 범위 밖, 성공 기준, 이해관계자, 주요 제약으로 나눠 줘.
+메모에 없는 내용은 '확인 필요'로 표시해 줘.
+
+&lt;메모&gt;
+- 오프라인 교육 과정 10개를 온라인으로 전환
+- 기간 12주, 참여 인원 6명
+- 기존 인사 시스템과 수강 기록 연동은 이번에 하지 않음
+- 전환 후 수강 신청은 모두 온라인으로 받음
+&lt;/메모&gt;</code></pre>
+<p>기대할 수 있는 결과의 예에서는 인사 시스템 연동이 범위 밖에 들어가고, 메모에 없는 성공 기준과 이해관계자는 '확인 필요'로 표시됩니다. 사람은 이 두 항목을 채우고, 범위 안과 밖을 프로젝트 의뢰자와 합의합니다.</p>
+
+<h3 id="project-wbs">작업 분해</h3>
+<p>작업 분해는 프로젝트를 담당자와 기간을 정할 수 있는 크기의 작업으로 나누는 일입니다. 산출물을 기준으로 나누면 어느 산출물에도 연결되지 않는 작업이나 누락된 작업을 찾기 쉽습니다.</p>
+<pre><code>착수 문서의 범위 안 항목을 산출물 기준으로 3단계까지 나눠 줘.
+마지막 단계는 한 사람이 1주 안에 끝낼 수 있는 크기로 나눠 줘.
+분해한 뒤, 범위 안 항목 가운데 어느 작업에도 포함되지 않은 것을 따로 적어 줘.</code></pre>
+<p>기대할 수 있는 결과의 예에서는 "교육 과정 전환" 아래에 과정별 영상 제작, 퀴즈 작성, 수강 신청 화면 구성 같은 작업이 나오고, 수강생 안내처럼 어느 작업에도 포함되지 않은 항목이 따로 표시됩니다. 사람은 작업 크기가 실제 담당자의 역량과 맞는지, 조직에서 필요한 승인 절차가 작업으로 들어 있는지 확인합니다.</p>
+
+<h3 id="project-schedule">일정</h3>
+<p>일정은 작업 사이의 선후 관계와 마일스톤을 기준으로 정합니다. AI가 스스로 제시하는 작업 기간에는 근거가 없으므로, 기간은 사람이 정해 입력하고 AI에는 순서와 배치를 맡깁니다.</p>
+<pre><code>아래 작업 목록과 기간으로 12주 일정표를 만들어 줘.
+열은 주차, 작업, 담당, 선행 작업으로 하고, 4주, 8주, 12주 끝에 마일스톤을 표시해 줘.
+선행 작업이 끝나기 전에 시작하는 작업이 있으면 표 아래에 따로 적어 줘.
+
+&lt;작업&gt;
+1. 과정별 영상 제작(6주, 담당 2명)
+2. 퀴즈 작성(3주, 영상 제작 후)
+3. 수강 신청 화면 구성(4주)
+4. 시범 운영(2주, 1~3 완료 후)
+&lt;/작업&gt;</code></pre>
+<p>기대할 수 있는 결과의 예에서는 영상 제작이 1~6주, 수강 신청 화면 구성이 1~4주, 퀴즈 작성이 7~9주, 시범 운영이 10~11주에 배치됩니다. 사람은 담당자의 휴가와 다른 업무, 외부 일정처럼 목록에 없는 제약을 반영해 일정을 조정합니다.</p>
+
+<h3 id="project-risk">위험 관리</h3>
+<p>위험 관리는 문제가 생기기 전에 위험을 목록으로 만들고 정기적으로 다시 점검하는 일입니다. AI는 비슷한 프로젝트에서 흔한 위험을 빠르게 나열하지만, 그 조직에서만 생기는 위험은 사람이 추가해야 합니다.</p>
+<pre><code>이 프로젝트의 위험 목록을 표로 만들어 줘.
+열은 위험, 발생 가능성(상, 중, 하), 영향(상, 중, 하), 예방책, 발생 시 대응, 담당으로 해 줘.
+발생 가능성과 영향이 모두 '상'인 위험은 표 위에 따로 적어 줘.</code></pre>
+<p>기대할 수 있는 결과의 예에서는 영상 제작 지연, 강사 일정 미확보, 수강 신청 화면 오류 같은 위험이 나열됩니다. 사람은 담당 칸을 실제 담당자로 채우고, 진척 보고 때마다 목록을 다시 점검해 새 위험을 추가합니다.</p>
+
+<h3 id="project-report">진척 보고</h3>
+<p>진척 보고는 읽을 사람이 결정할 일을 먼저 알 수 있게 작성합니다. 작업 현황을 완료, 진행, 지연으로 나누고, 지연 항목에는 원인과 대응을, 보고 앞부분에는 필요한 결정이나 지원을 적습니다.</p>
+<pre><code>아래 이번 주 작업 기록으로 주간 보고를 작성해 줘.
+순서는 요청 사항, 완료, 진행, 지연, 다음 주 계획으로 하고, 지연 항목에는 원인과 대응을 한 줄씩 적어 줘.
+기록에 없는 수치는 포함하지 마.
+
+&lt;기록&gt;
+- 영상 10개 가운데 4개 완료, 2개 촬영 중
+- 강사 1명의 일정 변경으로 영상 1개 촬영이 2주 늦어짐
+- 수강 신청 화면 시안 완료, 검토 대기
+- 시범 운영 참가자 모집 공지 필요
+&lt;/기록&gt;</code></pre>
+<p>기대할 수 있는 결과의 예에서는 요청 사항에 수강 신청 화면 시안 검토와 참가자 모집 공지 승인이 먼저 나오고, 지연 항목에 강사 일정 변경과 대응이 적힙니다. 사람은 지연이 마일스톤에 영향을 주는지 판단하고, 보고의 수치가 작업 기록과 같은지 대조합니다.</p>
 
 <h2 id="communication">업무 소통</h2>
 <p>업무 소통 문서는 받는 사람과 목적이 분명하므로, 전달할 사실을 항목으로 입력하고 문체와 형식을 지정하면 수정할 부분이 적은 초안을 얻습니다.</p>
@@ -173,8 +223,8 @@
 <p>인사 업무에서 AI가 맡을 수 있는 범위는 문서 작성까지입니다. 채용 공고와 교육 자료 초안에는 AI를 사용할 수 있지만, 지원자 평가, 승진, 해고처럼 사람에게 영향을 주는 판단에는 AI 결과를 그대로 사용하지 않습니다. 학습 데이터의 편향(Bias)이 판단에 반영될 수 있기 때문이며, 이유와 사례는 <a href="../chapters/ch08.html#bias">Chapter 8</a>에서 다룹니다.</p>
 
 <h2 id="types">생성 유형</h2>
-<p>창작에서 AI가 생성하는 결과물은 글, 이미지, 음성, 음악, 영상의 다섯 유형입니다. 유형마다 권리와 표시 의무의 쟁점이 다르므로, 결과물을 사용하기 전에 확인할 사항도 다릅니다(표 6-8).</p>
-<figure class="fig" id="tbl-6-8"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
+<p>창작에서 AI가 생성하는 결과물은 글, 이미지, 음성, 음악, 영상의 다섯 유형입니다. 유형마다 권리와 표시 의무의 쟁점이 다르므로, 결과물을 사용하기 전에 확인할 사항도 다릅니다(표 6-7).</p>
+<figure class="fig" id="tbl-6-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
 <thead><tr><th>유형</th><th>예제</th><th>확인할 점</th></tr></thead>
 <tbody>
 <tr><td>글</td><td>기획안, 광고 문구, 대본 초안</td><td>기존 문구와의 유사성</td></tr>
@@ -183,7 +233,7 @@
 <tr><td>음악</td><td>배경 음악, 효과음</td><td>도구 약관의 상업적 이용 조건</td></tr>
 <tr><td>영상</td><td>짧은 홍보 영상, 장면 시안</td><td>실존 인물이 등장하는 경우 딥페이크 표시 의무</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-8. 창작 생성 유형</b><ul class="capnote"><li>글, 이미지, 음성, 음악, 영상의 예제와 확인할 점</li></ul></figcaption></figure>
+<figcaption><b>표 6-7. 창작 생성 유형</b><ul class="capnote"><li>글, 이미지, 음성, 음악, 영상의 예제와 확인할 점</li></ul></figcaption></figure>
 
 <h2 id="workflow">창작 작업 절차</h2>
 <p>창작 작업은 AI가 후보를 만들고 사람이 선택과 점검을 맡는 구조로 진행합니다.</p>
@@ -201,8 +251,8 @@
 각 안의 차이를 한 줄로 요약해 줘.</code></pre>
 
 <h2 id="platform">플랫폼별 콘텐츠</h2>
-<p>플랫폼을 맥락으로 적고 플랫폼별 조건을 지정하면 형식이 맞는 초안을 얻습니다. 같은 내용도 게시할 플랫폼에 따라 길이, 구조, 문체가 다르기 때문입니다. 표 6-9는 플랫폼별 형식과 요청 시 적을 조건입니다.</p>
-<figure class="fig" id="tbl-6-9"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
+<p>플랫폼을 맥락으로 적고 플랫폼별 조건을 지정하면 형식이 맞는 초안을 얻습니다. 같은 내용도 게시할 플랫폼에 따라 길이, 구조, 문체가 다르기 때문입니다. 표 6-8은 플랫폼별 형식과 요청 시 적을 조건입니다.</p>
+<figure class="fig" id="tbl-6-8"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
 <thead><tr><th>플랫폼</th><th>형식</th><th>요청 시 적을 조건</th></tr></thead>
 <tbody>
 <tr><td>블로그</td><td>제목, 소제목, 본문 문단</td><td>분량, 검색어, 소제목 수</td></tr>
@@ -211,12 +261,12 @@
 <tr><td>뉴스레터</td><td>제목, 요약, 본문, 행동 요청</td><td>발송 대상, 읽는 시간</td></tr>
 <tr><td>보도 자료</td><td>제목, 부제, 본문, 문의처</td><td>공식 문체, 인용할 담당자 발언</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-9. 플랫폼별 콘텐츠 형식</b><ul class="capnote"><li>블로그, 짧은 영상, SNS, 뉴스레터, 보도 자료의 형식과 요청 시 적을 조건</li></ul></figcaption></figure>
+<figcaption><b>표 6-8. 플랫폼별 콘텐츠 형식</b><ul class="capnote"><li>블로그, 짧은 영상, SNS, 뉴스레터, 보도 자료의 형식과 요청 시 적을 조건</li></ul></figcaption></figure>
 <p>원고 하나를 여러 플랫폼용으로 변환할 때는 원고를 입력 자료로 제공하고, 사실은 그대로 두고 형식만 변환하도록 제약 조건을 둡니다.</p>
 
 <h2 id="image-prompt">이미지 프롬프트 구성</h2>
-<p>이미지 프롬프트는 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 여섯 요소로 구성합니다(표 6-10). 결과물이 그림이므로 화면에 담길 요소를 하나씩 지정해야 하기 때문입니다.</p>
-<figure class="fig" id="tbl-6-10"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
+<p>이미지 프롬프트는 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 여섯 요소로 구성합니다(표 6-9). 결과물이 그림이므로 화면에 담길 요소를 하나씩 지정해야 하기 때문입니다.</p>
+<figure class="fig" id="tbl-6-9"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
 <thead><tr><th>요소</th><th>내용</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>주제</td><td>무엇을 그릴지</td><td>창가에 놓인 화분</td></tr>
@@ -226,8 +276,8 @@
 <tr><td>비율</td><td>가로세로 비율</td><td>16:9</td></tr>
 <tr><td>제외 요소</td><td>포함하지 않을 요소</td><td>글자, 로고, 사람 얼굴</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-10. 이미지 프롬프트 요소</b><ul class="capnote"><li>주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 내용과 작성 예제</li></ul></figcaption></figure>
-<p>표 6-10의 작성 예제를 순서대로 이으면 아래 프롬프트(Prompt)가 됩니다.</p>
+<figcaption><b>표 6-9. 이미지 프롬프트 요소</b><ul class="capnote"><li>주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 내용과 작성 예제</li></ul></figcaption></figure>
+<p>표 6-9의 작성 예제를 순서대로 이으면 아래 프롬프트(Prompt)가 됩니다.</p>
 <pre><code>발표 자료 표지에 사용할 이미지.
 창가에 놓인 화분, 정면에서 가까이 본 구도, 화면 오른쪽에 배치.
 평면 삽화 스타일, 오전 햇빛, 연한 초록과 베이지 색 조합.
