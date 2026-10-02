@@ -19,7 +19,7 @@ B = re.compile(
     r"|알아채|잘하는|못하는|좋아지|나빠지|만들어 내|찾아내|끄는"
 )
 # 정상 예외: 고르지 않다, 고르게(균등하다 뜻), 붙여 넣다, 읽기와 쓰기(권한 이름), 일부러 보인 나쁜 예(개선 전 프롬프트)
-EXCEPT = re.compile(r"고르지 않|고르게|붙여 넣|읽기와 쓰기|나와\. 고쳐 줘|자기소개서 써 줘")
+EXCEPT = re.compile(r"보고서 써 줘|고르지 않|고르게|붙여 넣|읽기와 쓰기|나와\. 고쳐 줘|자기소개서 써 줘")
 files = ["index.html"] + sorted(glob.glob("chapters/*.html")) + sorted(glob.glob("appendix/*.html"))
 total = Counter()
 for f in files:
