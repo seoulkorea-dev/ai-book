@@ -5,6 +5,7 @@
 """
 import glob
 import re
+import html
 from collections import Counter
 
 # 치환 대상 동사는 어간 뒤 모든 어미를 잡는다(관형형, 과거형, 연결형). 앞에 한글이 붙으면 다른 낱말(원고를, 덧붙이다)이라 제외
@@ -54,5 +55,21 @@ for f in files:
                 continue
             total[m.group(0)] += 1
             print(f"경고 {f}:{n}: {m.group(0)} | {text[max(0, m.start() - 20):m.end() + 15].strip()}")
+# 문장 원칙(2026-10-02): 100자 넘는 문장, 문장 첫머리 "그리고, 다만, 또한, 특히"를 경고(표, 그림, 코드 상자, 참고 자료 서지 제외)
+for f in files:
+    if f.endswith("references.html"):
+        continue
+    body = re.sub(r"<(pre|table|svg|figure)\b.*?</\1>", " ", open(f, encoding="utf-8").read(), flags=re.S)
+    for para in re.findall(r"<(?:p|li)\b[^>]*>(.*?)</(?:p|li)>", body, flags=re.S):
+        text = html.unescape(re.sub(r"<[^>]+>", "", para)).strip()
+        for sent in re.split(r"(?<=[.?!])\s+(?=[^)\s])", text):
+            sent = sent.strip()
+            if len(sent) > 100:
+                total["100자 초과 문장"] += 1
+                print(f"경고 {f}: 100자 초과({len(sent)}자) | {sent[:40]}")
+            if re.match(r"(그리고|다만|또한|특히)[ ,]", sent):
+                total["첫머리 접속어"] += 1
+                print(f"경고 {f}: 첫머리 접속어 | {sent[:40]}")
+
 if total:
     print("B 배제어 경고 합계:", sum(total.values()), dict(total.most_common()))

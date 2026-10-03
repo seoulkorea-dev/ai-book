@@ -3,7 +3,7 @@
 <ul class="summary"><li>대규모 언어 모델(Large Language Model, LLM)은 앞의 토큰(Token)을 보고 다음 토큰을 예측하는 과정을 반복해 문장을 만듭니다.</li><li>모델은 사전 학습(Pre-training), 지시 학습(Instruction Tuning), 선호 학습(Preference Learning)을 거쳐 대화형 제품이 됩니다.</li><li>작동 방식을 알면 결과를 어디까지 신뢰할지 판단할 수 있습니다.</li></ul>
 
 <h2 id="hierarchy">AI의 포함 관계</h2>
-<p>생성형 AI는 인공지능 안의 여러 기술 가운데 하나입니다. 인공지능 안에 머신 러닝(Machine Learning)이, 머신 러닝 안에 딥 러닝(Deep Learning)이 있고, 생성형 AI는 딥 러닝으로 새로운 결과물을 만드는 기술입니다. 그림 1-1은 이 포함 관계를, 표 1-1은 용어별 정의와 예제를 보여 줍니다.</p>
+<p>생성형 AI는 인공지능 안의 여러 기술 가운데 하나입니다. 인공지능 안에 머신 러닝(Machine Learning)이 있고, 머신 러닝 안에 딥 러닝(Deep Learning)이 있습니다. 생성형 AI는 딥 러닝으로 새로운 결과물을 만드는 기술입니다. 그림 1-1은 이 포함 관계를, 표 1-1은 용어별 정의와 예제를 보여 줍니다.</p>
 <figure class="fig diagram" id="fig-1-1"><div class="svg-wrap" role="img" aria-label="인공지능 안에 머신 러닝, 그 안에 딥 러닝, 그 안에 생성형 AI가 포함되는 관계"><svg viewBox="0 0 760 388" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><rect x="8" y="8" width="744" height="372" rx="12" fill="#FAF6EB" stroke="#8a8272" stroke-width="1"/><text x="26" y="36" font-size="17" fill="#1f5a66" font-weight="700">인공지능</text><text x="26" y="58" font-size="15" fill="#625D52">사람의 지적 작업을 컴퓨터로 수행하는 기술 전체</text><rect x="24" y="70" width="712" height="298" rx="12" fill="#F3EDDF" stroke="#8a8272" stroke-width="1"/><text x="42" y="98" font-size="17" fill="#1f5a66" font-weight="700">머신 러닝</text><text x="42" y="120" font-size="15" fill="#625D52">데이터에서 찾은 패턴으로 예측하고 분류하는 방법</text><rect x="40" y="132" width="680" height="224" rx="12" fill="#E7EEEC" stroke="#8a8272" stroke-width="1"/><text x="58" y="160" font-size="17" fill="#1f5a66" font-weight="700">딥 러닝</text><text x="58" y="182" font-size="15" fill="#625D52">층을 여러 겹 쌓은 신경망이 데이터의 특징을 스스로 찾는 방법</text><rect x="56" y="194" width="648" height="150" rx="12" fill="#D9E7E6" stroke="#1f5a66" stroke-width="1.6"/><text x="74" y="222" font-size="17" fill="#1f5a66" font-weight="700">생성형 AI</text><text x="74" y="244" font-size="15" fill="#625D52">학습한 패턴을 바탕으로 새 텍스트, 이미지, 음성, 코드를 만드는 AI</text><rect x="72" y="256" width="300" height="74" rx="10" fill="#FFFFFF" stroke="#8a8272"/><text x="88" y="286" font-size="16" fill="#2B2A26" font-weight="700">대규모 언어 모델</text><text x="88" y="310" font-size="15" fill="#625D52">텍스트를 이해하고 생성</text><rect x="388" y="256" width="300" height="74" rx="10" fill="#FFFFFF" stroke="#8a8272"/><text x="404" y="286" font-size="16" fill="#2B2A26" font-weight="700">이미지, 음성, 영상 생성 모델</text><text x="404" y="310" font-size="15" fill="#625D52">그림, 소리, 장면을 생성</text></svg></div><figcaption><b>그림 1-1. 인공지능의 포함 관계</b><ul class="capnote"><li>인공지능, 머신 러닝, 딥 러닝, 생성형 AI, 대규모 언어 모델의 포함 관계</li></ul></figcaption></figure>
 <figure class="fig" id="tbl-1-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w45"><col class="w40"></colgroup>
 <thead><tr><th>용어</th><th>정의</th><th>예제</th></tr></thead>
@@ -46,13 +46,13 @@
 <p>대규모 언어 모델은 방대한 텍스트로 학습한 생성형 모델입니다. 모델은 문장을 한 번에 만들지 않고, 다음에 올 토큰을 하나씩 예측해 추가합니다. 과정은 네 단계입니다.</p>
 <ol><li>입력 문장을 토큰으로 나눕니다. 토큰은 모델이 처리하는 텍스트 단위이며, 단어 전체이거나 단어의 일부입니다.</li><li>지금까지의 토큰을 바탕으로 다음에 올 토큰의 확률을 계산합니다.</li><li>확률에 따라 토큰 하나를 선택해 입력 뒤에 추가합니다.</li><li>종료 조건에 이를 때까지 2단계와 3단계를 반복합니다.</li></ol>
 <p>3단계에서 모델은 확률이 가장 높은 토큰만 선택하지 않고 확률에 비례해 선택합니다. 그래서 같은 질문에도 답이 조금씩 달라집니다. 선택 방식을 조절하는 설정은 <a href="../chapters/ch03.html#sampling">Chapter 3</a>에서 다룹니다.</p>
-<p>이 과정을 처리하는 모델 구조가 트랜스포머(Transformer)입니다. GPT 계열, Claude 계열, Gemini 계열 모델은 모두 이 구조를 기반으로 합니다. 트랜스포머는 Google 연구진이 2017년 논문 「Attention Is All You Need」에서 발표한 구조이며, GPT라는 이름도 Generative Pre-trained Transformer의 약자입니다.</p>
+<p>이 과정을 처리하는 모델 구조가 트랜스포머(Transformer)입니다. GPT 계열, Claude 계열, Gemini 계열 모델은 모두 이 구조를 기반으로 합니다. 트랜스포머는 Google 연구진이 2017년 논문 「Attention Is All You Need」에서 발표한 구조입니다. GPT라는 이름도 Generative Pre-trained Transformer의 약자입니다.</p>
 
 <h2 id="token">토큰과 언어</h2>
-<p>같은 내용이라도 언어와 토크나이저(Tokenizer, 텍스트를 토큰으로 나누는 도구)에 따라 토큰 수가 다릅니다. 토크나이저가 영어 텍스트를 중심으로 만들어진 경우, 같은 뜻의 한국어 문장이 더 많은 토큰으로 나뉠 수 있습니다. 토큰 수는 사용 요금과, 다음 절에서 설명하는 컨텍스트 윈도(Context Window)의 사용량을 결정하므로, 긴 한국어 문서를 다룰 때는 제품이 제공하는 토큰 계산 도구로 먼저 확인합니다.</p>
+<p>같은 내용이라도 언어와 토크나이저(Tokenizer, 텍스트를 토큰으로 나누는 도구)에 따라 토큰 수가 다릅니다. 토크나이저가 영어 텍스트를 중심으로 만들어진 경우, 같은 뜻의 한국어 문장이 더 많은 토큰으로 나뉠 수 있습니다. 토큰 수는 사용 요금과 컨텍스트 윈도(Context Window)의 사용량을 결정합니다. 컨텍스트 윈도는 다음 절에서 설명합니다. 긴 한국어 문서를 다룰 때는 제품이 제공하는 토큰 계산 도구로 먼저 확인합니다.</p>
 
 <h2 id="context">컨텍스트 윈도</h2>
-<p>컨텍스트 윈도는 모델이 한 번에 처리하는 토큰의 최대 개수입니다. 시스템 프롬프트(System Prompt), 사용자 프롬프트, 첨부 문서, 이전 대화, 모델의 답변이 모두 이 한도 안에 포함되어야 하며, 한도를 넘는 내용은 모델이 처리하지 못합니다. 컨텍스트 윈도가 커지면서 긴 문서 여러 개를 나누지 않고 한 번에 입력할 수 있게 되었습니다.</p>
+<p>컨텍스트 윈도는 모델이 한 번에 처리하는 토큰의 최대 개수입니다. 시스템 프롬프트(System Prompt), 사용자 프롬프트, 첨부 문서, 이전 대화, 모델의 답변이 모두 이 한도 안에 포함되어야 합니다. 한도를 넘는 내용은 모델이 처리하지 못합니다. 컨텍스트 윈도가 커지면서 긴 문서 여러 개를 나누지 않고 한 번에 입력할 수 있게 되었습니다.</p>
 <p>한도 안에 포함된 내용도 모두 같은 비중으로 반영되지는 않습니다. Liu 외는 2023년 논문 「Lost in the Middle」에서 긴 입력의 중간에 놓인 정보를 모델이 앞과 끝의 정보보다 덜 활용한다고 보고했습니다. 따라서 긴 문서를 다룰 때는 중요한 지시를 앞이나 끝에 두고, 문서는 필요한 부분만 선택해 입력합니다.</p>
 
 <h2 id="training">학습 단계</h2>
@@ -65,10 +65,10 @@
 <tr><td>선호 학습</td><td>사람 또는 AI가 비교 평가한 답변</td><td>선호되는 답변을 내는 모델</td></tr>
 </tbody></table></div>
 <figcaption><b>표 1-4. LLM 학습 단계</b><ul class="capnote"><li>사전 학습, 지시 학습, 선호 학습에 사용하는 데이터와 단계별 결과</li></ul></figcaption></figure>
-<p>선호 학습의 대표 방법은 두 가지입니다. OpenAI 연구진은 2022년 InstructGPT 연구에서 사람의 비교 평가를 보상으로 사용하는 사람 피드백 기반 강화 학습(Reinforcement Learning from Human Feedback, RLHF)으로 지시를 따르는 모델을 만드는 방법을 발표했습니다. Anthropic은 2022년 12월 원칙 목록을 기준으로 AI가 자기 답변을 평가하고 수정하게 하는 Constitutional AI 방법을 발표했습니다.</p>
+<p>선호 학습의 대표 방법은 두 가지입니다. OpenAI 연구진은 2022년 InstructGPT 연구에서 지시를 따르는 모델을 만드는 방법을 발표했습니다. 이 방법은 사람 피드백 기반 강화 학습(Reinforcement Learning from Human Feedback, RLHF)으로, 사람의 비교 평가를 보상으로 사용합니다. Anthropic은 2022년 12월 원칙 목록을 기준으로 AI가 자기 답변을 평가하고 수정하게 하는 Constitutional AI 방법을 발표했습니다.</p>
 
 <h2 id="strengths">생성형 AI의 강점과 약점</h2>
-<p>생성형 AI는 문서 초안 작성, 요약과 정리, 번역과 문체 변환, 아이디어 발상과 구조 제안, 코드 작성과 설명, 분류와 정보 추출에 강하고, 최신 사실, 드문 사실과 세부 정보, 출처와 인용 제시, 정확한 계산, 긴 추론과 긴 입력, 사람에 대한 판단에 약합니다. 이 강점과 약점은 앞에서 설명한 작동 방식에서 비롯됩니다. 표 1-5는 작업 유형별 강점과 약점, 그 이유입니다.</p>
+<p>생성형 AI는 문서 초안 작성, 요약과 정리, 번역과 문체 변환, 아이디어 발상과 구조 제안, 코드 작성과 설명, 분류와 정보 추출에 강합니다. 반면 최신 사실, 드문 사실과 세부 정보, 출처와 인용 제시, 정확한 계산, 긴 추론과 긴 입력, 사람에 대한 판단에는 약합니다. 이 강점과 약점은 앞에서 설명한 작동 방식에서 비롯됩니다. 표 1-5는 작업 유형별 강점과 약점, 그 이유입니다.</p>
 <figure class="fig" id="tbl-1-5"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w60"></colgroup>
 <thead><tr><th>강점과 약점</th><th>작업</th><th>작동 방식에서 비롯된 이유</th></tr></thead>
 <tbody>
@@ -89,4 +89,4 @@
 
 <h2 id="expectation">결과를 다루는 원칙</h2>
 <p>AI 결과는 초안으로 받고, 최종 판단과 승인은 사람이 합니다. 이 원칙은 표 1-5에서 본 작동 방식의 이유에서 나옵니다. 결과를 다룰 때는 다음 세 가지를 지킵니다.</p>
-<ul><li><b>자신 있는 어조와 정확성을 구분합니다</b>: 생성형 AI는 문맥에 맞을 확률이 높은 토큰을 이어 문장을 만들 뿐, 내용이 사실인지 확인하지 않습니다. 그래서 사실과 다른 내용도 정중하고 확신에 찬 문장으로 나올 수 있습니다. 문장이 매끄러운지가 아니라 수치, 날짜, 인용 같은 사실이 맞는지를 원문이나 공식 자료로 따로 확인합니다.</li><li><b>결과가 달라질 수 있음을 전제합니다</b>: 같은 입력에 늘 같은 결과를 내는 기존 소프트웨어와 달리, 생성형 AI는 토큰을 확률에 따라 선택하므로 같은 질문에도 실행할 때마다 결과가 달라질 수 있습니다. 한 번 좋은 답을 얻었다고 다음에도 같다고 볼 수 없으므로, 결정에 사용하는 중요한 작업은 여러 번 실행해 공통된 내용과 달라지는 부분을 비교합니다.</li><li><b>남은 문제는 뒤 장에서 다룹니다</b>: 사실이 아닌 내용을 사실처럼 만드는 환각을 알아보고 줄이는 방법은 <a href="../chapters/ch04.html">Chapter 4</a>에서, 학습 데이터 때문에 답이 한쪽으로 치우치는 편향(Bias)을 점검하고 조직이 책임을 나누는 방법은 <a href="../chapters/ch08.html#bias">Chapter 8</a>에서 다룹니다.</li></ul>
+<ul><li><b>자신 있는 어조와 정확성을 구분합니다</b>: 생성형 AI는 문맥에 맞을 확률이 높은 토큰을 이어 문장을 만들 뿐, 내용이 사실인지 확인하지 않습니다. 그래서 사실과 다른 내용도 정중하고 확신에 찬 문장으로 나올 수 있습니다. 문장이 매끄러운지가 아니라 수치, 날짜, 인용 같은 사실이 맞는지를 원문이나 공식 자료로 따로 확인합니다.</li><li><b>결과가 달라질 수 있음을 전제합니다</b>: 기존 소프트웨어는 같은 입력에 늘 같은 결과를 냅니다. 생성형 AI는 토큰을 확률에 따라 선택하므로 같은 질문에도 실행할 때마다 결과가 달라질 수 있습니다. 한 번 좋은 답을 얻었다고 다음에도 같다고 볼 수 없으므로, 결정에 사용하는 중요한 작업은 여러 번 실행해 공통된 내용과 달라지는 부분을 비교합니다.</li><li><b>남은 문제는 뒤 장에서 다룹니다</b>: 사실이 아닌 내용을 사실처럼 만드는 환각을 알아보고 줄이는 방법은 <a href="../chapters/ch04.html">Chapter 4</a>에서 다룹니다. 학습 데이터 때문에 답이 한쪽으로 치우치는 편향(Bias)을 점검하고 조직이 책임을 나누는 방법은 <a href="../chapters/ch08.html#bias">Chapter 8</a>에서 다룹니다.</li></ul>

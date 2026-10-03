@@ -44,7 +44,7 @@
 <main id="main">
 <article>
 <h1>Chapter 3 고급 프롬프트 기법과 AI 자기 검토</h1>
-<p class="lead">고급 프롬프트 기법은 프롬프트 구성 요소만으로 해결되지 않는 작업에서 결과 품질을 높이는 방법입니다. 이 장은 예시 제공, 단계별 추론(Chain of Thought, CoT), 도구 사용, 작업 분할, 한국어 프롬프트, 기법 조합, 자기 검토 요청을 다루고, 마지막에 생성 설정을 설명합니다.</p>
+<p class="lead">고급 프롬프트 기법은 프롬프트 구성 요소만으로 해결되지 않는 작업에서 결과 품질을 높이는 방법입니다. 이 장은 예시 제공, 단계별 추론(Chain of Thought, CoT), 도구 사용, 작업 분할, 한국어 프롬프트, 기법 조합, 자기 검토 요청, 프롬프트 개선 요청을 다룹니다. 마지막에는 생성 설정을 설명합니다.</p>
 <ul class="summary"><li>Few-shot은 예시로 형식과 판단 기준을 전달합니다.</li><li>단계별 추론(Chain of Thought)은 여러 단계의 계산과 논리가 필요한 문제에 사용합니다.</li><li>결과를 받은 뒤 AI에게 근거, 반론, 조건 충족 여부를 점검하게 하면 사람이 확인할 지점이 드러납니다.</li></ul>
 
 <h2 id="overview">기법 요약</h2>
@@ -111,12 +111,12 @@ C안: 매장 체험 행사, 비용 300만 원, 예상 도달 1만 명, 예상 �
 <p>1인 도달 비용이 가장 낮은 안이 가장 좋은 선택은 아닙니다. 단계를 지정하면 이처럼 여러 기준을 차례로 계산한 뒤 판단하는 과정이 결과에 드러나, 사람이 단계마다 점검할 수 있습니다. 예제의 수치는 가상의 예입니다.</p>
 <h3>추론 모델에서의 차이</h3>
 <p>추론 모델(Reasoning Model)은 답하기 전에 추론 과정을 내부에서 수행하므로, 일반 모델과 사용 방법이 다릅니다. OpenAI는 추론 모델 안내에서 추론 모델에는 단계별로 생각하라는 지시를 따로 포함하지 않도록 안내했습니다. 추론 모델에는 목적과 제약 조건을 명확히 제시하고, 추론 과정은 모델에 맡깁니다.</p>
-<p>최근에는 모델을 변경하지 않고 한 모델 안에서 추론량을 조절하는 방식이 사용됩니다. Anthropic은 Claude Opus 4.6에서 모델이 작업 난이도에 따라 추론량을 스스로 정하는 적응형 추론(Adaptive Thinking)을 도입했고, Claude Opus 4.7부터는 적응형 추론만 지원합니다. 추론량은 노력 수준(effort) 설정으로 조절합니다. 따라서 사용자는 모델 선택과 함께 추론 강도를 정합니다.</p>
+<p>최근에는 모델을 변경하지 않고 한 모델 안에서 추론량을 조절하는 방식이 사용됩니다. Anthropic은 Claude Opus 4.6에서 적응형 추론(Adaptive Thinking)을 도입했습니다. 적응형 추론은 모델이 작업 난이도에 따라 추론량을 스스로 정하는 방식입니다. Claude Opus 4.7부터는 적응형 추론만 지원합니다. 추론량은 노력 수준(effort) 설정으로 조절합니다. 따라서 사용자는 모델 선택과 함께 추론 강도를 정합니다.</p>
 <h3>적용하지 않는 작업</h3>
 <p>단순 조회, 짧은 번역, 창작 초안처럼 추론 단계가 없는 작업에는 단계별 추론을 적용하지 않습니다. 정확도는 높아지지 않고 답변만 길어지기 때문입니다.</p>
 
 <h2 id="react">ReAct</h2>
-<p>ReAct는 추론(Reasoning)과 행동(Acting)을 번갈아 수행하는 방식입니다. 모델이 필요한 정보를 판단하고, 검색 같은 도구를 호출하고, 그 결과를 관찰해 다음 행동을 정하는 과정을 반복합니다(그림 3-1). 모델이 학습하지 않은 정보도 도구로 확인할 수 있어 최신 정보가 필요한 질문에 적합하며, AI 에이전트(Agent)의 기본 동작 방식이기도 합니다. 에이전트의 구성과 통제는 <a href="../chapters/ch08.html#agents">Chapter 8</a>에서 다룹니다.</p>
+<p>ReAct는 추론(Reasoning)과 행동(Acting)을 번갈아 수행하는 방식입니다. 모델이 필요한 정보를 판단하고, 검색 같은 도구를 호출하고, 그 결과를 관찰해 다음 행동을 정하는 과정을 반복합니다(그림 3-1). 모델이 학습하지 않은 정보도 도구로 확인할 수 있어 최신 정보가 필요한 질문에 적합합니다. AI 에이전트(Agent)의 기본 동작 방식이기도 합니다. 에이전트의 구성과 통제는 <a href="../chapters/ch08.html#agents">Chapter 8</a>에서 다룹니다.</p>
 <figure class="fig diagram" id="fig-3-1"><div class="svg-wrap" role="img" aria-label="질문에서 추론, 행동, 관찰을 반복한 뒤 답변으로 가는 흐름"><svg viewBox="0 0 760 252" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-a31" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker><marker id="m1-a31t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f5a66"/></marker></defs><rect x="96" y="12" width="542" height="202" rx="14" fill="#F1EBDB" stroke="#8a8272" stroke-dasharray="5 3"/><rect x="8" y="58" width="76" height="44" rx="22" fill="#1f5a66"/><text x="46.0" y="86.0" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">질문</text><line x1="84" y1="80" x2="106" y2="80" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a31)"/><rect x="110" y="26" width="156" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="134" cy="52" r="12" fill="#1f5a66"/><text x="134" y="57" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="154" y="58" font-size="16" fill="#2B2A26" font-weight="700">추론</text><text x="126" y="88" font-size="15" fill="#625D52">필요한 정보</text><text x="126" y="110" font-size="15" fill="#625D52">판단</text><rect x="290" y="26" width="156" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="314" cy="52" r="12" fill="#1f5a66"/><text x="314" y="57" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="334" y="58" font-size="16" fill="#2B2A26" font-weight="700">행동</text><text x="306" y="88" font-size="15" fill="#625D52">도구 호출</text><text x="306" y="110" font-size="15" fill="#625D52">(검색 등)</text><rect x="470" y="26" width="156" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="494" cy="52" r="12" fill="#1f5a66"/><text x="494" y="57" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="514" y="58" font-size="16" fill="#2B2A26" font-weight="700">관찰</text><text x="486" y="88" font-size="15" fill="#625D52">도구 결과</text><text x="486" y="110" font-size="15" fill="#625D52">확인</text><line x1="266" y1="80" x2="288" y2="80" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a31)"/><line x1="446" y1="80" x2="468" y2="80" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a31)"/><path d="M548.0 134 V170 H188.0 V136" fill="none" stroke="#1f5a66" stroke-width="1.5" marker-end="url(#m1-a31t)"/><text x="368" y="198" font-size="15" fill="#1f5a66" font-weight="700" text-anchor="middle">정보가 부족하면 다시 추론</text><line x1="626" y1="80" x2="664" y2="80" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a31)"/><rect x="668" y="58" width="84" height="44" rx="22" fill="#1f5a66"/><text x="710.0" y="86.0" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">답변</text><text x="8" y="244" font-size="15" fill="#625D52">예: 내일 서울 날씨에 맞는 옷차림은?</text></svg></div><figcaption><b>그림 3-1. ReAct의 반복 구조</b><ul class="capnote"><li>추론, 행동, 관찰을 반복하다가 정보가 충분하면 답변하는 구조(예: 날씨에 맞는 옷차림 질문)</li></ul></figcaption></figure>
 
 <h2 id="chaining">프롬프트 체이닝</h2>
@@ -165,7 +165,7 @@ C안: 매장 체험 행사, 비용 300만 원, 예상 도달 1만 명, 예상 �
 &lt;프롬프트&gt;
 새로 온 동료 안내문 작성해 줘.
 &lt;/프롬프트&gt;</code></pre>
-<p>기대할 수 있는 결과의 예에서는 맥락(읽을 사람과 첫 주의 일정), 출력 형식(날짜, 할 일, 담당자 열의 표), 제약 조건(분량)이 누락된 요소로 나오고, 이 세 요소를 갖춘 프롬프트가 제안됩니다. 사람은 제안된 프롬프트에 실제 일정과 담당자를 채운 뒤 실행해 결과를 확인합니다.</p>
+<p>기대할 수 있는 결과의 예에서는 맥락(읽을 사람과 첫 주의 일정), 출력 형식(날짜, 할 일, 담당자 열의 표), 제약 조건(분량)이 누락된 요소로 나옵니다. 이어서 이 세 요소를 갖춘 프롬프트가 제안됩니다. 사람은 제안된 프롬프트에 실제 일정과 담당자를 채운 뒤 실행해 결과를 확인합니다.</p>
 
 <h2 id="sampling">생성 설정</h2>
 <p>모델은 다음 토큰을 확률에 따라 선택하며, API와 일부 개발 도구에서는 선택 방식을 설정으로 조절할 수 있습니다. 대화형 제품은 대부분 이 설정을 화면에 표시하지 않습니다. 표 3-4는 주요 설정 세 가지의 의미와 사용 예제입니다.</p>
@@ -178,7 +178,7 @@ C안: 매장 체험 행사, 비용 300만 원, 예상 도달 1만 명, 예상 �
 </tbody></table></div>
 <figcaption><b>표 3-4. 생성 설정</b><ul class="capnote"><li>temperature, top_p, 최대 토큰 수의 의미와 사용 예제</li></ul></figcaption></figure>
 <p>top_p 방식은 Holtzman 외가 2019년 논문 「The Curious Case of Neural Text Degeneration」에서 제안했습니다. temperature와 top_p는 둘 다 선택의 다양성을 조절하므로 둘 중 하나만 조정합니다.</p>
-<p>최근 모델은 이 설정을 지원하지 않기도 합니다. Anthropic은 Claude Opus 4.7부터 temperature, top_p, top_k에 기본값이 아닌 값을 보내면 400 오류를 반환하고, 이 설정 대신 프롬프트로 동작을 조정하도록 안내합니다. 따라서 설정을 사용하기 전에 해당 모델의 개발 문서에서 지원 여부를 확인합니다.</p>
+<p>최근 모델은 이 설정을 지원하지 않기도 합니다. Anthropic은 Claude Opus 4.7부터 temperature, top_p, top_k에 기본값이 아닌 값을 보내면 400 오류를 반환합니다. 이 설정 대신 프롬프트로 동작을 조정하도록 안내합니다. 따라서 설정을 사용하기 전에 해당 모델의 개발 문서에서 지원 여부를 확인합니다.</p>
 
 
 </article>
