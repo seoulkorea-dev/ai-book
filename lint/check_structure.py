@@ -31,6 +31,18 @@ for path in pages:
         if late and 'rowspan' in m.group(0):
             cap = re.search(r'<figcaption><b>([^<.]+)\.', s[m.end():m.end() + 300])
             errors.append(f'{name}: {cap.group(1) if cap else "표"} 병합 셀이 있어 {" ".join(late)} 사용 불가')
+    # 링크 규칙(61차): 참고 자료 링크는 항목 id로, 본문 문단의 장 링크는 절 앵커로(목차 표와 마치며 장 요약 문단 제외)
+    _main = re.search(r'<main\b.*?</main>', s, re.S)
+    _main = _main.group(0) if _main else s
+    if 'http-equiv="refresh"' in s:
+        _main = ''  # 이동 쪽은 새 쪽 맨 위로 안내하는 것이 목적이라 제외
+    for m in re.finditer(r'href="[^"]*references\.html(#[^"]*)?"', _main):
+        if not (m.group(1) or '').startswith('#ref-'):
+            errors.append(f'{name}: 참고 자료 링크에 항목 id 없음')
+    if not name.endswith(('index.html', 'epilogue.html')):
+        body = re.sub(r'<table.*?</table>', ' ', _main, flags=re.S)
+        for m in re.finditer(r'<a href="[^"#]*/(ch0\d|epilogue)\.html">([^<]*)</a>', body):
+            errors.append(f'{name}: 앵커 없는 장 링크 {m.group(2)}')
     # 용어 풀이 표제어: 한글(원어) 또는 한글(원어, 약어). 괄호 붙임, 원어 각 단어 첫 글자 대문자(관사, 전치사, 접속사와 하이픈 뒤 제외), 약어는 뒤
     if name.endswith('terms.html'):
         SMALLW = {'a', 'an', 'the', 'of', 'in', 'on', 'to', 'for', 'and'}
