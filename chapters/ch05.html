@@ -44,11 +44,11 @@
 <main id="main">
 <article>
 <h1>Chapter 5 AI를 활용한 학습, 자료 조사, 요약</h1>
-<p class="lead">학습과 연구에서 생성형 AI는 설명, 질문, 연습 문제, 요약, 자료 탐색을 돕고, 사용자는 사실과 출처를 확인합니다. 역할을 이렇게 나누는 이유는 AI가 학습을 대신하면 배운 것이 남지 않고, 출처 확인을 AI에 맡기면 AI가 만든 오류를 같은 AI가 확인하게 되기 때문입니다.</p>
+<p class="lead">학습과 연구에서 생성형 AI는 설명, 질문, 연습 문제, 요약, 자료 탐색을 돕고, 사용자는 사실과 출처를 확인합니다. AI가 대신할 수 있는 것은 설명과 정리이고, 이해와 판단은 대신할 수 없습니다. 역할을 이렇게 나누는 이유는 AI가 학습을 대신하면 배운 것이 남지 않고, AI가 만든 오류를 같은 AI에게 확인하게 하면 오류가 그대로 남을 수 있기 때문입니다.</p>
 <ul class="summary"><li>AI에게 답 대신 힌트와 질문을 요청하면 스스로 푸는 과정이 남습니다.</li><li>AI가 제시한 참고문헌은 원문을 열어 존재와 내용을 확인합니다.</li><li>과제와 논문에 AI를 사용하기 전에 기관의 규정을 확인합니다.</li></ul>
 
 <h2 id="uses">활용 영역</h2>
-<p>학습과 연구에서 AI를 활용하는 영역은 일곱 가지이며, 영역마다 사용자가 확인할 사항이 다릅니다. 개념 설명은 교재와 일치하는지, 자료 탐색은 제안된 문헌이 실제로 존재하는지를 확인하는 식입니다. 표 5-1은 영역별 예제와 확인할 점입니다.</p>
+<p>학습과 연구에서 AI를 활용하는 영역은 일곱 가지이며, 영역마다 사용자가 확인할 사항이 다릅니다. 개념 설명은 교재와 일치하는지, 자료 탐색은 제안된 문헌이 실제로 존재하는지를 확인하는 식입니다. 표 5-1은 영역별 예제와 확인할 점입니다. 자신의 작업에 해당하는 영역부터 확인해도 됩니다.</p>
 <figure class="fig" id="tbl-5-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
 <thead><tr><th>영역</th><th>예제</th><th>확인할 점</th></tr></thead>
 <tbody>
@@ -58,7 +58,7 @@
 <tr><td>노트 정리</td><td>강의 내용을 구조화</td><td>강의 원문과 대조해 누락 확인</td></tr>
 <tr><td>요약</td><td>논문, 강의 자료 요약</td><td>원문에 없는 주장 추가 여부</td></tr>
 <tr><td>자료 탐색</td><td>검색어와 관련 분야 제안</td><td>제안된 문헌의 실제 존재 여부</td></tr>
-<tr><td>글쓰기 피드백</td><td>초안의 논리 구조 점검</td><td>피드백의 근거, 기관의 AI 사용 규정</td></tr>
+<tr><td>글쓰기 피드백</td><td>초안의 논리 구조 점검</td><td>지적 내용이 초안에 근거하는지, 제안이 글의 목적에 맞는지</td></tr>
 </tbody></table></div>
 <figcaption><b>표 5-1. 학습과 연구 활용 영역</b><ul class="capnote"><li>개념 설명부터 글쓰기 피드백까지 학습과 연구 활용 영역 7개의 예제와 확인할 점</li></ul></figcaption></figure>
 
@@ -66,11 +66,21 @@
 <p>개념 설명을 요청할 때는 수준, 형식, 분량을 지정합니다. 지정하지 않으면 설명의 수준이 요청한 사람과 맞지 않고, 교재와 비교하기도 어렵습니다. 아래 예제는 수준(금융 지식 없이 이해할 수 있는 수준), 계산 조건, 형식(표), 추가 항목(혼동하는 점)을 지정합니다.</p>
 <pre><code>복리를 금융 지식 없이 이해할 수 있게 설명해 줘.
 원금 1,000만 원을 연 4%로 맡겼을 때, 단리, 1년마다 복리, 매월 복리의 1년, 3년, 5년, 10년 뒤 금액을 코드로 계산해 표로 작성하고(세금은 제외), 표 아래에 처음 배울 때 자주 혼동하는 점 두 가지를 적어 줘.</code></pre>
-<p>기대할 수 있는 결과의 예(만 원, 단리 / 1년마다 복리 / 매월 복리): 1년 1,040.0 / 1,040.0 / 1,040.7, 3년 1,120.0 / 1,124.9 / 1,127.3, 5년 1,200.0 / 1,216.7 / 1,221.0, 10년 1,400.0 / 1,480.2 / 1,490.8. 기간이 길수록, 이자를 계산하는 주기가 짧을수록 차이가 커집니다.</p>
-<p>설명이 이해되지 않으면 비유를 요청하기보다 다른 예시나 그림을 사용한 설명을 요청합니다. 비유는 개념의 일부만 대응하므로 잘못된 이해로 이어질 수 있습니다.</p>
+<p>아래 표는 기대할 수 있는 결과의 예입니다(표 5-2).</p>
+<figure class="fig" id="tbl-5-2"><div class="table-wrap"><table class="fit-1 fit-2 fit-3 fit-4"><colgroup><col><col><col><col></colgroup>
+<thead><tr><th>기간</th><th>단리</th><th>1년마다 복리</th><th>매월 복리</th></tr></thead>
+<tbody>
+<tr><td>1년</td><td>1,040.0</td><td>1,040.0</td><td>1,040.7</td></tr>
+<tr><td>3년</td><td>1,120.0</td><td>1,124.9</td><td>1,127.3</td></tr>
+<tr><td>5년</td><td>1,200.0</td><td>1,216.7</td><td>1,221.0</td></tr>
+<tr><td>10년</td><td>1,400.0</td><td>1,480.2</td><td>1,490.8</td></tr>
+</tbody></table></div>
+<figcaption><b>표 5-2. 원금 1,000만 원, 연 4%의 기간별 금액(예)</b><ul class="capnote"><li>단리, 1년마다 복리, 매월 복리의 1년, 3년, 5년, 10년 뒤 금액(만 원, 세금 제외)</li></ul></figcaption></figure>
+<p>기간이 길수록, 이자를 계산하는 주기가 짧을수록 차이가 커집니다.</p>
+<p>비유는 이해를 도울 수 있지만, 개념의 일부만 옮기는 경우가 많습니다. 이해가 어려우면 비유를 거듭 요청하기보다 다른 예시나 그림을 사용한 설명을 요청합니다.</p>
 
-<h2 id="tutor">튜터로 활용</h2>
-<p>AI를 튜터로 활용할 때는 답을 주지 말라는 제약 조건을 먼저 둡니다. AI에게 답을 바로 받으면 과제는 끝나도 배운 것이 남지 않기 때문입니다. 아래 예제는 힌트를 한 번에 하나만 주고, 사용자가 제시한 답의 정오와 이유만 알려 주도록 지시합니다.</p>
+<h2 id="tutor">답 대신 힌트 받기</h2>
+<p>AI를 튜터로 활용할 때는 답을 주지 말라는 제약 조건을 먼저 둡니다. 과제 마감이 가까울수록 정답을 바로 받고 싶어지지만, 그때 학습은 가장 빨리 끝나고 가장 적게 남습니다. AI에게 답을 바로 받으면 과제는 끝나도 배운 것이 남지 않기 때문입니다. 아래 예제는 힌트를 한 번에 하나만 주고, 사용자가 제시한 답의 정오와 이유만 알려 주도록 지시합니다.</p>
 <pre><code>나는 확률을 처음 공부해. 아래 문제를 풀다가 막혔어.
 정답과 풀이를 바로 알려 주지 말고, 내 풀이에서 오류가 있는 부분을 질문으로 짚어 줘.
 한 번에 힌트 하나만 주고, 내가 다시 답하면 맞는지와 그 이유만 알려 줘.
@@ -83,7 +93,7 @@
 &lt;/내 풀이&gt;</code></pre>
 <p>학습자의 풀이에는 두 가지 오해가 있습니다. 합 11가지가 모두 같은 가능성으로 나온다고 본 것과, (1, 6)과 (6, 1)을 같은 경우로 본 것입니다. 기대할 수 있는 첫 응답의 예는 "합이 2가 되는 경우와 합이 7이 되는 경우는 나올 가능성이 같을까?"이며, 튜터는 두 오해를 차례로 질문으로 짚습니다.</p>
 <h3>소크라테스식 질문</h3>
-<p>소크라테스식 질문은 질문하는 쪽과 답하는 쪽을 반대로 해 AI가 질문하고 사용자가 답하는 방법입니다. 개념을 설명할 수 있는지 스스로 확인하는 데 적합합니다. 질문을 쉬운 것부터 하나씩 받으면 이해가 끊기는 지점을 찾을 수 있습니다.</p>
+<p>소크라테스식 질문은 질문하는 쪽과 답하는 쪽을 반대로 해 AI가 질문하고 사용자가 답하는 방법입니다. AI가 정답을 알려 주는 대신, 질문을 통해 사용자가 스스로 이해를 점검하게 하는 방법입니다. 개념을 설명할 수 있는지 스스로 확인하는 데 적합합니다. 질문을 쉬운 것부터 하나씩 받으면 이해가 끊기는 지점을 찾을 수 있습니다.</p>
 <p>빈칸 템플릿은 <a href="../appendix/prompts.html">부록 1</a>에 있습니다.</p>
 <pre><code>'기회비용'을 내가 제대로 이해했는지 확인하고 싶어. 내가 이해한 내용은 아래와 같아.
 &lt;내 이해&gt;
@@ -93,9 +103,9 @@
 내 답에 오류가 있으면 정답을 말하지 말고, 잘못 이해한 부분을 다시 생각하게 하는 질문을 해 줘.
 질문 다섯 개가 끝나면 내가 약한 부분을 정리해 줘.</code></pre>
 
-<h2 id="notes">노트와 복습 자료</h2>
-<p>AI는 강의 내용을 정해진 형식의 복습 자료로 변환하는 작업에 적합합니다. 형식마다 용도가 다르므로 복습 목적에 맞는 형식을 선택합니다. 표 5-2는 형식별 요청 방법과 용도입니다.</p>
-<figure class="fig" id="tbl-5-2"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col class="w65"><col></colgroup>
+<h2 id="notes">복습 자료 만들기</h2>
+<p>AI는 강의 내용을 정해진 형식의 복습 자료로 변환하는 작업에 적합합니다. 형식마다 용도가 다르므로 복습 목적에 맞는 형식을 선택합니다. 표 5-3은 형식별 요청 방법과 용도입니다. AI는 입력된 자료를 새 형식으로 재구성할 뿐이므로, 복습 자료도 원문과 대조합니다.</p>
+<figure class="fig" id="tbl-5-3"><div class="table-wrap"><table class="fit-1 fit-3"><colgroup><col><col class="w65"><col></colgroup>
 <thead><tr><th>형식</th><th>요청 방법</th><th>용도</th></tr></thead>
 <tbody>
 <tr><td>코넬 노트</td><td>강의 내용을 핵심어 칸, 필기 칸, 요약 칸으로 나눠 정리</td><td>강의 직후 정리</td></tr>
@@ -103,10 +113,10 @@
 <tr><td>개념 연결표</td><td>개념 사이의 원인, 포함, 대비 관계를 표로 정리</td><td>단원 전체 구조 파악</td></tr>
 <tr><td>오답 노트</td><td>오답 문제와 오답 원인, 비슷한 문제 두 개</td><td>시험 전 복습</td></tr>
 </tbody></table></div>
-<figcaption><b>표 5-2. 복습 자료 형식</b><ul class="capnote"><li>코넬 노트, 플래시카드, 개념 연결표, 오답 노트의 요청 방법과 용도</li></ul></figcaption></figure>
+<figcaption><b>표 5-3. 복습 자료 형식</b><ul class="capnote"><li>코넬 노트, 플래시카드, 개념 연결표, 오답 노트의 요청 방법과 용도</li></ul></figcaption></figure>
 <p>AI가 만든 복습 자료도 강의 원문과 대조합니다. 강의에서 강조한 내용이 누락되거나, 강의에 없는 내용이 섞일 수 있기 때문입니다.</p>
 
-<h2 id="plan">학습 계획</h2>
+<h2 id="plan">학습 계획 세우기</h2>
 <p>학습 계획은 기간, 목표, 하루 가용 시간, 현재 수준을 입력해 주 단위 일정으로 요청합니다. 아래 템플릿의 대괄호 안에 자신의 조건을 입력하고, 점검 방법 열을 포함해 진도를 확인할 수 있게 합니다.</p>
 <p>빈칸 템플릿은 <a href="../appendix/prompts.html">부록 1</a>에 있습니다.</p>
 <pre><code>나는 8주 안에 엑셀로 월간 매출 보고서를 혼자 만들 수 있게 되려고 해.
@@ -114,35 +124,36 @@
 사용할 수 있는 시간: 평일 하루 40분, 주말 하루 2시간. 6주차에는 출장이 있어 주말에만 공부할 수 있어.
 주 단위 학습 계획을 표로 만들어 줘. 열: 주차, 학습 내용, 연습 과제, 점검 방법, 예상 시간.
 피벗 테이블, 조건별 합계, 찾기 함수, 차트를 반드시 포함하고, 마지막 주에는 실제 보고서 한 장을 처음부터 만드는 과제를 포함해 줘.</code></pre>
+<p>AI가 만든 계획은 출발점입니다. 실제 학습 속도와 이해도에 따라 주차별 목표를 조정합니다.</p>
 
 <h2 id="language">외국어 학습</h2>
-<p>외국어 학습에서 AI는 교정, 대화 상대, 어휘 정리의 세 가지 역할을 맡습니다.</p>
+<p>외국어 학습에서 외국어 학습에서는 AI를 교정 도구, 대화 연습 상대, 어휘 정리 도구로 활용합니다.</p>
 <ul><li><b>작문 교정</b>: 자신이 작성한 문장을 교정하게 하고, 수정 이유를 문법 항목별로 설명하게 합니다.</li><li><b>상황 대화</b>: 식당 주문, 면접처럼 상황을 정해 AI와 역할 대화를 합니다.</li><li><b>어휘 정리</b>: 읽은 글에서 모르는 단어를 선택해 예문과 함께 정리하게 합니다.</li></ul>
 <p>발음과 억양은 문자 대화로 확인할 수 없으므로 음성 기능이나 원어민 자료로 확인합니다.</p>
 
 <h2 id="research">연구 단계별 활용</h2>
-<p>연구에서는 단계마다 AI가 맡을 작업과 사람이 맡을 일을 나눕니다. 기준은 결과에 대한 책임입니다. 연구 질문 확정, 방법 결정, 해석, 결론 작성처럼 연구자가 책임지는 판단은 사람이 맡고, 후보 제안과 정리는 AI가 맡습니다(표 5-3).</p>
-<figure class="fig" id="tbl-5-3"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w40"></colgroup>
+<p>연구에서는 단계마다 AI가 맡을 작업과 사람이 맡을 일을 나눕니다. 기준은 결과에 대한 책임입니다. 연구 질문 확정, 방법 결정, 해석, 결론 작성처럼 연구자가 책임지는 판단은 사람이 맡고, 후보 제안과 정리는 AI가 맡습니다(표 5-4).</p>
+<figure class="fig" id="tbl-5-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w50"><col class="w40"></colgroup>
 <thead><tr><th>단계</th><th>AI 작업</th><th>사람이 맡는 일</th></tr></thead>
 <tbody>
 <tr><td>주제 탐색</td><td>관련 분야, 검색어, 연구 질문 후보 제안</td><td>연구 질문 확정</td></tr>
 <tr><td>문헌 검토</td><td>검색한 논문 요약, 논문 간 비교표 작성</td><td>원문 확인, 인용 선택</td></tr>
 <tr><td>방법 설계</td><td>연구 방법 후보와 장단점 정리</td><td>방법 결정, 윤리 심의 신청</td></tr>
-<tr><td>분석</td><td>분석 코드 작성, 결과 표 설명</td><td>코드 실행 결과 확인, 해석</td></tr>
+<tr><td>분석</td><td>분석 코드 작성, 결과 표 설명</td><td>코드와 데이터 전처리 검토, 결과 해석, 통계적 타당성 확인</td></tr>
 <tr><td>작성</td><td>문장 교정, 구조 점검</td><td>주장과 결론 작성, AI 사용 표기</td></tr>
 </tbody></table></div>
-<figcaption><b>표 5-3. 연구 단계별 활용</b><ul class="capnote"><li>주제 탐색부터 작성까지 연구 단계별 AI 작업과 사람이 맡는 일</li></ul></figcaption></figure>
+<figcaption><b>표 5-4. 연구 단계별 활용</b><ul class="capnote"><li>주제 탐색부터 작성까지 연구 단계별 AI 작업과 사람이 맡는 일</li></ul></figcaption></figure>
 
-<h2 id="sources">참고문헌 확인</h2>
-<p>AI가 제시한 참고문헌은 존재, 서지 정보, 인용 문장을 차례로 확인한 뒤에만 사용합니다. 대화형 AI는 존재하지 않는 논문 제목, 저자, 쪽수를 생성하기도 합니다. 모델이 사실이 아니라 확률로 문장을 만들기 때문에, 그럴듯한 서지 정보도 실제 문헌과 일치한다는 보장이 없습니다. 확인 순서는 네 단계입니다(그림 5-1).</p>
+<h2 id="sources">AI가 제시한 문헌 확인</h2>
+<p>AI가 제시한 참고문헌은 존재, 서지 정보, 인용 문장을 차례로 확인한 뒤에만 사용합니다. AI가 제시한 논문 제목이 그럴듯할수록 실제로 있는지 먼저 확인합니다. 대화형 AI는 존재하지 않는 논문 제목, 저자, 쪽수를 생성하기도 합니다. 모델이 사실이 아니라 확률로 문장을 만들기 때문에, 그럴듯한 서지 정보도 실제 문헌과 일치한다는 보장이 없습니다. 확인 순서는 네 단계입니다(그림 5-1).</p>
 <figure class="fig diagram" id="fig-5-1"><div class="svg-wrap" role="img" aria-label="AI가 제시한 문헌을 존재 확인, 서지 대조, 인용 확인 순서로 확인하고, 1~3단계 가운데 하나라도 실패하면 사용하지 않는 절차"><svg viewBox="0 0 760 256" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-a51" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker><marker id="m1-a51t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f5a66"/></marker></defs><rect x="8" y="56" width="104" height="44" rx="22" fill="#1f5a66"/><text x="60.0" y="84.0" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">AI의 문헌</text><rect x="134" y="20" width="180" height="116" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="158" cy="46" r="12" fill="#1f5a66"/><text x="158" y="51" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="178" y="52" font-size="16" fill="#2B2A26" font-weight="700">존재 확인</text><text x="150" y="82" font-size="15" fill="#625D52">제목으로</text><text x="150" y="104" font-size="15" fill="#625D52">학술 검색</text><rect x="334" y="20" width="180" height="116" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="358" cy="46" r="12" fill="#1f5a66"/><text x="358" y="51" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="378" y="52" font-size="16" fill="#2B2A26" font-weight="700">서지 대조</text><text x="350" y="82" font-size="15" fill="#625D52">DOI, 출판사에서</text><text x="350" y="104" font-size="15" fill="#625D52">저자, 연도 대조</text><rect x="534" y="20" width="180" height="116" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="558" cy="46" r="12" fill="#1f5a66"/><text x="558" y="51" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="578" y="52" font-size="16" fill="#2B2A26" font-weight="700">인용 확인</text><text x="550" y="82" font-size="15" fill="#625D52">인용 문장이</text><text x="550" y="104" font-size="15" fill="#625D52">원문에 있는지</text><line x1="112" y1="78" x2="132" y2="78" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a51)"/><line x1="314" y1="78" x2="332" y2="78" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a51)"/><line x1="514" y1="78" x2="532" y2="78" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-a51)"/><rect x="604" y="182" width="148" height="56" rx="10" fill="#D9E7E6" stroke="#1f5a66"/><text x="678" y="216" font-size="16" fill="#1f5a66" font-weight="700" text-anchor="middle">사용</text><path d="M690 136 V180" fill="none" stroke="#1f5a66" stroke-width="1.5" marker-end="url(#m1-a51t)"/><line x1="224" y1="136" x2="224" y2="156" stroke="#8a5a00" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="424" y1="136" x2="424" y2="156" stroke="#8a5a00" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="580" y1="136" x2="580" y2="156" stroke="#8a5a00" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="224" y1="156" x2="580" y2="156" stroke="#8a5a00" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="324" y1="156" x2="324" y2="180" stroke="#8a5a00" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#m1-a51)"/><rect x="134" y="182" width="450" height="56" rx="10" fill="#FAF6EB" stroke="#8a5a00" stroke-dasharray="5 3"/><circle cx="158" cy="210" r="12" fill="#1f5a66"/><text x="158" y="215" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text><text x="180" y="216" font-size="15" fill="#2B2A26" font-weight="700">1~3단계 가운데 하나라도 실패하면 사용하지 않음</text></svg></div>
 <figcaption><b>그림 5-1. 참고문헌 확인 절차</b><ul class="capnote"><li>AI가 제시한 참고문헌을 원문으로 확인하는 네 단계</li></ul></figcaption></figure>
-<ol><li>학술 검색 서비스에서 제목으로 검색해 존재를 확인합니다.</li><li>DOI나 출판사 페이지에서 저자, 연도, 학술지를 대조합니다.</li><li>인용할 문장이 원문에 있는지 본문에서 확인합니다.</li><li>확인하지 못한 문헌은 사용하지 않습니다.</li></ol>
+<ol><li>학술 검색 서비스에서 제목으로 검색해 존재를 확인합니다.</li><li>DOI나 출판사 페이지에서 저자, 연도, 학술지를 대조합니다.</li><li>인용할 문장이 원문에 있는지 본문에서 확인합니다.</li><li>존재, 서지 정보, 인용 문장 가운데 하나라도 확인하지 못한 문헌은 인용하지 않습니다.</li></ol>
 <p>문헌 탐색은 AI에게 논문 제목을 받는 것보다, 검색어를 받아 학술 검색 서비스에서 직접 검색하는 방식이 안전합니다. 검색 결과는 실제 문헌만 보여 주기 때문입니다.</p>
 
 <h2 id="integrity">학술 윤리</h2>
 <p>과제나 논문에 AI를 사용하기 전에는 해당 기관의 규정을 확인하고 사용 범위를 밝힙니다. 규정은 기관마다 다르기 때문입니다. Nature는 2023년 1월 사설에서 두 가지 원칙을 발표했습니다. 대규모 언어 모델(Large Language Model, LLM)을 논문 저자로 인정하지 않고, 모델을 사용한 경우 방법 또는 감사의 글에 밝히도록 했습니다. 사용 사실을 표기하는 방법은 <a href="../chapters/ch08.html#disclosure">Chapter 8</a>에서 다룹니다.</p>
-<p>AI 탐지 도구의 판정은 부정행위의 근거로 사용하지 않습니다. OpenAI는 2023년 1월 공개한 AI 텍스트 판별기를 정확도가 낮다는 이유로 2023년 7월 20일 제공 중단했습니다. Liang 외(2023)는 여러 판별기가 영어 비원어민의 글을 AI가 작성한 글로 잘못 판정하는 경향을 보고했습니다. 판별기는 사람이 작성한 글을 AI가 작성한 글로 판정할 수 있습니다. AI가 작성한 글을 사람이 수정하면 탐지하지 못할 수도 있습니다. 따라서 탐지 결과만으로 판단하지 않고 작성 과정과 초안 기록을 함께 확인합니다.</p>
+<p>AI 탐지 도구의 판정만으로 부정행위를 단정하지 않습니다. 탐지 결과는 참고 자료로만 다루고, 작성 과정과 초안 기록을 함께 확인합니다. OpenAI는 2023년 1월 공개한 AI 텍스트 판별기를 정확도가 낮다는 이유로 2023년 7월 20일 제공 중단했습니다. Liang 외(2023)는 여러 판별기가 영어 비원어민의 글을 AI가 작성한 글로 잘못 판정하는 경향을 보고했습니다. 판별기는 사람이 작성한 글을 AI가 작성한 글로 판정할 수 있습니다. AI가 작성한 글을 사람이 수정하면 탐지하지 못할 수도 있습니다. 따라서 탐지 결과만으로 판단하지 않고 작성 과정과 초안 기록을 함께 확인합니다.</p>
 
 
 </article>
@@ -151,12 +162,12 @@
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#uses">활용 영역</a></li>
 <li><a href="#explain">개념 설명 요청</a></li>
-<li><a href="#tutor">튜터로 활용</a></li>
-<li><a href="#notes">노트와 복습 자료</a></li>
-<li><a href="#plan">학습 계획</a></li>
+<li><a href="#tutor">답 대신 힌트 받기</a></li>
+<li><a href="#notes">복습 자료 만들기</a></li>
+<li><a href="#plan">학습 계획 세우기</a></li>
 <li><a href="#language">외국어 학습</a></li>
 <li><a href="#research">연구 단계별 활용</a></li>
-<li><a href="#sources">참고문헌 확인</a></li>
+<li><a href="#sources">AI가 제시한 문헌 확인</a></li>
 <li><a href="#integrity">학술 윤리</a></li>
 </ol></aside>
 </div>
