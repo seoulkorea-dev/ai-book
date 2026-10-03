@@ -71,5 +71,28 @@ for f in files:
                 total["첫머리 접속어"] += 1
                 print(f"경고 {f}: 첫머리 접속어 | {sent[:40]}")
 
+# 이웃 문장 중복(2026-10-03, 60차): 같은 절 안에서 단어 겹침 65% 이상인 문장 쌍을 경고
+# 요점 상자(첫 문단의 정리), 표, 그림, 코드 상자, 참고 자료, 용어 풀이는 제외. 의도된 대비 문장은 DUP_OK에 둔다
+DUP_OK = [("짧은 자료는 구성 요소 뒤에 둡니다.", "긴 자료는 구성 요소 앞에 둡니다.")]
+def _toks(x):
+    return {w for w in re.findall(r"[가-힣A-Za-z0-9]+", x) if len(w) > 1}
+for f in files:
+    if f.endswith(("references.html", "terms.html")):
+        continue
+    body = open(f, encoding="utf-8").read()
+    body = re.sub(r'<ul class="summary">.*?</ul>', " ", body, flags=re.S)
+    body = re.sub(r"<(pre|table|svg|figure)\b.*?</\1>", " ", body, flags=re.S)
+    for sec in re.split(r"<h[23]\b", body):
+        sents = []
+        for para in re.findall(r"<(?:p|li)\b[^>]*>(.*?)</(?:p|li)>", sec, flags=re.S):
+            text = html.unescape(re.sub(r"<[^>]+>", "", para)).strip()
+            sents += [x.strip() for x in re.split(r"(?<=[.?!])\s+(?=[^)\s])", text) if len(_toks(x)) >= 5]
+        for i in range(len(sents)):
+            for j in range(i + 1, len(sents)):
+                a, b = _toks(sents[i]), _toks(sents[j])
+                if len(a & b) / min(len(a), len(b)) >= 0.65 and (sents[i], sents[j]) not in DUP_OK:
+                    total["이웃 문장 중복"] += 1
+                    print(f"경고 {f}: 이웃 문장 중복 | {sents[i][:30]} / {sents[j][:30]}")
+
 if total:
     print("B 배제어 경고 합계:", sum(total.values()), dict(total.most_common()))
