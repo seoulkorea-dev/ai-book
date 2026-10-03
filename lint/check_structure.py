@@ -57,5 +57,19 @@ for path in pages:
                 bad = [w for i, w in enumerate(words) if w and w[0].islower() and not (i > 0 and w in SMALLW)]
                 if bad:
                     errors.append(f'{name}: 표제어 원어 첫 글자 소문자: {dt}')
+# 용어 풀이 표제어가 본문(표지, 장, 마치며)에 1회 이상 나오는지(2026-10-03, 64차)
+import html as _html
+_body = ''
+for _f in ['index.html'] + sorted(glob.glob(f'{ROOT}/chapters/*.html')):
+    _p = _f if _f.startswith('/') else f'{ROOT}/{_f}'
+    _t = open(_p, encoding='utf-8').read()
+    _m = re.search(r'<main\b.*?</main>', _t, re.S)
+    _body += _html.unescape(re.sub(r'<[^>]+>', ' ', _m.group(0) if _m else _t))
+_terms = open(f'{ROOT}/appendix/terms.html', encoding='utf-8').read()
+for _dt in re.findall(r'<dt[^>]*>(.*?)</dt>', _terms):
+    _head = re.sub(r'<[^>]+>', '', _dt).split('(')[0].strip()
+    if _head and _head not in _body:
+        errors.append(f'appendix/terms.html: 본문에 없는 표제어 {_head}')
+
 print('\n'.join(errors), end='\n' if errors else '')
 sys.exit(1 if errors else 0)
