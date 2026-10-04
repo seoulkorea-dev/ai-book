@@ -231,15 +231,17 @@ figcaption ul.capnote li { margin: 0.1rem 0; }
 .tip { margin: 0 0 1.6rem; padding: 0.6rem 0.9rem; background: var(--panel); border-left: 3px solid var(--link); border-radius: 4px; color: var(--ink); }
 /* 시작하며 쪽 책 표지(2026-10-04): 표지만 어두운 바탕과 주황 강조, 외부 글꼴과 외부 이미지 없음 */
 .book-cover { max-width: 520px; margin: 0 0 2.5rem; background: #0b0b0d; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
-.book-cover-art { display: block; width: 100%; height: auto; border-bottom: 2px solid #f59e0b; }
-.book-cover-body { padding: 1.8rem 2rem 1.4rem; position: relative; }
-.book-cover-body::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: linear-gradient(176deg, transparent 40%, #f59e0b 41%); }
-.book-cover-kicker { margin: 0 0 1rem; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #f59e0b; }
+.book-cover-figure { position: relative; }
+.book-cover-art { display: block; width: 100%; height: auto; }
+.book-cover-curve { position: absolute; left: 0; bottom: -1px; width: 100%; height: 40px; display: block; }
+.book-cover-body { padding: 1.4rem 2rem 2.2rem; position: relative; }
+.book-cover-body::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18px; background: linear-gradient(178deg, transparent 45%, #f59e0b 46%, #f59e0b 70%, #d97706 71%); }
+.book-cover-kicker { margin: 0 0 1rem; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-transform: uppercase; color: #f59e0b; }
 .book-cover h1 { margin: 0 0 1rem; }
 .book-cover h1 .h-title { color: #ffffff; font-size: 40px; line-height: 1.2; }
 .book-cover-accent, .book-cover-line { display: block; }
 .book-cover-accent { color: #f59e0b; }
-.book-cover-sub { margin: 0 0 2.2rem; color: #d6d3d1; font-size: 16px; font-weight: 600; }
-.book-cover-edition { margin: 0; padding-top: 0.9rem; border-top: 1px solid #2a2a2c; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8a8f; }
+.book-cover-sub { margin: 0 0 5.5rem; color: #d6d3d1; font-size: 16px; font-weight: 600; }
+.book-cover-edition { margin: 0; padding-top: 0.9rem; border-top: 1px solid #2a2a2c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8a8f; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 900px) { .book-cover-body { padding: 1.4rem 1.3rem 1.2rem; } .book-cover h1 .h-title { font-size: 30px; } }
