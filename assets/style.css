@@ -11,9 +11,9 @@
   --ink: #2B2A26;
   --muted: #625D52;
   --rule: #ddd5c0;
-  --link: #0377b6;
+  --link: #0284c7;
   --link-hover: #075985;
-  --accent: #0284c7;  /* 장식(테두리, 그림 선)용 밝은 하늘색, 글자에는 쓰지 않음 */
+  --accent: #0284c7;  /* 장식(테두리, 그림 선)용 밝은 하늘색. 링크(--link)도 같은 색(2026-10-04 사용자 결정) */
   --focus: #2f6fd0;
   --nav-gray: #6e6e6e;
   --nav-gray-dark: #3f3f3f;
