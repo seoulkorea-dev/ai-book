@@ -106,8 +106,11 @@ grep -nEf lint/banned.txt index.html chapters/*.html appendix/*.html
 python3 lint/check_numbers.py
 python3 lint/check_structure.py
 python3 lint/check_style.py
-```
+- `check_numbers.py`: 그림과 표 번호의 순서, 누락, 중복, 없는 번호 참조, 번호 뒤 조사
+- `check_structure.py`: 캡션 형식, 절 제목과 그림, 표의 배치, 참고 자료 항목 id, 앵커 없는 장 링크, 용어 풀이 표제어의 본문 등장
+- `check_style.py`: 어휘 치환 후보, 100자 초과 문장, 문장 첫머리 접속어, 이웃 문장 중복(종료 코드는 항상 0)
 
+```
 
 10월 12일 책에 대한 Feedback 
 
@@ -128,6 +131,3 @@ python3 lint/check_style.py
 
 
 강의 일정으로 바쁘실텐데 와중에도 여유 시간을 쪼개어 이렇게 알찬 원고를 집필하시느라 고생 많으셨습니다! 모쪼록 좋은 결과물로 이어지길 응원하겠습니다
-- `check_numbers.py`: 그림과 표 번호의 순서, 누락, 중복, 없는 번호 참조, 번호 뒤 조사
-- `check_structure.py`: 캡션 형식, 절 제목과 그림, 표의 배치, 참고 자료 항목 id, 앵커 없는 장 링크, 용어 풀이 표제어의 본문 등장
-- `check_style.py`: 어휘 치환 후보, 100자 초과 문장, 문장 첫머리 접속어, 이웃 문장 중복(종료 코드는 항상 0)
