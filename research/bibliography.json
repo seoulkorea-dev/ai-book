@@ -70,5 +70,12 @@
     "venue": "FAccT 2024",
     "url": "https://arxiv.org/abs/2402.08021",
     "date": "2024"
+  },
+  "anthropic-xml-tags": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Use XML tags to structure your prompts",
+    "venue": "Claude Docs",
+    "url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags"
   }
 }
