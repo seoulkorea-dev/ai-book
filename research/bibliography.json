@@ -348,5 +348,26 @@
     "title": "'인공지능기본법' 22일 시행",
     "venue": "대한민국 정책브리핑 정책뉴스 (2026-01)",
     "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148958380"
+  },
+  "anthropic-mcp-2024": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Introducing the Model Context Protocol",
+    "venue": "Anthropic (2024-11-25)",
+    "url": "https://www.anthropic.com/news/model-context-protocol"
+  },
+  "anthropic-mcp-aaif-2025": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Donating the Model Context Protocol and establishing the Agentic AI Foundation",
+    "venue": "Anthropic (2025-12-09)",
+    "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
+  },
+  "anthropic-economic-index-2025": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "The Anthropic Economic Index",
+    "venue": "Anthropic",
+    "url": "https://www.anthropic.com/news/the-anthropic-economic-index"
   }
 }
