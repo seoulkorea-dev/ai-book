@@ -63,7 +63,7 @@
 <tr><td>기획, 전략</td><td>현황 분석, 선택지 비교</td><td>전제와 자료의 정확성</td></tr>
 <tr><td>프로젝트 관리</td><td>작업 분해, 일정표, 위험 목록</td><td>일정과 인력의 실현 가능성</td></tr>
 <tr><td>영업, 마케팅</td><td>고객 제안서, 홍보 문구, 캠페인 계획</td><td>과장 광고, 약관 일치</td></tr>
-<tr><td>인사</td><td>채용 공고, 교육 자료</td><td>차별 표현, 지원자 평가에 AI 결과를 사용하지 않았는지</td></tr>
+<tr><td>인사</td><td>채용 공고, 교육 자료</td><td>차별 표현, 지원자 평가에 AI 결과 사용 여부</td></tr>
 <tr><td>고객 응대</td><td>답변 초안, 자주 묻는 질문 정리</td><td>약관과 정책 일치, 예외 상황의 담당자 연결 기준</td></tr>
 <tr><td>코드</td><td>스크립트 작성, 오류 분석</td><td>실행 결과, 보안, 라이선스</td></tr>
 </tbody></table></div>
@@ -88,9 +88,9 @@
 <tbody>
 <tr><td>공개 정보</td><td>보도 자료, 공개 문서</td><td>허용 도구에 입력</td></tr>
 <tr><td>내부 정보</td><td>내부 회의록, 업무 매뉴얼</td><td>조직 계정과 학습 제외 설정이 된 환경에서만 입력</td></tr>
-<tr><td>개인정보</td><td>고객 이름, 연락처, 주소</td><td>원칙적으로 입력하지 않음. 필요하면 가명처리 후 입력</td></tr>
+<tr><td>개인정보</td><td>고객 이름, 연락처, 주소</td><td>가명처리 후에만 입력</td></tr>
 <tr><td>고유식별정보</td><td>주민등록번호, 여권번호, 운전면허번호</td><td>입력하지 않음</td></tr>
-<tr><td>영업 비밀</td><td>원가, 계약 조건, 미공개 제품 정보</td><td>원칙적으로 입력하지 않음. 조직이 승인한 환경에서만 입력</td></tr>
+<tr><td>영업 비밀</td><td>원가, 계약 조건, 미공개 제품 정보</td><td>조직이 승인한 환경에서만 입력</td></tr>
 </tbody></table></div>
 <figcaption><b>표 6-3. 입력 데이터 분류</b></figcaption></figure>
 <p>업무상 개인정보를 꼭 사용해야 한다면, 이름과 연락처처럼 개인을 알아볼 수 있는 정보를 삭제하거나 대체한 뒤 입력합니다. 이 처리를 가명처리라고 합니다. 가명처리는 추가 정보 없이는 특정 개인을 알아볼 수 없도록 개인정보의 일부를 삭제하거나 대체하는 처리입니다(「개인정보 보호법」 제2조 제1호의2). 예를 들어 고객 이름은 '고객 A'로 대체하고 연락처는 삭제한 뒤 입력합니다. 개인 계정과 조직 계정은 데이터 처리 조건이 다릅니다. 업무 데이터는 조직이 계약한 계정에서 처리합니다.</p>
@@ -136,8 +136,18 @@
 문체는 정중한 업무용으로, 사과는 한 문장만 포함해 줘. 외부 참석자가 읽어도 사내 용어 없이 이해되게 작성하고, 제목도 작성해 줘.</code></pre>
 
 <h2 id="project">단계마다 초안과 확정을 나누는 프로젝트 관리</h2>
-<p>프로젝트 관리에서 AI는 단계별 문서 초안을 만들고, 범위, 일정, 위험, 결정은 프로젝트 매니저가 확정합니다. AI는 문서의 형식을 갖추고 누락을 찾는 일을 맡을 수 있지만, 작업 기간, 담당자의 사정, 조직 안의 합의처럼 문서 밖의 사정은 알지 못하기 때문입니다. 그림 6-1은 위쪽에 AI가 단계마다 만드는 초안을, 아래쪽에 프로젝트 매니저가 그 초안을 받아 확정하는 일을 놓은 것입니다. 왼쪽에서 오른쪽으로 착수부터 진척 보고까지 읽고, 점선은 진척 보고 때마다 위험 목록으로 돌아가 다시 점검하는 경로입니다.</p>
-<figure class="fig diagram" id="fig-6-1"><div class="svg-wrap" role="img" aria-label="위쪽 영역은 AI가 만드는 초안으로, 1 착수, 2 분해, 3 일정, 4 위험, 5 보고가 왼쪽에서 오른쪽으로 이어진다. 각 단계 아래의 프로젝트 매니저 영역에는 범위 합의, 크기 점검, 기간 확정, 조직 위험 추가, 수치 대조와 결정이 있고, AI의 초안에서 아래 영역으로 화살표가 내려간다. 5단계의 수치 대조와 결정에서 점선이 4단계의 조직 위험 추가로 돌아간다"><svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-f61a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0284c7"/></marker><marker id="m1-f61g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8a8272"/></marker></defs><rect x="20" y="16" width="920" height="96" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><text x="40" y="52" font-size="26" fill="#2B2A26" font-weight="700">AI는 단계별 초안을, 프로젝트 매니저는 확정과 결정을 맡습니다</text><text x="40" y="88" font-size="20" fill="#625D52">착수부터 진척 보고까지, 보고 때마다 위험 목록을 다시 점검</text><rect x="20" y="136" width="920" height="180" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M20 180 V148 A12 12 0 0 1 32 136 H928 A12 12 0 0 1 940 148 V180 Z" fill="#0284c7"/><text x="40" y="166" font-size="22" fill="#FFFFFF" font-weight="700">AI가 만드는 초안</text><rect x="20" y="348" width="920" height="180" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M20 392 V360 A12 12 0 0 1 32 348 H928 A12 12 0 0 1 940 360 V392 Z" fill="#0284c7"/><text x="40" y="378" font-size="22" fill="#FFFFFF" font-weight="700">프로젝트 매니저가 확정</text><rect x="40" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="68" cy="226" r="16" fill="#0284c7"/><text x="68" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="92" y="234" font-size="22" fill="#2B2A26" font-weight="700">착수</text><text x="56" y="276" font-size="20" fill="#625D52">착수 문서</text><path d="M202 248 H214" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M120 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="40" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="120" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">범위 합의</text><rect x="218" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="246" cy="226" r="16" fill="#0284c7"/><text x="246" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="270" y="234" font-size="22" fill="#2B2A26" font-weight="700">분해</text><text x="234" y="276" font-size="20" fill="#625D52">산출물 분해</text><path d="M380 248 H392" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M298 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="218" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="298" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">크기 점검</text><rect x="396" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="424" cy="226" r="16" fill="#0284c7"/><text x="424" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="448" y="234" font-size="22" fill="#2B2A26" font-weight="700">일정</text><text x="412" y="276" font-size="20" fill="#625D52">순서와 배치</text><path d="M558 248 H570" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M476 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="396" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="476" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">기간 확정</text><rect x="574" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="602" cy="226" r="16" fill="#0284c7"/><text x="602" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text><text x="626" y="234" font-size="22" fill="#2B2A26" font-weight="700">위험</text><text x="590" y="276" font-size="20" fill="#625D52">흔한 위험</text><path d="M736 248 H748" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M654 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="574" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="654" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">조직 위험 추가</text><rect x="752" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="780" cy="226" r="16" fill="#0284c7"/><text x="780" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">5</text><text x="804" y="234" font-size="22" fill="#2B2A26" font-weight="700">보고</text><text x="768" y="276" font-size="20" fill="#625D52">보고 초안</text><path d="M832 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="752" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="832" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">수치 대조, 결정</text><path d="M832 474 V504 H654 V478" fill="none" stroke="#8a8272" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#m1-f61g)"/><text x="747" y="560" font-size="20" fill="#625D52" font-weight="700" text-anchor="middle">보고 때마다 위험 목록 다시 점검</text><text x="24" y="614" font-size="20" fill="#625D52">* 위쪽 칸은 AI의 초안, 아래쪽 칸은 사람이 확정하는 일</text></svg></div><figcaption><b>그림 6-1. 프로젝트 관리 단계별 AI와 사람의 역할</b></figcaption></figure>
+<p>프로젝트 관리에서 AI는 단계별 문서 초안을 만들고, 범위, 일정, 위험, 결정은 프로젝트 매니저가 확정합니다. AI는 문서의 형식을 갖추고 누락을 찾는 일을 맡을 수 있지만, 작업 기간, 담당자의 사정, 조직 안의 합의처럼 문서 밖의 사정은 알지 못하기 때문입니다. 그림 6-1은 왼쪽에서 오른쪽으로 착수, 작업 분해, 일정, 위험, 진척 보고의 다섯 단계를 따라갑니다. 단계마다 위쪽의 AI 초안이 아래쪽으로 내려가 프로젝트 매니저의 확정으로 이어집니다. 확정은 착수 문서의 범위 합의, 작업 크기 점검, 기간 확정, 조직 위험 추가, 보고 수치의 대조와 결정입니다. 점선은 진척 보고 때마다 위험 목록으로 돌아가 다시 점검하는 경로입니다.</p>
+<figure class="fig diagram" id="fig-6-1"><div class="svg-wrap" role="img" aria-label="위쪽 영역은 AI가 만드는 초안으로, 1 착수, 2 작업 분해, 3 일정, 4 위험, 5 진척 보고가 왼쪽에서 오른쪽으로 이어진다. 각 단계 아래의 프로젝트 매니저 영역에는 범위 합의, 크기 점검, 기간 확정, 조직 위험 추가, 수치 대조와 결정이 있고, AI의 초안에서 아래 영역으로 화살표가 내려간다. 5단계의 수치 대조와 결정에서 점선이 4단계의 조직 위험 추가로 돌아간다"><svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-f61a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0284c7"/></marker><marker id="m1-f61g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8a8272"/></marker></defs><rect x="20" y="16" width="920" height="96" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><text x="40" y="52" font-size="26" fill="#2B2A26" font-weight="700">AI는 단계별 초안을, 프로젝트 매니저는 확정과 결정을 맡습니다</text><text x="40" y="88" font-size="20" fill="#625D52">착수부터 진척 보고까지, 보고 때마다 위험 목록을 다시 점검</text><rect x="20" y="136" width="920" height="180" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M20 180 V148 A12 12 0 0 1 32 136 H928 A12 12 0 0 1 940 148 V180 Z" fill="#0284c7"/><text x="40" y="166" font-size="22" fill="#FFFFFF" font-weight="700">AI가 만드는 초안</text><rect x="20" y="348" width="920" height="180" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M20 392 V360 A12 12 0 0 1 32 348 H928 A12 12 0 0 1 940 360 V392 Z" fill="#0284c7"/><text x="40" y="378" font-size="22" fill="#FFFFFF" font-weight="700">프로젝트 매니저가 확정</text><rect x="40" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="68" cy="226" r="16" fill="#0284c7"/><text x="68" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="92" y="234" font-size="22" fill="#2B2A26" font-weight="700">착수</text><text x="56" y="276" font-size="20" fill="#625D52">착수 문서</text><path d="M202 248 H214" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M120 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="40" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="120" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">범위 합의</text><rect x="218" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="246" cy="226" r="16" fill="#0284c7"/><text x="246" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="270" y="234" font-size="22" fill="#2B2A26" font-weight="700">작업 분해</text><text x="234" y="276" font-size="20" fill="#625D52">산출물 분해</text><path d="M380 248 H392" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M298 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="218" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="298" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">크기 점검</text><rect x="396" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="424" cy="226" r="16" fill="#0284c7"/><text x="424" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="448" y="234" font-size="22" fill="#2B2A26" font-weight="700">일정</text><text x="412" y="276" font-size="20" fill="#625D52">순서와 배치</text><path d="M558 248 H570" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M476 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="396" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="476" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">기간 확정</text><rect x="574" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="602" cy="226" r="16" fill="#0284c7"/><text x="602" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text><text x="626" y="234" font-size="22" fill="#2B2A26" font-weight="700">위험</text><text x="590" y="276" font-size="20" fill="#625D52">흔한 위험</text><path d="M736 248 H748" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><path d="M654 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="574" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="654" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">조직 위험 추가</text><rect x="752" y="196" width="160" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="780" cy="226" r="16" fill="#0284c7"/><text x="780" y="233" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">5</text><text x="804" y="234" font-size="22" fill="#2B2A26" font-weight="700">진척 보고</text><text x="768" y="276" font-size="20" fill="#625D52">보고 초안</text><path d="M832 302 V344" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f61a)"/><rect x="752" y="400" width="160" height="72" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="832" y="444" font-size="22" fill="#2B2A26" font-weight="700" text-anchor="middle">수치 대조, 결정</text><path d="M832 474 V504 H654 V478" fill="none" stroke="#8a8272" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#m1-f61g)"/><text x="747" y="560" font-size="20" fill="#625D52" font-weight="700" text-anchor="middle">보고 때마다 위험 목록 다시 점검</text><text x="24" y="614" font-size="20" fill="#625D52">* 위쪽 칸은 AI의 초안, 아래쪽 칸은 사람이 확정하는 일</text></svg></div><figcaption><b>그림 6-1. 프로젝트 관리 단계별 AI와 사람의 역할</b></figcaption></figure>
+<figure class="fig" id="tbl-6-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
+<thead><tr><th>구성 요소</th><th>주요 역할</th><th>기능적 제약</th></tr></thead>
+<tbody>
+<tr><td>1. 착수</td><td>목적, 범위, 성공 기준을 한 문서로 정리한 초안</td><td>이해관계자의 기대를 알 수 없어 범위 합의 필요</td></tr>
+<tr><td>2. 작업 분해</td><td>산출물 기준으로 작업을 나눈 초안</td><td>작업 크기와 팀원 숙련도를 알 수 없어 크기 점검 필요</td></tr>
+<tr><td>3. 일정</td><td>입력된 기간으로 만든 작업 순서와 배치</td><td>승인 절차와 인력 사정을 반영하기 어려워 기간 확정 필요</td></tr>
+<tr><td>4. 위험</td><td>비슷한 프로젝트의 흔한 위험 목록</td><td>조직에만 있는 위험을 알 수 없어 조직 위험 추가 필요</td></tr>
+<tr><td>5. 진척 보고</td><td>완료, 진행, 지연으로 나눈 보고 초안</td><td>작업 기록과의 일치를 알 수 없어 수치 대조와 결정 필요</td></tr>
+</tbody></table></div>
+<figcaption><b>표 6-4. 그림 6-1의 구성 요소</b></figcaption></figure>
 <p>이 절은 가상의 시스템 구축 프로젝트 하나를 단계마다 이어서 예로 듭니다. 예제는 사내 규정과 업무 매뉴얼에 대한 질문에 근거 문서와 함께 답하는 질의응답 시스템 구축 프로젝트입니다. 회사 데이터를 외부로 보낼 수 없어, 가중치(Weight)를 내려받아 직접 운영할 수 있는 오픈 가중치 모델(Open-weight Model)을 사내 서버에서 운영합니다. 답은 검색 증강 생성(Retrieval-augmented Generation, RAG)으로 문서를 검색해 만듭니다. 검색 증강 생성은 답을 만들기 전에 관련 문서를 검색해 근거로 함께 제공하는 방식입니다(<a href="../chapters/ch04.html#measures">Chapter 4</a>). 기간은 16주, 투입 인원은 프로젝트 매니저를 포함해 8명입니다. 예제의 프로젝트와 수치는 모두 가상의 예입니다.</p>
 
 <h3 id="project-start">범위를 합의하는 착수</h3>
@@ -231,17 +241,17 @@
 <p>창작은 사람이 구조를 정하고 AI에게 부분 초안을 맡기며, 결과를 사용하기 전에 권리를 확인합니다.</p>
 
 <h3 id="types">다섯 가지 창작 생성 유형</h3>
-<p>창작에서 AI가 생성하는 결과물은 글, 이미지, 음성, 음악, 영상의 다섯 유형입니다. 유형마다 권리와 표시 의무의 쟁점이 다르므로, 결과물을 사용하기 전에 확인할 사항도 다릅니다(표 6-4).</p>
-<figure class="fig" id="tbl-6-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
+<p>창작에서 AI가 생성하는 결과물은 글, 이미지, 음성, 음악, 영상의 다섯 유형입니다. 유형마다 권리와 표시 의무의 쟁점이 다르므로, 결과물을 사용하기 전에 확인할 사항도 다릅니다(표 6-5).</p>
+<figure class="fig" id="tbl-6-5"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w45"></colgroup>
 <thead><tr><th>유형</th><th>대표 활용</th><th>확인 항목</th></tr></thead>
 <tbody>
 <tr><td>글</td><td>기획안, 광고 문구, 대본 초안</td><td>기존 문구와의 유사성</td></tr>
 <tr><td>이미지</td><td>시안, 삽화, 배경</td><td>상표, 캐릭터, 실존 인물 포함 여부</td></tr>
 <tr><td>음성</td><td>내레이션, 더빙</td><td>목소리 당사자의 동의</td></tr>
 <tr><td>음악</td><td>배경 음악, 효과음</td><td>도구 약관의 상업적 이용 조건</td></tr>
-<tr><td>영상</td><td>짧은 홍보 영상, 장면 시안</td><td>실존 인물과 목소리 사용 여부, AI 생성이나 합성 사실 표시, 게시 플랫폼 정책</td></tr>
+<tr><td>영상</td><td>짧은 홍보 영상, 장면 시안</td><td>실존 인물과 목소리 사용 여부</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-4. 창작 생성 유형</b></figcaption></figure>
+<figcaption><b>표 6-5. 창작 생성 유형</b></figcaption></figure>
 <p>AI 생성물 표시 의무는 결과물의 종류, 실제와 구분하기 어려운 정도, 제공 주체와 유통 방식에 따라 다르므로 공개 전에 최신 법령과 플랫폼 정책을 확인합니다(<a href="../chapters/ch08.html#labeling">Chapter 8</a>).</p>
 
 <h3 id="workflow">후보를 받아 선택하는 창작 작업 절차</h3>
@@ -262,9 +272,9 @@
 각 안의 차이를 한 줄로 요약해 줘.</code></pre>
 
 <h3 id="platform">플랫폼별 조건을 지정하는 콘텐츠</h3>
-<p>플랫폼을 맥락으로 적고 플랫폼별 조건을 지정하면 형식이 맞는 초안을 얻습니다. 같은 내용도 게시할 플랫폼에 따라 길이, 구조, 문체가 다르기 때문입니다. 표 6-5는 플랫폼별 형식과 요청 시 적을 조건입니다.</p>
-<figure class="fig" id="tbl-6-5"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
-<thead><tr><th>플랫폼</th><th>형식</th><th>요청 시 적을 조건</th></tr></thead>
+<p>플랫폼을 맥락으로 적고 플랫폼별 조건을 지정하면 형식이 맞는 초안을 얻습니다. 같은 내용도 게시할 플랫폼에 따라 길이, 구조, 문체가 다르기 때문입니다. 표 6-6은 플랫폼별 형식과 지정 조건입니다.</p>
+<figure class="fig" id="tbl-6-6"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
+<thead><tr><th>플랫폼</th><th>형식</th><th>지정 조건</th></tr></thead>
 <tbody>
 <tr><td>블로그</td><td>제목, 소제목, 본문 문단</td><td>분량, 검색어, 소제목 수</td></tr>
 <tr><td>짧은 영상</td><td>첫 3초 문장, 장면별 대본</td><td>영상 길이, 자막 글자 수</td></tr>
@@ -272,23 +282,23 @@
 <tr><td>뉴스레터</td><td>제목, 요약, 본문, 행동 요청</td><td>발송 대상, 읽는 시간</td></tr>
 <tr><td>보도 자료</td><td>제목, 부제, 본문, 문의처</td><td>공식 문체, 인용할 담당자 발언</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-5. 플랫폼별 콘텐츠 형식</b></figcaption></figure>
+<figcaption><b>표 6-6. 플랫폼별 콘텐츠 형식</b></figcaption></figure>
 <p>원고 하나를 여러 플랫폼용으로 변환할 때는 원고를 입력 자료로 제공하고, 사실은 그대로 두고 형식만 변환하도록 제약 조건을 둡니다.</p>
 
 <h3 id="image-prompt">여섯 요소로 구성하는 이미지 프롬프트</h3>
-<p>이미지 프롬프트는 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 여섯 요소로 구성합니다(표 6-6). 결과물이 그림이므로 화면에 담길 요소를 하나씩 지정해야 하기 때문입니다.</p>
-<figure class="fig" id="tbl-6-6"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
+<p>이미지 프롬프트는 주제, 구도, 스타일, 조명과 색, 비율, 제외 요소의 여섯 요소로 구성합니다(표 6-7). 결과물이 그림이므로 화면에 담길 요소를 하나씩 지정해야 하기 때문입니다.</p>
+<figure class="fig" id="tbl-6-7"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w45"></colgroup>
 <thead><tr><th>요소</th><th>지정 사항</th><th>작성 예제</th></tr></thead>
 <tbody>
-<tr><td>주제</td><td>무엇을 그릴지</td><td>정리된 서류철과 닫힌 상자가 놓인 책상</td></tr>
+<tr><td>주제</td><td>그릴 대상</td><td>정리된 서류철과 닫힌 상자가 놓인 책상</td></tr>
 <tr><td>구도</td><td>시점, 거리, 배치</td><td>위에서 비스듬히, 사물은 오른쪽 60%, 왼쪽 40%는 제목 공간</td></tr>
 <tr><td>스타일</td><td>사진, 수채화, 평면 삽화 등</td><td>평면 삽화</td></tr>
 <tr><td>조명과 색</td><td>빛의 방향, 색 조합</td><td>오전의 부드러운 빛, 남색과 연한 회색</td></tr>
 <tr><td>비율</td><td>가로세로 비율</td><td>16:9</td></tr>
-<tr><td>제외 요소</td><td>포함하지 않을 요소</td><td>글자, 로고, 사람 얼굴</td></tr>
+<tr><td>제외 요소</td><td>그림에서 제외할 대상</td><td>글자, 로고, 사람 얼굴</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-6. 이미지 프롬프트 요소</b></figcaption></figure>
-<p>표 6-6의 작성 예제를 순서대로 이으면 아래 프롬프트가 됩니다.</p>
+<figcaption><b>표 6-7. 이미지 프롬프트 요소</b></figcaption></figure>
+<p>표 6-7의 작성 예제에 목적과 맥락 한 줄을 앞에 더해 순서대로 이으면 아래 프롬프트가 됩니다.</p>
 <pre><code>발표 자료 표지에 사용할 이미지. 발표 주제는 분기 실적 보고야.
 정리된 서류철과 닫힌 상자가 놓인 책상, 위에서 비스듬히 내려다본 구도, 사물은 화면 오른쪽 60%에 배치하고 왼쪽 40%는 제목을 놓을 수 있게 비워 둬.
 평면 삽화 스타일, 오전의 부드러운 빛, 남색과 연한 회색 조합.
@@ -299,16 +309,16 @@
 <p>개인의 사용을 조직으로 넓힐 때는 도입 단계에 맞춰 통제를 늘리고, 자기 산업의 조건을 확인합니다. 단계가 올라갈수록 사람의 확인 없이 수행되는 작업이 늘어나므로, 권한, 기록, 승인, 감사 같은 통제도 함께 늘립니다.</p>
 
 <h3 id="stages">개인 사용에서 에이전트 운영까지의 도입 단계</h3>
-<p>조직의 AI 도입은 개인 사용에서 에이전트(Agent) 운영까지 네 단계로 확대됩니다. 맡기는 방식이 작업 하나의 구분이라면, 도입 단계는 조직 차원의 구분입니다. 단계가 올라갈수록 AI가 사람의 확인 없이 수행하는 작업이 늘어나므로, 단계마다 필요한 통제도 함께 늘려야 합니다(표 6-7).</p>
-<figure class="fig" id="tbl-6-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w45"><col class="w45"></colgroup>
-<thead><tr><th>단계</th><th>방식</th><th>필요한 통제</th></tr></thead>
+<p>조직의 AI 도입은 개인 사용에서 에이전트(Agent) 운영까지 네 단계로 확대됩니다. 맡기는 방식이 작업 하나의 구분이라면, 도입 단계는 조직 차원의 구분입니다. 단계가 올라갈수록 AI가 사람의 확인 없이 수행하는 작업이 늘어나므로, 단계마다 필요한 통제도 함께 늘려야 합니다(표 6-8).</p>
+<figure class="fig" id="tbl-6-8"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w45"><col class="w45"></colgroup>
+<thead><tr><th>단계</th><th>운영 형태</th><th>필요한 통제</th></tr></thead>
 <tbody>
 <tr><td>1. 개인 사용</td><td>개인이 대화형 제품으로 작업</td><td>사용 지침</td></tr>
 <tr><td>2. 팀 공유</td><td>팀이 템플릿 프롬프트를 공유</td><td>템플릿 관리, 결과 검토</td></tr>
 <tr><td>3. 시스템 연결</td><td>API로 업무 시스템에 연결</td><td>접근 권한, 로그, 비용 관리</td></tr>
 <tr><td>4. 에이전트 운영</td><td>에이전트가 여러 단계 작업을 수행</td><td>작업 권한 제한, 사람 승인, 감사 기록</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-7. 업무 AI 도입 단계</b></figcaption></figure>
+<figcaption><b>표 6-8. 업무 AI 도입 단계</b></figcaption></figure>
 <p>4단계에서 에이전트에게 맡기는 권한은 한 번에 넓히지 않고, 사람의 승인이 필요한 작업부터 단계적으로 줄여 나갑니다. 에이전트가 사람의 승인 없이 수행하는 범위를 정하는 기준은 <a href="../chapters/ch08.html#agents">Chapter 8의 에이전트 자율성</a>에서 다룹니다.</p>
 
 <h3 id="industry">자기 산업에서 확인할 다섯 항목</h3>
@@ -341,36 +351,36 @@
 3. 비고에 테스트 데이터, 누락 의심, 임시 집계로 적힌 행은 따로 표시하고, 이 행을 해석에서 어떻게 다룰지 적어 줘.
 4. 매출 변화의 원인은 비고에서 확인되는 내용만 작성하고, 추정은 &#x27;추정&#x27;이라고 표시해 줘.
 5. 사용한 코드를 마지막에 보여 줘.</code></pre>
-<p>표 6-8은 이 요청의 예상 결과를 검증 관점에서 정리한 것입니다.</p>
-<figure class="fig" id="tbl-6-8"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w20"><col class="w35"><col></colgroup>
+<p>표 6-9는 이 요청의 예상 결과를 검증 관점에서 정리한 것입니다.</p>
+<figure class="fig" id="tbl-6-9"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w20"><col class="w35"><col></colgroup>
 <thead><tr><th>검증 영역</th><th>대상</th><th>확인 결과</th><th>사람의 조치</th></tr></thead>
 <tbody>
-<tr><td>합계 대조</td><td>월별 합계(모든 행)</td><td>1월 1,200, 2월 1,080, 3월 1,350, 4월 1,320(백만 원). 행을 직접 합산한 값과 같음</td><td>합산은 맞음. 테스트 데이터, 누락 의심, 임시 집계 행이 포함된 합계임을 표시해 보고서에 사용</td></tr>
-<tr><td>계산 대조</td><td>2월 자사몰 패션잡화</td><td>파일 값 −18.6%, 5.9만 원. 코드로 다시 계산한 값 −18.7%, 6.0만 원</td><td>원본 작성 부서에 확인한 뒤 다시 계산한 값으로 수정</td></tr>
-<tr><td>변화 요인</td><td>3월 자사몰 패션잡화 +50.8%</td><td>같은 달 인플루언서 협업 진행(비고). 표만으로 인과를 확인할 수 없어 '추정'</td><td>협업 기간의 주문 자료로 효과 확인</td></tr>
+<tr><td>합계 대조</td><td>월별 합계(모든 행)</td><td>1월 1,200, 2월 1,080, 3월 1,350, 4월 1,320(백만 원)으로 직접 합산한 값과 일치</td><td>합산은 맞음. 테스트 데이터, 누락 의심, 임시 집계 행이 포함된 합계임을 표시해 보고서에 사용</td></tr>
+<tr><td>계산 대조</td><td>2월 자사몰 패션잡화</td><td>파일 값 −18.6%, 5.9만 원과 다시 계산한 값 −18.7%, 6.0만 원의 불일치</td><td>원본 작성 부서에 확인</td></tr>
+<tr><td>변화 요인</td><td>3월 자사몰 패션잡화 +50.8%</td><td>비고의 협업 진행 외에 인과를 확인할 자료가 없어 '추정' 표시</td><td>협업 기간의 주문 자료로 효과 확인</td></tr>
 <tr><td>데이터 품질</td><td>3월 오픈마켓 −36.2%</td><td>연동 오류로 누락 의심</td><td>오픈마켓 판매 관리 화면의 자료로 실제 감소인지 재확인</td></tr>
-<tr><td>분리 대상</td><td>3월 디지털가전, 4월 오픈마켓</td><td>테스트 데이터(카테고리 시험 확장), 미복구로 인한 임시 집계</td><td>추세 판단에서 분리하고 보고서에 분리 사유 표시</td></tr>
+<tr><td>분리 대상</td><td>3월 디지털가전, 4월 오픈마켓</td><td>테스트 데이터(카테고리 시험 확장), 미복구로 인한 임시 집계</td><td>추세 판단에서 분리</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-8. 매출 분석의 예상 검증 결과</b></figcaption></figure>
+<figcaption><b>표 6-9. 매출 분석의 예상 검증 결과</b></figcaption></figure>
 <p>결과에서 확인할 곳은 세 가지입니다. 첫째, 월별 합계를 직접 더해 봅니다. 3월은 920 + 130 + 300 = 1,350입니다. 둘째, 파일 값과 다시 계산한 값이 다른 칸을 원본 작성 부서에 확인합니다. 2월 자사몰 패션잡화의 전월비는 (610 − 750) ÷ 750 = −18.7%이고, 객단가는 610 ÷ 10,200 = 6.0만 원입니다. 셋째, 원인 설명에 '추정' 표시가 있는지 봅니다. 비고에 협업 진행이 적혀 있어도 표만으로는 매출 증가의 원인인지 알 수 없기 때문입니다.</p>
 
 <h2 id="fail">실패를 예방하는 장치</h2>
-<p>업무와 창작의 실패는 AI에게 맡길 일과 사람이 정할 일이 섞일 때 생깁니다. 표 6-9는 실패마다 그 원인과 원인을 막는 장치를 짝지어 정리한 것입니다.</p>
-<figure class="fig" id="tbl-6-9"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w30"><col class="w35"><col class="w35"></colgroup>
+<p>업무와 창작의 실패는 AI에게 맡길 일과 사람이 정할 일이 섞일 때 생깁니다. 표 6-10은 실패마다 그 원인과 원인을 막는 장치를 짝지어 정리한 것입니다.</p>
+<figure class="fig" id="tbl-6-10"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w30"><col class="w35"><col class="w35"></colgroup>
 <thead><tr><th>실패 유형</th><th>원인</th><th>방지 장치</th></tr></thead>
 <tbody>
 <tr><td>입력하면 안 되는 데이터를 입력함</td><td>맡기기 전에 데이터 유형을 정하지 않음</td><td>데이터 다섯 유형별 입력 기준을 먼저 확인</td></tr>
 <tr><td>AI가 계산한 수치가 원본과 다름</td><td>코드 실행 없이 모델이 직접 계산</td><td>코드 실행이나 수식으로 다시 계산하고 원본과 대조</td></tr>
 <tr><td>오류 의심 자료로 결론을 냄</td><td>테스트 데이터와 임시 집계를 구분하지 않음</td><td>해석에 주의할 행을 표시하게 하고 판단에서 분리</td></tr>
-<tr><td>기획서가 일반적인 내용으로 채워짐</td><td>구조 없이 전체를 한 번에 요청</td><td>목차와 핵심 문장을 먼저 확정하고 절마다 근거 자료와 함께 요청</td></tr>
-<tr><td>일정과 위험이 조직 사정과 맞지 않음</td><td>AI가 작업 기간과 조직 위험을 정함</td><td>기간은 담당자가 정하고, 조직의 위험은 프로젝트 매니저가 추가</td></tr>
+<tr><td>기획서가 일반적인 내용으로 채워짐</td><td>구조 없이 전체를 한 번에 요청</td><td>목차와 핵심 문장을 먼저 확정</td></tr>
+<tr><td>일정과 위험이 조직 사정과 맞지 않음</td><td>AI가 작업 기간과 조직 위험을 정함</td><td>기간과 조직의 위험을 사람이 확정</td></tr>
 <tr><td>창작물이 권리를 침해함</td><td>사용 전에 실존 인물, 상표, 기존 작품을 점검하지 않음</td><td>공개 전에 권리 침해 요소와 도구 약관을 확인</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-9. 업무와 창작에서 생길 수 있는 실패를 예방하는 장치</b></figcaption></figure>
+<figcaption><b>표 6-10. 업무와 창작에서 생길 수 있는 실패를 예방하는 장치</b></figcaption></figure>
 
 <h2 id="check">결과의 확인 방법</h2>
-<p>업무 결과는 조직 밖으로 나가기 전에 무엇을 기준으로 확인할지 정해 두어야 합니다. 표 6-10은 확인 항목마다 확인 방법과 확인 기준을 정리한 것입니다.</p>
-<figure class="fig" id="tbl-6-10"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w25"><col class="w40"><col class="w35"></colgroup>
+<p>업무 결과는 조직 밖으로 나가기 전에 무엇을 기준으로 확인할지 정해 두어야 합니다. 표 6-11은 확인 항목마다 확인 방법과 확인 기준을 정리한 것입니다.</p>
+<figure class="fig" id="tbl-6-11"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w25"><col class="w40"><col class="w35"></colgroup>
 <thead><tr><th>확인 항목</th><th>확인 방법</th><th>확인 기준</th></tr></thead>
 <tbody>
 <tr><td>입력 데이터</td><td>입력 전에 표 6-3의 유형과 대조</td><td>입력한 데이터가 모두 입력 기준 안에 있음</td></tr>
@@ -380,7 +390,7 @@
 <tr><td>창작물</td><td>실존 인물, 상표, 기존 작품 포함 여부와 약관 확인</td><td>권리 침해 요소가 없고 표시 의무를 지킴</td></tr>
 <tr><td>조직 도입</td><td>현재 도입 단계와 통제 항목 대조</td><td>단계에 필요한 통제가 모두 있음</td></tr>
 </tbody></table></div>
-<figcaption><b>표 6-10. 업무와 창작 결과의 확인 방법</b></figcaption></figure>
+<figcaption><b>표 6-11. 업무와 창작 결과의 확인 방법</b></figcaption></figure>
 
 <h2 id="principle">설계 원칙과 점검 질문</h2>
 <p class="principle">AI에게는 초안과 계산을 맡기고, 맡길 범위, 입력할 데이터, 결론에 사용할 자료, 결정과 권리 확인은 사람이 맡습니다.</p>
