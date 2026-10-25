@@ -306,5 +306,47 @@
     "title": "The Future of Jobs Report 2025",
     "venue": "World Economic Forum (2025-01)",
     "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+  },
+  "openai-chatgpt-2022": {
+    "type": "web",
+    "author": "OpenAI",
+    "title": "Introducing ChatGPT",
+    "venue": "OpenAI (2022-11-30)",
+    "url": "https://openai.com/index/chatgpt/"
+  },
+  "anthropic-claude-2023": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Introducing Claude",
+    "venue": "Anthropic (2023-03-14)",
+    "url": "https://www.anthropic.com/news/introducing-claude"
+  },
+  "google-bard-2023": {
+    "type": "web",
+    "author": "Google",
+    "title": "Bard updates from Google I/O 2023",
+    "venue": "Google 블로그 (2023-05)",
+    "url": "https://blog.google/innovation-and-ai/products/google-bard-updates-io-2023/"
+  },
+  "google-gemini-rename-2024": {
+    "type": "web",
+    "author": "Google",
+    "title": "Bard becomes Gemini: Try Ultra 1.0 and a new mobile app today",
+    "venue": "Google 블로그 (2024-02-08)",
+    "url": "https://blog.google/products-and-platforms/products/gemini/bard-gemini-advanced-app/"
+  },
+  "eu-ai-act-2024": {
+    "type": "web",
+    "author": "European Union",
+    "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+    "venue": "EUR-Lex",
+    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  },
+  "msit-ai-act-2026": {
+    "type": "web",
+    "author": "과학기술정보통신부",
+    "title": "'인공지능기본법' 22일 시행",
+    "venue": "대한민국 정책브리핑 정책뉴스 (2026-01)",
+    "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148958380"
   }
 }
