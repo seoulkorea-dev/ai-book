@@ -101,5 +101,77 @@
     "venue": "Findings of EMNLP 2024",
     "url": "https://arxiv.org/abs/2311.10054",
     "date": "2024"
+  },
+  "brown-2020": {
+    "type": "paper",
+    "author": "Brown, T. 외",
+    "title": "Language Models are Few-Shot Learners",
+    "venue": "arXiv:2005.14165",
+    "url": "https://arxiv.org/abs/2005.14165",
+    "date": "2020"
+  },
+  "wei-2022": {
+    "type": "paper",
+    "author": "Wei, J. 외",
+    "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+    "venue": "arXiv:2201.11903",
+    "url": "https://arxiv.org/abs/2201.11903",
+    "date": "2022"
+  },
+  "kojima-2022": {
+    "type": "paper",
+    "author": "Kojima, T. 외",
+    "title": "Large Language Models are Zero-Shot Reasoners",
+    "venue": "arXiv:2205.11916",
+    "url": "https://arxiv.org/abs/2205.11916",
+    "date": "2022"
+  },
+  "wang-2022": {
+    "type": "paper",
+    "author": "Wang, X. 외",
+    "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+    "venue": "arXiv:2203.11171",
+    "url": "https://arxiv.org/abs/2203.11171",
+    "date": "2022"
+  },
+  "yao-2023": {
+    "type": "paper",
+    "author": "Yao, S. 외",
+    "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+    "venue": "arXiv:2305.10601",
+    "url": "https://arxiv.org/abs/2305.10601",
+    "date": "2023"
+  },
+  "yao-2022": {
+    "type": "paper",
+    "author": "Yao, S. 외",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "venue": "arXiv:2210.03629",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "date": "2022"
+  },
+  "wu-2022": {
+    "type": "paper",
+    "author": "Wu, T. 외",
+    "title": "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts",
+    "venue": "CHI 2022. doi:10.1145/3491102.3517582",
+    "url": "https://doi.org/10.1145/3491102.3517582",
+    "date": "2022"
+  },
+  "zhao-2021": {
+    "type": "paper",
+    "author": "Zhao, T. Z. 외",
+    "title": "Calibrate Before Use: Improving Few-Shot Performance of Language Models",
+    "venue": "arXiv:2102.09690",
+    "url": "https://arxiv.org/abs/2102.09690",
+    "date": "2021"
+  },
+  "holtzman-2019": {
+    "type": "paper",
+    "author": "Holtzman, A. 외",
+    "title": "The Curious Case of Neural Text Degeneration",
+    "venue": "arXiv:1904.09751",
+    "url": "https://arxiv.org/abs/1904.09751",
+    "date": "2019"
   }
 }
