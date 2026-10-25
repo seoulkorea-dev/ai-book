@@ -111,7 +111,9 @@
       "path": "appendix/references.html",
       "nav": "3. 참고 자료",
       "title": "부록 3. 참고 자료",
-      "desc": "부록 3. 참고 자료"
+      "desc": "부록 3. 참고 자료",
+      "generated": "references",
+      "head": "<p class=\"eyebrow-part\">부록</p>\n<h1><span class=\"h-num\">Appendix 3</span> <span class=\"h-title\">참고 자료</span></h1>"
     }
   },
   "redirects": {

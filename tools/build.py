@@ -58,7 +58,7 @@ def cites(pid, body):
 
 if REF_PAGE:
     items = "".join(f'<li id="bib-{n}">{bib_entry(BIB[k])}</li>' for k, n in sorted(CITE_NO.items(), key=lambda x: x[1]))
-    BODY[REF_PAGE] = (f'<h1>{META[REF_PAGE]["title"]}</h1>\n'
+    BODY[REF_PAGE] = (META[REF_PAGE].get("head", f'<h1>{META[REF_PAGE]["title"]}</h1>') + '\n'
                       '<p class="lead">본문의 위첨자 번호가 가리키는 자료입니다. 번호는 시작하며부터 목차 순서로 처음 인용된 순서이고, 같은 자료는 몇 번 인용해도 같은 번호입니다.</p>\n'
                       f'<ol class="bib">{items}</ol>\n')
 

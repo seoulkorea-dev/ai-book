@@ -1,1 +1,74 @@
-{}
+{
+  "vaswani-2017": {
+    "type": "paper",
+    "author": "Vaswani, A. 외",
+    "title": "Attention Is All You Need",
+    "venue": "arXiv:1706.03762",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "date": "2017"
+  },
+  "liu-2023": {
+    "type": "paper",
+    "author": "Liu, N. F. 외",
+    "title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "venue": "arXiv:2307.03172",
+    "url": "https://arxiv.org/abs/2307.03172",
+    "date": "2023"
+  },
+  "ouyang-2022": {
+    "type": "paper",
+    "author": "Ouyang, L. 외",
+    "title": "Training language models to follow instructions with human feedback",
+    "venue": "arXiv:2203.02155",
+    "url": "https://arxiv.org/abs/2203.02155",
+    "date": "2022"
+  },
+  "bai-2022": {
+    "type": "paper",
+    "author": "Bai, Y. 외",
+    "title": "Constitutional AI: Harmlessness from AI Feedback",
+    "venue": "arXiv:2212.08073",
+    "url": "https://arxiv.org/abs/2212.08073",
+    "date": "2022"
+  },
+  "openai-2023": {
+    "type": "paper",
+    "author": "OpenAI",
+    "title": "GPT-4 Technical Report",
+    "venue": "arXiv:2303.08774",
+    "url": "https://arxiv.org/abs/2303.08774",
+    "date": "2023"
+  },
+  "gemini-2023": {
+    "type": "paper",
+    "author": "Gemini Team, Google",
+    "title": "Gemini: A Family of Highly Capable Multimodal Models",
+    "venue": "arXiv:2312.11805",
+    "url": "https://arxiv.org/abs/2312.11805",
+    "date": "2023"
+  },
+  "petrov-2023": {
+    "type": "paper",
+    "author": "Petrov, A. 외",
+    "title": "Language Model Tokenizers Introduce Unfairness Between Languages",
+    "venue": "NeurIPS 2023",
+    "url": "https://arxiv.org/abs/2305.15425",
+    "date": "2023"
+  },
+  "rohrbach-2018": {
+    "type": "paper",
+    "author": "Rohrbach, A. 외",
+    "title": "Object Hallucination in Image Captioning",
+    "venue": "EMNLP 2018",
+    "url": "https://aclanthology.org/D18-1437/",
+    "date": "2018"
+  },
+  "koenecke-2024": {
+    "type": "paper",
+    "author": "Koenecke, A. 외",
+    "title": "Careless Whisper: Speech-to-Text Hallucination Harms",
+    "venue": "FAccT 2024",
+    "url": "https://arxiv.org/abs/2402.08021",
+    "date": "2024"
+  }
+}

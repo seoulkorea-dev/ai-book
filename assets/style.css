@@ -248,3 +248,15 @@ figcaption ul.capnote li { margin: 0.1rem 0; }
 .book-cover-band { display: block; width: 100%; height: 28px; flex-shrink: 0; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 900px) { .book-cover-body { padding: 10px 22px 18px; } .book-cover-kicker, .book-cover-series { font-size: 10px; letter-spacing: 0.1em; } .book-cover-meta { gap: 0.5rem; } .book-cover h1 .h-title { font-size: 30px; } .book-cover-sub { font-size: 14px; } }
+
+/* 플레이북 장 틀(harness-book 스타일에서 옮김, 2026-10-25): 주장 줄, 원칙 문장, 버전 주석, 위첨자 인용, 참고 자료 */
+.claim { font-size: 23px; font-weight: 700; line-height: 1.5; margin: 0 0 1.1rem; word-break: keep-all; }
+h1 + .claim { margin-top: 0; }
+p.principle { background: var(--panel); border-left: 4px solid var(--accent); padding: 0.9rem 1.2rem; font-weight: 700; }
+aside.version-note { margin: 1rem 0; padding: 0.7rem 0.9rem; border-left: 3px solid #0284c7; background: #F8F8F6; font-size: 0.92em; }
+sup.cite { font-size: 0.7em; line-height: 0; margin-left: 1px; }
+sup.cite a { text-decoration: none; }
+ol.bib { padding-left: 2rem; line-height: 1.6; }
+ol.bib li { margin: 0.35rem 0; word-break: keep-all; overflow-wrap: anywhere; }
+ol.bib li:target { background: #e0f2fe; }
+@media (max-width: 900px) { .topbar .brand { white-space: normal; min-width: 0; } }
