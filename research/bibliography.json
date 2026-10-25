@@ -208,5 +208,58 @@
     "title": "Reasoning best practices",
     "venue": "OpenAI API Docs",
     "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices"
+  },
+  "ji-2023": {
+    "type": "paper",
+    "author": "Ji, Z. 외",
+    "title": "Survey of Hallucination in Natural Language Generation",
+    "venue": "ACM Computing Surveys. arXiv:2202.03629",
+    "url": "https://arxiv.org/abs/2202.03629",
+    "date": "2023"
+  },
+  "kalai-2025": {
+    "type": "paper",
+    "author": "Kalai, A. T. 외",
+    "title": "Why Language Models Hallucinate",
+    "venue": "arXiv:2509.04664",
+    "url": "https://arxiv.org/abs/2509.04664",
+    "date": "2025"
+  },
+  "lewis-2020": {
+    "type": "paper",
+    "author": "Lewis, P. 외",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "venue": "arXiv:2005.11401",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "date": "2020"
+  },
+  "parasuraman-2010": {
+    "type": "paper",
+    "author": "Parasuraman, R., Manzey, D. H.",
+    "title": "Complacency and Bias in Human Use of Automation: An Attentional Integration",
+    "venue": "Human Factors, 52(3)",
+    "url": "https://doi.org/10.1177/0018720810376055",
+    "date": "2010"
+  },
+  "mata-2023": {
+    "type": "web",
+    "author": "United States District Court, S.D.N.Y.",
+    "title": "Mata v. Avianca, Inc., No. 22-cv-1461 (PKC), Opinion and Order on Sanctions",
+    "venue": "678 F. Supp. 3d 443 (S.D.N.Y. 2023-06-22)",
+    "url": "https://www.law.berkeley.edu/wp-content/uploads/2025/12/Mata-v-Avianca-Inc.pdf"
+  },
+  "reuters-2023-bard": {
+    "type": "web",
+    "author": "Coulter, M., Bensinger, G.",
+    "title": "Alphabet shares dive after Google AI chatbot Bard flubs answer in ad",
+    "venue": "Reuters, 2023-02-08(재배포본)",
+    "url": "https://www.aljazeera.com/economy/2023/2/8/google-shares-tank-8-as-ai-chatbot-bard-flubs-answer-in-ad"
+  },
+  "eso-2m1207b": {
+    "type": "web",
+    "author": "European Southern Observatory",
+    "title": "2M1207b - first image of an exoplanet",
+    "venue": "ESO",
+    "url": "https://www.eso.org/public/images/26a_big-vlt/"
   }
 }
