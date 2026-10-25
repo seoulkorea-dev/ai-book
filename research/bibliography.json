@@ -208,5 +208,19 @@
     "title": "Reasoning best practices",
     "venue": "OpenAI API Docs",
     "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices"
+  },
+  "anthropic-mcp-2024": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Introducing the Model Context Protocol",
+    "venue": "Anthropic (2024-11-25)",
+    "url": "https://www.anthropic.com/news/model-context-protocol"
+  },
+  "anthropic-mcp-aaif-2025": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Donating the Model Context Protocol and establishing the Agentic AI Foundation",
+    "venue": "Anthropic (2025-12-09)",
+    "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
   }
 }
