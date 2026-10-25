@@ -291,5 +291,12 @@
     "title": "2M1207b - first image of an exoplanet",
     "venue": "ESO",
     "url": "https://www.eso.org/public/images/26a_big-vlt/"
+  },
+  "eu-ai-act-2024": {
+    "type": "web",
+    "author": "European Union",
+    "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+    "venue": "EUR-Lex",
+    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
   }
 }
