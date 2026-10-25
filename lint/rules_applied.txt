@@ -2,6 +2,7 @@
 ch01
 ch02
 ch03
+ch08
 ch07
 ch06
 ch05
