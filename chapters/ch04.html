@@ -43,30 +43,33 @@
 <main id="main">
 <article>
 <h1><span class="h-num">Chapter 4</span> <span class="h-title">환각 대응과 교차 검증</span></h1>
-<p class="lead">환각(Hallucination)은 AI가 사실이 아니거나 입력과 맞지 않는 내용을 사실처럼 생성하는 현상입니다. 환각은 오류처럼 보이는 것이 아니라, 정확한 답과 똑같이 자연스럽고 확신에 찬 문장으로 나타납니다. 겉보기로 구분되지 않으므로, 확인 없이 사용할수록 잘못된 사실이 결정과 문서에 그대로 퍼지게 됩니다. 따라서 결정에 사용하거나 외부에 공유할 핵심 사실은 원문과 대조하고, 서로 독립된 출처 두 곳 이상으로 교차 검증해야 합니다. 이 장에서는 환각을 알아보는 방법과, 평가 기준에 따라 결과를 개선하는 절차를 익힙니다.</p>
-<ul class="summary"><li>결정에 사용하거나 외부에 공유할 핵심 사실은 원문과 독립된 출처 두 곳 이상으로 확인합니다.</li><li>근거 자료를 함께 제공하고 출처를 표시하게 하면 대조할 수 있는 결과를 얻습니다.</li><li>결과 개선은 평가 기준을 먼저 정하고, 한 번에 한 요소만 수정하는 방식으로 진행합니다.</li></ul>
+<p class="claim">AI의 답은 정확하든 아니든 같은 문체로 나오므로, 오류가 있을 때 영향이 큰 사실부터 원문과 독립된 출처로 교차 검증하고, 프롬프트는 평가 기준을 먼저 정해 한 요소씩 개선합니다.</p>
+<p class="lead">이 장에서는 AI 결과에 섞인 오류를 찾아 확인하는 방법과, 오류가 덜 생기도록 프롬프트(Prompt)를 개선하는 방법을 다룹니다. 환각(Hallucination)은 AI가 사실이 아니거나 입력과 맞지 않는 내용을 사실처럼 생성하는 현상입니다. 환각은 정확한 답과 똑같이 자연스럽고 확신에 찬 문장으로 나타나므로, 겉보기로는 구분되지 않습니다.</p>
+<p class="lead">그래서 확인은 문장의 겉모습이 아니라 원문을 기준으로 합니다. 교차 검증(Cross-checking)은 결과에 담긴 사실을 원문과 대조하고, 서로 독립된 출처 두 곳 이상에서 같은 내용인지 확인하는 일입니다. 모델은 사실 여부가 아니라 다음 토큰(Token)의 확률로 문장을 만듭니다(Chapter 1). 이 작동 방식이 환각이 생기는 이유이고, 결과를 만든 모델에게 다시 묻는 것으로는 확인이 되지 않는 이유입니다.</p>
+<p class="lead">먼저 환각의 유형, 특징, 원인과 먼저 확인할 의심 신호를 살펴보고, 적용 위치에 따른 대응 방법을 익힙니다. 이어서 교차 검증의 기준과 순서, 확인을 건너뛰게 하는 자동화 편향(Automation Bias), 평가 기준에 따라 프롬프트를 개선하는 절차, 대화하며 답변을 수정하는 방법을 다룹니다. 끝으로 교육 안내문 정리 예제에서 AI 답변을 원문과 한 줄씩 대조하고, 실패를 예방하는 장치와 결과의 확인 방법을 정리합니다.</p>
+<ul class="summary"><li>결정에 사용하거나 외부에 공유할 핵심 사실은 원문과, 서로 독립된 출처 두 곳 이상으로 확인합니다.</li><li>근거 자료를 함께 제공하고 출처를 표시하게 하면 대조할 수 있는 결과를 얻습니다. 출처 표시는 대조할 위치를 알려 줄 뿐, 내용이 맞다는 보증은 아닙니다.</li><li>프롬프트 개선은 평가 기준을 먼저 정하고, 한 번에 한 요소만 수정하는 방식으로 진행합니다.</li></ul>
 
-<h2 id="types">환각 유형</h2>
-<p>환각은 입력과의 관계에 따라 두 유형으로 나뉩니다. Ji 외는 2023년 논문 「Survey of Hallucination in Natural Language Generation」에서 환각 연구를 정리하며 이 구분을 제시했습니다. 이 책도 같은 구분을 사용합니다. 유형에 따라 확인 방법이 다릅니다. 내재적 환각은 입력 자료와 대조하면 찾을 수 있지만, 외재적 환각은 외부 원문을 찾아야 확인됩니다(표 4-1).</p>
+<h2 id="types">입력과의 관계로 나누는 환각 유형</h2>
+<p>환각은 입력과의 관계에 따라 두 유형으로 나뉘고, 유형에 따라 확인 방법이 다릅니다. Ji 외는 2023년 논문 「Survey of Hallucination in Natural Language Generation」에서 환각 연구를 정리하며 이 구분을 제시했습니다<sup class="cite"><a href="../appendix/references.html#bib-28">28</a></sup>. 내재적 환각은 입력 자료와 대조하면 찾을 수 있지만, 외재적 환각은 외부 원문을 찾아야 확인됩니다. 표 4-1은 두 유형의 정의와 예제입니다.</p>
 <figure class="fig" id="tbl-4-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w45"><col class="w40"></colgroup>
 <thead><tr><th>유형</th><th>정의</th><th>예제</th></tr></thead>
 <tbody>
 <tr><td>내재적 환각</td><td>주어진 입력 자료와 모순되는 내용 생성</td><td>요약에 원문과 다른 수치 기재</td></tr>
 <tr><td>외재적 환각</td><td>입력으로 확인할 수 없는 내용 생성</td><td>존재하지 않는 논문, 판례 인용</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-1. 환각 유형</b><ul class="capnote"><li>Ji 외(2023)의 구분에 따른 내재적 환각과 외재적 환각의 정의와 예제</li></ul></figcaption></figure>
+<figcaption><b>표 4-1. 환각 유형</b></figcaption></figure>
 
-<h2 id="features">환각의 특징</h2>
-<p>환각이 위험한 이유는 정확한 답변과 겉모습이 같기 때문입니다. 오히려 자연스러운 문장일수록 확인을 미루게 됩니다. 환각에는 네 가지 특징이 있습니다.</p>
+<h2 id="features">정확한 답과 겉모습이 같은 환각의 특징</h2>
+<p>환각이 위험한 이유는 정확한 답변과 겉모습이 같기 때문입니다. 자연스러운 문장일수록 오히려 확인을 미루게 됩니다. 환각에는 네 가지 특징이 있습니다.</p>
 <ul><li><b>자연스러운 문장</b>: 문장이 매끄럽고 어조가 확신에 차 있습니다.</li><li><b>구체적인 세부 정보</b>: 저자, 연도, 사건 번호, 쪽수처럼 구체적인 정보를 포함합니다.</li><li><b>되풀이와 보강</b>: 같은 질문을 다시 해도 사실과 다른 내용을 반복하거나, 없는 근거를 새로 만들어 주장을 보강합니다.</li><li><b>사실과 오류의 혼합</b>: 사실과 오류가 한 문단 안에 섞여 있습니다.</li></ul>
 
-<h2 id="causes">환각의 원인</h2>
-<p>환각은 모델이 문장을 만드는 방식에서 비롯됩니다. 모델은 사실 여부가 아니라 다음 토큰(Token)의 확률로 문장을 만들기 때문에, 확률이 높은 문장이 사실과 다를 수 있습니다. 구체적인 원인은 네 가지입니다.</p>
-<ul><li><b>확률 기반 생성</b>: 모델은 문장이 사실인지 확인하지 않고 문맥상 자연스러운 다음 토큰을 선택합니다.</li><li><b>드문 정보</b>: 학습 자료에 거의 없는 정보는 비슷한 사례를 조합해 그럴듯한 답으로 채웁니다.</li><li><b>지식 기준일(Knowledge Cutoff)</b>: 학습 데이터 수집 시점 이후의 사실을 모릅니다.</li><li><b>답을 강요하는 프롬프트(Prompt)</b>: 이유가 두 가지뿐인 주제에 다섯 가지를 요구하면 나머지를 만들어 채울 수 있습니다.</li></ul>
-<p>평가 방식도 원인의 하나입니다. OpenAI 연구진(Kalai 외)은 2025년 9월 논문 「Why Language Models Hallucinate」에서, 정답만 채점하는 평가 방식이 모른다고 답하기보다 추측하도록 모델을 유도한다고 밝혔습니다.</p>
+<h2 id="causes">확률로 문장을 만드는 데서 오는 환각의 원인</h2>
+<p>환각은 모델이 문장을 만드는 방식에서 비롯됩니다. 모델은 문장이 사실인지 확인하지 않고 확률이 높은 다음 토큰을 선택하므로, 확률이 높은 문장이 사실과 다를 수 있습니다. 구체적인 원인은 네 가지입니다.</p>
+<ul><li><b>확률 기반 생성</b>: 모델은 문맥상 자연스러운 다음 토큰을 선택할 뿐, 그 내용이 사실인지는 확인하지 않습니다.</li><li><b>드문 정보</b>: 학습 자료에 거의 없는 정보는 비슷한 사례를 조합해 그럴듯한 답으로 채웁니다.</li><li><b>지식 기준일(Knowledge Cutoff)</b>: 학습 데이터 수집 시점 이후의 사실을 모릅니다(Chapter 1).</li><li><b>답을 강요하는 프롬프트</b>: 이유가 두 가지뿐인 주제에 다섯 가지를 요구하면 나머지를 만들어 채울 수 있습니다.</li></ul>
+<p>평가 방식도 원인의 하나입니다. OpenAI 연구진(Kalai 외)은 2025년 9월 논문 「Why Language Models Hallucinate」에서, 정답만 채점하는 평가 방식이 모른다고 답하기보다 추측하도록 모델을 유도한다고 밝혔습니다<sup class="cite"><a href="../appendix/references.html#bib-29">29</a></sup>.</p>
 
-<h2 id="signals">의심 신호</h2>
-<p>AI의 모든 문장을 확인할 수는 없습니다. 수치, 출처, 날짜처럼 오류가 있을 때 영향이 큰 신호부터 원문과 대조합니다. 표 4-2는 의심 신호 다섯 가지와 신호별 확인 방법입니다.</p>
+<h2 id="signals">먼저 확인할 환각 의심 신호</h2>
+<p>AI의 모든 문장을 확인할 수는 없으므로, 오류가 있을 때 영향이 큰 신호부터 원문과 대조합니다. 수치, 출처, 날짜, 인용이 그런 신호입니다. 표 4-2는 의심 신호 다섯 가지와 신호별 확인 방법입니다.</p>
 <figure class="fig" id="tbl-4-2"><div class="table-wrap"><table><colgroup><col class="w30"><col class="w40"><col class="w30"></colgroup>
 <thead><tr><th>신호</th><th>예제</th><th>확인 방법</th></tr></thead>
 <tbody>
@@ -76,12 +79,12 @@
 <tr><td>요청한 개수를 맞춘 목록</td><td>"이유 다섯 가지"를 요청하자 근거가 약한 항목까지 포함해 정확히 다섯 개를 채움</td><td>항목별 근거 확인</td></tr>
 <tr><td>인용 문장</td><td>큰따옴표 안의 발언</td><td>원문에서 같은 문장 검색</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-2. 환각 의심 신호</b><ul class="capnote"><li>근거 없는 소수점 통계, 처음 보는 출처 등 의심 신호 5개와 확인 방법</li></ul></figcaption></figure>
+<figcaption><b>표 4-2. 환각 의심 신호</b></figcaption></figure>
 
-<h2 id="measures">대응 방법</h2>
-<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고 모름을 허용해 환각이 생길 여지를 줄이고, 사용자는 결과를 원문과 대조합니다. 조직에서는 검색으로 근거를 보충하는 시스템을 둘 수 있습니다. 표 4-3은 방법별 적용 위치와 작성 예제입니다.</p>
+<h2 id="measures">적용 위치에 따른 환각 대응 방법</h2>
+<p>환각 대응은 적용 위치에 따라 세 가지로 나뉩니다. 프롬프트에서는 근거를 제공하고, 근거가 없으면 모른다고 답하게 하는 모름 허용(Abstention)으로 환각이 생길 여지를 줄입니다. 사용자는 결과를 원문과 대조합니다. 조직에서는 검색으로 근거를 보충하는 시스템을 둘 수 있습니다. 표 4-3은 방법별 적용 위치와 작성 예제입니다.</p>
 <figure class="fig" id="tbl-4-3"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w65"></colgroup>
-<thead><tr><th>방법</th><th>적용 위치</th><th>작성 예제</th></tr></thead>
+<thead><tr><th>대응 방법</th><th>적용 위치</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>근거 자료 제공</td><td>프롬프트</td><td>첨부 문서만 근거로 답해 줘.</td></tr>
 <tr><td>출처 표시 요구</td><td>프롬프트</td><td>각 주장 뒤에 근거 문단 번호를 적어 줘.</td></tr>
@@ -90,47 +93,70 @@
 <tr><td>원문 대조</td><td>사용자 검토</td><td>수치, 인용, 고유명사를 원문과 대조</td></tr>
 <tr><td>검색 증강 생성</td><td>시스템</td><td>문서를 검색해 관련 부분을 프롬프트에 포함(그림 4-1)</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-3. 환각 대응 방법</b><ul class="capnote"><li>근거 자료 제공부터 검색 증강 생성까지 대응 방법 6개의 적용 위치와 작성 예제</li></ul></figcaption></figure>
-<p>검색 증강 생성(Retrieval-augmented Generation, RAG)은 답을 만들기 전에 관련 문서를 검색해 근거로 함께 제공하는 방식입니다. 학습하지 않은 최신 정보나 조직 내부 문서를 다룰 때 사용하며, Lewis 외(2020)가 발표했습니다. 문서를 조각으로 나눠 저장해 두고, 질문과 가까운 조각을 검색해 프롬프트에 포함합니다. 그다음 답을 생성하고, 답변에 근거 조각의 출처를 표시합니다. 답변에 출처가 표시되므로 사람이 원문과 대조할 수 있습니다. 그림 4-1은 그 흐름입니다.</p>
-<figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="질문, 문서 검색, 근거 포함, 답변 생성, 출처 표시, 사람의 확인으로 이어지는 흐름"><svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-ah41" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker></defs><rect x="8" y="62" width="76" height="44" rx="22" fill="#0284c7"/><text x="46" y="89" font-size="16" fill="#FFFFFF" font-weight="700" text-anchor="middle">질문</text><rect x="108" y="30" width="148" height="110" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="130" cy="54" r="12" fill="#0284c7"/><text x="130" y="59" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="150" y="60" font-size="16" fill="#2B2A26" font-weight="700">문서 검색</text><text x="122" y="94" font-size="15" fill="#625D52">질문과 가까운</text><text x="122" y="116" font-size="15" fill="#625D52">조각을 찾음</text><rect x="268" y="30" width="148" height="110" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="290" cy="54" r="12" fill="#0284c7"/><text x="290" y="59" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="310" y="60" font-size="16" fill="#2B2A26" font-weight="700">근거 포함</text><text x="282" y="94" font-size="15" fill="#625D52">찾은 조각을</text><text x="282" y="116" font-size="15" fill="#625D52">프롬프트에 포함</text><rect x="428" y="30" width="148" height="110" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="450" cy="54" r="12" fill="#0284c7"/><text x="450" y="59" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="470" y="60" font-size="16" fill="#2B2A26" font-weight="700">답변 생성</text><text x="442" y="94" font-size="15" fill="#625D52">근거 조각 안에서</text><text x="442" y="116" font-size="15" fill="#625D52">답을 작성</text><rect x="588" y="30" width="148" height="110" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="610" cy="54" r="12" fill="#0284c7"/><text x="610" y="59" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text><text x="630" y="60" font-size="16" fill="#2B2A26" font-weight="700">출처 표시</text><text x="602" y="94" font-size="15" fill="#625D52">근거 조각의</text><text x="602" y="116" font-size="15" fill="#625D52">위치를 밝힘</text><line x1="84" y1="84" x2="106" y2="84" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah41)"/><line x1="256" y1="85.0" x2="266" y2="85.0" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah41)"/><line x1="416" y1="85.0" x2="426" y2="85.0" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah41)"/><line x1="576" y1="85.0" x2="586" y2="85.0" stroke="#625D52" stroke-width="1.5" marker-end="url(#m1-ah41)"/><rect x="108" y="172" width="148" height="52" rx="10" fill="#F1EBDB" stroke="#8a8272" stroke-dasharray="5 3"/><text x="182.0" y="203" font-size="15" fill="#2B2A26" font-weight="700" text-anchor="middle">문서 저장소</text><line x1="182.0" y1="172" x2="182.0" y2="142" stroke="#625D52" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#m1-ah41)"/><rect x="268" y="248" width="468" height="52" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><text x="286" y="280" font-size="16" fill="#0377b6" font-weight="700">사람의 확인</text><text x="390" y="280" font-size="15" fill="#2B2A26">출처 문단을 열어 답변과 대조</text><line x1="662.0" y1="140" x2="662.0" y2="246" stroke="#0284c7" stroke-width="1.5" marker-end="url(#m1-ah41)"/></svg></div><figcaption><b>그림 4-1. 검색 증강 생성 흐름</b><ul class="capnote"><li>질문, 문서 검색, 근거 포함, 답변 생성, 출처 표시의 흐름</li></ul></figcaption></figure>
+<figcaption><b>표 4-3. 환각 대응 방법</b></figcaption></figure>
+<p>검색 증강 생성(Retrieval-augmented Generation, RAG)은 답을 만들기 전에 관련 문서를 검색해 근거로 함께 제공하는 방식입니다. Lewis 외가 2020년에 발표했으며, 학습하지 않은 최신 정보나 조직 내부 문서를 다룰 때 사용합니다<sup class="cite"><a href="../appendix/references.html#bib-30">30</a></sup>. 문서를 조각으로 나눠 저장해 두고, 질문과 가까운 조각을 검색해 프롬프트에 포함한 뒤 답을 생성합니다. 검색은 모델 바깥의 검색 시스템이 맡고, 모델은 받은 조각 안에서 답을 작성합니다. 답변에는 근거 조각의 출처를 표시하므로, 사람은 모델에게 다시 묻지 않고 출처 문서를 직접 열어 대조할 수 있습니다. 그림 4-1은 세 주체가 맡는 일과 그 흐름입니다.</p>
+<figure class="fig diagram" id="fig-4-1"><div class="svg-wrap" role="img" aria-label="세 영역이 왼쪽부터 사람, 검색 시스템, 모델 순서로 있다. 사람의 질문이 검색 시스템의 1 문서 검색으로 가고, 문서 검색은 아래의 문서 저장소에서 조각을 찾는다. 찾은 조각은 모델의 2 답변 생성으로 가고, 아래의 3 출처 표시를 거쳐 사람의 원문 대조로 돌아온다. 원문 대조에서 점선 화살표가 문서 저장소로 이어져 사람이 출처 문서를 직접 연다"><svg viewBox="0 0 960 630" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m1-f41a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0284c7"/></marker><marker id="m1-f41g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8a8272"/></marker></defs><rect x="20" y="16" width="920" height="96" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><text x="40" y="52" font-size="26" fill="#2B2A26" font-weight="700">검색 증강 생성은 찾은 문서 안에서 답하고, 사람은 그 문서와 대조합니다</text><text x="40" y="88" font-size="20" fill="#625D52">사람, 검색 시스템, 모델이 맡는 일의 구분</text><rect x="20" y="136" width="280" height="420" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M20 180 V148 A12 12 0 0 1 32 136 H288 A12 12 0 0 1 300 148 V180 Z" fill="#0284c7"/><text x="40" y="166" font-size="22" fill="#FFFFFF" font-weight="700">사람</text><rect x="340" y="136" width="280" height="420" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M340 180 V148 A12 12 0 0 1 352 136 H608 A12 12 0 0 1 620 148 V180 Z" fill="#0284c7"/><text x="360" y="166" font-size="22" fill="#FFFFFF" font-weight="700">검색 시스템</text><rect x="660" y="136" width="280" height="420" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M660 180 V148 A12 12 0 0 1 672 136 H928 A12 12 0 0 1 940 148 V180 Z" fill="#0284c7"/><text x="680" y="166" font-size="22" fill="#FFFFFF" font-weight="700">모델</text><rect x="44" y="204" width="232" height="104" rx="12" fill="#FFFFFF" stroke="#8a8272" stroke-width="1.4"/><text x="64" y="242" font-size="22" fill="#2B2A26" font-weight="700">질문</text><text x="64" y="284" font-size="20" fill="#625D52">알고 싶은 내용</text><path d="M278 256 H360" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f41a)"/><rect x="364" y="204" width="232" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="392" cy="234" r="16" fill="#0284c7"/><text x="392" y="241" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="418" y="242" font-size="22" fill="#2B2A26" font-weight="700">문서 검색</text><text x="384" y="284" font-size="20" fill="#625D52">질문과 가까운 조각</text><path d="M598 256 H680" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f41a)"/><rect x="684" y="204" width="232" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="712" cy="234" r="16" fill="#0284c7"/><text x="712" y="241" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="738" y="242" font-size="22" fill="#2B2A26" font-weight="700">답변 생성</text><text x="704" y="284" font-size="20" fill="#625D52">찾은 조각 안에서 작성</text><path d="M800 310 V376" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f41a)"/><rect x="684" y="380" width="232" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="712" cy="410" r="16" fill="#0284c7"/><text x="712" y="417" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="738" y="418" font-size="22" fill="#2B2A26" font-weight="700">출처 표시</text><text x="704" y="460" font-size="20" fill="#625D52">근거 조각의 위치</text><rect x="364" y="380" width="232" height="104" rx="12" fill="#F8F8F6" stroke="#8a8272" stroke-width="1.4" stroke-dasharray="6 4"/><text x="384" y="418" font-size="22" fill="#2B2A26" font-weight="700">문서 저장소</text><text x="384" y="460" font-size="20" fill="#625D52">조각으로 나눠 저장</text><path d="M480 378 V314" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f41a)"/><path d="M800 486 V530 H160 V488" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m1-f41a)"/><rect x="44" y="380" width="232" height="104" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><text x="64" y="418" font-size="22" fill="#2B2A26" font-weight="700">원문 대조</text><text x="64" y="460" font-size="20" fill="#625D52">출처 문서와 답변 비교</text><path d="M278 432 H360" fill="none" stroke="#8a8272" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#m1-f41g)"/><text x="24" y="604" font-size="20" fill="#625D52">* 점선 칸은 미리 저장한 문서, 점선 화살표는 사람이 출처 문서를 직접 여는 경로</text></svg></div><figcaption><b>그림 4-1. 검색 증강 생성의 흐름</b></figcaption></figure>
+<figure class="fig" id="tbl-4-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w75"></colgroup>
+<thead><tr><th>구성 요소</th><th>주요 역할</th></tr></thead>
+<tbody>
+<tr><td>질문</td><td>사람이 알고 싶은 내용을 입력</td></tr>
+<tr><td>1. 문서 검색</td><td>검색 시스템이 질문과 내용이 가까운 조각을 찾음</td></tr>
+<tr><td>문서 저장소</td><td>조각으로 나눈 문서를 미리 저장</td></tr>
+<tr><td>2. 답변 생성</td><td>모델이 찾은 조각을 질문과 함께 받아 그 안에서 답을 작성</td></tr>
+<tr><td>3. 출처 표시</td><td>답변의 근거가 된 조각의 위치를 밝힘</td></tr>
+<tr><td>원문 대조</td><td>사람이 표시된 출처 문서를 직접 열어 답변과 비교</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-4. 그림 4-1의 구성 요소</b></figcaption></figure>
 
-<h2 id="automation-bias">자동화 편향</h2>
-<p>자동화 편향(Automation Bias)은 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 경향입니다. 자동화 편향은 AI를 지나치게 믿는 사람 쪽의 경향으로, 학습 데이터의 불균형이 결과에 반영되는 편향(<a href="../chapters/ch08.html#bias">Chapter 8</a>)과는 다릅니다. 확인하지 않은 AI 결과가 실제 피해로 이어지는 원인이 됩니다. AI의 답이 대부분 맞을수록 사람은 확인을 건너뛰기 쉽고, 문제는 그때 남은 소수의 오류입니다. 다음 두 경우가 그 예입니다.</p>
+<h2 id="crosscheck">원문과 독립된 출처로 확인하는 교차 검증</h2>
+<p>교차 검증은 원문 대조와 독립된 출처 확인의 두 단계로 진행합니다. 원문 대조는 결과의 사실을 그 사실이 나온 문서와 비교하는 일이고, 독립된 출처 확인은 같은 사실을 다른 출처에서 한 번 더 찾는 일입니다. 순서는 다음과 같습니다.</p>
+<ol><li><b>확인할 곳 표시</b>: 결과에서 수치, 인용, 고유명사, 날짜, 참고문헌을 표시합니다.</li><li><b>원문 대조</b>: 표시한 곳마다 원문을 찾아 같은지 비교합니다.</li><li><b>독립된 출처 확인</b>: 결정에 사용하거나 외부에 공유할 핵심 사실은 다른 출처에서 같은 내용인지 확인합니다.</li></ol>
+<h3 id="checklist">확인 항목 다섯 가지</h3>
+<p>확인 항목은 다섯 가지이며, 항목마다 대조할 기준이 정해져 있습니다. 다섯 항목을 모든 결과에 확인할 필요는 없고, 수치, 인용, 참고문헌처럼 오류가 있을 때 영향이 큰 항목부터 확인합니다.</p>
+<ul><li><b>수치</b>: 원문의 값, 단위, 기준 연도와 일치하는지</li><li><b>인용</b>: 원문에 같은 문장이 있는지</li><li><b>고유명사</b>: 인물, 기관, 제품 이름의 철자가 맞는지</li><li><b>날짜</b>: 사건 순서와 연도가 맞는지</li><li><b>참고문헌</b>: 실제로 존재하고 서지 정보가 맞는지</li></ul>
+<p>핵심 사실은 원문 하나로 끝내지 않고, 서로 독립된 출처 두 곳 이상에서 같은 내용인지 확인합니다. 한 출처가 다른 출처를 그대로 인용한 경우는 독립된 출처로 보지 않습니다. 두 출처가 같은 원자료에서 나왔다면 하나의 출처를 두 번 확인한 것과 같기 때문입니다.</p>
+<h3 id="practice">확인 습관을 만드는 연습</h3>
+<p>확인 습관은 연습으로 만듭니다. AI 답변을 받을 때마다 수치, 고유명사, 인용처럼 오류가 있으면 영향이 큰 부분 가운데 세 곳을 먼저 표시합니다. 표시한 세 곳을 원문으로 확인하고, 오류가 나오면 기록합니다. 기록이 쌓이면 자신이 사용하는 도구에서 오류가 자주 나는 유형을 알 수 있습니다.</p>
+
+<h2 id="automation-bias">확인을 건너뛰게 하는 자동화 편향</h2>
+<p>자동화 편향은 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 경향입니다. 자동화 편향은 AI를 지나치게 믿는 사람 쪽의 경향으로, 학습 데이터의 불균형이 결과에 반영되는 편향(<a href="../chapters/ch08.html#bias">Chapter 8</a>)과는 다릅니다. 확인하지 않은 AI 결과가 실제 피해로 이어지는 원인이 됩니다. AI의 답이 대부분 맞을수록 사람은 확인을 건너뛰기 쉽고, 문제는 그때 남은 소수의 오류입니다. 다음 두 경우가 그 예입니다.</p>
 <p>미국 뉴욕 남부 연방지방법원은 2023년 6월 22일 Mata v. Avianca 사건에서, ChatGPT가 생성한 존재하지 않는 판례를 인용한 변호사 두 명과 법률 사무소에 공동으로 5,000달러의 제재금을 부과했습니다. 변호사는 ChatGPT에 판례가 실제로 있는지 물었고, ChatGPT는 있다고 답했습니다. <b>결과를 만든 AI에게 다시 묻는 것은 검증이 아닙니다.</b></p>
 <p>Google은 2023년 2월 Bard를 소개하는 홍보 자료에서, 제임스 웹 우주망원경이 태양계 밖 행성을 처음 촬영했다는 Bard의 답변을 보여 주었습니다. 태양계 밖 행성을 처음 촬영한 것은 2004년 유럽남방천문대의 VLT였습니다. 오류가 보도된 날 모회사 Alphabet의 주가가 하락했습니다. 공개하기 전에 확인하지 않은 작은 사실 오류가 신뢰와 평판에 큰 영향을 줄 수 있음을 보여 줍니다.</p>
-<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
+<p>두 사례의 공통점은 AI 답을 확인하지 않고 사용했다는 점입니다. Parasuraman과 Manzey는 2010년 논문 「Complacency and Bias in Human Use of Automation」에서 사람이 자동화 시스템을 사용할 때 오류를 놓치는 현상을 정리했습니다<sup class="cite"><a href="../appendix/references.html#bib-31">31</a></sup>. AI 답변이 대부분 정확하면 사람은 점점 확인을 생략하고, 드물게 나오는 오류가 이때 통과합니다. 대응 방법은 세 가지입니다.</p>
 <ul><li><b>목록에 따른 확인</b>: 확인 항목을 목록으로 정해 두고 매번 같은 순서로 확인합니다.</li><li><b>제삼자 확인</b>: 중요도가 높은 결과는 작성자가 아닌 사람이 한 번 더 확인합니다.</li><li><b>예상 답 기록</b>: AI 결과를 받기 전에 예상 답을 먼저 적어 두면 차이를 발견하기 쉽습니다.</li></ul>
 <p>자동화 편향을 경계하라는 말은 AI를 믿지 말라는 뜻이 아닙니다. 결과가 사람의 판단을 대신하지 않게 하라는 뜻입니다.</p>
 
-<h2 id="checklist">검토 목록</h2>
-<p>확인 항목은 다섯 가지이며, 항목마다 대조할 기준이 정해져 있습니다. 다섯 항목을 모든 결과에 확인할 필요는 없습니다. 수치, 인용, 참고문헌처럼 오류가 있을 때 영향이 큰 항목부터 확인합니다.</p>
-<ul><li><b>수치</b>: 원문의 값, 단위, 기준 연도와 일치하는지</li><li><b>인용</b>: 원문에 같은 문장이 있는지</li><li><b>고유명사</b>: 인물, 기관, 제품 이름의 철자가 맞는지</li><li><b>날짜</b>: 사건 순서와 연도가 맞는지</li><li><b>참고문헌</b>: 실제로 존재하고 서지 정보가 맞는지</li></ul>
-<p>결정에 사용하거나 외부에 공유할 핵심 사실은 원문 하나로 끝내지 않고, 서로 독립된 출처 두 곳 이상에서 같은 내용인지 확인합니다. 한 출처가 다른 출처를 그대로 인용한 경우는 독립된 출처로 보지 않습니다.</p>
+<h2 id="cycle">평가 기준을 먼저 정하는 개선 절차</h2>
+<p>교차 검증이 결과의 오류를 찾는 일이라면, 개선 절차는 오류가 덜 생기도록 프롬프트를 수정하는 일입니다. 절차는 여섯 단계이며, 불합격한 기준이 남아 있는 동안 3단계부터 반복합니다. 5단계에서 요소를 하나만 수정하는 이유는, 한 번에 여러 요소를 수정하면 어느 수정이 효과를 냈는지 알 수 없기 때문입니다. 그림 4-2는 그 절차입니다.</p>
+<figure class="fig diagram" id="fig-4-2"><div class="svg-wrap" role="img" aria-label="왼쪽 영역은 실행 전에 한 번 하는 단계로, 1 목표 정의 아래에 2 평가 기준이 있다. 오른쪽 영역은 합격할 때까지 반복하는 단계로, 3 초안 실행에서 4 평가로 가고, 불합격이면 아래의 5 수정을 거쳐 점선을 따라 3 초안 실행으로 돌아간다. 모든 기준에 합격하면 4 평가에서 영역 밖 아래의 6 기록으로 간다"><svg viewBox="0 0 960 770" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m2-f42a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0284c7"/></marker><marker id="m2-f42g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8a8272"/></marker></defs><rect x="20" y="16" width="920" height="96" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><text x="40" y="52" font-size="26" fill="#2B2A26" font-weight="700">기준은 실행 전에 정하고, 합격할 때까지 한 요소씩 수정합니다</text><text x="40" y="88" font-size="20" fill="#625D52">1, 2단계는 한 번, 3~5단계는 반복, 6단계는 합격한 뒤</text><rect x="20" y="136" width="280" height="404" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M20 180 V148 A12 12 0 0 1 32 136 H288 A12 12 0 0 1 300 148 V180 Z" fill="#0284c7"/><text x="40" y="166" font-size="22" fill="#FFFFFF" font-weight="700">실행 전에 한 번</text><rect x="340" y="136" width="600" height="404" rx="14" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.6"/><path d="M340 180 V148 A12 12 0 0 1 352 136 H928 A12 12 0 0 1 940 148 V180 Z" fill="#0284c7"/><text x="360" y="166" font-size="22" fill="#FFFFFF" font-weight="700">합격할 때까지 반복</text><rect x="44" y="204" width="232" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="72" cy="234" r="16" fill="#0284c7"/><text x="72" y="241" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="98" y="242" font-size="22" fill="#2B2A26" font-weight="700">목표 정의</text><text x="64" y="284" font-size="20" fill="#625D52">용도, 읽을 사람, 형식</text><path d="M160 310 V360" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m2-f42a)"/><rect x="44" y="364" width="232" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="72" cy="394" r="16" fill="#0284c7"/><text x="72" y="401" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="98" y="402" font-size="22" fill="#2B2A26" font-weight="700">평가 기준</text><text x="64" y="444" font-size="20" fill="#625D52">합격과 불합격의 기준</text><path d="M278 416 H318 V256 H360" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m2-f42a)"/><rect x="364" y="204" width="264" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="392" cy="234" r="16" fill="#0284c7"/><text x="392" y="241" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="418" y="242" font-size="22" fill="#2B2A26" font-weight="700">초안 실행</text><text x="384" y="284" font-size="20" fill="#625D52">실행하고 결과 저장</text><path d="M630 256 H656" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m2-f42a)"/><rect x="660" y="204" width="256" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="688" cy="234" r="16" fill="#0284c7"/><text x="688" y="241" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text><text x="714" y="242" font-size="22" fill="#2B2A26" font-weight="700">평가</text><text x="680" y="284" font-size="20" fill="#625D52">기준별로 결과 점검</text><path d="M700 310 V416 H632" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m2-f42a)"/><text x="712" y="380" font-size="20" fill="#625D52" font-weight="700">불합격</text><rect x="364" y="364" width="264" height="104" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/><circle cx="392" cy="394" r="16" fill="#0284c7"/><text x="392" y="401" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">5</text><text x="418" y="402" font-size="22" fill="#2B2A26" font-weight="700">수정</text><text x="384" y="444" font-size="20" fill="#625D52">요소 하나만 수정</text><path d="M496 362 V314" fill="none" stroke="#8a8272" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#m2-f42g)"/><text x="508" y="344" font-size="20" fill="#625D52" font-weight="700">3단계부터</text><path d="M860 310 V586" fill="none" stroke="#0284c7" stroke-width="2.5" marker-end="url(#m2-f42a)"/><text x="848" y="580" font-size="20" fill="#0284c7" font-weight="700" text-anchor="end">모든 기준 합격</text><rect x="660" y="590" width="256" height="104" rx="12" fill="#FFFFFF" stroke="#0284c7" stroke-width="1.4"/><circle cx="688" cy="620" r="16" fill="#0284c7"/><text x="688" y="627" font-size="20" fill="#FFFFFF" font-weight="700" text-anchor="middle">6</text><text x="714" y="628" font-size="22" fill="#2B2A26" font-weight="700">기록</text><text x="680" y="670" font-size="20" fill="#625D52">프롬프트, 결과, 평가</text><text x="24" y="744" font-size="20" fill="#625D52">* 점선은 불합격한 기준이 남아 있는 동안의 되돌림</text></svg></div><figcaption><b>그림 4-2. 프롬프트 개선 절차</b></figcaption></figure>
+<figure class="fig" id="tbl-4-5"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w75"></colgroup>
+<thead><tr><th>구성 요소</th><th>주요 역할</th></tr></thead>
+<tbody>
+<tr><td>1. 목표 정의</td><td>결과물의 용도, 읽을 사람, 형식을 적음</td></tr>
+<tr><td>2. 평가 기준</td><td>합격과 불합격을 가르는 기준을 적음</td></tr>
+<tr><td>3. 초안 실행</td><td>프롬프트를 실행하고 결과를 저장</td></tr>
+<tr><td>4. 평가</td><td>기준별로 결과를 점검</td></tr>
+<tr><td>5. 수정</td><td>불합격한 기준에 해당하는 요소 하나를 수정</td></tr>
+<tr><td>6. 기록</td><td>프롬프트, 결과, 평가를 함께 저장</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-5. 그림 4-2의 구성 요소</b></figcaption></figure>
 
-<h2 id="practice">확인 연습</h2>
-<p>확인 습관은 연습으로 만듭니다. AI 답변을 받을 때마다 수치, 고유명사, 인용처럼 오류가 있으면 영향이 큰 부분 가운데 세 곳을 먼저 표시합니다. 표시한 세 곳을 원문으로 확인하고, 오류가 나오면 기록합니다. 기록이 쌓이면 자신이 사용하는 도구에서 오류가 자주 나는 유형을 알 수 있습니다.</p>
-
-<h2 id="cycle">개선 절차</h2>
-<p>환각 확인이 결과의 오류를 찾는 일이라면, 개선 절차는 오류가 덜 생기도록 프롬프트를 수정하는 일입니다. 절차는 여섯 단계이며, 불합격 기준이 남아 있는 동안 3단계부터 반복합니다(그림 4-2).</p>
-<figure class="fig diagram" id="fig-4-2"><div class="svg-wrap" role="img" aria-label="목표 정의부터 평가까지 진행한 뒤, 합격이면 기록하고 불합격이면 수정해 3단계부터 다시 실행하는 절차"><svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif"><defs><marker id="m2-a42" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#625D52"/></marker><marker id="m2-a42t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0284c7"/></marker></defs><rect x="8" y="12" width="226" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="32" cy="38" r="12" fill="#0284c7"/><text x="32" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text><text x="52" y="44" font-size="16" fill="#2B2A26" font-weight="700">목표 정의</text><text x="24" y="74" font-size="15" fill="#625D52">용도, 읽을 사람,</text><text x="24" y="96" font-size="15" fill="#625D52">형식 적기</text><rect x="267" y="12" width="226" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="291" cy="38" r="12" fill="#0284c7"/><text x="291" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text><text x="311" y="44" font-size="16" fill="#2B2A26" font-weight="700">평가 기준</text><text x="283" y="74" font-size="15" fill="#625D52">합격과 불합격을</text><text x="283" y="96" font-size="15" fill="#625D52">가르는 기준</text><rect x="526" y="12" width="226" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="550" cy="38" r="12" fill="#0284c7"/><text x="550" y="43" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text><text x="570" y="44" font-size="16" fill="#2B2A26" font-weight="700">초안 실행</text><text x="542" y="74" font-size="15" fill="#625D52">프롬프트 실행,</text><text x="542" y="96" font-size="15" fill="#625D52">결과 저장</text><rect x="526" y="210" width="226" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="550" cy="236" r="12" fill="#0284c7"/><text x="550" y="241" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text><text x="570" y="242" font-size="16" fill="#2B2A26" font-weight="700">평가</text><text x="542" y="272" font-size="15" fill="#625D52">기준별로</text><text x="542" y="294" font-size="15" fill="#625D52">결과 점검</text><rect x="267" y="210" width="226" height="108" rx="10" fill="#FAF6EB" stroke="#8a8272"/><circle cx="291" cy="236" r="12" fill="#0284c7"/><text x="291" y="241" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">5</text><text x="311" y="242" font-size="16" fill="#2B2A26" font-weight="700">수정</text><text x="283" y="272" font-size="15" fill="#625D52">실패한 기준의</text><text x="283" y="294" font-size="15" fill="#625D52">요소 하나 수정</text><rect x="8" y="210" width="226" height="108" rx="10" fill="#e0f2fe" stroke="#0284c7"/><circle cx="32" cy="236" r="12" fill="#0284c7"/><text x="32" y="241" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">6</text><text x="52" y="242" font-size="16" fill="#2B2A26" font-weight="700">기록</text><text x="24" y="272" font-size="15" fill="#625D52">프롬프트, 결과,</text><text x="24" y="294" font-size="15" fill="#625D52">평가 저장</text><line x1="234" y1="66" x2="265" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-a42)"/><line x1="493" y1="66" x2="524" y2="66" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-a42)"/><line x1="722" y1="120" x2="722" y2="208" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-a42)"/><line x1="526" y1="264" x2="495" y2="264" stroke="#625D52" stroke-width="1.5" marker-end="url(#m2-a42)"/><text x="509" y="202" font-size="15" fill="#8a5a00" font-weight="700" text-anchor="middle">불합격</text><path d="M639.0 318 V344 H121.0 V320" fill="none" stroke="#0284c7" stroke-width="1.5" marker-end="url(#m2-a42t)"/><text x="380.0" y="366" font-size="15" fill="#0377b6" font-weight="700" text-anchor="middle">합격</text><path d="M380.0 210 V165 H576 V122" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#m2-a42t)"/><text x="290.0" y="158" font-size="15" fill="#0377b6" font-weight="700">불합격 기준이 남으면 3단계로</text></svg></div><figcaption><b>그림 4-2. 프롬프트 개선 절차</b><ul class="capnote"><li>목표 정의부터 기록까지 6단계와 반복 구간</li></ul></figcaption></figure>
-<ol><li><b>목표 정의</b>: 결과물의 용도, 읽을 사람, 형식을 적습니다.</li><li><b>평가 기준</b>: 합격과 불합격을 가르는 기준을 적습니다.</li><li><b>초안 실행</b>: 프롬프트를 실행하고 결과를 저장합니다.</li><li><b>평가</b>: 기준별로 결과를 점검합니다.</li><li><b>수정</b>: 실패한 기준에 해당하는 요소 하나를 수정합니다. 한 번에 여러 요소를 수정하면 어느 수정이 효과를 냈는지 알 수 없기 때문입니다.</li><li><b>기록</b>: 프롬프트, 결과, 평가를 함께 저장합니다.</li></ol>
-
-<h3 id="criteria">평가 기준표</h3>
-<p>평가 기준은 프롬프트를 실행하기 전에 정합니다. 결과를 본 뒤에 기준을 정하면 결과에 맞춰 기준이 느슨해지기 때문입니다. 표 4-4는 대부분의 문서 작업에 적용할 수 있는 기준 네 가지입니다.</p>
-<figure class="fig" id="tbl-4-4"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w40"></colgroup>
-<thead><tr><th>기준</th><th>확인할 점</th><th>불합격 예제</th></tr></thead>
+<h3 id="criteria">결과물 평가 기준 네 가지</h3>
+<p>평가 기준은 프롬프트를 실행하기 전에 정합니다. 결과를 본 뒤에 기준을 정하면 결과에 맞춰 기준이 느슨해지기 때문입니다. 표 4-6은 대부분의 문서 작업에 적용할 수 있는 기준 네 가지입니다.</p>
+<figure class="fig" id="tbl-4-6"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w40"></colgroup>
+<thead><tr><th>평가 기준</th><th>확인할 점</th><th>불합격 예제</th></tr></thead>
 <tbody>
 <tr><td>정확성</td><td>사실과 수치가 원문과 일치</td><td>원문에 없는 수치 등장</td></tr>
 <tr><td>완전성</td><td>요청한 항목이 모두 포함</td><td>기한 열 누락</td></tr>
 <tr><td>형식</td><td>지정한 형식과 분량 준수</td><td>표 대신 문단으로 작성</td></tr>
 <tr><td>어조</td><td>읽을 사람과 용도에 맞는 문체</td><td>보고서에 구어체 사용</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-4. 결과물 평가 기준</b><ul class="capnote"><li>정확성, 완전성, 형식, 어조의 확인할 점과 불합격 예제</li></ul></figcaption></figure>
+<figcaption><b>표 4-6. 결과물 평가 기준</b></figcaption></figure>
 
-<h3 id="fixes">실패 유형별 수정</h3>
-<p>평가에서 불합격한 기준은 프롬프트 구성 요소 가운데 수정할 요소를 알려 줍니다. 예를 들어 요청과 다른 작업을 수행했다면 목적이, 수준이 맞지 않으면 맥락이 불충분한 것입니다. 표 4-5는 실패 유형별로 수정할 요소와 수정 예제입니다.</p>
-<figure class="fig" id="tbl-4-5"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w50"></colgroup>
-<thead><tr><th>실패 유형</th><th>수정할 요소</th><th>수정 예제</th></tr></thead>
+<h3 id="fixes">불합격한 기준에 따른 수정 요소</h3>
+<p>평가에서 불합격한 기준은 프롬프트 구성 요소 가운데 수정할 요소를 알려 줍니다. 예를 들어 요청과 다른 작업을 수행했다면 목적이, 수준이 맞지 않으면 맥락이 불충분한 것입니다. 표 4-7은 결과의 문제별로 수정할 요소와 수정 예제입니다.</p>
+<figure class="fig" id="tbl-4-7"><div class="table-wrap"><table class="fit-1 fit-2"><colgroup><col><col><col class="w50"></colgroup>
+<thead><tr><th>결과의 문제</th><th>수정할 요소</th><th>수정 예제</th></tr></thead>
 <tbody>
 <tr><td>요청과 다른 작업 수행</td><td>목적</td><td>동사를 구체화: &quot;정리&quot; 대신 &quot;세 문장으로 요약&quot;</td></tr>
 <tr><td>수준이 맞지 않음</td><td>맥락</td><td>읽을 사람과 배경지식 명시</td></tr>
@@ -139,40 +165,41 @@
 <tr><td>형식 불일치</td><td>출력 형식</td><td>빈 틀 예시 제공</td></tr>
 <tr><td>결과가 매번 다름</td><td>출력 형식(예시 추가)</td><td>Few-shot 예시 추가(Chapter 3), 생성 설정 temperature 낮춤(Chapter 3)</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-5. 실패 유형과 수정 방법</b><ul class="capnote"><li>실패 유형별로 수정할 구성 요소와 수정 예제</li></ul></figcaption></figure>
+<figcaption><b>표 4-7. 결과의 문제와 수정할 요소</b></figcaption></figure>
 
 <h3 id="testset">대표 입력으로 점검하기</h3>
 <p>여러 번 사용할 프롬프트는 대표 입력 몇 개를 시험 입력 모음으로 만들어 관리합니다. 프롬프트를 수정할 때마다 모음 전체로 다시 실행하면, 한 입력의 결과를 개선하려다 다른 입력의 결과가 저하되는 문제를 발견할 수 있습니다.</p>
 
-<h3 id="record">기록 방법</h3>
-<p>프롬프트를 수정할 때마다 무엇을 변경했고 결과가 어떻게 달라졌는지 기록합니다. 한 번에 한 요소만 변경하고 기록하면, 결과가 좋아졌을 때 어느 수정 덕분인지 알 수 있습니다. 기록 항목(차수, 변경한 요소, 결과, 다음에 할 일)은 이 책이 정한 형식입니다. 표 4-6은 교육 안내문을 표로 정리하는 프롬프트를 세 번 수정한 기록의 예입니다.</p>
-<figure class="fig" id="tbl-4-6"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w35"><col></colgroup>
+<h3 id="record">차수별 수정 기록</h3>
+<p>프롬프트를 수정할 때마다 무엇을 변경했고 결과가 어떻게 달라졌는지 기록합니다. 한 번에 한 요소만 변경하고 기록하면, 결과가 좋아졌을 때 어느 수정 덕분인지 알 수 있습니다. 기록 항목은 차수, 변경한 요소, 결과, 다음에 할 일의 네 가지입니다. 표 4-8은 교육 안내문을 표로 정리하는 프롬프트를 세 번 수정한 기록의 예입니다.</p>
+<figure class="fig" id="tbl-4-8"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w35"><col></colgroup>
 <thead><tr><th>차수</th><th>변경한 요소</th><th>결과</th><th>다음에 할 일</th></tr></thead>
 <tbody>
 <tr><td>1</td><td>처음 요청 "이 교육 안내문 정리해 줘."</td><td>문단으로 요약되어 신청 기한이 문장 속에 묻힘</td><td>출력 형식 지정</td></tr>
 <tr><td>2</td><td>출력 형식: 항목, 내용, 기한 표</td><td>신청 기한, 교육일, 준비물이 표에 따로 정리됨</td><td>안내문에 없는 내용이 섞였는지 확인</td></tr>
 <tr><td>3</td><td>제약 조건: 안내문에 없는 내용은 포함하지 마</td><td>안내문에 없던 "점심 제공" 항목이 사라짐</td><td>기록 종료</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-6. 프롬프트 수정 기록 예</b><ul class="capnote"><li>교육 안내문 정리 프롬프트를 세 번 수정한 차수별 변경과 결과</li></ul></figcaption></figure>
+<figcaption><b>표 4-8. 프롬프트 수정 기록 예</b></figcaption></figure>
+
 <h2 id="revision">대화하며 답변 수정하기</h2>
 <p>AI의 첫 답변이 기대와 다르면, 처음부터 다시 요청하기보다 같은 대화에서 수정해 나가는 경우가 많습니다. 이때 무엇을 어떻게 전달하느냐에 따라 원하는 답변에 닿기까지 걸리는 횟수가 달라집니다. 대화 중에 답변을 수정할 때는 다음 세 가지를 먼저 정합니다.</p>
 <ul><li><b>피드백 방식</b>: 무엇이 문제인지, 어떤 기준에 맞지 않는지, 어디까지 수정할지를 나눠 전달합니다.</li><li><b>대화를 이어 갈지 여부</b>: 앞의 맥락이 도움이 되면 같은 대화에서 이어 가고, 잘못된 가정이 쌓였으면 새 대화에서 시작합니다.</li><li><b>방안의 설정</b>: 방향이 정해져 있으면 한 안을 다듬고, 방향이 정해지지 않았으면 서로 다른 안을 여러 개 받아 비교합니다.</li></ul>
 
 <h3 id="feedback">구조화된 피드백</h3>
-<p>피드백은 현상, 기준, 요청의 세 부분으로 나눠 작성합니다. "다시 해 줘", "더 좋게" 같은 피드백은 수정 방향을 알려 주지 않기 때문입니다. 표 4-7은 세 부분의 내용과 작성 예제입니다.</p>
-<figure class="fig" id="tbl-4-7"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w60"></colgroup>
-<thead><tr><th>부분</th><th>내용</th><th>작성 예제</th></tr></thead>
+<p>피드백은 현상, 기준, 요청의 세 부분으로 나눠 작성합니다. "다시 해 줘", "더 좋게" 같은 피드백은 수정 방향을 알려 주지 않기 때문입니다. 표 4-9는 세 부분에 담을 것과 작성 예제입니다.</p>
+<figure class="fig" id="tbl-4-9"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w30"><col class="w60"></colgroup>
+<thead><tr><th>부분</th><th>담을 것</th><th>작성 예제</th></tr></thead>
 <tbody>
 <tr><td>현상</td><td>답변에서 문제가 된 부분을 지목</td><td>두 번째 문단의 매출 수치가 표와 달라.</td></tr>
 <tr><td>기준</td><td>무엇이 맞는지, 왜 문제인지</td><td>표의 3분기 매출은 12억 원이야.</td></tr>
 <tr><td>요청</td><td>수정 범위와 방식</td><td>두 번째 문단만 표 수치로 수정하고 나머지는 그대로 둬.</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-7. 피드백 구성</b><ul class="capnote"><li>피드백을 현상, 기준, 요청으로 나눈 작성 예제</li></ul></figcaption></figure>
+<figcaption><b>표 4-9. 피드백 구성</b></figcaption></figure>
 <p>요청 부분에는 수정 범위를 적습니다. 범위를 적지 않으면 모델이 문제가 없던 부분까지 다시 작성하고, 사람은 이미 확인한 부분을 다시 검토해야 합니다.</p>
 
 <h3 id="conversation">대화를 이어 갈 때와 새로 시작할 때</h3>
-<p>같은 대화에서 수정을 이어 가면 앞의 지시와 답변이 맥락으로 쌓입니다. 쌓인 맥락 덕분에 같은 설명을 반복하지 않아도 되지만, 초기의 잘못된 가정이나 폐기한 초안도 함께 남아 다음 답변에 영향을 줍니다. 따라서 상황에 따라 대화를 이어 갈지 새로 시작할지 정합니다(표 4-8).</p>
-<figure class="fig" id="tbl-4-8"><div class="table-wrap"><table><colgroup><col class="w40"><col class="w60"></colgroup>
+<p>같은 대화에서 수정을 이어 가면 앞의 지시와 답변이 맥락으로 쌓입니다. 쌓인 맥락 덕분에 같은 설명을 반복하지 않아도 되지만, 초기의 잘못된 가정이나 폐기한 초안도 함께 남아 다음 답변에 영향을 줍니다. 따라서 상황에 따라 대화를 이어 갈지 새로 시작할지 정합니다(표 4-10).</p>
+<figure class="fig" id="tbl-4-10"><div class="table-wrap"><table><colgroup><col class="w40"><col class="w60"></colgroup>
 <thead><tr><th>상황</th><th>권장 방식</th></tr></thead>
 <tbody>
 <tr><td>같은 결과물을 조금씩 다듬음</td><td>같은 대화에서 계속</td></tr>
@@ -180,9 +207,8 @@
 <tr><td>대화가 길어져 앞의 지시가 무시됨</td><td>지금까지 확정한 조건을 요약하게 한 뒤 새 대화에 입력</td></tr>
 <tr><td>여러 결과물을 한 대화에서 만듦</td><td>결과물별로 대화 분리</td></tr>
 </tbody></table></div>
-<figcaption><b>표 4-8. 대화를 이어 갈 때와 새로 시작할 때</b><ul class="capnote"><li>같은 대화를 이어 갈 상황과 새 대화를 열 상황의 구분</li></ul></figcaption></figure>
-
-<h3 id="parallel">병렬 탐색</h3>
+<figcaption><b>표 4-10. 대화를 이어 갈 때와 새로 시작할 때</b></figcaption></figure>
+<h3 id="parallel">여러 안을 받아 비교하는 병렬 탐색</h3>
 <p>병렬 탐색은 AI가 여러 답을 스스로 평가하게 하는 기법(Chapter 3의 Tree of Thoughts)이 아니라, 사람이 여러 초안을 받아 비교하고 선택하는 방법입니다. 결과물의 방향이 정해지지 않았을 때는 하나를 수정해 나가기보다 서로 다른 안을 여러 개 만든 뒤 선택합니다. 한 안을 계속 수정하면 처음 방향에서 벗어나기 어렵기 때문입니다. 아래 예제는 구성 방식이 다른 목차 세 가지를 요청합니다.</p>
 <pre><code>사내 문서 보관 규칙 개정 설명회의 발표 목차를 세 가지 방향으로 만들어 줘.
 
@@ -196,21 +222,91 @@
 1안은 문제 제기로 시작하고, 2안은 결론을 먼저 제시하고, 3안은 실제 문서 분실 사례로 시작해 줘.
 각 안마다 슬라이드 제목을 6장 안으로 적고, 예상 반발에 답하는 슬라이드의 위치와 이 구성이 맞는 청중을 적어 줘.</code></pre>
 
+<h2 id="example">예제: 교육 안내문 정리의 원문 대조</h2>
+<p>이 절은 원문 대조를 사내 교육 안내문을 표로 정리한 답변(이하 교육 안내문 정리)에 적용합니다. 근거 표시와 모름 허용을 지시한 프롬프트로 답변을 받고, 답변의 각 행을 원문과 대조합니다.</p>
+<pre><code>아래 안내문을 항목과 세부 사항 두 열의 표로 정리해 줘. 표 오른쪽에 근거 열을 두고, 근거가 된 안내문 줄의 항목 이름을 적어 줘. 안내문에 없는 내용은 포함하지 말고, 확인할 수 없는 항목은 '안내문에 없음'으로 적어 줘.
+
+&lt;안내문&gt;
+[사내 교육] 문서 보안 기초 과정 안내
+- 교육일: 2026년 11월 12일(목) 14:00~16:00
+- 장소: 본관 3층 대회의실
+- 대상: 신청자 가운데 선착순 40명
+- 신청 기한: 11월 5일(목) 18:00까지, 사내 교육 시스템에서 신청
+- 준비물: 노트북(사내 보안 프로그램 설치)
+- 문의: 인재개발팀 내선 2040
+&lt;/안내문&gt;</code></pre>
+<p>표 4-11은 이 프롬프트에 대한 답변의 예입니다. 대조 과정을 보이기 위해 오류 두 곳을 일부러 포함한 가상의 답변입니다.</p>
+<figure class="fig" id="tbl-4-11"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w20"><col class="w55"><col class="w25"></colgroup>
+<thead><tr><th>항목</th><th>세부 사항</th><th>근거</th></tr></thead>
+<tbody>
+<tr><td>교육일</td><td>11월 12일(목) 14:00~16:00</td><td>교육일</td></tr>
+<tr><td>장소</td><td>본관 3층 대회의실</td><td>장소</td></tr>
+<tr><td>대상</td><td>선착순 50명</td><td>대상</td></tr>
+<tr><td>신청 기한</td><td>11월 5일(목) 18:00까지, 사내 교육 시스템</td><td>신청 기한</td></tr>
+<tr><td>준비물</td><td>노트북(사내 보안 프로그램 설치), 점심 제공</td><td>준비물</td></tr>
+<tr><td>문의</td><td>인재개발팀 내선 2040</td><td>문의</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-11. 교육 안내문 정리의 답변 예</b></figcaption></figure>
+<p>대조는 행마다 근거 열이 가리키는 안내문 줄을 찾아 세부 사항과 한 단어씩 비교하는 방식으로 진행합니다. 표 4-12는 그 결과입니다.</p>
+<figure class="fig" id="tbl-4-12"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w20"><col class="w40"><col class="w40"></colgroup>
+<thead><tr><th>항목</th><th>안내문의 해당 줄</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>대상</td><td>신청자 가운데 선착순 40명</td><td>내재적 환각(인원이 안내문과 다름), 40명으로 수정</td></tr>
+<tr><td>준비물</td><td>노트북(사내 보안 프로그램 설치)</td><td>외재적 환각(점심 제공은 안내문에 없음), 삭제</td></tr>
+<tr><td>나머지 네 항목</td><td>교육일, 장소, 신청 기한, 문의 줄</td><td>일치</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-12. 교육 안내문 정리의 원문 대조 결과</b></figcaption></figure>
+<p>두 오류 모두 근거 열은 올바른 줄을 가리켰습니다. 출처 표시는 대조할 위치를 알려 줄 뿐 내용이 맞다는 보증은 아니므로, 근거가 적혀 있어도 내용을 원문과 비교합니다. 오류가 나오면 답변만 수정하지 않고, 다음 실행에서 같은 오류가 줄도록 프롬프트도 점검합니다. 표 4-8의 3차 수정이 그런 점검의 예입니다.</p>
+
+<h2 id="fail">실패를 예방하는 장치</h2>
+<p>환각 대응과 결과 개선의 실패는 대부분 확인을 건너뛰거나, 확인과 수정을 한 번에 몰아서 하는 데서 나옵니다. 표 4-13은 실패마다 그 원인과 원인을 막는 장치를 짝지어 정리한 것입니다.</p>
+<figure class="fig" id="tbl-4-13"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w30"><col class="w35"><col class="w35"></colgroup>
+<thead><tr><th>실패 유형</th><th>원인</th><th>방지 장치</th></tr></thead>
+<tbody>
+<tr><td>존재하지 않는 출처나 판례를 사용함</td><td>결과를 만든 AI에게 다시 물어 확인함</td><td>학술 검색이나 기관 누리집에서 원문을 직접 찾음</td></tr>
+<tr><td>원문과 다른 수치가 문서에 들어감</td><td>근거 자료 없이 요청함</td><td>근거 자료를 제공하고 근거 위치를 표시하게 함</td></tr>
+<tr><td>근거가 약한 항목이 목록에 섞임</td><td>요청에서 개수를 정함</td><td>개수를 정하지 않고 근거가 있는 항목만 요청</td></tr>
+<tr><td>대부분 맞는 결과 속의 오류를 놓침</td><td>자동화 편향으로 확인을 건너뜀</td><td>확인 항목을 목록으로 정해 매번 같은 순서로 확인</td></tr>
+<tr><td>어느 수정이 효과를 냈는지 모름</td><td>여러 요소를 한 번에 수정함</td><td>요소 하나씩 수정하고 차수별로 기록</td></tr>
+<tr><td>한 입력은 나아졌는데 다른 입력이 나빠짐</td><td>수정 효과를 입력 하나로만 확인함</td><td>대표 입력 모음 전체로 다시 실행</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-13. 환각 대응과 결과 개선에서 생길 수 있는 실패를 예방하는 장치</b></figcaption></figure>
+
+<h2 id="check">결과의 확인 방법</h2>
+<p>결과를 사용하기 전에 무엇을 어떤 기준으로 확인할지 정해 두면, 확인이 사람의 기억이나 그날의 주의력에 좌우되지 않습니다. 표 4-14는 확인 항목마다 확인 방법과 확인 기준을 정리한 것입니다.</p>
+<figure class="fig" id="tbl-4-14"><div class="table-wrap"><table class="fit-1"><colgroup><col class="w25"><col class="w40"><col class="w35"></colgroup>
+<thead><tr><th>확인 항목</th><th>확인 방법</th><th>확인 기준</th></tr></thead>
+<tbody>
+<tr><td>수치</td><td>원문의 값, 단위, 기준 연도와 대조</td><td>세 가지가 모두 원문과 같음</td></tr>
+<tr><td>인용</td><td>원문에서 같은 문장을 검색</td><td>같은 문장이 원문에 있음</td></tr>
+<tr><td>고유명사와 날짜</td><td>철자, 연도, 사건 순서를 원문과 대조</td><td>철자, 연도, 순서가 원문과 같음</td></tr>
+<tr><td>참고문헌</td><td>학술 검색으로 실제 존재를 확인</td><td>저자, 제목, 연도가 검색 결과와 같음</td></tr>
+<tr><td>핵심 사실</td><td>독립된 출처를 한 곳 이상 더 확인</td><td>서로 인용하지 않는 출처 두 곳 이상의 내용이 같음</td></tr>
+<tr><td>개선한 프롬프트</td><td>대표 입력 모음으로 다시 실행</td><td>모든 입력이 평가 기준 네 가지에 합격</td></tr>
+</tbody></table></div>
+<figcaption><b>표 4-14. 환각 대응과 결과 개선의 확인 방법</b></figcaption></figure>
+
+<h2 id="principle">설계 원칙과 점검 질문</h2>
+<p class="principle">AI 결과는 문장의 자연스러움이 아니라 원문을 기준으로 확인하고, 프롬프트는 기준을 먼저 정한 뒤 한 요소씩 개선합니다.</p>
+<ul><li>이 결과에서 오류가 있을 때 영향이 가장 큰 사실은 무엇이고, 그 사실을 원문과 대조했는가?</li><li>핵심 사실을 서로 인용하지 않는 출처 두 곳 이상에서 확인했는가?</li><li>프롬프트를 수정하기 전에 평가 기준을 정했고, 이번에 수정한 요소가 하나인가?</li></ul>
 
 </article>
 <footer class="site-foot">생성형 AI, 묻고 확인하고 활용하기 — 작동 원리, 프롬프트, 검증, 책임</footer>
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
-<li><a href="#types">환각 유형</a></li>
-<li><a href="#features">환각의 특징</a></li>
-<li><a href="#causes">환각의 원인</a></li>
-<li><a href="#signals">의심 신호</a></li>
-<li><a href="#measures">대응 방법</a></li>
-<li><a href="#automation-bias">자동화 편향</a></li>
-<li><a href="#checklist">검토 목록</a></li>
-<li><a href="#practice">확인 연습</a></li>
-<li><a href="#cycle">개선 절차</a></li>
+<li><a href="#types">입력과의 관계로 나누는 환각 유형</a></li>
+<li><a href="#features">정확한 답과 겉모습이 같은 환각의 특징</a></li>
+<li><a href="#causes">확률로 문장을 만드는 데서 오는 환각의 원인</a></li>
+<li><a href="#signals">먼저 확인할 환각 의심 신호</a></li>
+<li><a href="#measures">적용 위치에 따른 환각 대응 방법</a></li>
+<li><a href="#crosscheck">원문과 독립된 출처로 확인하는 교차 검증</a></li>
+<li><a href="#automation-bias">확인을 건너뛰게 하는 자동화 편향</a></li>
+<li><a href="#cycle">평가 기준을 먼저 정하는 개선 절차</a></li>
 <li><a href="#revision">대화하며 답변 수정하기</a></li>
+<li><a href="#example">예제: 교육 안내문 정리의 원문 대조</a></li>
+<li><a href="#fail">실패를 예방하는 장치</a></li>
+<li><a href="#check">결과의 확인 방법</a></li>
+<li><a href="#principle">설계 원칙과 점검 질문</a></li>
 </ol></aside>
 </div>
 </body>
