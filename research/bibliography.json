@@ -305,5 +305,12 @@
     "venue": "Scientific Reports 13. doi:10.1038/s41598-023-41032-5",
     "url": "https://doi.org/10.1038/s41598-023-41032-5",
     "date": "2023"
+  },
+  "anthropic-economic-index-2025": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "The Anthropic Economic Index",
+    "venue": "Anthropic",
+    "url": "https://www.anthropic.com/news/the-anthropic-economic-index"
   }
 }
