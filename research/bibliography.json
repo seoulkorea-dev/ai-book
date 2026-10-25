@@ -291,5 +291,20 @@
     "title": "2M1207b - first image of an exoplanet",
     "venue": "ESO",
     "url": "https://www.eso.org/public/images/26a_big-vlt/"
+  },
+  "dellacqua-2026": {
+    "type": "paper",
+    "author": "Dell'Acqua, F. 외",
+    "title": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality",
+    "venue": "Organization Science. doi:10.1287/orsc.2025.21838 (2023년 Harvard Business School Working Paper 24-013으로 처음 공개)",
+    "url": "https://doi.org/10.1287/orsc.2025.21838",
+    "date": "2026"
+  },
+  "wef-2025": {
+    "type": "web",
+    "author": "World Economic Forum",
+    "title": "The Future of Jobs Report 2025",
+    "venue": "World Economic Forum (2025-01)",
+    "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
   }
 }
