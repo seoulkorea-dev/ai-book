@@ -2,8 +2,8 @@
 
 사용법:
   pip install scikit-learn
-  git clone --depth 1 https://github.com/zakedu/genai-book.git ../genai-book
-  python3 similarity_check.py --ab src --gb ../genai-book/docs [--out sim.json]
+  git clone --depth 1 https://github.com/zakedu/genai-book.git ../zakedu-genai-book  (이 저장소 이름과 겹치지 않게)
+  python3 similarity_check.py --ab src --gb ../zakedu-genai-book/docs [--out sim.json]
 
 판정 구간(단위 점수): 일치율 0.95 이상 100, 0.80~0.95 90, 0.60~0.80 70, 그 밖 0
 단위: 설명 문장, 표 행, 예제(코드 상자), 제목
