@@ -1,21 +1,25 @@
 """원고 구조 검사 (STYLE.md 3절, CLAUDE.md 캡션 규칙). 위반이 없으면 출력 없음.
-1. 캡션 설명(capnote)은 정확히 1줄
+1. 캡션 설명(capnote)은 0줄 또는 1줄(작가 결정 2026-10-23: 부연 설명이 필요 없으면 두지 않음)
 2. 절 제목(h2, h3) 바로 뒤에 그림이나 표를 두지 않음
 3. 요약 그림은 캡션에서 가리키는 같은 절의 표보다 앞에 둠
 4. 병합 셀(rowspan)이 있는 표에는 둘째 열 이후의 줄바꿈 금지 클래스(fit-2~)를 쓰지 않음
+5. 장마다 참고 자료 항목과 본문 링크가 있고, 끊긴 링크가 없음
 """
-import glob, re, sys
+import glob, os, re, sys
+from pathlib import Path
 
-ROOT = __file__.rsplit('/lint/', 1)[0]
-pages = ([f'{ROOT}/index.html'] + sorted(glob.glob(f'{ROOT}/chapters/*.html'))
-         + sorted(glob.glob(f'{ROOT}/appendix/*.html')))
+ROOT = Path(__file__).resolve().parent.parent.as_posix()
+# glob 결과의 구분자를 /로 맞춘다(Windows). path[len(ROOT) + 1:]로 이름을 만들기 때문
+glob_ = lambda pat: sorted(p.replace('\\', '/') for p in glob.glob(pat))
+pages = ([f'{ROOT}/index.html'] + glob_(f'{ROOT}/chapters/*.html')
+         + glob_(f'{ROOT}/appendix/*.html'))
 errors = []
 for path in pages:
     s = open(path, encoding='utf-8').read()
     name = path[len(ROOT) + 1:]
     for m in re.finditer(r'<figcaption><b>([^<.]+)\.[^<]*</b>(.*?)</figcaption>', s, re.S):
         n = len(re.findall(r'<li>', m.group(2)))
-        if n != 1:
+        if n > 1:
             errors.append(f'{name}: {m.group(1)} 캡션 설명 {n}줄')
     for m in re.finditer(r'<(h2|h3)[^>]*>([^<]*)</\1>\s*<figure', s, re.S):
         errors.append(f'{name}: 절 "{re.sub(r"<[^>]+>", "", m.group(2))}" 제목 바로 뒤에 그림 또는 표')
@@ -37,7 +41,7 @@ for path in pages:
     if 'http-equiv="refresh"' in s:
         _main = ''  # 이동 쪽은 새 쪽 맨 위로 안내하는 것이 목적이라 제외
     for m in re.finditer(r'href="[^"]*references\.html(#[^"]*)?"', _main):
-        if not (m.group(1) or '').startswith('#ref-'):
+        if not (m.group(1) or '').startswith(('#ref-', '#bib-')):  # #bib-N은 새 인용 방식의 참고 문헌 항목(D-131)
             errors.append(f'{name}: 참고 자료 링크에 항목 id 없음')
     if not name.endswith(('index.html', 'epilogue.html')):
         body = re.sub(r'<table.*?</table>', ' ', _main, flags=re.S)
@@ -60,16 +64,74 @@ for path in pages:
 # 용어 풀이 표제어가 본문(표지, 장, 마치며)에 1회 이상 나오는지(2026-10-03, 64차)
 import html as _html
 _body = ''
-for _f in ['index.html'] + sorted(glob.glob(f'{ROOT}/chapters/*.html')):
-    _p = _f if _f.startswith('/') else f'{ROOT}/{_f}'
+for _f in ['index.html'] + glob_(f'{ROOT}/chapters/*.html'):
+    _p = _f if os.path.isabs(_f) else f'{ROOT}/{_f}'
     _t = open(_p, encoding='utf-8').read()
     _m = re.search(r'<main\b.*?</main>', _t, re.S)
     _body += _html.unescape(re.sub(r'<[^>]+>', ' ', _m.group(0) if _m else _t))
-_terms = open(f'{ROOT}/appendix/terms.html', encoding='utf-8').read()
+# 용어 풀이 쪽이 있을 때만 검사(설계 단계에는 부록이 없음)
+_tp = f'{ROOT}/appendix/terms.html'
+_terms = open(_tp, encoding='utf-8').read() if os.path.exists(_tp) else ''
 for _dt in re.findall(r'<dt[^>]*>(.*?)</dt>', _terms):
     _head = re.sub(r'<[^>]+>', '', _dt).split('(')[0].strip()
     if _head and _head not in _body:
         errors.append(f'appendix/terms.html: 본문에 없는 표제어 {_head}')
+
+# 참고 자료 링크 검사(1차 검수 25번): 장마다 항목 1개 이상, 항목마다 본문 링크 1개 이상, 끊긴 링크 0, id 형식
+_refp = f'{ROOT}/appendix/references.html'
+_ref_ids = set(re.findall(r'id="(ref-[^"]+)"', open(_refp, encoding='utf-8').read())) if os.path.exists(_refp) else set()
+for _f in glob_(f'{ROOT}/chapters/ch*.html'):
+    _n = _f[len(ROOT) + 1:]
+    _t = open(_f, encoding='utf-8').read()
+    if 'http-equiv="refresh"' in _t:
+        continue
+    _ids = re.findall(r'id="(ref-[^"]+)"', _t)
+    _local = re.findall(r'href="#(ref-[^"]+)"', _t)
+    _remote = re.findall(r'href="[^"]*references\.html#(ref-[^"]+)"', _t)
+    _fn = ('class="fnref"' in _t and '<h2 id="refs">' in _t) or 'class="cite"' in _t  # 새 인용 방식(D-131)은 부록 끝 참고 문헌  # 각주로 정비한 장(D-123)은 참고 자료에 id와 본문 링크가 없음
+    if not _ids and not _remote and not _fn:
+        errors.append(f'{_n}: 참고 자료 항목 없음')
+    for _i in _ids:
+        if not re.fullmatch(r'ref-[a-z]+-[0-9]{4}[a-z]?', _i):
+            errors.append(f'{_n}: 참고 자료 id 형식 위반 {_i}')
+        if _i not in _local:
+            errors.append(f'{_n}: 본문 링크가 없는 참고 자료 항목 {_i}')
+    for _h in _local:
+        if _h not in _ids:
+            errors.append(f'{_n}: 끊긴 참고 자료 링크 #{_h}')
+    for _h in _remote:
+        if _h not in _ref_ids:
+            errors.append(f'{_n}: 끊긴 참고 자료 링크 references.html#{_h}')
+
+
+# 장마다 첫 등장 병기 검사(2차 검수 26번, D-041): 용어 풀이의 "한글(원어" 표제어가 장 쪽(ch01~ch10) 본문에
+# 처음 나올 때 바로 뒤에 "(원어"가 있어야 한다. 제목, 표, 그림, 캡션, 코드 상자, 요점 상자, 버전 주석, 참고 자료 절은 제외.
+_pairs = []
+for _dt in re.findall(r'<dt[^>]*>(.*?)</dt>', _terms):
+    _m = re.match(r'([가-힣][가-힣 ]*)\(([A-Za-z][^,)]*)', re.sub(r'<[^>]+>', '', _dt))
+    if _m:
+        _pairs.append((_m.group(1).strip(), _m.group(2).strip()))
+if _pairs:
+    _alt = re.compile('|'.join(re.escape(k) for k, _ in sorted(_pairs, key=lambda x: -len(x[0]))))
+    for _f in glob_(f'{ROOT}/chapters/ch[0-9]*.html'):
+        _n = _f[len(ROOT) + 1:]
+        _t = open(_f, encoding='utf-8').read()
+        _m = re.search(r'<main\b.*?</main>', _t, re.S)
+        _t = _m.group(0) if _m else _t
+        _t = re.split(r'<h2 id="refs"', _t)[0]
+        _t = re.sub(r'<footer\b.*?</footer>', ' ', _t, flags=re.S)  # 쪽 바닥글(책 제목)은 본문이 아님. 참고 자료 절이 없는 장(D-131)에서도 제외
+        _t = re.sub(r'<(h[1-6]|table|figure|figcaption|pre|aside|svg)\b.*?</\1>', ' ', _t, flags=re.S)
+        _t = re.sub(r'<ul class="summary">.*?</ul>', ' ', _t, flags=re.S)
+        _t = re.sub(r'<p class="(claim|principle)">.*?</p>', ' ', _t, flags=re.S)  # 주장 제목과 원칙(D-104)은 제목처럼 병기 제외
+        _t = _html.unescape(re.sub(r'<[^>]+>', '', _t))
+        _seen = set()
+        for _mm in _alt.finditer(_t):
+            _k = _mm.group(0)
+            if _k in _seen:
+                continue
+            _seen.add(_k)
+            if not _t[_mm.end():].startswith('('):
+                errors.append(f'{_n}: 병기 누락 {_k}')
 
 print('\n'.join(errors), end='\n' if errors else '')
 sys.exit(1 if errors else 0)

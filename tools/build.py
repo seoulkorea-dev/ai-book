@@ -3,6 +3,8 @@
 - 원고는 src/ 아래 HTML 조각(본문만)을 고친다. 루트의 index.html, chapters/, appendix/ 는 빌드 결과물이므로 직접 고치지 않는다.
 - 목차와 페이지 정보는 src/site.json 에 있다.
 - 빌드는 다른 쪽의 "표 3-1", "그림 8-1" 참조에만 링크를 건다. 같은 쪽 참조는 글자만 둔다. 없는 번호를 가리키면 멈춘다.
+- 인용(BOOK_STANDARD.md 8절, D-131): 원고의 <sup class="cite" data-ref="키"></sup>에 목차 순서로 처음 인용된 순서대로 책 전체 번호를 매기고,
+  research/bibliography.json으로 부록 끝 "참고 문헌" 쪽(site.json에서 generated)을 만든다. 없는 키를 가리키면 멈춘다.
 실행: python3 tools/build.py
 """
 import html
@@ -18,8 +20,47 @@ SUB = "작동 원리, 프롬프트, 검증, 책임"
 site = json.loads((SRC / "site.json").read_text(encoding="utf-8"))
 NAV = site["nav"]
 META = site["pages"]
-ORDER = [pid for _, ids in NAV for pid in ids]
-BODY = {pid: (SRC / META[pid]["path"]).read_text(encoding="utf-8") for pid in ORDER}
+ORDER = ["index"] + [pid for _, ids in NAV for pid in ids if pid != "index"]
+BODY = {pid: (SRC / META[pid]["path"]).read_text(encoding="utf-8") for pid in ORDER if not META[pid].get("generated")}
+
+# 인용: 책 전체 번호(같은 자료는 같은 번호), 부록 끝 참고 문헌
+BIB = {k: v for k, v in json.loads((ROOT / "research" / "bibliography.json").read_text(encoding="utf-8")).items() if not k.startswith("_")}
+CITE_RUN = re.compile(r'(?:<sup class="cite" data-ref="[^"]+"></sup>)+')
+CITE_KEY = re.compile(r'<sup class="cite" data-ref="([^"]+)"></sup>')
+CITE_NO = {}
+for _pid in ORDER:
+    for _k in CITE_KEY.findall(BODY.get(_pid, "")):
+        if _k not in BIB:
+            raise SystemExit(f"bibliography.json에 없는 자료 키: {META[_pid]['path']} {_k}")
+        CITE_NO.setdefault(_k, len(CITE_NO) + 1)
+REF_PAGE = next((pid for pid in ORDER if META[pid].get("generated") == "references"), None)
+
+
+def bib_entry(e):
+    # 항목 글(저자, 제목, 매체)을 주소 링크로 감싸고 주소는 글로 드러내지 않음, 발행일은 링크 밖, 열람일 없음(이슈 #66 08:53)
+    venue = f'《{e["venue"]}》' if e["type"] == "web" else e["venue"]
+    text = html.escape(f'{e["author"]}, “{e["title"]}”, {venue}', quote=False)
+    link = f'<a href="{html.escape(e["url"])}">{text}</a>'
+    return link if e["type"] == "web" else f'{link}, {html.escape(e["date"], quote=False)}.'
+
+
+def cites(pid, body):
+    if not REF_PAGE:
+        return body
+    href = rel(META[pid]["path"], META[REF_PAGE]["path"])
+
+    def one(m):
+        keys = CITE_KEY.findall(m.group(0))
+        links = ",".join(f'<a href="{href}#bib-{CITE_NO[k]}">{CITE_NO[k]}</a>' for k in keys)
+        return f'<sup class="cite">{links}</sup>'
+    return CITE_RUN.sub(one, body)
+
+
+if REF_PAGE:
+    items = "".join(f'<li id="bib-{n}">{bib_entry(BIB[k])}</li>' for k, n in sorted(CITE_NO.items(), key=lambda x: x[1]))
+    BODY[REF_PAGE] = (f'<h1>{META[REF_PAGE]["title"]}</h1>\n'
+                      '<p class="lead">본문의 위첨자 번호가 가리키는 자료입니다. 번호는 시작하며부터 목차 순서로 처음 인용된 순서이고, 같은 자료는 몇 번 인용해도 같은 번호입니다.</p>\n'
+                      f'<ol class="bib">{items}</ol>\n')
 
 
 def rel(frm, to):
@@ -110,7 +151,7 @@ def page(pid, body):
     m = META[pid]
     cp = m["path"]
     full_title = BOOK if pid == "index" else f"{m['title']} | {BOOK}"
-    foot = f"{BOOK}: {SUB}."
+    foot = f"{BOOK} — {SUB}"
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -130,7 +171,6 @@ def page(pid, body):
 <a class="brand" href="{rel(cp, 'index.html')}">{BOOK}</a>
 <span class="spacer"></span>
 <a class="navlink" href="#sidenav">전체 목차</a>
-<a href="https://github.com/seoulkorea-dev/ai-book">저장소</a>
 </header>
 <div class="layout">
 {build_nav(pid)}
@@ -148,7 +188,7 @@ def page(pid, body):
 
 
 for pid in ORDER:
-    body = link_refs(pid, unique_markers(BODY[pid]))
+    body = link_refs(pid, unique_markers(cites(pid, BODY[pid])))
     out = ROOT / META[pid]["path"]
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page(pid, body), encoding="utf-8")
