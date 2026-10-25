@@ -119,11 +119,11 @@
   "redirects": {
     "appendix/b-tools.html": [
       "chapters/ch07.html#tool-sheet",
-      "Chapter 7 제품 비교 점검표"
+      "Chapter 7 확인 날짜를 남기는 제품 비교 점검표"
     ],
     "appendix/e-self-check.html": [
       "chapters/ch07.html#self-assessment",
-      "Chapter 7 자기 평가표"
+      "Chapter 7 행동으로 평가하는 자기 평가표"
     ],
     "appendix/f-trends.html": [
       "index.html#structure",
