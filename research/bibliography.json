@@ -173,5 +173,40 @@
     "venue": "arXiv:1904.09751",
     "url": "https://arxiv.org/abs/1904.09751",
     "date": "2019"
+  },
+  "anthropic-opus-4-6": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Introducing Claude Opus 4.6",
+    "venue": "Anthropic",
+    "url": "https://www.anthropic.com/news/claude-opus-4-6"
+  },
+  "anthropic-thinking": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Thinking",
+    "venue": "Claude Docs",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/thinking"
+  },
+  "anthropic-model-migration": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Claude Haiku 5.5 migration guide",
+    "venue": "Claude Docs",
+    "url": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide"
+  },
+  "anthropic-api-2026-10-21": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Migrating to API version 2026-10-21",
+    "venue": "Claude Docs",
+    "url": "https://platform.claude.com/docs/en/api/migration-2026-10-21"
+  },
+  "openai-reasoning-best-practices": {
+    "type": "web",
+    "author": "OpenAI",
+    "title": "Reasoning best practices",
+    "venue": "OpenAI API Docs",
+    "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices"
   }
 }
