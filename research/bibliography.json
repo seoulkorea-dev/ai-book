@@ -74,8 +74,32 @@
   "anthropic-xml-tags": {
     "type": "web",
     "author": "Anthropic",
-    "title": "Use XML tags to structure your prompts",
+    "title": "Prompting best practices",
     "venue": "Claude Docs",
-    "url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags"
+    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+  },
+  "moran-2024": {
+    "type": "web",
+    "author": "Moran, K.",
+    "title": "CARE: Structure for Crafting AI Prompts",
+    "venue": "Nielsen Norman Group",
+    "url": "https://www.nngroup.com/articles/careful-prompts/",
+    "date": "2024"
+  },
+  "teo-2023": {
+    "type": "web",
+    "author": "Teo, S.",
+    "title": "How I Won Singapore's GPT-4 Prompt Engineering Competition",
+    "venue": "Towards Data Science",
+    "url": "https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41/",
+    "date": "2023-12-29"
+  },
+  "zheng-2024": {
+    "type": "paper",
+    "author": "Zheng, M. 외",
+    "title": "When \"A Helpful Assistant\" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models",
+    "venue": "Findings of EMNLP 2024",
+    "url": "https://arxiv.org/abs/2311.10054",
+    "date": "2024"
   }
 }
