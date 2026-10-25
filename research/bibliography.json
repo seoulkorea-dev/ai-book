@@ -432,5 +432,48 @@
     "title": "Bartz v. Anthropic PBC, No. 3:24-cv-05417, 합의 예비 승인(2025-09-25)과 최종 승인(2026-07-20)",
     "venue": "CourtListener 사건 기록",
     "url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/?entry_gte=271&page=1"
+  },
+  "dellacqua-2026": {
+    "type": "paper",
+    "author": "Dell'Acqua, F. 외",
+    "title": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality",
+    "venue": "Organization Science. doi:10.1287/orsc.2025.21838 (2023년 Harvard Business School Working Paper 24-013으로 처음 공개)",
+    "url": "https://doi.org/10.1287/orsc.2025.21838",
+    "date": "2026"
+  },
+  "wef-2025": {
+    "type": "web",
+    "author": "World Economic Forum",
+    "title": "The Future of Jobs Report 2025",
+    "venue": "World Economic Forum (2025-01)",
+    "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+  },
+  "openai-chatgpt-2022": {
+    "type": "web",
+    "author": "OpenAI",
+    "title": "Introducing ChatGPT",
+    "venue": "OpenAI (2022-11-30)",
+    "url": "https://openai.com/index/chatgpt/"
+  },
+  "anthropic-claude-2023": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Introducing Claude",
+    "venue": "Anthropic (2023-03-14)",
+    "url": "https://www.anthropic.com/news/introducing-claude"
+  },
+  "google-bard-2023": {
+    "type": "web",
+    "author": "Google",
+    "title": "Bard updates from Google I/O 2023",
+    "venue": "Google 블로그 (2023-05)",
+    "url": "https://blog.google/innovation-and-ai/products/google-bard-updates-io-2023/"
+  },
+  "google-gemini-rename-2024": {
+    "type": "web",
+    "author": "Google",
+    "title": "Bard becomes Gemini: Try Ultra 1.0 and a new mobile app today",
+    "venue": "Google 블로그 (2024-02-08)",
+    "url": "https://blog.google/products-and-platforms/products/gemini/bard-gemini-advanced-app/"
   }
 }
