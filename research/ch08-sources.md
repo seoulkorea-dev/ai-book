@@ -37,4 +37,4 @@
 - Getty 1차, 2차 침해: 판결 요약(Ropes & Gray 등 검색 결과 요약)에 근거. 2차 침해는 영국 저작권법(CDPA) 제22조, 제23조의 침해 복제물 수입, 유통 주장(Q-085 A8)
 - 배포자(deployer): Regulation (EU) 2024/1689 제3조 제4호 "자기 권한 아래 AI 시스템을 사용하는 자"(Q-085 A8)
 - 부속서 I, III, 범용 AI 모델, AI 리터러시(제4조): Regulation (EU) 2024/1689. 제4조는 Omnibus 개정 여부 확인 필요(Q-080)
-- Agentic AI Foundation: anthropic-aaif-2025(Linux Foundation 산하 재단으로 MCP를 기증). 원문 미열람
+- Agentic AI Foundation: anthropic-mcp-aaif-2025(Linux Foundation 산하 재단으로 MCP를 기증). 원문 미열람
