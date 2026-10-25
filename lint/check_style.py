@@ -55,7 +55,7 @@ for f in files:
                 continue
             total[m.group(0)] += 1
             print(f"경고 {f}:{n}: {m.group(0)} | {text[max(0, m.start() - 20):m.end() + 15].strip()}")
-# 문장 원칙(2026-10-02): 100자 넘는 문장, 문장 첫머리 "그리고, 다만, 또한, 특히"를 경고(표, 그림, 코드 상자, 참고 자료 서지 제외)
+# 문장 원칙(2026-10-02, 길이 기준 2026-10-16 150자로 변경): 150자 넘는 문장, 문장 첫머리 "그리고, 다만, 또한, 특히"를 경고(표, 그림, 코드 상자, 참고 자료 서지 제외)
 for f in files:
     if f.endswith("references.html"):
         continue
@@ -64,9 +64,9 @@ for f in files:
         text = html.unescape(re.sub(r"<[^>]+>", "", para)).strip()
         for sent in re.split(r"(?<=[.?!])\s+(?=[^)\s])", text):
             sent = sent.strip()
-            if len(sent) > 100:
-                total["100자 초과 문장"] += 1
-                print(f"경고 {f}: 100자 초과({len(sent)}자) | {sent[:40]}")
+            if len(sent) > 150:
+                total["150자 초과 문장"] += 1
+                print(f"경고 {f}: 150자 초과({len(sent)}자) | {sent[:40]}")
             if re.match(r"(그리고|다만|또한|특히)[ ,]", sent):
                 total["첫머리 접속어"] += 1
                 print(f"경고 {f}: 첫머리 접속어 | {sent[:40]}")
@@ -81,6 +81,8 @@ for f in files:
         continue
     body = open(f, encoding="utf-8").read()
     body = re.sub(r'<ul class="summary">.*?</ul>', " ", body, flags=re.S)
+    body = re.sub(r'<p class="claim">.*?</p>', " ", body, flags=re.S)  # 주장 줄(D-104)은 첫 문단 둘째 문장과 같게 둠, 작가 확인 사항
+    body = re.sub(r'<ol class="fn"[^>]*>.*?</ol>|<h2 id="refs">.*', " ", body, flags=re.S)  # 각주와 참고 자료(D-123)는 서지 형식이 겹침
     body = re.sub(r"<(pre|table|svg|figure)\b.*?</\1>", " ", body, flags=re.S)
     for sec in re.split(r"<h[23]\b", body):
         sents = []
