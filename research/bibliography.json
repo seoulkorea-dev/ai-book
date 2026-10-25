@@ -240,5 +240,26 @@
     "venue": "Human Factors, 52(3)",
     "url": "https://doi.org/10.1177/0018720810376055",
     "date": "2010"
+  },
+  "mata-2023": {
+    "type": "web",
+    "author": "United States District Court, S.D.N.Y.",
+    "title": "Mata v. Avianca, Inc., No. 22-cv-1461 (PKC), Opinion and Order on Sanctions",
+    "venue": "678 F. Supp. 3d 443 (S.D.N.Y. 2023-06-22)",
+    "url": "https://www.law.berkeley.edu/wp-content/uploads/2025/12/Mata-v-Avianca-Inc.pdf"
+  },
+  "reuters-2023-bard": {
+    "type": "web",
+    "author": "Coulter, M., Bensinger, G.",
+    "title": "Alphabet shares dive after Google AI chatbot Bard flubs answer in ad",
+    "venue": "Reuters, 2023-02-08(재배포본)",
+    "url": "https://www.aljazeera.com/economy/2023/2/8/google-shares-tank-8-as-ai-chatbot-bard-flubs-answer-in-ad"
+  },
+  "eso-2m1207b": {
+    "type": "web",
+    "author": "European Southern Observatory",
+    "title": "2M1207b - first image of an exoplanet",
+    "venue": "ESO",
+    "url": "https://www.eso.org/public/images/26a_big-vlt/"
   }
 }
