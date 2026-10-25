@@ -127,7 +127,7 @@
     ],
     "appendix/f-trends.html": [
       "index.html#structure",
-      "이 책의 구성(주요 기술 변화는 각 장으로 이동)"
+      "이 책의 구성과 읽는 방법"
     ],
     "wiki/index.html": [
       "index.html",
@@ -143,15 +143,15 @@
     ],
     "wiki/cases.html": [
       "chapters/ch04.html#automation-bias",
-      "Chapter 4 자동화 편향"
+      "Chapter 4 확인을 건너뛰게 하는 자동화 편향"
     ],
     "wiki/security.html": [
       "chapters/ch08.html#security",
-      "Chapter 8 보안 위협"
+      "Chapter 8 자연어 입력에서 생기는 보안 위협"
     ],
     "wiki/governance.html": [
       "chapters/ch06.html#stages",
-      "Chapter 6 도입 단계"
+      "Chapter 6 개인 사용에서 에이전트 운영까지의 도입 단계"
     ],
     "wiki/pe-foundations.html": [
       "index.html",
@@ -167,11 +167,11 @@
     ],
     "wiki/pe-rag.html": [
       "chapters/ch04.html#measures",
-      "Chapter 4 대응 방법"
+      "Chapter 4 적용 위치에 따른 환각 대응 방법"
     ],
     "wiki/pe-agents.html": [
       "chapters/ch08.html#agents",
-      "Chapter 8 에이전트 자율성"
+      "Chapter 8 에이전트의 자율성 단계와 도입 통제"
     ],
     "wiki/pe-applications.html": [
       "index.html",
@@ -179,7 +179,7 @@
     ],
     "wiki/pe-evaluation.html": [
       "chapters/ch08.html#security",
-      "Chapter 8 보안 위협"
+      "Chapter 8 자연어 입력에서 생기는 보안 위협"
     ],
     "wiki/pe-research.html": [
       "index.html",
