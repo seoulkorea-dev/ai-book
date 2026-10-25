@@ -208,5 +208,20 @@
     "title": "Reasoning best practices",
     "venue": "OpenAI API Docs",
     "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices"
+  },
+  "liang-2023": {
+    "type": "paper",
+    "author": "Liang, W. 외",
+    "title": "GPT detectors are biased against non-native English writers",
+    "venue": "Patterns. doi:10.1016/j.patter.2023.100779",
+    "url": "https://doi.org/10.1016/j.patter.2023.100779",
+    "date": "2023"
+  },
+  "nature-2023": {
+    "type": "web",
+    "author": "Nature",
+    "title": "Tools such as ChatGPT threaten transparent science; here are our ground rules for their use",
+    "venue": "Nature 613, 612 (2023-01-24)",
+    "url": "https://www.nature.com/articles/d41586-023-00191-1"
   }
 }
