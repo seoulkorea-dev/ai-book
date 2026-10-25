@@ -2,6 +2,7 @@
 사용: python tools/apply_review.py <보고 .md> [건너뛸 번호,쉼표로]
 - "지적 표" 절의 표 행에서 위치 칸의 src/ 경로, 원문과 고친 문안 칸의 backtick 문자열을 읽는다.
 - 원문이 그 파일에 정확히 한 번 있을 때만 바꾼다. 원문 칸 문자열이 하나가 아니거나 찾지 못하면 "수동"으로 알린다.
+- 원문과 고친 문안의 "⏎"는 줄바꿈으로 읽는다.
 - 고친 문안 칸에 backtick 문자열이 여럿이면 줄바꿈으로 이어 붙인다("(줄바꿈)" 표시는 무시).
 결과: 반영한 번호와 수동 처리할 번호. 반영 뒤 python tools/check_all.py로 확인한다.
 """
@@ -30,7 +31,7 @@ for line in section.splitlines():
         manual.append((n, f"원문 {len(old)}개, 고친 문안 {len(new)}개")); continue
     if cur not in texts:
         texts[cur] = open(cur, encoding="utf-8").read()
-    o, w = old[0].replace("<\\", "<"), "\n".join(new).replace("<\\", "<")
+    o, w = old[0].replace("<\\", "<").replace("⏎", "\n"), "\n".join(new).replace("<\\", "<").replace("⏎", "\n")
     c = texts[cur].count(o)
     if c != 1:
         manual.append((n, f"원문 {c}회")); continue
