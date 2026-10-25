@@ -208,5 +208,12 @@
     "title": "Reasoning best practices",
     "venue": "OpenAI API Docs",
     "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices"
+  },
+  "anthropic-economic-index-2025": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "The Anthropic Economic Index",
+    "venue": "Anthropic (2025-02-10)",
+    "url": "https://www.anthropic.com/news/the-anthropic-economic-index"
   }
 }
