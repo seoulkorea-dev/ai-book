@@ -65,7 +65,7 @@
 
 <h2 id="bias">학습 데이터의 불균형이 반영되는 편향</h2>
 <p>편향은 학습 데이터의 불균형이 결과에 반영되어 특정 집단에 불공정한 결과를 내는 현상입니다. 모델은 데이터의 패턴을 학습하므로, 데이터에 특정 집단이 적거나 불리하게 나타나면 결과도 같은 방향으로 치우칩니다. 내용이 같은 자기소개서에서 지원자의 성별만 변경해 여러 번 실행한 평균 점수가 미리 정한 값 이상 달라지면, 그 차이는 편향에서 나온 것으로 봅니다.</p>
-<p>Reuters는 2018년 10월, Amazon이 개발하던 이력서 평가 AI가 'women's'(여성의)라는 단어가 포함된 이력서를 낮게 평가해 개발을 중단했다고 보도했습니다<sup class="cite"><a href="../appendix/references.html#bib-50">50</a></sup>. 이 AI는 남성 지원자가 많았던 과거 10년간의 이력서로 학습했습니다. 학습 데이터의 불균형이 그대로 평가 기준이 된 사례입니다.</p>
+<p>Reuters는 2018년 10월, Amazon이 개발하던 이력서 평가 AI가 'women's'(여성의)라는 단어가 포함된 이력서를 낮게 평가해 개발을 중단했다고 보도했습니다<sup class="cite"><a href="../appendix/references.html#bib-52">52</a></sup>. 이 AI는 남성 지원자가 많았던 과거 10년간의 이력서로 학습했습니다. 학습 데이터의 불균형이 그대로 평가 기준이 된 사례입니다.</p>
 <h3 id="bias-check">속성 하나만 변경한 편향 점검</h3>
 <p>편향 점검에는 비교할 속성 하나만 다르고 나머지 조건은 같은 프롬프트(Prompt) 두 개를 사용합니다. 비교할 속성은 성별, 나이, 출신 지역처럼 하나만 정합니다. 생성형 AI는 다음 토큰(Token)을 확률로 선택하므로 같은 프롬프트도 실행할 때마다 답이 달라질 수 있습니다. 그래서 두 프롬프트는 한 번씩 비교하지 않고 각각 여러 번 실행해 경향을 비교합니다.</p>
 <p>평가 항목별 평균 점수의 차이가 미리 정한 값 이상이거나 평가의 근거로 든 문장이 집단에 따라 다르게 나타나면, 사용자는 그 도구를 그 판단에 사용하지 않고 원인을 확인합니다. 자기소개서 평가 예제는 이 방법을 적용한 점검입니다.</p>
@@ -81,10 +81,10 @@
 <p>AI 저작권 쟁점은 두 가지입니다. 하나는 AI 결과물의 저작물 보호 여부이고, 다른 하나는 모델 학습에 저작물을 사용한 행위의 침해 여부입니다.</p>
 <h4>AI 결과물의 저작권</h4>
 <p>AI 결과물은 사람의 창작 기여가 있는 부분만 저작물로 보호됩니다. 그래서 AI 결과물에 권리를 주장하려는 사용자는 사람이 작성하거나 선택하고 배치한 부분을 AI가 생성한 부분과 구분해 기록해 둡니다. 이 기준은 한국 저작권법의 정의와 미국 저작권청의 등록 결정, 등록 안내에 근거합니다.</p>
-<ul><li><b>한국</b>: 저작권법 제2조 제1호는 저작물을 인간의 사상 또는 감정을 표현한 창작물로 정의합니다<sup class="cite"><a href="../appendix/references.html#bib-51">51</a></sup>.</li><li><b>미국 등록 결정</b>: 미국 저작권청은 2023년 2월 그래픽 노블 「Zarya of the Dawn」 등록 결정에서 사람이 작성한 글과 이미지 배치는 보호했습니다. Midjourney로 생성한 이미지 자체는 보호 대상에서 제외했습니다<sup class="cite"><a href="../appendix/references.html#bib-52">52</a></sup>.</li><li><b>미국 등록 안내</b>: 미국 저작권청은 2023년 3월 AI 생성물이 포함된 작품의 등록 안내를 발표하고, 신청자가 AI 생성 부분을 밝히도록 했습니다<sup class="cite"><a href="../appendix/references.html#bib-53">53</a></sup>.</li></ul>
+<ul><li><b>한국</b>: 저작권법 제2조 제1호는 저작물을 인간의 사상 또는 감정을 표현한 창작물로 정의합니다<sup class="cite"><a href="../appendix/references.html#bib-53">53</a></sup>.</li><li><b>미국 등록 결정</b>: 미국 저작권청은 2023년 2월 그래픽 노블 「Zarya of the Dawn」 등록 결정에서 사람이 작성한 글과 이미지 배치는 보호했습니다. Midjourney로 생성한 이미지 자체는 보호 대상에서 제외했습니다<sup class="cite"><a href="../appendix/references.html#bib-54">54</a></sup>.</li><li><b>미국 등록 안내</b>: 미국 저작권청은 2023년 3월 AI 생성물이 포함된 작품의 등록 안내를 발표하고, 신청자가 AI 생성 부분을 밝히도록 했습니다<sup class="cite"><a href="../appendix/references.html#bib-55">55</a></sup>.</li></ul>
 <h4>학습 데이터 소송</h4>
 <p>권리자들은 모델 학습에 저작물을 사용한 것을 두고 AI 기업을 상대로 소송을 제기했습니다. 소송이 진행 중이거나 판결 뒤 항소가 이어질 수 있습니다. 그래서 사용자는 소송 결과를 근거로 삼을 때 법원 기록에서 현재 상태를 확인합니다.</p>
-<p>공정 이용(Fair Use)은 이용의 목적과 성격, 저작물의 성격, 이용한 분량, 시장에 미치는 영향을 따져 권리자의 허락 없는 이용을 허용하는 미국 저작권법의 원칙입니다. 미국 소송에서는 학습에 저작물을 사용한 방식이 공정 이용에 해당하는지가 쟁점입니다. 표 8-2는 소송 사례 가운데 일부입니다<sup class="cite"><a href="../appendix/references.html#bib-54">54</a>,<a href="../appendix/references.html#bib-55">55</a>,<a href="../appendix/references.html#bib-56">56</a></sup>.</p>
+<p>공정 이용(Fair Use)은 이용의 목적과 성격, 저작물의 성격, 이용한 분량, 시장에 미치는 영향을 따져 권리자의 허락 없는 이용을 허용하는 미국 저작권법의 원칙입니다. 미국 소송에서는 학습에 저작물을 사용한 방식이 공정 이용에 해당하는지가 쟁점입니다. 표 8-2는 소송 사례 가운데 일부입니다<sup class="cite"><a href="../appendix/references.html#bib-56">56</a>,<a href="../appendix/references.html#bib-57">57</a>,<a href="../appendix/references.html#bib-58">58</a></sup>.</p>
 <figure class="fig" id="tbl-8-2"><div class="table-wrap"><table><colgroup><col class="w30"><col class="w25"><col class="w45"></colgroup>
 <thead><tr><th>사건</th><th>제기</th><th>쟁점</th></tr></thead>
 <tbody>
@@ -94,8 +94,8 @@
 </tbody></table></div>
 <figcaption><b>표 8-2. 학습 데이터 저작권 소송</b></figcaption></figure>
 <p>Getty의 저작권 침해 주장은 두 가지였습니다. 1차 침해는 학습 과정에서 이미지를 복제한 행위 자체에 대한 주장이고, 2차 침해는 그렇게 학습한 모델을 영국에 들여와 제공한 것이 침해 복제물의 유통이라는 주장입니다. 1차 침해 주장은 학습이 영국 밖에서 이루어졌다는 이유로 Getty가 재판 중에 철회했습니다.</p>
-<p>영국 고등법원은 2025년 11월 4일 판결에서 2차 저작권 침해 주장을 기각했습니다<sup class="cite"><a href="../appendix/references.html#bib-54">54</a></sup>. 법원은 모델이 학습으로 정한 내부 수치인 가중치(Weight)가 Getty 이미지의 복제물을 저장하지 않으므로 침해 복제물이 아니라고 판단했습니다. 상표 침해는 초기 버전 모델이 Getty 워터마크와 비슷한 표시를 생성한 일부 사례에 대해서만 인정했습니다.</p>
-<p>Bartz 사건에서 미국 연방지방법원은 2025년 6월, 구매한 책으로 학습한 부분은 공정 이용으로 보았으나 불법 복제본을 모아 보관한 부분은 공정 이용으로 보지 않았습니다<sup class="cite"><a href="../appendix/references.html#bib-56">56</a></sup>. 이후 15억 달러 규모의 합의가 이루어졌고, 법원은 2025년 9월 예비 승인, 2026년 7월 20일 최종 승인을 했습니다<sup class="cite"><a href="../appendix/references.html#bib-57">57</a></sup>. 합의는 과거의 불법 복제본 취득과 복제에 대한 청구만 해결합니다.</p>
+<p>영국 고등법원은 2025년 11월 4일 판결에서 2차 저작권 침해 주장을 기각했습니다<sup class="cite"><a href="../appendix/references.html#bib-56">56</a></sup>. 법원은 모델이 학습으로 정한 내부 수치인 가중치(Weight)가 Getty 이미지의 복제물을 저장하지 않으므로 침해 복제물이 아니라고 판단했습니다. 상표 침해는 초기 버전 모델이 Getty 워터마크와 비슷한 표시를 생성한 일부 사례에 대해서만 인정했습니다.</p>
+<p>Bartz 사건에서 미국 연방지방법원은 2025년 6월, 구매한 책으로 학습한 부분은 공정 이용으로 보았으나 불법 복제본을 모아 보관한 부분은 공정 이용으로 보지 않았습니다<sup class="cite"><a href="../appendix/references.html#bib-58">58</a></sup>. 이후 15억 달러 규모의 합의가 이루어졌고, 법원은 2025년 9월 예비 승인, 2026년 7월 20일 최종 승인을 했습니다<sup class="cite"><a href="../appendix/references.html#bib-59">59</a></sup>. 합의는 과거의 불법 복제본 취득과 복제에 대한 청구만 해결합니다.</p>
 <p>두 판결은 개별 사건의 판단이고, 결과물 이용에 대한 법적 기준은 아직 정해지지 않았습니다. 그래서 사용자는 AI 결과물을 상업적으로 사용하기 전에 사용한 도구의 이용 약관에서 결과물 이용 조건을 확인합니다.</p>
 
 <h3 id="plagiarism">AI 사용과 관련된 표절 유형</h3>
@@ -124,9 +124,9 @@
 
 <h3 id="labeling">법률이 정한 AI 생성물 표시 의무</h3>
 <p>AI 생성물 표시 의무는 EU와 한국이 법률로 둡니다. 이 의무는 생성물이 실제와 구분되지 않을 때 생기는 오인과 피해를 막기 위한 것입니다.</p>
-<ul><li><b>EU</b>: EU 인공지능법 제50조는 합성 콘텐츠를 생성하는 AI 시스템의 제공자가 결과물을 기계가 읽을 수 있는 방식으로 표시하도록 규정합니다. 딥페이크(Deepfake)는 실존 인물이나 사물을 실제처럼 보이게 합성한 이미지, 음성, 영상입니다. 배포자는 EU 인공지능법에서 AI 시스템을 자기 권한 아래 사용하는 자를 뜻합니다. 딥페이크를 만드는 AI 시스템을 업무에 사용하는 배포자는 인위적으로 생성했다는 사실을 밝혀야 합니다. 이 조항은 2026년 8월 2일부터 적용되며, 그 전에 시장에 나온 시스템의 기계 판독 표시 의무는 2026년 12월 2일까지 유예됩니다<sup class="cite"><a href="../appendix/references.html#bib-58">58</a></sup>.</li><li><b>한국</b>: 2026년 1월 22일 시행된 인공지능기본법은 생성형 AI 결과물임을 표시하고, 실제와 구분하기 어려운 결과물은 이용자가 명확히 인식하도록 고지하는 의무를 규정합니다<sup class="cite"><a href="../appendix/references.html#bib-59">59</a></sup>. 과학기술정보통신부는 시행 뒤 1년 이상 과태료 부과를 유예하고 사실조사는 중대한 사회적 문제가 생긴 예외적인 경우에만 하는 계도 기간을 운영하겠다고 밝혔습니다<sup class="cite"><a href="../appendix/references.html#bib-8">8</a></sup>.</li></ul>
+<ul><li><b>EU</b>: EU 인공지능법 제50조는 합성 콘텐츠를 생성하는 AI 시스템의 제공자가 결과물을 기계가 읽을 수 있는 방식으로 표시하도록 규정합니다. 딥페이크(Deepfake)는 실존 인물이나 사물을 실제처럼 보이게 합성한 이미지, 음성, 영상입니다. 배포자는 EU 인공지능법에서 AI 시스템을 자기 권한 아래 사용하는 자를 뜻합니다. 딥페이크를 만드는 AI 시스템을 업무에 사용하는 배포자는 인위적으로 생성했다는 사실을 밝혀야 합니다. 이 조항은 2026년 8월 2일부터 적용되며, 그 전에 시장에 나온 시스템의 기계 판독 표시 의무는 2026년 12월 2일까지 유예됩니다<sup class="cite"><a href="../appendix/references.html#bib-60">60</a></sup>.</li><li><b>한국</b>: 2026년 1월 22일 시행된 인공지능기본법은 생성형 AI 결과물임을 표시하고, 실제와 구분하기 어려운 결과물은 이용자가 명확히 인식하도록 고지하는 의무를 규정합니다<sup class="cite"><a href="../appendix/references.html#bib-61">61</a></sup>. 과학기술정보통신부는 시행 뒤 1년 이상 과태료 부과를 유예하고 사실조사는 중대한 사회적 문제가 생긴 예외적인 경우에만 하는 계도 기간을 운영하겠다고 밝혔습니다<sup class="cite"><a href="../appendix/references.html#bib-8">8</a></sup>.</li></ul>
 <h4>표시 의무를 지는 주체</h4>
-<p>업무가 아닌 개인적 사용만 하는 사용자는 한국 인공지능기본법과 EU 인공지능법의 표시 의무자가 되지 않습니다. 한국 인공지능기본법의 표시 의무는 AI 서비스를 제공하는 사업자에게 있고, EU 인공지능법 제50조의 표시 의무는 시스템 제공자와 딥페이크를 업무에 사용하는 배포자에게 있습니다. 과학기술정보통신부의 「인공지능 투명성 확보 안내 지침」도 투명성 의무의 주체를 이용자에게 AI 제품이나 서비스를 직접 제공하는 사업자로 정리했습니다<sup class="cite"><a href="../appendix/references.html#bib-60">60</a></sup>. 그러나 도구의 이용 약관이나 게시 플랫폼의 규정은 AI 생성물 표시를 요구할 수 있습니다. 그래서 게시하기 전에 이용 약관과 플랫폼 규정을 확인합니다.</p>
+<p>업무가 아닌 개인적 사용만 하는 사용자는 한국 인공지능기본법과 EU 인공지능법의 표시 의무자가 되지 않습니다. 한국 인공지능기본법의 표시 의무는 AI 서비스를 제공하는 사업자에게 있고, EU 인공지능법 제50조의 표시 의무는 시스템 제공자와 딥페이크를 업무에 사용하는 배포자에게 있습니다. 과학기술정보통신부의 「인공지능 투명성 확보 안내 지침」도 투명성 의무의 주체를 이용자에게 AI 제품이나 서비스를 직접 제공하는 사업자로 정리했습니다<sup class="cite"><a href="../appendix/references.html#bib-62">62</a></sup>. 그러나 도구의 이용 약관이나 게시 플랫폼의 규정은 AI 생성물 표시를 요구할 수 있습니다. 그래서 게시하기 전에 이용 약관과 플랫폼 규정을 확인합니다.</p>
 
 <h2 id="responsibility">AI 결과의 사람 검토</h2>
 <p>책임 영역의 위험은 AI 결과를 검증 없이 사용하는 데서 생깁니다. 그래서 AI 결과가 실제 효력을 갖기 전에 사람이 검토하고 승인합니다.</p>
@@ -134,11 +134,11 @@
 <p>사람의 승인이 필요한 대상은 채용, 신용 평가, 의료처럼 사람에게 영향을 주는 판단과, 결제, 삭제, 외부 발송처럼 되돌리기 어려운 작업입니다. 승인자는 AI 결과만 보지 않고 근거 자료와 실행 기록을 함께 확인합니다.</p>
 
 <h2 id="environment">모델 크기와 실행 횟수에 따라 커지는 환경 비용</h2>
-<p>AI의 전력 소비량은 모델의 크기와 실행 횟수에 따라 커집니다. 국제에너지기구(IEA)는 2025년 4월 「Energy and AI」 보고서에서 세계 데이터 센터의 전력 소비를 2024년 약 415TWh로 추정하고, 2030년에는 약 945TWh로 늘어날 것으로 전망했습니다<sup class="cite"><a href="../appendix/references.html#bib-61">61</a></sup>. 그래서 사용자는 작업에 맞는 크기의 모델을 선택하고, 같은 작업을 불필요하게 반복 실행하지 않습니다. 모델을 선택할 수 없는 제품에서는 처음 요청에 필요한 조건을 갖춰 다시 요청하는 횟수를 줄입니다.</p>
+<p>AI의 전력 소비량은 모델의 크기와 실행 횟수에 따라 커집니다. 국제에너지기구(IEA)는 2025년 4월 「Energy and AI」 보고서에서 세계 데이터 센터의 전력 소비를 2024년 약 415TWh로 추정하고, 2030년에는 약 945TWh로 늘어날 것으로 전망했습니다<sup class="cite"><a href="../appendix/references.html#bib-63">63</a></sup>. 그래서 사용자는 작업에 맞는 크기의 모델을 선택하고, 같은 작업을 불필요하게 반복 실행하지 않습니다. 모델을 선택할 수 없는 제품에서는 처음 요청에 필요한 조건을 갖춰 다시 요청하는 횟수를 줄입니다.</p>
 
 <h2 id="personal">개인이 지킬 과의존 점검과 균형</h2>
 <p>AI 없이는 글 작성, 결과 확인, 판단을 하기 어려울 만큼 AI에 기대는 상태를 과의존이라고 합니다. 여섯 점검 영역의 대상은 결과물입니다. 반면, 과의존 점검의 대상은 결과물을 사용하는 사람의 습관입니다. AI에 의존하는 정도가 커지면 스스로 생각하고 판단하는 기회가 줄어듭니다. 그래서 사용자는 과의존 신호를 확인하고, 사용 전에 점검하고, 균형 원칙을 지킵니다.</p>
-<p>Microsoft Research와 카네기멜런대 연구진(Lee 외)은 2025년 논문 「The Impact of Generative AI on Critical Thinking」에서 지식 노동자 319명을 조사했습니다. AI를 더 신뢰한다고 답한 사람일수록 비판적 사고를 덜 사용했다고 응답했고, 자기 판단을 더 신뢰한 사람일수록 더 사용했다고 응답했습니다<sup class="cite"><a href="../appendix/references.html#bib-62">62</a></sup>. 응답자가 스스로 답한 설문이므로 이 결과로 인과를 단정할 수는 없습니다. 자동화 편향(Automation Bias)은 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 경향입니다. 자동화 편향은 학습 데이터에서 생기는 편향과 다릅니다. 설문에서 나타난 관계는 이 경향과 같은 방향입니다.</p>
+<p>Microsoft Research와 카네기멜런대 연구진(Lee 외)은 2025년 논문 「The Impact of Generative AI on Critical Thinking」에서 지식 노동자 319명을 조사했습니다. AI를 더 신뢰한다고 답한 사람일수록 비판적 사고를 덜 사용했다고 응답했고, 자기 판단을 더 신뢰한 사람일수록 더 사용했다고 응답했습니다<sup class="cite"><a href="../appendix/references.html#bib-64">64</a></sup>. 응답자가 스스로 답한 설문이므로 이 결과로 인과를 단정할 수는 없습니다. 자동화 편향(Automation Bias)은 자동화 시스템의 결과를 자기 판단이나 다른 정보보다 더 신뢰하는 경향입니다. 자동화 편향은 학습 데이터에서 생기는 편향과 다릅니다. 설문에서 나타난 관계는 이 경향과 같은 방향입니다.</p>
 <h3 id="overreliance">행동으로 나타나는 과의존 신호</h3>
 <p>과의존은 행동으로 나타납니다. 그래서 사용자는 과의존 신호를 자신의 사용 습관에서 점검합니다. 과의존 신호는 초안을 스스로 작성하지 못함, 확인을 건너뜀, 판단을 맡김, 배우지 않음, 관계를 대신함의 다섯 가지입니다. 간단한 메일 한 통도 AI 없이 작성하기 어렵다고 느낀다면 첫째 신호에 해당합니다. 표 8-4는 신호별로 나타나는 모습과 대응입니다.</p>
 <figure class="fig" id="tbl-8-4"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w35"><col class="w40"></colgroup>
@@ -192,11 +192,11 @@
 <tr><td>출력 신뢰</td><td>검증 없이 결과를 시스템에 반영</td><td>출력 검증, 사람의 검토</td></tr>
 </tbody></table></div>
 <figcaption><b>표 8-6. 생성형 AI 보안 위협</b></figcaption></figure>
-<p>OWASP(Open Worldwide Application Security Project)는 「Top 10 for LLM Applications」 2025년 판에서 프롬프트 인젝션을 첫 번째 위험 항목(LLM01)으로 지정했습니다<sup class="cite"><a href="../appendix/references.html#bib-63">63</a></sup>. 과도한 권한은 여섯 번째 항목(LLM06)입니다.</p>
+<p>OWASP(Open Worldwide Application Security Project)는 「Top 10 for LLM Applications」 2025년 판에서 프롬프트 인젝션을 첫 번째 위험 항목(LLM01)으로 지정했습니다<sup class="cite"><a href="../appendix/references.html#bib-65">65</a></sup>. 과도한 권한은 여섯 번째 항목(LLM06)입니다.</p>
 <p>프롬프트 인젝션은 지시와 데이터가 모두 자연어로 같은 입력에 섞이는 구조에서 생기므로 완전히 막기 어렵습니다. 그래서 공격이 성공해도 피해가 작도록 권한을 줄이는 것이 기본 대응입니다.</p>
 
 <h2 id="agents">에이전트의 자율성 단계와 도입 통제</h2>
-<p>에이전트와 워크플로는 실행 과정을 정하는 주체가 다릅니다. 워크플로에서는 코드가 실행 과정을 정합니다. 반면, 에이전트에서는 모델이 실행 과정을 스스로 정합니다. 이 구분은 Anthropic이 2024년 12월 글 「Building effective agents」에서 제시했습니다. Anthropic은 같은 글에서 가장 단순한 방식부터 시작하도록 권장했습니다<sup class="cite"><a href="../appendix/references.html#bib-64">64</a></sup>.</p>
+<p>에이전트와 워크플로는 실행 과정을 정하는 주체가 다릅니다. 워크플로에서는 코드가 실행 과정을 정합니다. 반면, 에이전트에서는 모델이 실행 과정을 스스로 정합니다. 이 구분은 Anthropic이 2024년 12월 글 「Building effective agents」에서 제시했습니다. Anthropic은 같은 글에서 가장 단순한 방식부터 시작하도록 권장했습니다<sup class="cite"><a href="../appendix/references.html#bib-66">66</a></sup>.</p>
 <p>에이전트는 다섯 부분으로 구성되고, 이 절의 자율성 단계와 도입 통제는 그 가운데 통제를 정하는 방법입니다.</p>
 <ul><li><b>모델</b>: 다음 행동을 정합니다.</li><li><b>도구</b>: 검색, 파일 조작 같은 작업을 실행합니다.</li><li><b>메모리</b>: 대화 기록과 작업 메모를 담습니다.</li><li><b>루프</b>: 도구 호출, 결과 확인, 다음 행동 결정을 반복합니다.</li><li><b>통제</b>: 권한 제한, 사람 승인, 종료 조건을 정합니다.</li></ul>
 <p>에이전트의 자율성 단계는 에이전트가 사람의 확인 없이 실행하는 범위에 따라 제안, 승인 실행, 범위 자율, 자율 실행의 네 가지로 나눕니다. 제안 단계는 할 일을 제안만 하고, 승인 실행 단계는 사람이 승인한 작업만 실행합니다. 범위 자율 단계는 정해진 권한 안에서 스스로 실행하고, 자율 실행 단계는 목표만 받고 도구 선택과 실행을 스스로 결정합니다.</p>
@@ -238,7 +238,7 @@
 </tbody></table></div>
 <figcaption><b>표 8-9. EU 인공지능법의 위험 등급</b></figcaption></figure>
 <p>EU 인공지능법은 허용 불가 등급의 AI 사용을 금지 관행으로 정합니다. 고위험 시스템의 범위는 두 부속서가 정합니다. 부속서 III은 채용, 신용 평가, 교육 평가처럼 고위험으로 보는 용도를 나열합니다. 부속서 I은 의료기기, 기계처럼 EU 제품 안전 법령이 적용되는 제품을 정하고, 그 제품에 안전 부품으로 내장된 AI를 고위험으로 봅니다.</p>
-<p>네 등급과 별도로, 여러 용도에 사용할 수 있는 범용 AI 모델의 제공자에게도 의무가 있습니다. AI 리터러시 조항에 따라 AI 시스템의 제공자와 배포자는 직원이 AI를 이해하고 다룰 수 있도록 조치해야 합니다. 표 8-10은 EU 인공지능법과 한국 인공지능기본법의 주요 적용 일정입니다<sup class="cite"><a href="../appendix/references.html#bib-7">7</a>,<a href="../appendix/references.html#bib-58">58</a>,<a href="../appendix/references.html#bib-59">59</a></sup>.</p>
+<p>네 등급과 별도로, 여러 용도에 사용할 수 있는 범용 AI 모델의 제공자에게도 의무가 있습니다. AI 리터러시 조항에 따라 AI 시스템의 제공자와 배포자는 직원이 AI를 이해하고 다룰 수 있도록 조치해야 합니다. 표 8-10은 EU 인공지능법과 한국 인공지능기본법의 주요 적용 일정입니다<sup class="cite"><a href="../appendix/references.html#bib-7">7</a>,<a href="../appendix/references.html#bib-60">60</a>,<a href="../appendix/references.html#bib-61">61</a></sup>.</p>
 <figure class="fig" id="tbl-8-10"><div class="table-wrap"><table class="fit-1"><colgroup><col><col><col class="w70"></colgroup>
 <thead><tr><th>법률</th><th>시점</th><th>적용 사항</th></tr></thead>
 <tbody>
@@ -252,10 +252,10 @@
 <tr><td>한국 인공지능기본법</td><td>2026년 1월 22일</td><td>시행(과태료 부과는 1년 이상 유예)</td></tr>
 </tbody></table></div>
 <figcaption><b>표 8-10. 주요 AI 법률 적용 일정</b></figcaption></figure>
-<p>EU 인공지능법은 Regulation (EU) 2026/1744(Digital Omnibus on AI) 개정으로 2026년 7월 27일부터 일부 내용이 변경되었습니다<sup class="cite"><a href="../appendix/references.html#bib-58">58</a></sup>. 고위험 시스템의 적용 시점이 늦춰졌고, 비동의 성적 이미지와 아동 성착취물을 생성하는 AI를 금지하는 조항이 신설되었습니다.</p>
+<p>EU 인공지능법은 Regulation (EU) 2026/1744(Digital Omnibus on AI) 개정으로 2026년 7월 27일부터 일부 내용이 변경되었습니다<sup class="cite"><a href="../appendix/references.html#bib-60">60</a></sup>. 고위험 시스템의 적용 시점이 늦춰졌고, 비동의 성적 이미지와 아동 성착취물을 생성하는 AI를 금지하는 조항이 신설되었습니다.</p>
 
 <p>규제와 표준은 계속 변화합니다. 그래서 조직은 법률, 보안 표준, 에이전트 규격의 세 분야에서 변화를 확인합니다.</p>
-<p>MCP(Model Context Protocol)는 AI 애플리케이션이 외부 데이터와 도구에 연결하는 방식을 정한 공개 규격입니다. Agentic AI Foundation은 MCP 같은 에이전트 규격을 여러 회사가 함께 관리하도록 만든 재단입니다. 표 8-11은 세 분야의 주요 변화와 시점입니다<sup class="cite"><a href="../appendix/references.html#bib-58">58</a>,<a href="../appendix/references.html#bib-63">63</a>,<a href="../appendix/references.html#bib-49">49</a></sup>.</p>
+<p>MCP(Model Context Protocol)는 AI 애플리케이션이 외부 데이터와 도구에 연결하는 방식을 정한 공개 규격입니다. Agentic AI Foundation은 MCP 같은 에이전트 규격을 여러 회사가 함께 관리하도록 만든 재단입니다. 표 8-11은 세 분야의 주요 변화와 시점입니다<sup class="cite"><a href="../appendix/references.html#bib-60">60</a>,<a href="../appendix/references.html#bib-65">65</a>,<a href="../appendix/references.html#bib-51">51</a></sup>.</p>
 <figure class="fig" id="tbl-8-11"><div class="table-wrap"><table class="fit-3"><colgroup><col class="w30"><col class="w55"><col></colgroup>
 <thead><tr><th>구분</th><th>변화 사항</th><th>시점</th></tr></thead>
 <tbody>
