@@ -7,13 +7,8 @@
 
 ## 배경
 
-이 저장소는 먼저 완성한 원고(seoulkorea-dev/ai-book)를, 그 뒤 하네스 엔지니어링 책(seoulkorea-dev/harness-book)을 쓰며 정리한 원고 원칙과 작업 방식으로 다시 정리한 판입니다. 장의 틀, 정의, 그림, 출처 표기를 한 기준으로 맞췄고, 정리 전 원고는 `original` 브랜치에 그대로 두었습니다.
+이 저장소는 먼저 완성한 원고(seoulkorea-dev/ai-book)를 다시 정리한 판입니다. 정리 전 원고는 `original` 브랜치에 그대로 두었습니다.
 
 ## 구성
 
 시작하며, Chapter 1~8(기본 원리와 한계, 프롬프트 작성의 기본, 고급 프롬프트 기법과 AI 자기 검토, 환각 대응과 교차 검증, 학습과 자료 조사, 업무와 창작, 도구 선택과 역량 진단, 윤리와 법과 보안), 마치며, 부록(분야별 프롬프트 예문 모음, 용어 풀이, 참고 자료)
-
-## 작업
-
-- 원고는 `src/`에서 고치고 `python tools/build.py`로 쪽을 만듭니다. 작업 브랜치와 PR로 반영하고, PR마다 자동 검사(`python tools/check_all.py`)를 통과해야 병합합니다.
-- 작가가 정할 항목은 [docs/AUTHOR_QUEUE.md](docs/AUTHOR_QUEUE.md), 원본과의 비교는 [docs/COMPARISON.md](docs/COMPARISON.md)에 있습니다.
