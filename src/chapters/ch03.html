@@ -7,7 +7,7 @@
 
 <h2 id="overview">작업에 맞는 프롬프트 기법 선택</h2>
 <p>기법마다 효과가 있는 작업이 다릅니다. 그래서 기법은 작업의 성격에 맞춰 선택합니다. 이 장에서 다루는 기법은 Zero-shot, Few-shot, 단계별 추론, Zero-shot CoT, Self-consistency, Tree of Thoughts, ReAct, 프롬프트 체이닝(Prompt Chaining)의 여덟 가지입니다. Few-shot, 단계별 추론, ReAct, 프롬프트 체이닝은 뒤의 절에서 하나씩 다룹니다.</p>
-<p>이 장 첫머리의 세 묶음으로 보면 Zero-shot과 Few-shot은 예시 제공, 단계별 추론과 그 변형 셋은 중간 과정 작성, ReAct와 프롬프트 체이닝은 도구 사용과 작업 분할에 속합니다. 뒤의 절에서 따로 다루지 않는 넷은 Few-shot과 단계별 추론을 줄이거나 늘린 형태입니다. 예시 없이 지시만 주는 기본 방식을 Zero-shot이라고 합니다. Zero-shot에 단계별로 생각하라는 지시 한 줄만 더한 방식을 Zero-shot CoT라고 합니다<sup class="cite" data-ref="kojima-2022"></sup>. 같은 질문을 여러 번 추론하게 해 가장 많이 나온 답을 채택하는 방식을 Self-consistency라고 합니다<sup class="cite" data-ref="wang-2022"></sup>. 여러 풀이 갈래를 만들어 평가하며 나아가는 방식을 Tree of Thoughts라고 합니다<sup class="cite" data-ref="yao-2023"></sup>. 표 3-1은 여덟 기법의 처리 방식과 대상 작업을 비교합니다.</p>
+<p>이 장 첫머리의 세 묶음으로 보면 Zero-shot과 Few-shot은 예시 제공, 단계별 추론과 그 변형 셋은 중간 과정 작성, ReAct와 프롬프트 체이닝은 도구 사용과 작업 분할에 속합니다. 뒤의 절에서 따로 다루지 않는 넷은 Few-shot과 단계별 추론을 줄이거나 늘린 형태입니다. 예시 없이 지시만 주는 기본 방식을 Zero-shot이라고 합니다<sup class="cite" data-ref="brown-2020"></sup>. Zero-shot에 단계별로 생각하라는 지시 한 줄만 더한 방식을 Zero-shot CoT라고 합니다<sup class="cite" data-ref="kojima-2022"></sup>. 같은 질문을 여러 번 추론하게 해 가장 많이 나온 답을 채택하는 방식을 Self-consistency라고 합니다<sup class="cite" data-ref="wang-2022"></sup>. 여러 풀이 갈래를 만들어 평가하며 나아가는 방식을 Tree of Thoughts라고 합니다<sup class="cite" data-ref="yao-2023"></sup>. 표 3-1은 여덟 기법의 처리 방식과 대상 작업을 비교합니다.</p>
 <figure class="fig" id="tbl-3-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w40"></colgroup>
 <thead><tr><th>구분</th><th>처리 방식</th><th>대상 작업</th></tr></thead>
 <tbody>

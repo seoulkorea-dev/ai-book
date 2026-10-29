@@ -51,7 +51,7 @@
 
 <h2 id="overview">작업에 맞는 프롬프트 기법 선택</h2>
 <p>기법마다 효과가 있는 작업이 다릅니다. 그래서 기법은 작업의 성격에 맞춰 선택합니다. 이 장에서 다루는 기법은 Zero-shot, Few-shot, 단계별 추론, Zero-shot CoT, Self-consistency, Tree of Thoughts, ReAct, 프롬프트 체이닝(Prompt Chaining)의 여덟 가지입니다. Few-shot, 단계별 추론, ReAct, 프롬프트 체이닝은 뒤의 절에서 하나씩 다룹니다.</p>
-<p>이 장 첫머리의 세 묶음으로 보면 Zero-shot과 Few-shot은 예시 제공, 단계별 추론과 그 변형 셋은 중간 과정 작성, ReAct와 프롬프트 체이닝은 도구 사용과 작업 분할에 속합니다. 뒤의 절에서 따로 다루지 않는 넷은 Few-shot과 단계별 추론을 줄이거나 늘린 형태입니다. 예시 없이 지시만 주는 기본 방식을 Zero-shot이라고 합니다. Zero-shot에 단계별로 생각하라는 지시 한 줄만 더한 방식을 Zero-shot CoT라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-23">23</a></sup>. 같은 질문을 여러 번 추론하게 해 가장 많이 나온 답을 채택하는 방식을 Self-consistency라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-24">24</a></sup>. 여러 풀이 갈래를 만들어 평가하며 나아가는 방식을 Tree of Thoughts라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-25">25</a></sup>. 표 3-1은 여덟 기법의 처리 방식과 대상 작업을 비교합니다.</p>
+<p>이 장 첫머리의 세 묶음으로 보면 Zero-shot과 Few-shot은 예시 제공, 단계별 추론과 그 변형 셋은 중간 과정 작성, ReAct와 프롬프트 체이닝은 도구 사용과 작업 분할에 속합니다. 뒤의 절에서 따로 다루지 않는 넷은 Few-shot과 단계별 추론을 줄이거나 늘린 형태입니다. 예시 없이 지시만 주는 기본 방식을 Zero-shot이라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-23">23</a></sup>. Zero-shot에 단계별로 생각하라는 지시 한 줄만 더한 방식을 Zero-shot CoT라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-24">24</a></sup>. 같은 질문을 여러 번 추론하게 해 가장 많이 나온 답을 채택하는 방식을 Self-consistency라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-25">25</a></sup>. 여러 풀이 갈래를 만들어 평가하며 나아가는 방식을 Tree of Thoughts라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-26">26</a></sup>. 표 3-1은 여덟 기법의 처리 방식과 대상 작업을 비교합니다.</p>
 <figure class="fig" id="tbl-3-1"><div class="table-wrap"><table class="fit-1"><colgroup><col><col class="w40"><col class="w40"></colgroup>
 <thead><tr><th>구분</th><th>처리 방식</th><th>대상 작업</th></tr></thead>
 <tbody>
@@ -67,7 +67,7 @@
 <figcaption><b>표 3-1. 프롬프트 기법 비교</b></figcaption></figure>
 
 <h2 id="fewshot">예시로 기준을 전달하는 Few-shot</h2>
-<p>입력과 출력의 예시 몇 개를 프롬프트에 포함해 작업 방식을 보여 주는 기법을 Few-shot이라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-26">26</a></sup>. 예시는 말로 설명하기 어려운 분류 기준이나 출력 형식의 설명을 대신합니다. 사용자는 긴 설명에도 모델의 분류가 계속 어긋나면 기준을 예시로 보여 줍니다.</p>
+<p>입력과 출력의 예시 몇 개를 프롬프트에 포함해 작업 방식을 보여 주는 기법을 Few-shot이라고 합니다<sup class="cite"><a href="../appendix/references.html#bib-23">23</a></sup>. 예시는 말로 설명하기 어려운 분류 기준이나 출력 형식의 설명을 대신합니다. 사용자는 긴 설명에도 모델의 분류가 계속 어긋나면 기준을 예시로 보여 줍니다.</p>
 <p>예시는 분류 기준과 출력 형식을 동시에 전달하므로, 예시의 구성이 결과를 좌우합니다. 예시를 선택하는 원칙은 균형, 단일 판단, 형식 통일, 실제 작업과의 유사성, 순서 섞기의 다섯 가지입니다.</p>
 <ul><li><b>균형</b>: 예시를 분류별로 고르게 포함합니다. 예시가 한쪽 분류에 몰리면 결과도 그쪽으로 몰립니다.</li><li><b>단일 판단</b>: 예시 문장 하나에는 한 가지 판단만 담습니다. 여러 판단이 섞인 문장의 처리 방법은 지시로 따로 정합니다.</li><li><b>형식 통일</b>: 모든 예시를 같은 형식으로 작성합니다.</li><li><b>실제 작업과의 유사성</b>: 예시의 길이와 난이도를 실제 작업과 비슷하게 맞춥니다.</li><li><b>순서 섞기</b>: 같은 분류의 예시를 연달아 두지 않습니다. Zhao 외는 2021년 논문 「Calibrate Before Use」에서 예시의 순서와 마지막 예시의 답이 결과에 영향을 준다고 보고했습니다<sup class="cite"><a href="../appendix/references.html#bib-27">27</a></sup>.</li></ul>
 
