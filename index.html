@@ -71,17 +71,17 @@
 <tr><td><a href="chapters/ch08.html">Chapter 8 AI 윤리, 법, 보안과 조직 정책</a></td><td>편향, 개인정보, 권리, 보안, 규제 위험을 점검하고 조직의 사용 정책을 수립</td></tr>
 </tbody></table></div></figure>
 
-<h2 id="why">머리말: 지금 배워야 하는 이유</h2>
+<h2 id="why">머리말: 생성형 AI를 지금 배워야 하는 이유</h2>
 <p>요구 사항을 정리하고 분류하는 일을 AI에게 맡긴 적이 있습니다. 결과는 항목마다 근거와 출처까지 붙어 있어 그럴듯했습니다. 그러나 근거로 적힌 문서와 출처를 하나씩 찾아보니 실제로는 없는 것이었습니다. 그 뒤로 저는 AI에게 요청할 때 맥락과 제약 조건을 모두 제공하고, 받은 결과의 근거를 원문에서 직접 확인합니다. 그 순간에 필요한 습관, 곧 묻고 확인하고 활용하는 방법이 이 책의 주제입니다.</p>
 <p>생성형 AI를 지금 배워야 하는 이유는 네 가지입니다.</p>
 <ul class="summary"><li>생성형 AI가 누구나 사용하는 제품이 되면서 AI 관련 기술의 수요가 늘고 있습니다.</li><li>같은 도구라도 사용 방법에 따라 결과의 차이가 큽니다.</li><li>생성형 AI를 포함한 AI 전반을 규율하는 법률이 시행 단계에 들어갔습니다.</li><li>결과물의 책임은 사용자에게 남습니다.</li></ul>
 
 <h3 id="products">누구나 사용하는 제품이 된 생성형 AI와 기술 수요</h3>
-<p>생성형 AI는 연구 기술에서 누구나 사용하는 대화형 제품으로 변화했습니다. ChatGPT(OpenAI, 2022년 11월), Claude(Anthropic, 2023년 3월), Gemini(Google, 2023년 3월 Bard로 공개, 2024년 2월 이름 변경)가 차례로 공개되었습니다<sup class="cite"><a href="appendix/references.html#bib-1">1</a>,<a href="appendix/references.html#bib-2">2</a>,<a href="appendix/references.html#bib-3">3</a>,<a href="appendix/references.html#bib-4">4</a></sup>.</p>
-<p>생성형 AI가 누구나 사용하는 제품이 되면서 AI 관련 기술의 수요도 늘고 있습니다. 세계경제포럼(WEF)은 「Future of Jobs Report 2025」에서 2030년까지 새로 생기는 일자리를 1억 7천만 개, 사라지는 일자리를 9천2백만 개로 추정했습니다. 수요가 가장 빠르게 증가하는 기술로는 AI와 빅데이터를 꼽았습니다<sup class="cite"><a href="appendix/references.html#bib-5">5</a></sup>. 이 수치는 기업 설문에 기반한 전망이므로, 변화의 방향을 보여 주는 자료로 읽습니다.</p>
-<h3 id="skill-gap">같은 AI, 다른 결과</h3>
-<p>생성형 AI가 높은 품질로 처리할 수 있는 작업의 범위를 능력 범위라고 합니다. 이 범위는 작업마다 일정하지 않아, 비슷해 보이는 작업이라도 범위 안에 있는 것과 밖에 있는 것이 섞여 있습니다. 그래서 같은 사람이 같은 도구를 사용해도, 작업이 AI의 능력 범위 안에 있으면 결과 품질이 높아지고 범위 밖에 있으면 오히려 저하될 수 있습니다.</p>
-<p>하버드 경영대학원 등의 연구진(Dell'Acqua 외)은 논문 「Navigating the Jagged Technological Frontier」에서 컨설턴트 758명에게 OpenAI의 모델 GPT-4를 사용하게 한 실험 결과를 보고했습니다<sup class="cite"><a href="appendix/references.html#bib-6">6</a></sup>. 이 논문은 2023년 9월 공개되었고 2026년 학술지 Organization Science에 게재되었습니다. AI의 능력 범위 안의 과제에서는 AI를 사용한 집단이 더 많은 과제를 더 빨리, 더 높은 품질로 마쳤습니다. 반면 능력 범위 밖의 과제에서는 AI를 사용한 집단의 정답률이 사용하지 않은 집단보다 낮았습니다.</p>
+<p>생성형 AI는 연구 단계를 지나 누구나 사용하는 대화형 제품이 되었습니다. ChatGPT(OpenAI, 2022년 11월), Claude(Anthropic, 2023년 3월), Gemini(Google, 2023년 3월 Bard로 공개, 2024년 2월 이름 변경)가 차례로 공개되었습니다<sup class="cite"><a href="appendix/references.html#bib-1">1</a>,<a href="appendix/references.html#bib-2">2</a>,<a href="appendix/references.html#bib-3">3</a>,<a href="appendix/references.html#bib-4">4</a></sup>.</p>
+<p>생성형 AI가 누구나 사용하는 제품이 되면서 AI 관련 기술의 수요도 늘고 있습니다. 세계경제포럼(WEF)은 「Future of Jobs Report 2025」에서 수요가 가장 빠르게 증가하는 기술로 AI와 빅데이터를 꼽았습니다<sup class="cite"><a href="appendix/references.html#bib-5">5</a></sup>. 같은 보고서는 2030년까지 새로 생기는 일자리를 1억 7천만 개, 사라지는 일자리를 9천2백만 개로 추정했습니다. 이 수치는 기업 설문에 기반한 전망이므로, 변화의 방향을 보여 주는 자료로 읽습니다.</p>
+<h3 id="skill-gap">능력 범위와 사용 방법에 따라 달라지는 AI 결과</h3>
+<p>생성형 AI가 높은 품질로 처리할 수 있는 작업의 범위를 능력 범위라고 합니다. 어떤 작업이 이 범위 안에 있는지는 작업의 종류만으로 정해지지 않아, 비슷해 보이는 작업이라도 범위 안에 있는 것과 밖에 있는 것이 섞여 있습니다. 그래서 같은 사람이 같은 도구를 사용해도, 작업이 AI의 능력 범위 안에 있으면 결과 품질이 높아지고 범위 밖에 있으면 오히려 저하될 수 있습니다.</p>
+<p>하버드 경영대학원 등의 연구진(Dell'Acqua 외)은 논문 「Navigating the Jagged Technological Frontier」에서 컨설턴트 758명에게 OpenAI의 모델 GPT-4를 사용하게 한 실험 결과를 보고했습니다<sup class="cite"><a href="appendix/references.html#bib-6">6</a></sup>. AI의 능력 범위 안의 과제에서는 AI를 사용한 집단이 더 많은 과제를 더 빨리, 더 높은 품질로 마쳤습니다. 반면 능력 범위 밖의 과제에서는 AI를 사용한 집단의 정답률이 사용하지 않은 집단보다 낮았습니다.</p>
 <p>이 결과는 두 가지 능력이 필요하다는 것을 보여 줍니다. 첫째는 AI에 맡길 작업과 맡기지 않을 작업을 구분하는 능력이고, 둘째는 AI 결과를 검증하는 능력입니다. 능력 범위 밖의 과제에서 AI 결과를 그대로 받아들이면 AI를 사용하지 않을 때보다 결과가 나빠질 수 있기 때문입니다. 첫째 능력은 Chapter 1의 강점과 약점을 기준으로 Chapter 5, 6에서 AI가 맡을 일과 사람이 맡을 일을 나누며 익히고, Chapter 7의 자기 평가표로 점검합니다. 둘째 능력은 Chapter 4에서 결과를 원문과 대조하는 방법으로 익힙니다.</p>
 
 <h3 id="law">AI 사용의 법적 기준</h3>
@@ -102,7 +102,7 @@
 <tr><td><a href="chapters/ch03.html">Chapter 3 고급 프롬프트 기법과 AI 자기 검토</a></td><td>고급 기법, 자기 검토 요청, 생성 설정</td></tr>
 <tr><td><a href="chapters/ch04.html">Chapter 4 환각 대응과 교차 검증</a></td><td>환각, 교차 검증, 자동화 편향, 프롬프트 개선</td></tr>
 <tr><td><a href="chapters/ch05.html">Chapter 5 AI를 활용한 학습, 자료 조사, 요약</a></td><td>학습 방법, 요약, 연구 단계별 활용, 문헌 확인</td></tr>
-<tr><td><a href="chapters/ch06.html">Chapter 6 AI를 활용한 업무, 기획서 초안, 창작</a></td><td>업무 위임, 기획서 초안, 프로젝트 관리, 창작 절차</td></tr>
+<tr><td><a href="chapters/ch06.html">Chapter 6 AI를 활용한 업무, 기획서 초안, 창작</a></td><td>AI에 맡기는 방식, 기획서 초안, 프로젝트 관리, 창작 절차</td></tr>
 <tr><td><a href="chapters/ch07.html">Chapter 7 나에게 맞는 AI 도구 선택과 역량 진단</a></td><td>도구 선택, 역량 진단</td></tr>
 <tr><td><a href="chapters/ch08.html">Chapter 8 AI 윤리, 법, 보안과 조직 정책</a></td><td>편향, 개인정보, 저작권, 보안, 규제</td></tr>
 <tr><td><a href="chapters/epilogue.html">마치며</a></td><td>한 문장 원칙, 원리에서 책임까지, 이번 주에 시작할 다섯 가지, 앞으로의 변화, 마지막 제언</td></tr>
@@ -116,7 +116,7 @@
 <thead><tr><th>부분</th><th>주요 역할</th></tr></thead>
 <tbody>
 <tr><td>주장 한 문장</td><td>장 제목 바로 아래에서 장의 결론을 한 문장으로 밝힘</td></tr>
-<tr><td>도입부와 요약</td><td>다루는 범위, 앞 장과의 관계, 순서를 세 문단으로 안내하고 핵심을 세 줄로 정리</td></tr>
+<tr><td>도입부와 요약</td><td>다루는 범위, 앞 장과의 관계, 순서를 세 문단으로 안내하고 핵심을 서너 줄로 정리</td></tr>
 <tr><td>원리 절</td><td>개념, 방법, 근거를 설명</td></tr>
 <tr><td>예제 절</td><td>제목이 "예제:"로 시작하는 절에서 원리 절의 방법을 하나의 작업에 처음부터 결과까지 적용</td></tr>
 <tr><td>실패를 예방하는 장치</td><td>생길 수 있는 실패와 원인, 방지 장치를 표로 정리</td></tr>
@@ -130,7 +130,7 @@
 </main>
 <aside class="pagetoc" aria-label="이 페이지"><h2>이 페이지</h2><ol>
 <li><a href="#goals">이 책의 목표</a></li>
-<li><a href="#why">머리말: 지금 배워야 하는 이유</a></li>
+<li><a href="#why">머리말: 생성형 AI를 지금 배워야 하는 이유</a></li>
 <li><a href="#structure">이 책의 구성과 읽는 방법</a></li>
 </ol></aside>
 </div>
