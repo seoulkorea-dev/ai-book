@@ -16,3 +16,8 @@
 - Koenecke 외, "Careless Whisper: Speech-to-Text Hallucination Harms", https://arxiv.org/abs/2402.08021, FAccT 2024, 확인일 2026-10-25(검색 결과 요약). 사용: Whisper 전사의 약 1%에서 통째로 지어낸 문구(2023년 시점).
 - Anthropic Transparency Hub 모델 보고서, https://www.anthropic.com/transparency/model-report, 2026-10-02, 확인일 2026-10-25(앞 10만 자 직접 열람). 트랜스포머 언급 없음.
 - 미확인: GPT 약자의 OpenAI 1차 출처, Claude 현행 모델의 트랜스포머 기반 공식 문서(Claude 2 모델 카드는 검색 결과 요약으로만), 표 1-6의 "단계가 길수록 오류 누적"과 "공개 코드 학습", 이미지 음성 통합 제품 기능의 공식 문서.
+
+- 원문 확인(2026-10-29, Q-055 닫음, 직접 열람): 종료 조건(끝 토큰 또는 길이 상한) — OpenAI OpenAPI 명세 finish_reason(stop, length; https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml), Anthropic Stop reasons 문서(end_turn, max_tokens; https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons), Hugging Face transformers eos_token_id 설명. 원문은 사용자 지정 중지 문자열도 종료 조건으로 두나 본문은 단순화.
+- 원문 확인(2026-10-29, Q-055, 직접 열람): 한도 초과 동작 — Anthropic Context windows 문서(https://platform.claude.com/docs/en/build-with-claude/context-windows): claude.ai의 선입선출 관리, API의 400 'prompt is too long' 거부, compaction 요약.
+- 원문 확인(2026-10-29, Q-055, 직접 열람): 토큰 계산 도구 — Anthropic Token counting 문서(https://platform.claude.com/docs/en/build-with-claude/token-counting), OpenAI tiktoken README(https://raw.githubusercontent.com/openai/tiktoken/main/README.md).
+- 원문 미열람(2026-10-29, Q-050 유지): 표 1-3 '단계가 길수록 오류 누적'(Dziri 외 2023), '공개 코드로 학습'(Chen 외 2021), 37행 음성·이미지·영상 기능 추가(OpenAI 2023-09-25 공지, DALL·E 3 공지, Google 2025-04-15 공지). arxiv.org, openai.com, blog.google 접속 차단. 출간 전 작가 열람 목록.

@@ -12,3 +12,7 @@
 - CRAFT, RTF: 만든 기관이나 사람을 밝힌 글을 찾지 못함(블로그, 뉴스레터, 대학 안내 페이지 수준의 2차 글만 확인, 판정 근거로 쓰지 않음). CRAFT 다섯째 요소는 Tone, Target Audience, Audience 변형이 있어 본문의 "자료마다 다름"과 방향이 같음. RTF는 Role, Task, Format.
 - 날짜 계산(2026-10-25, 달력 계산): 2026-10-16 금, 2026-10-17 토, 2026-09-28 월, 2026-10-06 화. 공지문, 표 2-7, 문의 예시의 요일과 일치.
 - 미확인(찾은 범위): 시스템 프롬프트, 사용자 프롬프트, 어시스턴트 메시지 세 종류 구분의 1차 문서(Anthropic best-practices 페이지에서 시스템 프롬프트 존재만 확인). ChatGPT의 사용자 지정 지침과 프로젝트 지침 공식 문서(help.openai.com은 검색 결과에 나오지 않음). 프롬프트 인젝션 정의의 1차 출처.
+
+- 원문 확인(2026-10-29, Q-062 반영 뒤 닫음, 직접 열람): Anthropic Prompting best practices의 Long context prompting(https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices): "Place your long documents and inputs near the top of your prompt, above your query, instructions, and examples", 20k+ 토큰 입력 기준. 본문 108행에 인용 추가, 길이 기준(몇 문단, 여러 쪽)은 이 장의 기준으로 밝힘. 참고: OpenAI GPT-4.1 Prompting Guide는 지시를 자료 앞뒤 양쪽에 두라고 안내(본문에는 넣지 않음).
+- 범위 조정(2026-10-29, Q-062): 109행 '지시가 중간에 놓이면 덜 반영'을 Liu 외 실험 범위(관련 정보의 위치)에 맞춰 '입력의 중간에 놓인 정보는 덜 활용될 수 있습니다'로 좁힘.
+- 원문 미열람(2026-10-29, Q-056 유지): CARE(nngroup.com), CO-STAR(towardsdatascience.com, tech.gov.sg) 접속 차단. 출간 전 작가 열람 목록.

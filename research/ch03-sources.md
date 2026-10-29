@@ -21,3 +21,7 @@
 - 논문 귀속: Holtzman 외(arXiv 1904.09751, ICLR 2020) Nucleus Sampling 제안은 검색 요약으로 확인. Wu 외(CHI 2022)는 dblp와 UW IDL 검색 요약. Wang, Yao(ToT, ReAct)는 검색 요약. Brown, Wei, Kojima는 서지 정보만. 미확인: Zhao 외 2021(열람 불가), arXiv 원문 전부(접속 제한).
 - "ReAct는 에이전트의 기본 동작 방식": 1차 출처 없음 → 정의에서 따라 나오는 문장(판단과 도구 사용의 반복)으로 바꿈.
 - 마케팅 안 계산: 재계산 일치.
+
+- 원문 확인(2026-10-29, Q-064 반영 뒤 닫음, 직접 열람): Opus 4.7 이후 temperature, top_p, top_k 비기본값 400 오류 — Anthropic Thinking 문서 sampling 절(https://platform.claude.com/docs/en/build-with-claude/thinking). 123행 위첨자를 anthropic-thinking으로 교체. budget_tokens 400(같은 문서 표), '프롬프트로 조정'(Haiku 5.5, Opus 5.5 migration guide) 일치.
+- 원문 미열람(2026-10-29, Q-064 일부 유지): OpenAI Reasoning best practices(developers.openai.com), Zhao 외(2021, arxiv) 접속 차단. 출간 전 작가 열람 목록.
+- 원문 확인(2026-10-29, Q-067 닫음): Turpin 외(2023) 초록(저자 저장소 https://raw.githubusercontent.com/milesaturpin/cot-unfaithfulness/main/README.md, "CoT explanations can systematically misrepresent the true reason for a model's prediction"), Anthropic "Reasoning models don't always say what they think"(https://www.anthropic.com/research/reasoning-models-dont-say-think, 2025-04-03). 33행 끝에 한계 문장과 위첨자 추가.

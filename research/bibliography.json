@@ -475,5 +475,21 @@
     "title": "Bard becomes Gemini: Try Ultra 1.0 and a new mobile app today",
     "venue": "Google 블로그 (2024-02-08)",
     "url": "https://blog.google/products-and-platforms/products/gemini/bard-gemini-advanced-app/"
+  },
+  "turpin-2023": {
+    "type": "paper",
+    "author": "Turpin, M., Michael, J., Perez, E., Bowman, S. R.",
+    "title": "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+    "venue": "arXiv:2305.04388",
+    "url": "https://arxiv.org/abs/2305.04388",
+    "date": "2023"
+  },
+  "anthropic-2025-cot-faithfulness": {
+    "type": "web",
+    "author": "Anthropic",
+    "title": "Reasoning models don't always say what they think",
+    "venue": "Anthropic Research",
+    "url": "https://www.anthropic.com/research/reasoning-models-dont-say-think",
+    "date": "2025-04-03"
   }
 }
